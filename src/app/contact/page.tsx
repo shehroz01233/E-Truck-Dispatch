@@ -16,7 +16,9 @@ export default function ContactPage() {
         h1={
           <>
             Contact Us – E-Truck Dispatching
-            <span className="block">Let’s Move Your Trucking Business Forward</span>
+            <span className="block">
+              Let’s Move Your Trucking Business Forward
+            </span>
           </>
         }
         paragraphs={[
@@ -26,6 +28,7 @@ export default function ContactPage() {
         backgroundImage="/Contact Us/images/1_rectangle_1450.webp"
         backgroundAlt="Truck traveling on the highway"
       />
+
       <InformationFormSection />
       <ChecklistHighlightSection />
     </main>

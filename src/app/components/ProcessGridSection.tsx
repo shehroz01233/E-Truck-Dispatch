@@ -1,0 +1,3 @@
+export default function ProcessGridSection({ heading, steps }: { heading: string; steps: string[][] }) {
+  return <section className="mx-auto w-[calc(100%-40px)] max-w-[1560px] pb-16 pt-28 sm:w-[calc(100%-64px)]"><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3"><div className="flex min-h-[264px] items-start bg-[#b34b0c] p-[30px]"><h2 className="max-w-80 text-4xl font-bold leading-tight sm:text-5xl">{heading}</h2></div>{steps.map(([title, text], index) => <article key={title} className="min-h-[264px] bg-[#171717] p-[30px]"><span className="text-sm font-semibold text-[#b34b0c]">0{index + 1}</span><h3 className="mt-4 text-xl font-semibold">{title}</h3><p className="mt-5 text-base leading-6 text-white/70">{text}</p></article>)}</div></section>;
+}

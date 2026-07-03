@@ -2,6 +2,9 @@
 @theme inline {
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --font-outfit: var(--font-outfit);
+  --font-dm-sans: var(--font-dm-sans);
 }
 @theme {
   --color-bg-main: #1c1c1c;

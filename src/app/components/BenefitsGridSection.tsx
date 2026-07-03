@@ -1,0 +1,3 @@
+export default function BenefitsGridSection({ heading, benefits }: { heading: string; benefits: string[] }) {
+  return <section className="py-12"><div className="mx-auto grid w-[calc(100%-40px)] max-w-[1560px] gap-3 sm:w-[calc(100%-64px)] md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-2"><div className="flex min-h-96 items-center bg-[#b34b0c] p-[42px] xl:row-span-2"><h2 className="text-4xl font-bold leading-tight sm:text-5xl">{heading}</h2></div>{benefits.map((benefit) => <div key={benefit} className="min-h-48 bg-[#171717] p-5"><span className="flex h-14 w-14 items-center justify-center bg-[#b34b0c]/20 text-2xl text-[#b34b0c]">✓</span><p className="mt-6 text-lg font-medium capitalize">{benefit}</p></div>)}</div></section>;
+}
