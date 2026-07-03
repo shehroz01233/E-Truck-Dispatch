@@ -1,0 +1,282 @@
+<div style={{width: '100%', height: '100%', position: 'relative', background: '#1C1C1C', overflow: 'hidden'}}>
+    <img style={{width: 1920, height: 900, left: 0, top: 0, position: 'absolute'}} src="https://placehold.co/1920x900" />
+    <div style={{left: 180, top: 220, position: 'absolute'}}><span style="color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', textTransform: 'capitalize', wordWrap: 'break-word'">Best trucking Service <br/>in the USA <br/></span><span style="color: 'white', fontSize: 70, fontFamily: 'Outfit', fontWeight: '700', textTransform: 'capitalize', wordWrap: 'break-word'">E Truck Dispatching</span></div>
+    <div style={{width: 635, left: 180, top: 464, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Owner operators lose productive driving hours managing load boards, broker calls, and back office paperwork daily. E Truck Dispatching eliminates this operational drag by handling load booking, rate negotiation, broker communication, and same day invoice submission across all 48 states. You drive. We manage everything between pickup and payment.</div>
+    <div style={{width: 1920, height: 80, left: 0, top: 30, position: 'absolute', background: 'rgba(255, 255, 255, 0.06)', backdropFilter: 'blur(15px)'}} />
+    <img style={{width: 70, height: 50, left: 180, top: 45, position: 'absolute'}} src="https://placehold.co/70x50" />
+    <div style={{left: 253, top: 52, position: 'absolute', color: 'white', fontSize: 30, fontFamily: 'Exo 2', fontStyle: 'italic', fontWeight: '900', textTransform: 'uppercase', wordWrap: 'break-word'}}>Dispatching</div>
+    <div style={{left: 769, top: 60, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Truck Types</div>
+    <div style={{left: 916, top: 60, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Services</div>
+    <div style={{left: 1038, top: 60, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Pricing</div>
+    <div style={{left: 665, top: 60, position: 'absolute', color: '#B34B0C', fontSize: 16, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Home</div>
+    <div style={{left: 1150, top: 60, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Resources</div>
+    <img style={{width: 20, height: 20, left: 1236, top: 60, position: 'absolute'}} src="https://placehold.co/20x20" />
+    <div style={{height: 44, paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10, left: 1610, top: 48, position: 'absolute', background: '#B34B0C', justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+        <div style={{color: 'white', fontSize: 18, fontFamily: 'Outfit', fontWeight: '500', textTransform: 'capitalize', wordWrap: 'break-word'}}>Get a Load </div>
+    </div>
+    <div style={{height: 44, paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10, left: 180, top: 683, position: 'absolute', background: '#B34B0C', justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+        <div style={{color: 'white', fontSize: 18, fontFamily: 'Outfit', fontWeight: '500', textTransform: 'capitalize', wordWrap: 'break-word'}}>Start Trucking Dispatch</div>
+    </div>
+    <img style={{width: 46, height: 44, left: 180, top: 609, position: 'absolute'}} src="https://placehold.co/46x44" />
+    <div style={{left: 226, top: 632, position: 'absolute', color: 'white', fontSize: 10, fontFamily: 'DM Sans', fontWeight: '700', wordWrap: 'break-word'}}>E Truck Dispatching</div>
+    <img style={{width: 10, height: 10, left: 226, top: 617, position: 'absolute'}} src="https://placehold.co/10x10" />
+    <img style={{width: 10, height: 10, left: 238, top: 617, position: 'absolute'}} src="https://placehold.co/10x10" />
+    <img style={{width: 10, height: 10, left: 250, top: 617, position: 'absolute'}} src="https://placehold.co/10x10" />
+    <img style={{width: 10, height: 10, left: 262, top: 617, position: 'absolute'}} src="https://placehold.co/10x10" />
+    <img style={{width: 5, height: 10, left: 274, top: 617, position: 'absolute'}} src="https://placehold.co/5x10" />
+    <img style={{width: 5, height: 10, left: 279, top: 617, position: 'absolute'}} src="https://placehold.co/5x10" />
+    <img style={{width: 110, height: 35, left: 353, top: 609, position: 'absolute'}} src="https://placehold.co/110x35" />
+    <img style={{width: 77, height: 24, left: 386, top: 629, position: 'absolute'}} src="https://placehold.co/77x24" />
+    <img style={{width: 80, height: 44, left: 493, top: 609, position: 'absolute'}} src="https://placehold.co/80x44" />
+    <img style={{width: 84, height: 44, left: 603, top: 609, position: 'absolute'}} src="https://placehold.co/84x44" />
+    <div style={{left: 180, top: 950, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>300+</div>
+    <div style={{left: 180, top: 1020, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'DM Sans', fontWeight: '700', wordWrap: 'break-word'}}>Active Trucks </div>
+    <div style={{left: 180, top: 1059, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Trucks we dispatch </div>
+    <div style={{left: 391, top: 950, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>60+</div>
+    <div style={{left: 391, top: 1020, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'DM Sans', fontWeight: '700', wordWrap: 'break-word'}}>Team Members</div>
+    <div style={{left: 391, top: 1059, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Experienced dispatchers </div>
+    <div style={{left: 649, top: 950, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>150+</div>
+    <div style={{left: 649, top: 1020, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'DM Sans', fontWeight: '700', wordWrap: 'break-word'}}> MC Clients</div>
+    <div style={{left: 649, top: 1059, position: 'absolute'}}><span style="color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', textTransform: 'capitalize', wordWrap: 'break-word'">actively</span><span style="color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'"> working with us.</span></div>
+    <div style={{left: 903, top: 950, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>3+ </div>
+    <div style={{left: 903, top: 1020, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'DM Sans', fontWeight: '700', wordWrap: 'break-word'}}> Years Experience</div>
+    <div style={{left: 903, top: 1059, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Proven experience in truck </div>
+    <div style={{width: 300, height: 278, left: 180, top: 4065, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 278, left: 495, top: 4065, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 278, left: 810, top: 4065, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 278, left: 810, top: 3772, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 278, left: 1125, top: 4065, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 278, left: 1125, top: 3772, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 278, left: 1440, top: 4065, position: 'absolute', background: '#B34B0C', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 278, left: 1440, top: 3772, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{left: 935, top: 3956, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Ohio</div>
+    <div style={{left: 1237, top: 3956, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Indiana</div>
+    <div style={{left: 1561, top: 3956, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Texas</div>
+    <div style={{left: 294, top: 4249, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Florida</div>
+    <div style={{left: 597, top: 4249, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>New York</div>
+    <div style={{left: 909, top: 4249, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>California</div>
+    <div style={{left: 1228, top: 4249, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Kentucky</div>
+    <div style={{width: 562, left: 180, top: 3772, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', lineHeight: 54, wordWrap: 'break-word'}}>Truck Dispatch Services Across Key Freight States</div>
+    <div style={{width: 512, left: 180, top: 3954, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability.</div>
+    <img style={{width: 176, height: 108, left: 872, top: 3838, position: 'absolute'}} src="https://placehold.co/176x108" />
+    <img style={{width: 176, height: 108, left: 1187, top: 3838, position: 'absolute'}} src="https://placehold.co/176x108" />
+    <img style={{width: 176, height: 108, left: 1502, top: 3838, position: 'absolute'}} src="https://placehold.co/176x108" />
+    <img style={{width: 176, height: 108, left: 242, top: 4131, position: 'absolute'}} src="https://placehold.co/176x108" />
+    <img style={{width: 176, height: 108, left: 557, top: 4131, position: 'absolute'}} src="https://placehold.co/176x108" />
+    <img style={{width: 176, height: 108, left: 872, top: 4131, position: 'absolute'}} src="https://placehold.co/176x108" />
+    <img style={{width: 176, height: 108, left: 1187, top: 4131, position: 'absolute'}} src="https://placehold.co/176x108" />
+    <div style={{width: 158, height: 44, paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10, left: 1511, top: 4258, position: 'absolute', background: '#161616', justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+        <div style={{color: 'white', fontSize: 18, fontFamily: 'Outfit', fontWeight: '500', textTransform: 'capitalize', wordWrap: 'break-word'}}>View All States</div>
+    </div>
+    <div style={{width: 264, left: 1458, top: 4106, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Selected States Coverage</div>
+    <div style={{width: 256, left: 1462, top: 4154, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Explore dispatch services in selected high-demand states with strong lanes, load availability, and region-specific support.</div>
+    <img style={{width: 1920, height: 800, left: 0, top: 2892, position: 'absolute'}} src="https://placehold.co/1920x800" />
+    <div style={{width: 156, left: 608, top: 3429, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Flatbed Dispatch</div>
+    <div style={{width: 208, left: 608, top: 3495, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Open-deck trailers transporting construction materials, steel, lumber, and heavy machinery with tarping, strapping, and load securement compliance built into every booking.</div>
+    <div style={{width: 156, left: 916, top: 3429, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Step Deck Dispatch</div>
+    <div style={{width: 208, left: 916, top: 3495, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}> Designed for 8.5 to 10 foot tall cargo including industrial machinery and construction equipment, with multi-state permit coordination and oversized load documentation.</div>
+    <div style={{width: 156, left: 1224, top: 3429, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Reefer Dispatch</div>
+    <div style={{width: 208, left: 1224, top: 3495, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Temperature-controlled trailers for food, pharmaceuticals, and perishables requiring cold chain integrity and direct relationships with food-grade brokers.</div>
+    <div style={{width: 156, left: 1532, top: 3429, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Hotshot Dispatch</div>
+    <div style={{width: 208, left: 1532, top: 3495, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Time-sensitive freight for oil fields, perishable cargo, and construction industries using 40-foot-plus trucks with same-day or next-day delivery turnaround.</div>
+    <div style={{width: 393, left: 180, top: 2982, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Our Trucks</div>
+    <div style={{width: 393, left: 180, top: 3072, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>E Truck Dispatching covers 8 equipment categories, each requiring distinct load board strategies, broker relationships, and securement knowledge.</div>
+    <div style={{width: 268, height: 313, left: 270, top: 3379, position: 'absolute', background: 'rgba(179, 75, 12, 0.80)'}} />
+    <div style={{width: 156, left: 300, top: 3429, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Dry Van Dispatch</div>
+    <div style={{width: 208, left: 300, top: 3495, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Standard 48 to 53 foot enclosed trailers moving retail goods, consumer products, and packaged freight through high-volume distribution corridors nationwide.</div>
+    <div style={{width: 70, height: 70, left: 180, top: 3602, position: 'absolute', background: '#B34B0C'}} />
+    <div style={{width: 70, height: 70, left: 180, top: 3512, position: 'absolute', background: '#161616'}} />
+    <img style={{width: 40, height: 40, left: 195, top: 3657, position: 'absolute', transform: 'rotate(-90deg)', transformOrigin: 'top left'}} src="https://placehold.co/40x40" />
+    <img style={{width: 40, height: 40, left: 235, top: 3527, position: 'absolute', transform: 'rotate(90deg)', transformOrigin: 'top left'}} src="https://placehold.co/40x40" />
+    <div style={{width: 1920, height: 800, left: 1920, top: 5899, position: 'absolute', transform: 'rotate(180deg)', transformOrigin: 'top left', background: '#161616'}} />
+    <img style={{width: 1920, height: 70, left: 0, top: 5047, position: 'absolute', boxShadow: '0px -3px 0px rgba(179, 75, 12, 0.21)'}} src="https://placehold.co/1920x70" />
+    <div style={{width: 729, height: 711, left: 1011, top: 5182, position: 'absolute', overflow: 'hidden'}}>
+        <div style={{width: 9, height: 506, left: 720, top: 156, position: 'absolute', background: '#3F3F3F'}} />
+        <div style={{width: 5, height: 247, left: 722, top: 158, position: 'absolute', background: '#B34B0C'}} />
+        <div style={{width: 521, left: 0, top: 6, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>How We Work <br/>Our Dispatch Workflow</div>
+        <div style={{width: 660, height: 151, left: 0, top: 169, position: 'absolute', background: '#1C1C1C', border: '0.50px #3F3F3F solid'}} />
+        <div style={{width: 660, height: 151, left: 0, top: 340, position: 'absolute', background: '#1C1C1C', border: '0.50px #3F3F3F solid'}} />
+        <div style={{width: 660, height: 151, left: 0, top: 511, position: 'absolute', background: '#1C1C1C', border: '0.50px #3F3F3F solid'}} />
+        <div style={{width: 110, height: 110, left: 20, top: 189, position: 'absolute', background: 'rgba(179, 75, 12, 0.10)'}} />
+        <div style={{width: 110, height: 110, left: 20, top: 360, position: 'absolute', background: 'rgba(179, 75, 12, 0.10)'}} />
+        <div style={{width: 110, height: 110, left: 20, top: 531, position: 'absolute', background: 'rgba(179, 75, 12, 0.10)'}} />
+        <div style={{left: 60, top: 194, position: 'absolute', color: '#B34B0C', fontSize: 79, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>1</div>
+        <div style={{left: 52, top: 365, position: 'absolute', color: '#B34B0C', fontSize: 79, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>2</div>
+        <div style={{left: 52, top: 536, position: 'absolute', color: '#B34B0C', fontSize: 79, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>3</div>
+        <div style={{left: 144, top: 189, position: 'absolute', color: '#B34B0C', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Onboarding and Dispatch Setup</div>
+        <div style={{left: 144, top: 360, position: 'absolute', color: '#B34B0C', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Dedicated Dispatcher Assignment</div>
+        <div style={{left: 144, top: 531, position: 'absolute', color: '#B34B0C', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Load Evaluation and Rate Negotiation</div>
+        <div style={{width: 497, left: 144, top: 237, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Your operating parameters are defined upfront — preferred lanes, home time schedule, equipment type, weight limits, and minimum rate per mile. These act as filters for every load sourced.</div>
+        <div style={{width: 497, left: 144, top: 408, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>A dispatcher is assigned with full context of your lanes, broker history, and rate expectations, creating continuity from day one.</div>
+        <div style={{width: 497, left: 144, top: 579, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Each load is assessed against real-time market data from platforms like DAT Solutions. Only freight meeting your approved rate floor and operational criteria is presented.</div>
+    </div>
+    <div style={{width: 512, left: 1180, top: 4573, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability.</div>
+    <div style={{width: 300, height: 262, left: 820, top: 4423, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 262, left: 500, top: 4423, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 262, left: 180, top: 4423, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 262, left: 820, top: 4705, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 262, left: 500, top: 4705, position: 'absolute', background: '#161616', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 300, height: 262, left: 180, top: 4705, position: 'absolute', background: '#B34B0C', border: '1px #3F3F3F solid'}} />
+    <div style={{width: 260, left: 200, top: 4453, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Broker Credit Screening Before Load Acceptance</div>
+    <div style={{width: 270, left: 840, top: 4735, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Dedicated Dispatcher with Operational Continuity</div>
+    <div style={{width: 260, left: 520, top: 4453, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Rate Negotiation Using Market Intelligence</div>
+    <div style={{width: 260, left: 520, top: 4735, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Pre-Load and Post-Load Risk Management</div>
+    <div style={{width: 260, left: 840, top: 4453, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Post-Payment Fee Structure</div>
+    <div style={{width: 270, left: 200, top: 4529, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Every broker is evaluated on payment history, credit score, and factoring approval status before any rate confirmation is issued. Slow-paying and high-risk accounts are excluded at the sourcing stage.</div>
+    <div style={{width: 260, left: 840, top: 4811, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>A single dispatcher manages your account long-term, retaining lane performance data and broker interaction history to refine future load decisions.</div>
+    <div style={{width: 269, left: 520, top: 4529, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Rates are countered based on lane demand, equipment availability, broker behavior patterns, and capacity imbalance — not accepted at first offer.</div>
+    <div style={{width: 269, left: 520, top: 4811, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Before booking: broker validation, rate qualification, and load verification. After delivery: documentation accuracy, detention claims, TONU recovery, and payment follow-up.</div>
+    <div style={{width: 260, left: 840, top: 4529, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Dispatch fees apply only after broker payment is received. No upfront costs, no monthly commitments. Performance stays tied directly to your cash flow.</div>
+    <div style={{width: 158, height: 44, paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10, left: 253, top: 4888, position: 'absolute', background: '#161616', justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+        <div style={{color: 'white', fontSize: 18, fontFamily: 'Outfit', fontWeight: '500', textTransform: 'capitalize', wordWrap: 'break-word'}}>View All States</div>
+    </div>
+    <div style={{width: 264, left: 200, top: 4736, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Selected States Coverage</div>
+    <div style={{width: 256, left: 204, top: 4784, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Explore dispatch services in selected high-demand states with strong lanes, load availability, and region-specific support.</div>
+    <div style={{width: 521, left: 1180, top: 4423, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Why Choose us <br/>E Truck Dispatching</div>
+    <img style={{width: 600, height: 262, left: 1140, top: 4705, position: 'absolute'}} src="https://placehold.co/600x262" />
+    <div style={{width: 600, height: 262, left: 1140, top: 4705, position: 'absolute', background: 'linear-gradient(313deg, rgba(179, 75, 12, 0.20) 0%, rgba(179, 75, 12, 0.10) 100%)'}} />
+    <div style={{width: 613, left: 1030, top: 6129, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability.</div>
+    <div style={{width: 405, left: 1030, top: 5979, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Frequently Asked Questions</div>
+    <div style={{width: 800, height: 68, left: 180, top: 5979, position: 'absolute', background: '#B34B0C'}} />
+    <div style={{width: 800, height: 68, left: 180, top: 6149, position: 'absolute', background: '#161616'}} />
+    <div style={{width: 800, height: 68, left: 180, top: 6325, position: 'absolute', background: '#161616'}} />
+    <div style={{width: 800, height: 68, left: 180, top: 6237, position: 'absolute', background: '#161616'}} />
+    <div style={{width: 800, height: 68, left: 180, top: 6413, position: 'absolute', background: '#161616'}} />
+    <div style={{width: 800, height: 68, left: 180, top: 6501, position: 'absolute', background: '#161616'}} />
+    <div style={{width: 800, height: 82, left: 180, top: 6047, position: 'absolute', background: '#161616'}} />
+    <div style={{left: 220, top: 5999, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>What is truck dispatching?</div>
+    <div style={{left: 220, top: 6169, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>How do dispatch services improve earnings?</div>
+    <div style={{left: 220, top: 6345, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>How fast do payments come through?</div>
+    <div style={{left: 220, top: 6257, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Do I have to accept every load presented?</div>
+    <div style={{left: 220, top: 6433, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Is there a contract or upfront fee?</div>
+    <div style={{left: 220, top: 6521, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>How quickly can I get started?</div>
+    <div style={{width: 708, left: 220, top: 6067, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>A service that manages load booking, rate negotiation, broker communication, and operational paperwork so carriers can focus on driving and revenue generation.</div>
+    <img style={{width: 20, height: 20, left: 920, top: 6525, position: 'absolute'}} src="https://placehold.co/20x20" />
+    <img style={{width: 20, height: 20, left: 920, top: 6437, position: 'absolute'}} src="https://placehold.co/20x20" />
+    <img style={{width: 20, height: 20, left: 920, top: 6349, position: 'absolute'}} src="https://placehold.co/20x20" />
+    <img style={{width: 20, height: 20, left: 920, top: 6261, position: 'absolute'}} src="https://placehold.co/20x20" />
+    <img style={{width: 20, height: 20, left: 920, top: 6173, position: 'absolute'}} src="https://placehold.co/20x20" />
+    <img style={{width: 20, height: 20, left: 940, top: 6023, position: 'absolute', transform: 'rotate(180deg)', transformOrigin: 'top left'}} src="https://placehold.co/20x20" />
+    <img style={{width: 710, height: 332, left: 1030, top: 6237, position: 'absolute'}} src="https://placehold.co/710x332" />
+    <div style={{width: 710, height: 332, left: 1030, top: 6237, position: 'absolute', background: 'linear-gradient(313deg, rgba(179, 75, 12, 0.50) 0%, rgba(179, 75, 12, 0.20) 100%)'}} />
+    <div style={{width: 158, height: 44, paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10, left: 180, top: 3194, position: 'absolute', background: '#B34B0C', justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+        <div style={{color: 'white', fontSize: 18, fontFamily: 'Outfit', fontWeight: '500', textTransform: 'capitalize', wordWrap: 'break-word'}}>View All States</div>
+    </div>
+    <div style={{width: 36, height: 36, left: 1854, top: 418, position: 'absolute', background: '#B34B0C'}} />
+    <img style={{width: 18, height: 18, left: 1863, top: 427, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{width: 36, height: 36, left: 1854, top: 464, position: 'absolute', background: '#B34B0C'}} />
+    <img style={{width: 18, height: 18, left: 1863, top: 473, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{width: 36, height: 36, left: 30, top: 464, position: 'absolute', background: '#B34B0C'}} />
+    <img style={{width: 18, height: 18, left: 39, top: 473, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{width: 36, height: 36, left: 1854, top: 510, position: 'absolute', background: '#B34B0C'}} />
+    <img style={{width: 18, height: 18, left: 1863, top: 519, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{width: 36, height: 36, left: 30, top: 510, position: 'absolute', background: '#B34B0C'}} />
+    <img style={{width: 18, height: 18, left: 39, top: 519, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{width: 36, height: 36, left: 1854, top: 556, position: 'absolute', background: '#B34B0C'}} />
+    <img style={{width: 18, height: 18, left: 1863, top: 565, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{width: 1560, height: 268, left: 180, top: 6731, position: 'absolute', background: '#161616'}} />
+    <div style={{width: 430, height: 350, left: 280, top: 6649, position: 'absolute', background: '#B34B0C'}} />
+    <div style={{width: 175, height: 44, paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10, left: 324, top: 6915, position: 'absolute', background: '#161616', justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+        <div style={{color: 'white', fontSize: 18, fontFamily: 'Outfit', fontWeight: '500', wordWrap: 'break-word'}}>Talk to an Expert</div>
+    </div>
+    <div style={{width: 328, left: 320, top: 6689, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Still Have Questions?</div>
+    <div style={{width: 346, left: 324, top: 6839, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Our billing experts are here to help. Get in touch for a free consultation.</div>
+    <div style={{left: 809, top: 6799, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>300+</div>
+    <div style={{left: 809, top: 6869, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'DM Sans', fontWeight: '700', wordWrap: 'break-word'}}>Active Trucks </div>
+    <div style={{left: 809, top: 6908, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Trucks we dispatch </div>
+    <div style={{left: 1100, top: 6799, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>60+</div>
+    <div style={{left: 1100, top: 6869, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'DM Sans', fontWeight: '700', wordWrap: 'break-word'}}>Team Members</div>
+    <div style={{left: 1100, top: 6908, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Experienced dispatchers </div>
+    <div style={{left: 1438, top: 6799, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>150+</div>
+    <div style={{left: 1438, top: 6869, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'DM Sans', fontWeight: '700', wordWrap: 'break-word'}}> MC Clients</div>
+    <div style={{left: 1438, top: 6908, position: 'absolute'}}><span style="color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', textTransform: 'capitalize', wordWrap: 'break-word'">actively</span><span style="color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'"> working with us.</span></div>
+    <div style={{width: 1, height: 131, left: 1035, top: 6800, position: 'absolute', background: '#3F3F3F'}} />
+    <div style={{width: 1, height: 131, left: 1373, top: 6800, position: 'absolute', background: '#3F3F3F'}} />
+    <div style={{width: 1920, height: 637, left: 0, top: 1178, position: 'absolute', background: '#161616', overflow: 'hidden'}}>
+        <div style={{width: 677, height: 517, left: 961, top: 60, position: 'absolute', background: '#1C1C1C'}} />
+        <div style={{left: 1011, top: 149, position: 'absolute', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Who We Are</div>
+        <div style={{width: 577, left: 1011, top: 239, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>E Truck Dispatching is a dedicated freight dispatch company built for owner-operators and small trucking companies operating across the continental United States. Our dispatchers carry hands-on experience in freight brokerage, carrier-side operations, and Federal Motor Carrier Safety Administration compliance standards.</div>
+        <div style={{width: 577, left: 1011, top: 374, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Each carrier is assigned a single point of contact who maintains full visibility into lane history, rate thresholds, equipment type, and broker interaction records. This continuity removes the inefficiency of rotating dispatchers and builds operational memory that improves load selection over time.</div>
+        <img style={{width: 638, height: 295, left: 323, top: 60, position: 'absolute'}} src="https://placehold.co/638x295" />
+        <img style={{width: 309, height: 202, left: 652, top: 375, position: 'absolute'}} src="https://placehold.co/309x202" />
+        <img style={{width: 309, height: 202, left: 323, top: 375, position: 'absolute'}} src="https://placehold.co/309x202" />
+    </div>
+    <div style={{width: 500, height: 396, left: 1240, top: 702, position: 'absolute', background: '#161616', backdropFilter: 'blur(10px)'}} />
+    <div style={{left: 1270, top: 722, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'Outfit', fontWeight: '500', wordWrap: 'break-word'}}>Full  Name</div>
+    <div style={{width: 440, height: 44, left: 1270, top: 752, position: 'absolute', background: '#1C1C1C'}} />
+    <div style={{left: 1290, top: 765, position: 'absolute', color: 'rgba(255, 255, 255, 0.60)', fontSize: 14, fontFamily: 'Outfit', fontWeight: '300', wordWrap: 'break-word'}}>Enter Full Name</div>
+    <div style={{left: 1270, top: 826, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'Outfit', fontWeight: '500', wordWrap: 'break-word'}}>Phone Number</div>
+    <div style={{width: 440, height: 44, left: 1270, top: 856, position: 'absolute', background: '#1C1C1C'}} />
+    <div style={{left: 1290, top: 869, position: 'absolute', color: 'rgba(255, 255, 255, 0.60)', fontSize: 14, fontFamily: 'Outfit', fontWeight: '300', wordWrap: 'break-word'}}>+1 (000) 123-1234</div>
+    <div style={{left: 1270, top: 930, position: 'absolute', color: 'white', fontSize: 16, fontFamily: 'Outfit', fontWeight: '500', wordWrap: 'break-word'}}>Email Address</div>
+    <div style={{width: 440, height: 44, left: 1270, top: 960, position: 'absolute', background: '#1C1C1C'}} />
+    <div style={{left: 1290, top: 973, position: 'absolute', color: 'rgba(255, 255, 255, 0.60)', fontSize: 14, fontFamily: 'Outfit', fontWeight: '300', wordWrap: 'break-word'}}>email@gmail.com</div>
+    <div style={{width: 440, height: 44, paddingLeft: 20, paddingRight: 20, paddingTop: 10, paddingBottom: 10, left: 1270, top: 1034, position: 'absolute', background: '#B34B0C', justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+        <div style={{color: 'white', fontSize: 18, fontFamily: 'Outfit', fontWeight: '500', textTransform: 'capitalize', wordWrap: 'break-word'}}>Get Started Now</div>
+    </div>
+    <img style={{width: 390, height: 360, left: 1350, top: 2452, position: 'absolute'}} src="https://placehold.co/390x360" />
+    <div style={{width: 390, height: 360, left: 960, top: 2452, position: 'absolute', background: '#161616'}} />
+    <div style={{width: 390, height: 361, left: 1350, top: 2091, position: 'absolute', background: '#161616'}} />
+    <img style={{width: 390, height: 360, left: 570, top: 2452, position: 'absolute'}} src="https://placehold.co/390x360" />
+    <div style={{width: 390, height: 361, left: 570, top: 2091, position: 'absolute', background: '#161616'}} />
+    <div style={{width: 390, height: 360, left: 180, top: 2452, position: 'absolute', background: '#B34B0C'}} />
+    <img style={{width: 390, height: 361, left: 960, top: 2091, position: 'absolute'}} src="https://placehold.co/390x361" />
+    <img style={{width: 390, height: 361, left: 180, top: 2091, position: 'absolute'}} src="https://placehold.co/390x361" />
+    <div style={{left: 286, top: 2529, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Truck Dispatching</div>
+    <div style={{width: 240, left: 255, top: 2567, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Load sourcing, rate negotiation, broker communication, appointment scheduling, and same-day invoice submission managed by a dedicated dispatcher aligned to your lanes, equipment type, and revenue targets.</div>
+    <div style={{left: 665, top: 2180, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Trucking Accounting</div>
+    <div style={{width: 240, height: 146, left: 645, top: 2218, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Revenue tracking, expense categorization, and financial reporting structured around each load cycle to maintain clear visibility into per-mile profitability and overall business performance.</div>
+    <div style={{left: 1034, top: 2540, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>Document Management</div>
+    <div style={{width: 240, height: 146, left: 1035, top: 2578, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Carrier packets, rate confirmations, BOL (Bill of Lading), POD (Proof of Delivery), insurance certificates, and compliance paperwork organized and maintained within a centralized workflow.</div>
+    <div style={{left: 1470, top: 2190, position: 'absolute', color: 'white', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', wordWrap: 'break-word'}}>MC/DOT Setup</div>
+    <div style={{width: 240, height: 125, left: 1425, top: 2228, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 16, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>Motor Carrier authority registration, USDOT number application, BOC-3 process agent filing, and initial compliance documentation handled from start to activation.</div>
+    <div style={{width: 361, left: 780, top: 1895, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 48, fontFamily: 'Outfit', fontWeight: '700', wordWrap: 'break-word'}}>Our Services</div>
+    <div style={{width: 880, left: 520, top: 1985, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', wordWrap: 'break-word'}}>E Truck Dispatching provides end-to-end operational support beyond load booking — covering financial management, regulatory setup, and documentation handling for owner-operators and small carriers.</div>
+    <div style={{width: 746.43, height: 539, left: 0, top: 5138.16, position: 'absolute', background: 'linear-gradient(180deg, rgba(179, 75, 12, 0.80) 5%, rgba(179, 75, 12, 0.10) 47%)'}} />
+    <img style={{width: 800, height: 742, left: 980, top: 5844, position: 'absolute', transform: 'rotate(-180deg)', transformOrigin: 'top left'}} src="https://placehold.co/800x742" />
+    <div style={{width: 1920, height: 490, left: 0, top: 7079, position: 'absolute', background: '#161616'}} />
+    <div style={{left: 732, top: 7138, position: 'absolute', color: '#B34B0C', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', lineHeight: 30, wordWrap: 'break-word'}}>Quick Links</div>
+    <div style={{left: 732, top: 7188, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Home</div>
+    <div style={{left: 732, top: 7223, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Truck Types</div>
+    <div style={{left: 732, top: 7258, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>States</div>
+    <div style={{left: 732, top: 7293, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>About Us</div>
+    <div style={{left: 732, top: 7328, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Contact Us</div>
+    <div style={{left: 732, top: 7363, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Resources</div>
+    <div style={{left: 732, top: 7398, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Why Choose MNA?</div>
+    <div style={{left: 732, top: 7433, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Pricing</div>
+    <div style={{left: 1010, top: 7138, position: 'absolute', color: '#B34B0C', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', lineHeight: 30, wordWrap: 'break-word'}}>Our Services </div>
+    <div style={{left: 1010, top: 7188, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Dedicated Truck Dispatching</div>
+    <div style={{left: 1010, top: 7223, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Load Booking</div>
+    <div style={{left: 1010, top: 7258, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Factoring</div>
+    <div style={{left: 1010, top: 7293, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Paper Work</div>
+    <div style={{left: 1010, top: 7328, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Driver Recruiting</div>
+    <div style={{left: 1010, top: 7363, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>MC Setup</div>
+    <div style={{left: 1010, top: 7398, position: 'absolute', color: '#EAEAEA', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Accounting</div>
+    <div style={{left: 1432, top: 7138, position: 'absolute', color: '#B34B0C', fontSize: 22, fontFamily: 'Outfit', fontWeight: '600', lineHeight: 30, wordWrap: 'break-word'}}>Get In Touch </div>
+    <div style={{left: 1455, top: 7190, position: 'absolute', color: '#EAEAEA', fontSize: 14, fontFamily: 'DM Sans', fontWeight: '600', lineHeight: 14, wordWrap: 'break-word'}}>Phone </div>
+    <div style={{left: 1432, top: 7216, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>+1 (216) 400-5753</div>
+    <div style={{left: 1432, top: 7246, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>+1 (443) 251-4244</div>
+    <img style={{width: 18, height: 18, left: 1432, top: 7188, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{left: 1455, top: 7288, position: 'absolute', color: '#EAEAEA', fontSize: 14, fontFamily: 'DM Sans', fontWeight: '600', lineHeight: 14, wordWrap: 'break-word'}}>Email </div>
+    <div style={{left: 1432, top: 7314, position: 'absolute', color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>dispatch@mnatransport.com</div>
+    <img style={{width: 18, height: 18, left: 1432, top: 7286, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{left: 1455, top: 7356, position: 'absolute', color: '#EAEAEA', fontSize: 14, fontFamily: 'DM Sans', fontWeight: '600', lineHeight: 14, wordWrap: 'break-word'}}>Location</div>
+    <div style={{width: 215, left: 1432, top: 7382, position: 'absolute'}}><span style="color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', textTransform: 'lowercase', lineHeight: 20, wordWrap: 'break-word'">521</span><span style="color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'"> </span><span style="color: 'white', fontSize: 18, fontFamily: 'DM Sans', fontWeight: '400', textTransform: 'lowercase', lineHeight: 20, wordWrap: 'break-word'">VALCOUR RD CATONSVILLE, MD 21228</span></div>
+    <img style={{width: 18, height: 18, left: 1432, top: 7354, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{width: 1920, height: 1, left: 0, top: 7483, position: 'absolute', background: '#3F3F3F'}} />
+    <div style={{left: 220, top: 7514, position: 'absolute'}}><span style="color: '#EAEAEA', fontSize: 14, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 25, wordWrap: 'break-word'">© 2026, MNA Transport ,  Design &amp; Developed By </span><span style="color: '#EAEAEA', fontSize: 14, fontFamily: 'DM Sans', fontWeight: '700', lineHeight: 25, wordWrap: 'break-word'">BitBlazeTec</span></div>
+    <div style={{left: 1354, top: 7514, position: 'absolute', color: '#EAEAEA', fontSize: 14, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 25, wordWrap: 'break-word'}}>Privacy Policy </div>
+    <div style={{left: 1480, top: 7514, position: 'absolute', color: '#EAEAEA', fontSize: 14, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 25, wordWrap: 'break-word'}}>Terms of Service</div>
+    <div style={{left: 1625, top: 7514, position: 'absolute', color: '#EAEAEA', fontSize: 14, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 25, wordWrap: 'break-word'}}>Disclaimer</div>
+    <div style={{width: 367, height: 120, left: 220, top: 7208, position: 'absolute', color: '#EAEAEA', fontSize: 14, fontFamily: 'DM Sans', fontWeight: '400', lineHeight: 24, wordWrap: 'break-word'}}>MNA Transport offers reliable and profit driven truck dispatching services across the United States.<br/>We help owner operators and fleets secure high-paying loads, reduce deadhead miles, and streamline operations for maximum efficiency.</div>
+    <div style={{width: 36, height: 36, left: 220, top: 7348, position: 'absolute', background: '#1C1C1C'}} />
+    <img style={{width: 18, height: 18, left: 229, top: 7357, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{width: 36, height: 36, left: 271, top: 7348, position: 'absolute', background: '#1C1C1C'}} />
+    <img style={{width: 18, height: 18, left: 280, top: 7357, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{width: 36, height: 36, left: 322, top: 7348, position: 'absolute', background: '#1C1C1C'}} />
+    <img style={{width: 18, height: 18, left: 331, top: 7357, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <div style={{width: 36, height: 36, left: 373, top: 7348, position: 'absolute', background: '#1C1C1C'}} />
+    <img style={{width: 18, height: 18, left: 382, top: 7357, position: 'absolute'}} src="https://placehold.co/18x18" />
+    <img style={{width: 70, height: 50, left: 220, top: 7138, position: 'absolute'}} src="https://placehold.co/70x50" />
+    <div style={{left: 293, top: 7145, position: 'absolute', color: 'white', fontSize: 30, fontFamily: 'Exo 2', fontStyle: 'italic', fontWeight: '900', textTransform: 'uppercase', wordWrap: 'break-word'}}>Dispatching</div>
+</div>
