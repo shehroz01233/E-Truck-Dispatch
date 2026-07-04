@@ -11,7 +11,7 @@ const stats = [
 export default function Hero() {
   return (
     <section className="relative bg-[#171717] text-white">
-      <div className="relative min-h-[520px] overflow-hidden sm:min-h-[570px] lg:min-h-[560px] xl:min-h-[590px]">
+      <div className="relative min-h-[32.5rem] overflow-hidden sm:min-h-[35.625rem] lg:min-h-[35rem] xl:min-h-[36.875rem]">
         <Image
           src="/Home/images/1_best_trucking_service__in_the_usa__e_truck_dispatching.webp"
           alt="Black semi truck driving through a mountain landscape"
@@ -22,26 +22,26 @@ export default function Hero() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/25 to-transparent lg:from-black/65" />
 
-        <div className="relative z-10 mx-auto flex w-full max-w-[1560px] px-5 pb-10 pt-10 sm:px-8 sm:pt-14 lg:px-16 lg:pt-[66px] xl:px-[86px] xl:pt-[72px]">
-          <div className="max-w-[590px] sm:max-w-[530px] lg:max-w-[600px]">
-            <h1 className="text-[29px] font-bold leading-[1.08] tracking-[-0.035em] min-[390px]:text-[32px] sm:text-[38px] lg:text-[42px]">
+        <div className="relative z-10 mx-auto flex w-full max-w-[97.5rem] px-4 pb-10 pt-[8.5rem] min-[23.4375rem]:px-5 sm:px-8 sm:pt-[9rem] lg:px-16 lg:pt-[9.5rem] xl:px-[5.375rem]">
+          <div className="max-w-[36.875rem] sm:max-w-[33.125rem] lg:max-w-[37.5rem]">
+            <h1 className="text-[1.8125rem] font-bold leading-[1.08] tracking-[-0.035em] min-[24.375rem]:text-[2rem] sm:text-[2.375rem] lg:text-[2.625rem]">
               Best Trucking Service
               <br />In The USA
-              <span className="mt-2 block text-[33px] min-[390px]:text-[36px] sm:text-[43px] lg:text-[48px]">E Truck Dispatching</span>
+              <span className="mt-2 block text-[2.0625rem] min-[24.375rem]:text-[2.25rem] sm:text-[2.6875rem] lg:text-[3rem]">E Truck Dispatching</span>
             </h1>
 
-            <p className="mt-5 max-w-[560px] text-[11px] leading-[1.5] text-white/90 sm:mt-6 sm:text-[12px] lg:text-[12px]">
+            <p className="mt-5 max-w-[35rem] text-[0.6875rem] leading-[1.5] text-white/90 sm:mt-6 sm:text-[0.75rem] lg:text-[0.75rem]">
               Owner operators lose productive driving hours managing load boards, broker calls, and back office paperwork daily. E Truck Dispatching eliminates this operational drag by handling load booking, rate negotiation, broker communication, and same day invoice submission across all 48 states. You drive. We manage everything between pickup and payment.
             </p>
 
             <div className="mt-5 flex flex-wrap items-center gap-x-5 gap-y-3">
-              <span className="flex items-center gap-1.5"><ReviewLogo src="/Home/images/4_rectangle_1060.webp" alt="Google" width={28} /><span className="text-[9px] tracking-[-1px] text-[#ffd323]">&#9733;&#9733;&#9733;&#9733;&#9733;</span></span>
+              <span className="flex items-center gap-1.5"><ReviewLogo src="/Home/images/4_rectangle_1060.webp" alt="Google" width={28} /><span className="text-[0.5625rem] tracking-[-0.0625rem] text-[#ffd323]">&#9733;&#9733;&#9733;&#9733;&#9733;</span></span>
               <span className="flex flex-col gap-1"><ReviewLogo src="/Home/images/11_rectangle_1067.webp" alt="Trustpilot" width={90} /><ReviewLogo src="/Home/images/12_rectangle_1068.webp" alt="Five star Trustpilot rating" width={74} /></span>
               <ReviewLogo src="/Home/images/13_rectangle_1069.webp" alt="Yelp" width={62} />
               <ReviewLogo src="/Home/images/14_rectangle_1070.webp" alt="Clutch" width={72} />
             </div>
 
-            <Link href="/contact" className="mt-6 inline-flex h-10 items-center bg-[#d95408] px-5 text-[11px] font-bold transition-colors hover:bg-[#f26718]">
+            <Link href="/contact" className="mt-6 inline-flex h-10 items-center bg-[#d95408] px-5 text-[0.6875rem] font-bold transition-colors hover:bg-[#f26718]">
               Start Trucking Dispatch
             </Link>
           </div>
@@ -53,12 +53,12 @@ export default function Hero() {
       <LeadForm />
 
       <div className="relative z-20 bg-[#1b1b1b]">
-        <div className="mx-auto grid w-full max-w-[1560px] grid-cols-2 gap-x-5 gap-y-7 px-5 py-8 sm:px-8 md:grid-cols-4 lg:pr-[460px] lg:pl-16 xl:pl-[86px]">
+        <div className="mx-auto grid w-full max-w-[97.5rem] grid-cols-2 gap-x-3 gap-y-7 px-4 py-8 min-[23.4375rem]:gap-x-5 min-[23.4375rem]:px-5 sm:px-8 md:grid-cols-4 lg:pr-[28.75rem] lg:pl-16 xl:pl-[5.375rem]">
           {stats.map(([value, label, description]) => (
             <div key={label}>
-              <strong className="block text-[27px] font-bold leading-none sm:text-[30px]">{value}</strong>
-              <span className="mt-2.5 block text-[11px] font-bold sm:text-[12px]">{label}</span>
-              <span className="mt-1.5 block text-[9px] text-white/75">{description}</span>
+              <strong className="block text-[1.6875rem] font-bold leading-none sm:text-[1.875rem]">{value}</strong>
+              <span className="mt-2.5 block text-[0.6875rem] font-bold sm:text-[0.75rem]">{label}</span>
+              <span className="mt-1.5 block text-[0.5625rem] text-white/75">{description}</span>
             </div>
           ))}
         </div>
@@ -73,11 +73,11 @@ function ReviewLogo({ src, alt, width }: { src: string; alt: string; width: numb
 
 function LeadForm() {
   return (
-    <form className="relative z-30 mx-5 mb-8 space-y-4 bg-[#191919] p-5 shadow-2xl sm:mx-8 sm:p-6 lg:absolute lg:bottom-5 lg:right-16 lg:mb-0 lg:w-[400px] lg:p-6 xl:right-[86px]">
+    <form className="relative z-30 mx-4 mb-8 space-y-4 bg-[#191919] p-4 shadow-2xl min-[23.4375rem]:mx-5 min-[23.4375rem]:p-5 sm:mx-8 sm:p-6 lg:absolute lg:bottom-5 lg:right-16 lg:mb-0 lg:w-[25rem] lg:p-6 xl:right-[5.375rem]">
       <FormField label="Full Name" name="fullName" type="text" placeholder="Enter Full Name" />
       <FormField label="Phone Number" name="phone" type="tel" placeholder="+1(000) 123-1234" />
       <FormField label="Email Address" name="email" type="email" placeholder="email@gmail.com" />
-      <button type="submit" className="h-10 w-full bg-[#d95408] text-[11px] font-bold transition-colors hover:bg-[#f26718]">
+      <button type="submit" className="h-10 w-full bg-[#d95408] text-[0.6875rem] font-bold transition-colors hover:bg-[#f26718]">
         Get Started Now
       </button>
     </form>
@@ -86,9 +86,9 @@ function LeadForm() {
 
 function FormField({ label, name, type, placeholder }: { label: string; name: string; type: string; placeholder: string }) {
   return (
-    <label className="block text-[11px] font-semibold">
+    <label className="block text-[0.6875rem] font-semibold">
       {label}
-      <input name={name} type={type} placeholder={placeholder} className="mt-1.5 h-10 w-full border-0 bg-[#1f1f1f] px-3 text-[10px] font-normal text-white outline-none placeholder:text-white/30 focus:ring-1 focus:ring-[#d95408]" />
+      <input name={name} type={type} placeholder={placeholder} className="mt-1.5 h-10 w-full border-0 bg-[#1f1f1f] px-3 text-[0.625rem] font-normal text-white outline-none placeholder:text-white/30 focus:ring-1 focus:ring-[#d95408]" />
     </label>
   );
 }
@@ -97,11 +97,11 @@ function SideActions() {
   return (
     <>
       <div className="absolute left-0 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-1 sm:flex">
-        <a href="tel:+12164005753" aria-label="Call us" className="grid h-7 w-7 place-items-center bg-[#c94f09] text-[10px]">TEL</a>
-        <a href="mailto:dispatch@mnatransport.com" aria-label="Email us" className="grid h-7 w-7 place-items-center bg-[#c94f09] text-[10px]">@</a>
+        <a href="tel:+12164005753" aria-label="Call us" className="grid h-7 w-7 place-items-center bg-[#c94f09] text-[0.625rem]">TEL</a>
+        <a href="mailto:dispatch@mnatransport.com" aria-label="Email us" className="grid h-7 w-7 place-items-center bg-[#c94f09] text-[0.625rem]">@</a>
       </div>
       <div className="absolute right-0 top-1/2 z-20 hidden -translate-y-1/2 flex-col gap-1 lg:flex">
-        {['f', 'X', 'in', 'ig'].map((item) => <span key={item} className="grid h-7 w-7 place-items-center bg-[#c94f09] text-[10px]">{item}</span>)}
+        {['f', 'X', 'in', 'ig'].map((item) => <span key={item} className="grid h-7 w-7 place-items-center bg-[#c94f09] text-[0.625rem]">{item}</span>)}
       </div>
     </>
   );

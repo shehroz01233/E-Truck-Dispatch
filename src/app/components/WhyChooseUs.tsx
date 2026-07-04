@@ -68,28 +68,28 @@ export default function WhyChooseUs({
 }: WhyChooseUsProps) {
   return (
     <section className="bg-[#1C1C1C] px-4 py-12 text-white sm:px-8 lg:py-16 xl:px-[9.375vw]">
-      <div className="mx-auto grid w-full max-w-[1560px] gap-10 xl:grid-cols-[minmax(0,47fr)_minmax(0,30fr)] xl:gap-[clamp(12px,1.04vw,20px)]">
-        <div className="grid gap-[clamp(12px,1.04vw,20px)] sm:grid-cols-2 lg:grid-cols-3">
+      <div className="mx-auto grid w-full max-w-[97.5rem] gap-10 xl:grid-cols-[minmax(0,47fr)_minmax(0,30fr)] xl:gap-[clamp(0.75rem,1.04vw,1.25rem)]">
+        <div className="grid gap-[clamp(0.75rem,1.04vw,1.25rem)] md:grid-cols-2 lg:grid-cols-3">
           {items.map((item) => (
             <WhyChooseCard key={item.title} item={item} />
           ))}
         </div>
 
         <div className="flex min-w-0 flex-col">
-          <h2 className="px-0 font-['Outfit'] text-[34px] font-bold leading-[1.12] tracking-[-0.02em] text-white sm:text-[40px] xl:px-[clamp(24px,2.08vw,40px)] xl:text-[clamp(34px,2.5vw,48px)]">
+          <h2 className="px-0 font-['Outfit'] text-[2.125rem] font-bold leading-[1.12] tracking-[-0.02em] text-white sm:text-[2.5rem] xl:px-[clamp(1.5rem,2.08vw,2.5rem)] xl:text-[clamp(2.125rem,2.5vw,3rem)]">
             {heading}
           </h2>
 
           {description ? (
-            <p className="mt-6 max-w-[512px] font-['DM_Sans'] text-[14px] leading-[1.45] text-white/80 xl:ml-[clamp(24px,2.08vw,40px)] xl:mt-[clamp(28px,2.08vw,40px)] xl:text-[clamp(12px,0.84vw,16px)]">{description}</p>
+            <p className="mt-6 max-w-[32rem] font-['DM_Sans'] text-[0.875rem] leading-[1.45] text-white/80 xl:ml-[clamp(1.5rem,2.08vw,2.5rem)] xl:mt-[clamp(1.75rem,2.08vw,2.5rem)] xl:text-[clamp(0.75rem,0.84vw,1rem)]">{description}</p>
           ) : null}
 
-          <div className="relative mt-8 aspect-[600/262] w-full overflow-hidden xl:mt-auto">
+          <div className="relative mt-8 aspect-[4/3] w-full overflow-hidden sm:aspect-[600/262] xl:mt-auto">
             <Image
               src={image}
               alt={imageAlt}
               fill
-              sizes="(max-width: 1279px) 100vw, 600px"
+              sizes="(max-width: 79.9375rem) 100vw, 37.5rem"
               className="object-cover"
             />
 
@@ -104,22 +104,22 @@ export default function WhyChooseUs({
 function WhyChooseCard({ item }: { item: WhyChooseItem }) {
   return (
     <article
-      className={`aspect-[300/262] border border-[#3F3F3F] px-[clamp(14px,1.04vw,20px)] py-[clamp(18px,1.56vw,30px)] ${
+      className={`min-h-[16.375rem] border border-[#3F3F3F] px-[clamp(0.875rem,1.04vw,1.25rem)] py-[clamp(1.125rem,1.56vw,1.875rem)] md:aspect-[300/262] md:min-h-0 ${
         item.accent ? "bg-[#B34B0C]" : "bg-[#161616]"
       }`}
     >
-      <h3 className="font-['Outfit'] text-[18px] font-semibold leading-[1.25] text-white xl:text-[clamp(16px,1.15vw,22px)]">
+      <h3 className="font-['Outfit'] text-[1.125rem] font-semibold leading-[1.25] text-white xl:text-[clamp(1rem,1.15vw,1.375rem)]">
         {item.title}
       </h3>
 
-      <p className="mt-[clamp(18px,1.46vw,28px)] font-['DM_Sans'] text-[14px] leading-[1.45] text-white/90 xl:text-[clamp(11px,0.84vw,16px)]">
+      <p className="mt-[clamp(1.125rem,1.46vw,1.75rem)] font-['DM_Sans'] text-[0.875rem] leading-[1.45] text-white/90 xl:text-[clamp(0.6875rem,0.84vw,1rem)]">
         {item.description}
       </p>
 
       {item.buttonText && item.buttonHref ? (
         <Link
           href={item.buttonHref}
-          className="mt-[clamp(18px,1.46vw,28px)] inline-flex h-[clamp(34px,2.3vw,44px)] items-center justify-center bg-[#161616] px-5 font-['Outfit'] text-[15px] font-medium text-white xl:text-[clamp(13px,0.94vw,18px)]"
+          className="mt-[clamp(1.125rem,1.46vw,1.75rem)] inline-flex h-[clamp(2.125rem,2.3vw,2.75rem)] items-center justify-center bg-[#161616] px-5 font-['Outfit'] text-[0.9375rem] font-medium text-white xl:text-[clamp(0.8125rem,0.94vw,1.125rem)]"
         >
           {item.buttonText}
         </Link>

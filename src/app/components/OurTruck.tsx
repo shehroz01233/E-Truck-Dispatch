@@ -28,14 +28,14 @@ export default function OurTrucks({
   trucks = defaultTrucks,
 }: OurTrucksProps) {
   return (
-    <section className="relative w-full overflow-hidden bg-[#1C1C1C] text-white xl:aspect-[12/5] xl:max-h-[800px]">
+    <section className="relative w-full overflow-hidden bg-[#1C1C1C] text-white xl:aspect-[12/5] xl:max-h-[50rem]">
       <Image src={backgroundImage} alt="Black semi truck at night" fill sizes="100vw" className="object-cover object-center" />
 
-      <div className="relative z-10 mx-auto hidden aspect-[12/5] h-full w-full max-w-[1920px] xl:block">
+      <div className="relative z-10 mx-auto hidden aspect-[12/5] h-full w-full max-w-[120rem] xl:block">
         <div className="absolute left-[9.375%] top-[11.25%] w-[20.47%]">
-          <h2 className="font-['Outfit'] text-[clamp(32px,2.5vw,48px)] font-bold leading-[1.2]">{heading}</h2>
-          <p className="mt-[6%] font-['DM_Sans'] text-[clamp(12px,0.94vw,18px)] leading-[1.5]">{description}</p>
-          <Link href={buttonHref} className="mt-[8%] inline-flex h-[clamp(34px,2.3vw,44px)] items-center bg-[#B34B0C] px-5 font-['Outfit'] text-[clamp(13px,0.94vw,18px)] font-medium capitalize">{buttonText}</Link>
+          <h2 className="font-['Outfit'] text-[clamp(2rem,2.5vw,3rem)] font-bold leading-[1.2]">{heading}</h2>
+          <p className="mt-[6%] font-['DM_Sans'] text-[clamp(0.75rem,0.94vw,1.125rem)] leading-[1.5]">{description}</p>
+          <Link href={buttonHref} className="mt-[8%] inline-flex h-[clamp(2.125rem,2.3vw,2.75rem)] items-center bg-[#B34B0C] px-5 font-['Outfit'] text-[clamp(0.8125rem,0.94vw,1.125rem)] font-medium capitalize">{buttonText}</Link>
         </div>
 
         <button type="button" aria-label="Previous truck type" className="absolute bottom-[13.75%] left-[9.375%] flex aspect-square w-[3.65%] items-center justify-center bg-[#161616]"><Arrow direction="left" /></button>
@@ -44,24 +44,24 @@ export default function OurTrucks({
         <div className="absolute bottom-0 left-[14.0625%] grid h-[39.125%] w-[78.125%] grid-cols-5 gap-[2.667%]">
           {trucks.map((truck) => (
             <article key={truck.title} className={`h-full min-w-0 px-[11.2%] pt-[18.65%] ${truck.active ? "bg-[#B34B0C]/80" : "bg-transparent"}`}>
-              <h3 className="max-w-[156px] font-['Outfit'] text-[clamp(14px,1.15vw,22px)] font-semibold leading-[1.27]">{truck.title}</h3>
-              <p className="mt-[14%] max-w-[208px] font-['DM_Sans'] text-[clamp(10px,0.84vw,16px)] leading-[1.38]">{truck.description}</p>
+              <h3 className="max-w-[9.75rem] font-['Outfit'] text-[clamp(0.875rem,1.15vw,1.375rem)] font-semibold leading-[1.27]">{truck.title}</h3>
+              <p className="mt-[14%] max-w-[13rem] font-['DM_Sans'] text-[clamp(0.625rem,0.84vw,1rem)] leading-[1.38]">{truck.description}</p>
             </article>
           ))}
         </div>
       </div>
 
       <div className="relative z-10 px-5 py-12 sm:px-8 xl:hidden">
-        <div className="max-w-[430px]">
-          <h2 className="font-['Outfit'] text-[34px] font-bold leading-tight">{heading}</h2>
-          <p className="mt-5 font-['DM_Sans'] text-[13px] leading-[1.5] text-white/90">{description}</p>
-          <Link href={buttonHref} className="mt-6 inline-flex h-10 items-center bg-[#B34B0C] px-5 font-['Outfit'] text-[13px] font-medium">{buttonText}</Link>
+        <div className="max-w-[26.875rem]">
+          <h2 className="font-['Outfit'] text-[2.125rem] font-bold leading-tight">{heading}</h2>
+          <p className="mt-5 font-['DM_Sans'] text-[0.8125rem] leading-[1.5] text-white/90">{description}</p>
+          <Link href={buttonHref} className="mt-6 inline-flex h-10 items-center bg-[#B34B0C] px-5 font-['Outfit'] text-[0.8125rem] font-medium">{buttonText}</Link>
         </div>
         <div className="mt-10 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {trucks.map((truck) => (
-            <article key={truck.title} className={`min-h-[220px] p-6 ${truck.active ? "bg-[#B34B0C]/80" : "bg-[#161616]/80 backdrop-blur-sm"}`}>
-              <h3 className="font-['Outfit'] text-[18px] font-semibold">{truck.title}</h3>
-              <p className="mt-5 font-['DM_Sans'] text-[12px] leading-[1.5]">{truck.description}</p>
+            <article key={truck.title} className={`min-h-[13.75rem] p-6 ${truck.active ? "bg-[#B34B0C]/80" : "bg-[#161616]/80 backdrop-blur-sm"}`}>
+              <h3 className="font-['Outfit'] text-[1.125rem] font-semibold">{truck.title}</h3>
+              <p className="mt-5 font-['DM_Sans'] text-[0.75rem] leading-[1.5]">{truck.description}</p>
             </article>
           ))}
         </div>

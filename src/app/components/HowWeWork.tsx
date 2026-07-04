@@ -48,19 +48,19 @@ export default function HowWeWork({
   steps = defaultSteps,
 }: HowWeWorkProps) {
   return (
-    <section className="relative overflow-hidden bg-[#161616] px-4 pb-14 pt-20 text-white sm:px-8 xl:px-[9.375vw] xl:pb-[clamp(40px,3.125vw,60px)] xl:pt-[clamp(80px,7.03vw,135px)]">
+    <section className="relative overflow-hidden bg-[#161616] px-4 pb-14 pt-20 text-white sm:px-8 xl:px-[9.375vw] xl:pb-[clamp(2.5rem,3.125vw,3.75rem)] xl:pt-[clamp(5rem,7.03vw,8.4375rem)]">
       <TopWave />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-[1560px] items-start gap-10 xl:grid-cols-[minmax(0,800fr)_minmax(0,729fr)] xl:gap-[clamp(18px,1.615vw,31px)]">
-        <div className="relative min-h-[430px] xl:-mt-[clamp(48px,4.17vw,80px)] xl:aspect-[800/742] xl:min-h-0">
-          <div className="absolute left-0 top-0 h-[72%] w-[72%] rounded-tl-[80px] bg-gradient-to-b from-[#B34B0C] to-[#B34B0C]/10 [clip-path:polygon(12%_0,100%_0,82%_22%,72%_100%,0_100%,0_38%)]" />
+      <div className="relative z-10 mx-auto grid w-full max-w-[97.5rem] items-start gap-10 xl:grid-cols-[minmax(0,800fr)_minmax(0,729fr)] xl:gap-[clamp(1.125rem,1.615vw,1.9375rem)]">
+        <div className="relative min-h-[20rem] sm:min-h-[26.875rem] xl:-mt-[clamp(3rem,4.17vw,5rem)] xl:aspect-[800/742] xl:min-h-0">
+          <div className="absolute left-0 top-0 h-[72%] w-[72%] rounded-tl-[5rem] bg-gradient-to-b from-[#B34B0C] to-[#B34B0C]/10 [clip-path:polygon(12%_0,100%_0,82%_22%,72%_100%,0_100%,0_38%)]" />
 
           <div className="absolute inset-0">
             <Image
               src={image}
               alt={imageAlt}
               fill
-              sizes="(max-width: 1279px) 100vw, 42vw"
+              sizes="(max-width: 79.9375rem) 100vw, 42vw"
               className="object-contain object-left-bottom"
               priority
             />
@@ -68,17 +68,17 @@ export default function HowWeWork({
         </div>
 
         <div className="relative">
-          <h2 className="font-sans text-[32px] font-bold leading-[1.08] tracking-[-0.02em] text-white sm:text-[38px] xl:text-[clamp(34px,2.5vw,48px)]">
+          <h2 className="font-sans text-[2rem] font-bold leading-[1.08] tracking-[-0.02em] text-white sm:text-[2.375rem] xl:text-[clamp(2.125rem,2.5vw,3rem)]">
             {heading}
           </h2>
 
-          <div className="mt-10 space-y-[clamp(12px,1.04vw,20px)] pr-[9.5%] xl:mt-[clamp(38px,2.86vw,55px)]">
+          <div className="mt-10 space-y-[clamp(0.75rem,1.04vw,1.25rem)] pr-[9.5%] xl:mt-[clamp(2.375rem,2.86vw,3.4375rem)]">
             {steps.map((step) => (
               <WorkflowCard key={step.number} step={step} />
             ))}
           </div>
 
-          <div className="absolute right-0 top-[22%] h-[71.2%] w-[clamp(4px,0.47vw,9px)] bg-[#3F3F3F]">
+          <div className="absolute right-0 top-[22%] h-[71.2%] w-[clamp(0.25rem,0.47vw,0.5625rem)] bg-[#3F3F3F]">
             <div className="h-[48.8%] w-[55%] bg-[#B34B0C]" />
           </div>
         </div>
@@ -91,19 +91,19 @@ export default function HowWeWork({
 
 function WorkflowCard({ step }: { step: WorkflowStep }) {
   return (
-    <article className="grid min-h-[120px] grid-cols-[90px_1fr] border border-[#3F3F3F] bg-[#1C1C1C] p-3 sm:grid-cols-[110px_1fr] xl:aspect-[660/151] xl:min-h-0 xl:grid-cols-[16.67%_1fr] xl:p-[3%]">
+    <article className="grid min-h-[7.5rem] grid-cols-[4rem_1fr] border border-[#3F3F3F] bg-[#1C1C1C] p-3 min-[23.4375rem]:grid-cols-[5.625rem_1fr] sm:grid-cols-[6.875rem_1fr] xl:aspect-[660/151] xl:min-h-0 xl:grid-cols-[16.67%_1fr] xl:p-[3%]">
       <div className="flex aspect-square items-center justify-center bg-[#B34B0C]/10">
-        <span className="font-sans text-[clamp(42px,4.11vw,79px)] font-bold leading-none text-[#B34B0C]">
+        <span className="font-sans text-[clamp(2.625rem,4.11vw,4.9375rem)] font-bold leading-none text-[#B34B0C]">
           {step.number}
         </span>
       </div>
 
       <div className="flex min-w-0 flex-col justify-center pl-[3%]">
-        <h3 className="font-sans text-[clamp(14px,1.15vw,22px)] font-semibold leading-tight text-[#B34B0C]">
+        <h3 className="font-sans text-[clamp(0.875rem,1.15vw,1.375rem)] font-semibold leading-tight text-[#B34B0C]">
           {step.title}
         </h3>
 
-        <p className="mt-[2%] max-w-[497px] font-sans text-[clamp(10px,0.84vw,16px)] leading-[1.4] text-white/90">
+        <p className="mt-[2%] max-w-[31.0625rem] font-sans text-[clamp(0.625rem,0.84vw,1rem)] leading-[1.4] text-white/90">
           {step.description}
         </p>
       </div>
@@ -114,7 +114,7 @@ function WorkflowCard({ step }: { step: WorkflowStep }) {
 function TopWave() {
   return (
     <svg
-      className="absolute left-0 top-0 h-[28px] w-full xl:h-[70px]"
+      className="absolute left-0 top-0 h-[1.75rem] w-full xl:h-[4.375rem]"
       viewBox="0 0 1440 28"
       preserveAspectRatio="none"
       fill="none"
@@ -133,7 +133,7 @@ function TopWave() {
 function BottomWave() {
   return (
     <svg
-      className="absolute bottom-0 left-0 h-[48px] w-full"
+      className="absolute bottom-0 left-0 h-[3rem] w-full"
       viewBox="0 0 1440 48"
       preserveAspectRatio="none"
       fill="none"

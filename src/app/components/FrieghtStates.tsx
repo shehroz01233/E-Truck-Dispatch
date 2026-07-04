@@ -58,13 +58,13 @@ export default function StatesCoverage({
 }: StatesCoverageProps) {
   return (
     <section className="bg-[#1C1C1C] px-4 py-12 text-white sm:px-8 lg:py-20">
-      <div className="mx-auto grid w-full max-w-[1560px] grid-cols-1 gap-[15px] sm:grid-cols-2 xl:grid-cols-5">
-        <div className="flex min-h-[278px] flex-col justify-start sm:col-span-2 xl:col-span-2">
-          <h2 className="max-w-[562px] font-['Outfit'] text-[34px] font-bold leading-[1.12] tracking-[-0.02em] text-white sm:text-[40px] xl:text-[48px]">
+      <div className="mx-auto grid w-full max-w-[97.5rem] grid-cols-1 gap-[0.9375rem] sm:grid-cols-2 xl:grid-cols-5">
+        <div className="flex min-h-[17.375rem] flex-col justify-start sm:col-span-2 xl:col-span-2">
+          <h2 className="max-w-[35.125rem] font-['Outfit'] text-[2.125rem] font-bold leading-[1.12] tracking-[-0.02em] text-white sm:text-[2.5rem] xl:text-[3rem]">
             {heading}
           </h2>
 
-          <p className="mt-5 max-w-[512px] font-['DM_Sans'] text-[14px] leading-[1.45] text-white/85 xl:text-[18px]">
+          <p className="mt-5 max-w-[32rem] font-['DM_Sans'] text-[0.875rem] leading-[1.45] text-white/85 xl:text-[1.125rem]">
             {description}
           </p>
         </div>
@@ -77,19 +77,19 @@ export default function StatesCoverage({
           <StateCard key={state.name} state={state} />
         ))}
 
-        <article className="flex min-h-[278px] flex-col items-center justify-center border border-[#3F3F3F] bg-[#B34B0C] px-5 py-8 text-center">
-          <h3 className="font-['Outfit'] text-[18px] font-bold leading-tight text-white xl:text-[22px]">
+        <article className="flex min-h-[17.375rem] flex-col items-center justify-center border border-[#3F3F3F] bg-[#B34B0C] px-5 py-8 text-center">
+          <h3 className="font-['Outfit'] text-[1.125rem] font-bold leading-tight text-white xl:text-[1.375rem]">
             Selected States Coverage
           </h3>
 
-          <p className="mt-5 max-w-[256px] font-['DM_Sans'] text-[14px] leading-[1.4] text-white/90 xl:text-[16px]">
+          <p className="mt-5 max-w-[16rem] font-['DM_Sans'] text-[0.875rem] leading-[1.4] text-white/90 xl:text-[1rem]">
             Explore dispatch services in selected high-demand states with strong
             lanes, load availability, and region-specific support.
           </p>
 
           <Link
             href="/states"
-            className="mt-6 inline-flex h-11 items-center justify-center bg-[#161616] px-5 font-['Outfit'] text-[15px] font-medium text-white xl:text-[18px]"
+            className="mt-6 inline-flex h-11 items-center justify-center bg-[#161616] px-5 font-['Outfit'] text-[0.9375rem] font-medium text-white xl:text-[1.125rem]"
           >
             View All States
           </Link>
@@ -101,18 +101,18 @@ export default function StatesCoverage({
 
 function StateCard({ state }: { state: StateItem }) {
   return (
-    <article className="flex min-h-[278px] flex-col items-center justify-center border border-[#3F3F3F] bg-[#161616] px-5 py-8 text-center">
-      <div className="relative h-[108px] w-[176px] overflow-hidden">
+    <article className="flex min-h-[17.375rem] flex-col items-center justify-center border border-[#3F3F3F] bg-[#161616] px-5 py-8 text-center">
+      <div className="relative h-[6.75rem] w-[11rem] overflow-hidden">
         <Image
           src={state.image}
           alt={state.imageAlt}
           fill
-          sizes="176px"
+          sizes="11rem"
           className="object-contain"
         />
       </div>
 
-      <h3 className="mt-5 font-['Outfit'] text-[18px] font-bold text-white xl:text-[22px]">
+      <h3 className="mt-5 font-['Outfit'] text-[1.125rem] font-bold text-white xl:text-[1.375rem]">
         {state.name}
       </h3>
     </article>
