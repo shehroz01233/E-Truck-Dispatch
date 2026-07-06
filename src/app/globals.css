@@ -1,26 +1,74 @@
 @import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-inter: var(--font-inter);
+  --font-outfit: var(--font-outfit);
+  --font-dm-sans: var(--font-dm-sans);
+}
+@theme {
+  --color-bg-main: #1c1c1c;
+  --color-bg-dark: #161616;
+  --color-brand-orange: #b34b0c;
+  --color-text-main: #ffffff;
+  --color-text-soft: #eaeaea;
+  --color-gray-dark: #3f3f3f;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --bg-main: #1c1c1c;
+  --bg-dark: #161616;
+  --brand-orange: #b34b0c;
+  --text-main: #ffffff;
+  --text-soft: #eaeaea;
+  --white-60: rgba(255, 255, 255, 0.6);
+  --orange-20: rgba(179, 75, 12, 0.2);
+  --orange-10: rgba(179, 75, 12, 0.1);
+
+  --radial-brand: radial-gradient(
+    circle,
+    #272727 0%,
+    #161616 45%,
+    rgba(179, 75, 12, 0.1) 100%
+  );
+
+  --linear-orange-soft: linear-gradient(
+    90deg,
+    rgba(179, 75, 12, 0.5) 0%,
+    rgba(179, 75, 12, 0.2) 100%
+  );
+
+  --linear-orange-fade: linear-gradient(
+    90deg,
+    rgba(179, 75, 12, 0.8) 0%,
+    rgba(179, 75, 12, 0.1) 100%
+  );
+}
+
+html,
+body {
+  min-height: 100%;
+  background: var(--bg-main);
+  color: var(--text-main);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}
+
+::selection {
+  background: rgba(179, 75, 12, 0.45);
+  color: #ffffff;
+}
+
+.bg-radial-brand {
+  background: var(--radial-brand);
+}
+
+.bg-linear-orange-soft {
+  background: var(--linear-orange-soft);
+}
+
+.bg-linear-orange-fade {
+  background: var(--linear-orange-fade);
 }

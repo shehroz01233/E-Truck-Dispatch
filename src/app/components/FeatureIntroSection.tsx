@@ -1,0 +1,5 @@
+import Image from "next/image";
+type Props = { heading: string; description: string; features: string[]; image: string; imageAlt: string };
+export default function FeatureIntroSection({ heading, description, features, image, imageAlt }: Props) {
+  return <section className="mx-auto grid w-[calc(100%-40px)] max-w-[1560px] gap-14 py-20 sm:w-[calc(100%-64px)] lg:grid-cols-[1fr_719px]"><div className="self-center"><h1 className="max-w-[703px] text-4xl font-bold leading-tight sm:text-5xl">{heading}</h1><p className="mt-10 max-w-[649px] text-lg font-medium leading-7 text-white/80">{description}</p><div className="mt-10 grid gap-5 sm:grid-cols-2">{features.map((item) => <p key={item} className="flex items-center gap-3 text-base text-white/80"><span className="flex h-10 w-10 shrink-0 items-center justify-center bg-[#b34b0c]/20 text-[#b34b0c]">✓</span>{item}</p>)}</div></div><div className="relative min-h-[360px] bg-[#171717] lg:min-h-[462px]"><Image src={image} alt={imageAlt} fill priority sizes="(min-width: 1024px) 719px, 100vw" className="object-cover" /></div></section>;
+}
