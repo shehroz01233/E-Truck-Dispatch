@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type Props = {
   heading: string;
-  description: string;
+  description?: string;
   groups: RevenueGroup[];
   image: string;
   backgroundImage: string;
@@ -15,10 +15,10 @@ export type RevenueGroup = {
   footer?: string;
 };
 
-const desktopCardPositions = [
-  "left-[3.125rem] top-[10.625rem] h-[27.375rem] w-[18.75rem]",
-  "left-[23.125rem] top-[12.4375rem] h-[25.625rem] w-[18.75rem]",
-  "left-[43.125rem] top-[14.5625rem] h-[23.75rem] w-[18.75rem]",
+const desktopCardLayout = [
+  "h-[27.375rem] w-[18.75rem]",
+  "mt-[1.8125rem] h-[25.625rem] w-[18.75rem]",
+  "mt-[3.9375rem] h-[23.75rem] w-[18.75rem]",
 ];
 
 export default function RevenuePanelSection({
@@ -29,9 +29,9 @@ export default function RevenuePanelSection({
   backgroundImage,
 }: Props) {
   return (
-    <section className="mx-auto w-[calc(100%-2.5rem)] max-w-[97.5rem] overflow-hidden bg-[#171717] text-white sm:w-[calc(100%-4rem)] md:relative md:h-[calc(41.25rem*var(--rp))] md:[--rp:min(calc((100vw-4rem)/97.5rem),1)]">
+    <section className="mx-auto w-[calc(100%-2.5rem)] max-w-[97.5rem] overflow-hidden bg-[#171717] text-white sm:w-[calc(100%-4rem)] md:relative md:h-[calc(44.5rem*var(--rp))] md:[--rp:min(calc((100vw-4rem)/97.5rem),1)]">
       {/* laptop / desktop scaled layout */}
-      <div className="relative hidden h-[41.25rem] w-[97.5rem] origin-top-left scale-[var(--rp)] md:block">
+      <div className="relative hidden h-[44.5rem] w-[97.5rem] origin-top-left scale-[var(--rp)] md:block">
         <div className="absolute left-[50.875rem] top-[3.75rem] z-[1] h-[33.6875rem] w-[46.652rem]">
           <Image
             src={backgroundImage}
@@ -53,26 +53,33 @@ export default function RevenuePanelSection({
           />
         </div>
 
-        <h2 className="absolute left-[3.125rem] top-[3.125rem] z-[3] w-[56.4375rem] text-[3rem] font-bold leading-[1.02] tracking-[-0.02em]">
-          {heading}
-        </h2>
+        {/* Desktop content */}
+        <div className="absolute left-[3.125rem] top-[3.125rem] z-[4] w-[58.75rem]">
+          <div className="min-h-[7.75rem]">
+            <h2 className="w-[56.4375rem] text-[3rem] font-bold leading-[1.02] tracking-[-0.02em]">
+              {heading}
+            </h2>
 
-        {description ? (
-          <p className="absolute left-[3.125rem] top-[8.75rem] z-[3] w-[49.0625rem] text-[1.125rem] leading-[1.55] text-white/85">
-            {description}
-          </p>
-        ) : null}
+            {description ? (
+              <p className="mt-[0.875rem] w-[49.0625rem] text-[1.125rem] leading-[1.55] text-white/85">
+                {description}
+              </p>
+            ) : null}
+          </div>
 
-        {groups.map((group, index) => (
-          <article
-            key={group.title}
-            className={`absolute z-[4] overflow-hidden border-[0.0625rem] border-neutral-700 bg-[#171717] px-[1.25rem] pb-[1.5rem] pt-[1.875rem] ${
-              desktopCardPositions[index] ?? ""
-            }`}
-          >
-            <RevenueCardContent group={group} desktop />
-          </article>
-        ))}
+          <div className="mt-[1.75rem] flex items-start gap-[1.25rem]">
+            {groups.map((group, index) => (
+              <article
+                key={group.title}
+                className={`shrink-0 overflow-hidden border-[0.0625rem] border-neutral-700 bg-[#171717] px-[1.25rem] pb-[1.5rem] pt-[1.875rem] ${
+                  desktopCardLayout[index] ?? ""
+                }`}
+              >
+                <RevenueCardContent group={group} desktop />
+              </article>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* mobile stacked layout */}
@@ -169,13 +176,8 @@ function RevenueCardContent({
                   : "flex items-start gap-[0.75rem] text-[0.875rem] leading-[1.45] text-white/80"
               }
             >
-              <span
-                className={
-                  desktop
-                    ? "mt-[0.45rem] h-[0.375rem] w-[0.375rem] shrink-0 rounded-full bg-[#b34b0c]"
-                    : "mt-[0.45rem] h-[0.375rem] w-[0.375rem] shrink-0 rounded-full bg-[#b34b0c]"
-                }
-              />
+              <span className="mt-[0.45rem] h-[0.375rem] w-[0.375rem] shrink-0 rounded-full bg-[#b34b0c]" />
+
               <span>{item}</span>
             </li>
           ))}
