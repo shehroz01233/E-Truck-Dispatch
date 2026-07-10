@@ -1,16 +1,20 @@
+import { ReactNode } from "react";
+
 type VisionFormSectionProps = {
-  heading: string;
+  heading: ReactNode;
   paragraphs: string[];
   fields: string[][];
+  compactBottom?: boolean;
 };
 
 export default function VisionFormSection({
   heading,
   paragraphs,
   fields,
+  compactBottom = false,
 }: VisionFormSectionProps) {
   return (
-    <section className="mx-auto mb-[5rem] w-[calc(100%-2rem)] max-w-[97.5rem] overflow-hidden bg-[#161616] text-white sm:w-[calc(100%-4rem)] xl:h-[33.4375rem]">
+    <section className={`mx-auto w-[calc(100%-2rem)] max-w-[97.5rem] overflow-hidden bg-[#161616] text-white sm:w-[calc(100%-4rem)] xl:h-[33.4375rem] ${compactBottom ? "mb-0" : "mb-[5rem]"}`}>
       <div className="grid gap-[2rem] px-[1rem] py-[2rem] min-[23.4375rem]:px-[1.5rem] sm:gap-[3rem] sm:px-[3rem] sm:py-[3rem] xl:grid-cols-[minmax(18rem,24rem)_minmax(0,48.1875rem)] xl:justify-between xl:px-[clamp(3rem,6.41vw,6.25rem)] xl:pb-0 xl:pt-[3.125rem]">
         <div className="max-w-[24rem] xl:self-center">
           <h2 className="text-[2rem] font-bold leading-[1.08] min-[23.4375rem]:text-[2.25rem] xl:text-[3rem]">

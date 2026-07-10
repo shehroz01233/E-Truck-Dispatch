@@ -21,19 +21,19 @@ export default function OurServices({
   services,
 }: OurServicesProps) {
   return (
-    <section className="bg-[#1C1C1C] px-4 py-12 text-white sm:px-8 sm:py-16 xl:py-20">
+    <section className="bg-[#1c1c1c] px-[1rem] py-[3rem] text-white min-[30rem]:px-[1.5rem] min-[30rem]:py-[4rem] min-[48rem]:px-[2rem] min-[64rem]:px-[3rem] min-[80rem]:py-[5rem]">
       <div className="mx-auto w-full max-w-[97.5rem]">
         <header className="mx-auto text-center">
-          <h2 className="font-['Outfit'] text-[1.875rem] font-bold leading-tight sm:text-[2.375rem] xl:text-[3rem] xl:leading-[3.625rem]">
+          <h2 className="font-['Outfit'] text-[1.875rem] font-bold leading-tight min-[48rem]:text-[2.375rem] min-[80rem]:text-[3rem] min-[80rem]:leading-[3.625rem]">
             {heading}
           </h2>
 
-          <p className="mx-auto mt-5 max-w-[55rem] font-['DM_Sans'] text-[0.75rem] leading-[1.5] text-white/90 sm:text-[0.9375rem] xl:mt-8 xl:text-[1.125rem] xl:leading-[1.6875rem]">
+          <p className="mx-auto mt-[1.25rem] max-w-[55rem] font-['DM_Sans'] text-[0.75rem] leading-[1.5] text-white/90 min-[48rem]:text-[0.9375rem] min-[80rem]:mt-[2rem] min-[80rem]:text-[1.125rem] min-[80rem]:leading-[1.6875rem]">
             {description}
           </p>
         </header>
 
-        <div className="mt-10 grid overflow-hidden sm:grid-cols-2 xl:mt-[4.9375rem] xl:grid-cols-4">
+        <div className="mt-[2.5rem] grid overflow-hidden min-[48rem]:grid-cols-2 min-[80rem]:mt-[4.9375rem] min-[80rem]:grid-cols-4">
           {services.map((service, index) => (
             <ServicePair key={service.title} service={service} index={index} />
           ))}
@@ -52,42 +52,44 @@ function ServicePair({
 }) {
   const imageOrder =
     [
-      "order-1 xl:order-1",
-      "order-1 xl:order-3",
-      "order-2 xl:order-6",
-      "order-2 xl:order-8",
+      "order-1 min-[80rem]:order-1",
+      "order-1 min-[80rem]:order-3",
+      "order-2 min-[80rem]:order-6",
+      "order-2 min-[80rem]:order-8",
     ][index] || "order-1";
 
   const textOrder =
     [
-      "order-2 xl:order-2",
-      "order-2 xl:order-4",
-      "order-1 xl:order-5",
-      "order-1 xl:order-7",
+      "order-2 min-[80rem]:order-2",
+      "order-2 min-[80rem]:order-4",
+      "order-1 min-[80rem]:order-5",
+      "order-1 min-[80rem]:order-7",
     ][index] || "order-2";
 
   return (
-    <div className="grid grid-rows-2 xl:contents">
-      <div className={`relative aspect-[390/361] overflow-hidden ${imageOrder}`}>
+    <div className="grid grid-rows-2 min-[80rem]:contents">
+      <div
+        className={`relative aspect-[390/361] overflow-hidden ${imageOrder}`}
+      >
         <Image
           src={service.image}
           alt={service.imageAlt}
           fill
-          sizes="(max-width: 39.9375rem) 100vw, (max-width: 79.9375rem) 50vw, 24.375rem"
+          sizes="(max-width: 47.9375rem) 100vw, (max-width: 79.9375rem) 50vw, 24.375rem"
           className="object-cover"
         />
       </div>
 
       <article
-        className={`flex min-h-[21rem] flex-col items-center justify-center px-6 py-8 text-center sm:aspect-[390/361] sm:min-h-0 sm:px-12 xl:px-[4.6875rem] ${
-          service.accent ? "bg-[#B34B0C]" : "bg-[#161616]"
+        className={`flex aspect-[390/361] min-h-[21rem] flex-col items-center justify-center overflow-hidden px-[1.5rem] py-[2rem] text-center min-[30rem]:px-[2rem] min-[48rem]:min-h-0 min-[48rem]:px-[2.5rem] min-[80rem]:px-[2.25rem] min-[96rem]:px-[3rem] ${
+          service.accent ? "bg-[#b34b0c]" : "bg-[#161616]"
         } ${textOrder}`}
       >
-        <h3 className="font-['Outfit'] text-[1.0625rem] font-semibold leading-tight sm:text-[1.1875rem] xl:text-[1.375rem] xl:leading-7">
+        <h3 className="max-w-[13rem] font-['Outfit'] text-[1.0625rem] font-semibold leading-[1.2] text-white min-[48rem]:text-[1.125rem] min-[80rem]:text-[1.125rem] min-[96rem]:text-[1.25rem] min-[96rem]:leading-[1.45]">
           {service.title}
         </h3>
 
-        <p className="mt-3 max-w-[15rem] font-['DM_Sans'] text-[0.75rem] leading-[1.5] text-white sm:text-[0.875rem] xl:text-[1rem] xl:leading-6">
+        <p className="mt-[0.75rem] max-w-[14rem] font-['DM_Sans'] text-[0.75rem] leading-[1.45] text-white min-[48rem]:text-[0.8125rem] min-[80rem]:text-[0.8125rem] min-[80rem]:leading-[1.45] min-[96rem]:text-[0.875rem] min-[96rem]:leading-[1.5]">
           {service.description}
         </p>
       </article>

@@ -1,93 +1,222 @@
+"use client";
+
+import { useLayoutEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 const navItems = [
   { label: "Home", href: "/" },
-  { label: "contact us", href: "/contact" },
+  { label: "Contact Us", href: "/contact" },
   { label: "About", href: "/about" },
-  { label: "Pricing", href: "/pricing" },
+  { label: "Conestoga", href: "/conestoga_dispatch_services" },
+  { label: "Truck Types", href: "/Truck_types" },
+  { label: "Resources", href: "/resources" },
 ];
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+  const [useMobileMenu, setUseMobileMenu] = useState(true);
+
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const logoRef = useRef<HTMLAnchorElement | null>(null);
+  const measureNavRef = useRef<HTMLUListElement | null>(null);
+  const measureCtaRef = useRef<HTMLSpanElement | null>(null);
+
+  useLayoutEffect(() => {
+    const checkFit = () => {
+      const container = containerRef.current;
+      const logo = logoRef.current;
+      const nav = measureNavRef.current;
+      const cta = measureCtaRef.current;
+
+      if (!container || !logo || !nav || !cta) return;
+
+      const containerWidth = container.clientWidth;
+      const logoWidth = logo.getBoundingClientRect().width;
+      const navWidth = nav.getBoundingClientRect().width;
+      const ctaWidth = cta.getBoundingClientRect().width;
+
+      const safeGap = 48;
+
+      const navLeftEdge = containerWidth / 2 - navWidth / 2;
+      const navRightEdge = containerWidth / 2 + navWidth / 2;
+
+      const logoSafeEdge = logoWidth + safeGap;
+      const ctaSafeEdge = containerWidth - ctaWidth - safeGap;
+
+      const navFits =
+        navLeftEdge >= logoSafeEdge && navRightEdge <= ctaSafeEdge;
+
+      setUseMobileMenu(!navFits);
+
+      if (navFits) {
+        setIsOpen(false);
+      }
+    };
+
+    checkFit();
+
+    const observer = new ResizeObserver(checkFit);
+
+    if (containerRef.current) observer.observe(containerRef.current);
+    if (logoRef.current) observer.observe(logoRef.current);
+    if (measureNavRef.current) observer.observe(measureNavRef.current);
+    if (measureCtaRef.current) observer.observe(measureCtaRef.current);
+
+    window.addEventListener("resize", checkFit);
+
+    if ("fonts" in document) {
+      document.fonts.ready.then(checkFit);
+    }
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener("resize", checkFit);
+    };
+  }, []);
+
   return (
-    <header className="absolute left-0 top-[1.875rem] z-[999] h-20 w-full bg-white/5 text-white backdrop-blur-lg">
-      <div className="relative mx-auto h-full w-[calc(100%-2rem)] max-w-[97.5rem] sm:w-[calc(100%-2.5rem)]">
+    <header className="fixed inset-x-0 top-0 z-[999] w-full bg-white/5 text-white backdrop-blur-lg">
+      <div
+        ref={containerRef}
+        className="relative mx-auto grid h-[72px] w-full max-w-[1560px] grid-cols-[auto_1fr_auto] items-center px-5"
+      >
+        {/* Logo */}
         <Link
+          ref={logoRef}
           href="/"
           aria-label="E Truck Dispatching home"
-          className="group absolute left-0 top-1/2 flex -translate-y-1/2 items-center gap-[0.1875rem]"
+          onClick={() => setIsOpen(false)}
+          className="group z-10 flex min-w-0 shrink-0 items-center gap-[3px]"
         >
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 58 42"
-            className="h-9 w-[3.125rem] fill-current transition-transform duration-200 group-hover:-translate-y-0.5 sm:h-10 sm:w-14 xl:h-[3.125rem] xl:w-[4.375rem]"
-          >
-            <path d="M11 5h35l-4 6H25l-2.2 4H40l-4 6H19.8l-2.2 4H34l-4 7H2L11 5Zm25 18h9l6 5h4l-3 7H30l6-12Zm7 4-2 4h7l-4-4h-1ZM4 35h45l-2 3H2l2-3Z" />
-          </svg>
+          <Image
+            src="/Truck Types/images/2_rectangle_8.webp"
+            alt="E Truck Dispatching"
+            width={70}
+            height={50}
+            className="h-[42px] w-[58px] shrink-0 object-contain transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:h-[50px] sm:w-[70px]"
+          />
 
-          <span className="hidden font-['Exo_2'] text-xl font-black italic uppercase leading-none tracking-[-0.04em] min-[30rem]:inline xl:text-[1.875rem]">
+          <span className="truncate font-['Exo_2'] text-[22px] font-black italic uppercase leading-none tracking-[-0.04em] sm:text-[30px]">
             DISPATCHING
           </span>
         </Link>
 
+        {/* One visible nav */}
         <nav
+          id="main-navigation"
           aria-label="Main navigation"
-          className="absolute left-1/2 top-1/2 hidden -translate-x-1/2 -translate-y-1/2 xl:block xl:left-[30.3125rem] xl:translate-x-0"
+          className={
+            useMobileMenu
+              ? `absolute left-5 right-5 top-[84px] z-[1000] origin-top overflow-hidden rounded-xl border border-white/10 bg-[#111111]/95 shadow-2xl backdrop-blur-xl transition-all duration-300 ease-out ${
+                  isOpen
+                    ? "max-h-[520px] translate-y-0 scale-100 opacity-100"
+                    : "pointer-events-none max-h-0 -translate-y-3 scale-[0.98] opacity-0"
+                }`
+              : "absolute left-1/2 top-1/2 z-10 block -translate-x-1/2 -translate-y-1/2"
+          }
         >
-          <ul className="flex items-center gap-6 xl:gap-[2.75rem]">
+          <ul
+            className={
+              useMobileMenu
+                ? "flex flex-col gap-1 p-4"
+                : "flex items-center gap-8 2xl:gap-[44px]"
+            }
+          >
             {navItems.map((item, index) => (
-              <li key={item.label}>
+              <li key={item.href}>
                 <Link
                   href={item.href}
-                  className={`font-['Outfit'] text-base font-bold leading-none transition-colors hover:text-[#b45309] ${
-                    index === 0 ? "text-[#b45309]" : "text-white"
-                  }`}
+                  onClick={() => setIsOpen(false)}
+                  className={`block whitespace-nowrap rounded-lg font-['Outfit'] text-base font-bold leading-none transition-all duration-200 ease-out hover:text-[#b45309] ${
+                    useMobileMenu
+                      ? "px-4 py-3 hover:translate-x-1 hover:bg-white/5"
+                      : ""
+                  } ${index === 0 ? "text-[#b45309]" : "text-white"}`}
                 >
                   {item.label}
                 </Link>
               </li>
             ))}
 
-            <li>
-              <Link
-                href="/resources"
-                className="flex items-center gap-2 font-['Outfit'] text-base font-bold leading-none text-white transition-colors hover:text-[#b45309]"
-              >
-                Resources
-                <svg
-                  aria-hidden="true"
-                  viewBox="0 0 12 7"
-                  className="h-1.5 w-2.5 fill-none stroke-current stroke-2"
+            {useMobileMenu && (
+              <li className="pt-3">
+                <Link
+                  href="/get-a-load"
+                  onClick={() => setIsOpen(false)}
+                  className="flex h-11 w-full items-center justify-center rounded-lg bg-[#b45309] px-5 font-['Outfit'] text-base font-medium text-white transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#d95408]"
                 >
-                  <path d="m1 1 5 5 5-5" />
-                </svg>
-              </Link>
-            </li>
+                  Get A Load
+                </Link>
+              </li>
+            )}
           </ul>
         </nav>
 
-        <details className="group absolute right-[6.75rem] top-1/2 -translate-y-1/2 sm:right-[8.25rem] xl:hidden">
-          <summary className="grid h-10 w-10 cursor-pointer list-none place-items-center [&::-webkit-details-marker]:hidden" aria-label="Open navigation menu">
-            <span className="relative h-4 w-6 border-y-2 border-white before:absolute before:left-0 before:top-1/2 before:h-0.5 before:w-full before:-translate-y-1/2 before:bg-white" />
-          </summary>
-          <nav aria-label="Mobile navigation" className="absolute right-0 top-[3.375rem] w-56 border border-white/10 bg-[#161616]/95 p-2 shadow-2xl backdrop-blur-xl">
-            <ul>
-              {[...navItems, { label: "Resources", href: "/resources" }].map((item) => (
-                <li key={item.label}>
-                  <Link href={item.href} className="block px-4 py-3 font-['Outfit'] text-sm font-semibold capitalize transition-colors hover:bg-white/5 hover:text-[#b45309]">
-                    {item.label}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        </details>
+        {/* Right CTA / Hamburger */}
+        <div className="z-10 col-start-3 flex justify-end">
+          {!useMobileMenu ? (
+            <Link
+              href="/get-a-load"
+              className="inline-flex h-11 shrink-0 items-center justify-center bg-[#b45309] px-5 font-['Outfit'] text-lg font-medium capitalize leading-none text-white transition-all duration-200 ease-out hover:-translate-y-0.5 hover:bg-[#d95408]"
+            >
+              Get A Load
+            </Link>
+          ) : (
+            <button
+              type="button"
+              aria-label="Toggle menu"
+              aria-expanded={isOpen}
+              aria-controls="main-navigation"
+              onClick={() => setIsOpen((prev) => !prev)}
+              className={`flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-white/20 bg-black/20 transition-all duration-300 ease-out hover:bg-white/10 ${
+                isOpen ? "bg-white/10" : ""
+              }`}
+            >
+              <span className="relative block h-5 w-6">
+                <span
+                  className={`absolute left-0 top-0 h-0.5 w-6 bg-white transition-all duration-300 ease-out ${
+                    isOpen ? "translate-y-2 rotate-45" : ""
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 top-2 h-0.5 w-6 bg-white transition-all duration-200 ease-out ${
+                    isOpen ? "opacity-0" : "opacity-100"
+                  }`}
+                />
+                <span
+                  className={`absolute left-0 top-4 h-0.5 w-6 bg-white transition-all duration-300 ease-out ${
+                    isOpen ? "-translate-y-2 -rotate-45" : ""
+                  }`}
+                />
+              </span>
+            </button>
+          )}
+        </div>
 
-        <Link
-          href="/get-a-load"
-          className="absolute right-0 top-1/2 inline-flex h-9 -translate-y-1/2 items-center justify-center bg-[#b45309] px-3 font-['Outfit'] text-xs font-medium capitalize leading-none text-white transition-colors hover:bg-[#d95408] min-[30rem]:h-11 min-[30rem]:px-5 min-[30rem]:text-lg"
+        {/* Hidden measuring nav */}
+        <ul
+          ref={measureNavRef}
+          aria-hidden="true"
+          className="pointer-events-none invisible absolute left-0 top-0 flex gap-8 whitespace-nowrap 2xl:gap-[44px]"
+        >
+          {navItems.map((item) => (
+            <li
+              key={item.href}
+              className="font-['Outfit'] text-base font-bold leading-none"
+            >
+              {item.label}
+            </li>
+          ))}
+        </ul>
+
+        <span
+          ref={measureCtaRef}
+          aria-hidden="true"
+          className="pointer-events-none invisible absolute right-0 top-0 inline-flex h-11 items-center justify-center px-5 font-['Outfit'] text-lg font-medium leading-none"
         >
           Get A Load
-        </Link>
+        </span>
       </div>
     </header>
   );

@@ -27,7 +27,14 @@ const visionParagraphs = [
   "Fill out the form to connect with our expert dispatch team and start getting high-paying loads with full support and zero stress.",
 ];
 
-const formFields = [["First Name", "Enter First Name", "text"], ["Last Name", "Enter Last Name", "text"], ["Phone Number", "+1 (000) 123-1234", "tel"], ["Email Address", "email@gmail.com", "email"], ["Truck Type", "Enter Truck Type", "text"], ["MC Number", "Enter MC Number", "text"]];
+const formFields = [
+  ["First Name", "Enter First Name", "text"], 
+  ["Last Name", "Enter Last Name", "text"], 
+  ["Phone Number", "+1 (000) 123-1234", "tel"],
+  ["Email Address", "email@gmail.com", "email"], 
+  ["Truck Type", "Enter Truck Type", "text"], 
+  ["MC Number", "Enter MC Number", "text"]
+];
 export default function ServicesPage() {
   return (
     <div className="bg-[#1c1c1c] text-white">

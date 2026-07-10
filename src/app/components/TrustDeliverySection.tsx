@@ -1,0 +1,53 @@
+import Image from "next/image";
+import type { ReactNode } from "react";
+
+export type TrustDeliveryCard = {
+  text: ReactNode;
+  image: string;
+  imageAlt?: string;
+};
+
+type TrustDeliverySectionProps = {
+  heading: ReactNode;
+  cards: TrustDeliveryCard[];
+};
+
+export default function TrustDeliverySection({
+  heading,
+  cards,
+}: TrustDeliverySectionProps) {
+  return (
+    <section className="bg-[#1c1c1c] px-5 py-16 text-white sm:px-8 lg:py-20">
+      <div className="mx-auto max-w-[97.5rem]">
+        <h2 className="mx-auto max-w-[46rem] text-center font-['Outfit'] text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-[2.75rem]">
+          {heading}
+        </h2>
+
+        <div className="mt-12 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
+          {cards.map((card, index) => (
+            <article
+              key={index}
+              className="relative min-h-[22rem] overflow-hidden bg-[#171717]"
+            >
+              <Image
+                src={card.image}
+                alt={card.imageAlt || "Dispatch support image"}
+                fill
+                sizes="(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                className="object-cover"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/20" />
+
+              <div className="absolute inset-x-0 bottom-0 z-10 px-5 pb-7">
+                <p className="font-['Outfit'] text-[1rem] font-semibold leading-[1.3] text-white sm:text-[1.125rem]">
+                  {card.text}
+                </p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
