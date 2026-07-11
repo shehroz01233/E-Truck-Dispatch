@@ -6,62 +6,53 @@ import StatesCoverageSection from "../components/statesCoverageSection";
 const eTruckStatesHeroParagraphs = [
   "E-Truck Dispatching provides professional truck dispatch services across major freight corridors in the United States.",
 ];
-
 const primaryStates = [
   {
     name: "Ohio",
-    description:
-      "Strong Midwest freight hub with consistent demand across manufacturing and retail lanes. Ideal for dry van, reefer, and regional freight operations.",
+    description:"Strong Midwest freight hub with consistent demand across manufacturing and retail lanes. Ideal for dry van, reefer, and regional freight operations.",
     image: "/States/images/4_ohio.webp",
     imageAlt: "Ohio state flag",
     highlighted: true,
   },
   {
     name: "Indiana",
-    description:
-      "Strategic logistics corridor with access to major interstates and industrial freight. High load availability with balanced outbound and return lanes.",
+    description:"Strategic logistics corridor with access to major interstates and industrial freight. High load availability with balanced outbound and return lanes.",
     image: "/States/images/5_indiana.webp",
     imageAlt: "Indiana state flag",
   },
   {
     name: "Texas",
-    description:
-      "One of the largest freight markets in the U.S. with high-volume lanes in oil, construction, and general freight. Strong opportunities for all trailer types.",
+    description:"One of the largest freight markets in the U.S. with high-volume lanes in oil, construction, and general freight. Strong opportunities for all trailer types.",
     image: "/States/images/6_texas.webp",
     imageAlt: "Texas state flag",
   },
   {
     name: "Florida",
-    description:
-      "High inbound freight demand with seasonal variability. Requires smart backhaul planning to reduce deadhead and maximize profitability.",
+    description:"High inbound freight demand with seasonal variability. Requires smart backhaul planning to reduce deadhead and maximize profitability.",
     image: "/States/images/7_florida.webp",
     imageAlt: "Florida state flag",
   },
   {
     name: "New York",
-    description:
-      "Dense freight activity with premium-paying loads in urban and port regions. Best suited for experienced operators handling tight schedules and compliance.",
+    description:"Dense freight activity with premium-paying loads in urban and port regions. Best suited for experienced operators handling tight schedules and compliance.",
     image: "/States/images/8_new_york.webp",
     imageAlt: "New York state flag",
   },
   {
     name: "California",
-    description:
-      "Major port-driven economy with consistent freight flow. High-paying lanes but requires compliance awareness and route optimization.",
+    description:"Major port-driven economy with consistent freight flow. High-paying lanes but requires compliance awareness and route optimization.",
     image: "/States/images/9_california.webp",
     imageAlt: "California state flag",
   },
   {
     name: "Kentucky",
-    description:
-      "Growing logistics hub with strong connections to Midwest and Southeast freight markets. Ideal for consistent regional runs.",
+    description:"Growing logistics hub with strong connections to Midwest and Southeast freight markets. Ideal for consistent regional runs.",
     image: "/States/images/10_kentucky.webp",
     imageAlt: "Kentucky state flag",
   },
   {
     name: "Illinois",
-    description:
-      "Central freight powerhouse anchored by Chicago. High load-to-truck ratios with strong opportunities for optimized lane planning.",
+    description:"Central freight powerhouse anchored by Chicago. High load-to-truck ratios with strong opportunities for optimized lane planning.",
     image: "/States/images/11_illionis.webp",
     imageAlt: "Illinois state flag",
   },

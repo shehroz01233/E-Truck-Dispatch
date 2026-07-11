@@ -600,7 +600,7 @@ export default function McSetupPage() {
       }
       description="E Truck Dispatching uses a structured MC DOT Activation System to manage registration, compliance alignment, and authority activation; ensuring faster approval and error-free setup."
       cards={activationCards}
-      image="/MC DOT Setup/images/activation-system.webp"
+      image="/MC DOT Setup/images/6_rectangle_1426.webp"
       imageAlt="Carrier standing beside a truck during MC DOT activation setup"
     />
     <br/>
@@ -608,7 +608,7 @@ export default function McSetupPage() {
       heading="MC DOT Setup Requirements"
       description="Before applying for MC DOT authority, carriers must meet specific legal, operational, and compliance prerequisites defined by FMCSA. Missing any requirement delays approval or results in application rejection."
       cards={setupRequirementCards}
-      image="/MC DOT Setup/images/setup-requirements.webp"
+      image="/MC DOT Setup/images/7_rectangle_1560.webp"
       imageAlt="Two trucking professionals completing MC DOT setup requirements"
     />
       <HowWeWork
