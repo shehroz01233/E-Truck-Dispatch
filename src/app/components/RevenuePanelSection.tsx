@@ -29,7 +29,7 @@ export default function RevenuePanelSection({
   backgroundImage,
 }: Props) {
   return (
-    <section className="mx-auto w-[calc(100%-2.5rem)] max-w-[97.5rem] overflow-hidden bg-[#171717] text-white sm:w-[calc(100%-4rem)] md:relative md:h-[calc(44.5rem*var(--rp))] md:[--rp:min(calc((100vw-4rem)/97.5rem),1)]">
+    <section className="mx-auto w-[calc(100%-2.5rem)] max-w-[97.5rem] overflow-hidden bg-[#171717] my-6 text-white sm:w-[calc(100%-4rem)] md:relative md:h-[calc(44.5rem*var(--rp))] md:[--rp:min(calc((100vw-4rem)/97.5rem),1)]">
       {/* laptop / desktop scaled layout */}
       <div className="relative hidden h-[44.5rem] w-[97.5rem] origin-top-left scale-[var(--rp)] md:block">
         <div className="absolute left-[50.875rem] top-[3.75rem] z-[1] h-[33.6875rem] w-[46.652rem]">

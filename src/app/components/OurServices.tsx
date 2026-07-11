@@ -11,7 +11,7 @@ export type Service = {
 
 export type OurServicesProps = {
   heading: ReactNode;
-  description: string;
+  description?: string;
   services: Service[];
 };
 
@@ -28,9 +28,11 @@ export default function OurServices({
             {heading}
           </h2>
 
-          <p className="mx-auto mt-[1.25rem] max-w-[55rem] font-['DM_Sans'] text-[0.75rem] leading-[1.5] text-white/90 min-[48rem]:text-[0.9375rem] min-[80rem]:mt-[2rem] min-[80rem]:text-[1.125rem] min-[80rem]:leading-[1.6875rem]">
-            {description}
-          </p>
+          {description ? (
+            <p className="mx-auto mt-[1.25rem] max-w-[55rem] font-['DM_Sans'] text-[0.75rem] leading-[1.5] text-white/90 min-[48rem]:text-[0.9375rem] min-[80rem]:mt-[2rem] min-[80rem]:text-[1.125rem] min-[80rem]:leading-[1.6875rem]">
+              {description}
+            </p>
+          ) : null}
         </header>
 
         <div className="mt-[2.5rem] grid overflow-hidden min-[48rem]:grid-cols-2 min-[80rem]:mt-[4.9375rem] min-[80rem]:grid-cols-4">

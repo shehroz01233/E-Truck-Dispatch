@@ -29,9 +29,9 @@ export default function BrokerNetworkSection({
     <section
       className={`overflow-hidden mt-20 mb-20 bg-transparent px-5 text-white sm:px-8 lg:px-12 ${className}`}
     >
-      <div className="mx-auto grid w-full max-w-[97.5rem] overflow-hidden lg:h-[27rem] lg:grid-cols-[minmax(0,47rem)_minmax(0,50.5rem)]">
+      <div className="mx-auto grid w-full max-w-[97.5rem] lg:min-h-[27rem] lg:grid-cols-[minmax(0,47rem)_minmax(0,50.5rem)]">
         {/* Content */}
-        <div className="flex min-w-0 flex-col py-12 lg:pb-0 lg:pt-[2.0625rem]">
+        <div className="flex min-w-0 flex-col py-12 lg:py-[2.0625rem]">
           <h2 className="w-full max-w-[43.9375rem] font-outfit text-3xl font-bold leading-[1.1] sm:text-4xl lg:text-5xl">
             {heading}
           </h2>

@@ -28,7 +28,7 @@ export default function ComparisonTableSection({
 
   return (
     <section
-      className={`bg-[#1c1c1c] px-4 pb-12 text-white sm:px-8 sm:pb-16 lg:px-16 lg:pb-20 ${
+      className={`bg-[#1c1c1c] px-4 my-6 pb-12 text-white sm:px-8 sm:pb-16 lg:px-16 lg:pb-20 ${
         compactTop ? "pt-8 sm:pt-10 lg:pt-12" : "pt-12 sm:pt-16 lg:pt-20"
       }`}
     >

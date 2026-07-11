@@ -28,12 +28,20 @@ import DispatchTechnologyGridSection, {
   type DispatchTechnologyCard,
 } from "../components/DispatchTechnologyGridSection";
 
-const bookingProblems = [
-  ["Impact of Freight Continuity on Trucking Profitability", "Modern trucking operations depend heavily on freight continuity. A truck without a load becomes an operational expense instead of a revenue-generating asset. Delays between loads reduce rate-per-mile performance, increase empty mileage, and create scheduling instability."],
-  ["Problems Caused by Manual Freight Searching", "Manual freight searching slows dispatch operations because carriers often check multiple load boards, negotiate rates individually, verify brokers manually, and search for reload opportunities after deliveries are completed."],
-  ["How E-Truck Dispatching Reduces Load Delays", "E-Truck Dispatching reduces delays by monitoring freight activity continuously throughout the day, giving carriers access to active opportunities as soon as they enter the market."],
+const bookingProblems: [string, string][] = [
+  [
+    "Impact of Freight Continuity on Trucking Profitability",
+    "Modern trucking operations depend heavily on freight continuity. A truck without a load becomes an operational expense instead of a revenue-generating asset. Delays between loads reduce rate-per-mile performance, increase empty mileage, and create scheduling instability.",
+  ],
+  [
+    "Problems Caused by Manual Freight Searching",
+    "Manual freight searching slows dispatch operations because carriers often check multiple load boards, negotiate rates individually, verify brokers manually, and search for reload opportunities after deliveries are completed.",
+  ],
+  [
+    "How E-Truck Dispatching Reduces Load Delays",
+    "E-Truck Dispatching reduces delays by monitoring freight activity continuously throughout the day, giving carriers access to active opportunities as soon as they enter the market.",
+  ],
 ];
-
 const problemColumns: ComparisonColumn[] = [
   { key: "factor", label: "Operational Problem" },
   { key: "impact", label: "Impact on Carrier Revenue" },
