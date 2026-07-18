@@ -78,3 +78,95 @@ body {
 .bg-linear-orange-fade {
   background: var(--linear-orange-fade);
 }
+
+@keyframes truck-card-scan {
+  0% {
+    transform: translateY(-160%);
+  }
+  100% {
+    transform: translateY(520%);
+  }
+}
+
+@keyframes truck-card-signal {
+  0%,
+  100% {
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.9;
+  }
+}
+
+.truck-future-card::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 18%;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 190, 122, 0.16),
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  opacity: 0;
+  transform: translateY(-160%);
+}
+
+.truck-future-card::after {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  border: 1px solid transparent;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.2), transparent 28%) border-box;
+  mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.truck-future-card:hover::before,
+.truck-future-card:focus-visible::before,
+.truck-future-card--active::before {
+  animation: truck-card-scan 3.8s linear infinite;
+  opacity: 1;
+}
+
+.truck-future-card:hover::after,
+.truck-future-card:focus-visible::after,
+.truck-future-card--active::after {
+  animation: truck-card-signal 2.8s ease-in-out infinite;
+  opacity: 0.7;
+}
+
+.truck-future-card h3,
+.truck-future-card p {
+  transition: text-shadow 500ms ease, color 500ms ease;
+}
+
+.truck-future-card:hover h3,
+.truck-future-card:focus-visible h3,
+.truck-future-card--active h3 {
+  text-shadow: 0 0 1.1rem rgba(255, 214, 173, 0.45);
+}
+
+.truck-future-card:hover p,
+.truck-future-card:focus-visible p,
+.truck-future-card--active p {
+  text-shadow: 0 0 0.8rem rgba(255, 255, 255, 0.16);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .truck-future-card::before,
+  .truck-future-card::after {
+    animation: none !important;
+  }
+}

@@ -37,10 +37,9 @@ export default function RevenuePanelSection({
 
   return (
     <LazyMotion features={domAnimation} strict>
-    <section className="mx-auto w-[calc(100%-2.5rem)] max-w-[97.5rem] overflow-hidden bg-[#171717] my-6 text-white sm:w-[calc(100%-4rem)] md:relative md:h-[calc(44.5rem*var(--rp))] md:[--rp:min(calc((100vw-4rem)/97.5rem),1)]">
+    <section className="mx-auto my-6 w-[calc(100%-2.5rem)] max-w-[97.5rem] overflow-hidden bg-[#171717] text-white sm:w-[calc(100%-4rem)] md:relative md:h-[calc(var(--rp-height)*var(--rp))] md:[--rp:min(calc((100vw-4rem)/97.5rem),1)] md:[--rp-height:49rem]">
       {/* laptop / desktop scaled layout */}
-      <div className="relative hidden h-[44.5rem] w-[97.5rem] origin-top-left scale-[var(--rp)] md:block">
-        <m.div
+<div className="relative hidden h-[var(--rp-height)] w-[97.5rem] origin-top-left scale-[var(--rp)] md:block">        <m.div
           initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 70, scale: 0.96 }}
           whileInView={{ opacity: 1, x: 0, scale: 1 }}
           viewport={{ once: true, amount: 0.35 }}

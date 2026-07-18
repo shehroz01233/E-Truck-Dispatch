@@ -7,6 +7,7 @@ import { useState } from "react";
 type TruckType = {
   title: string;
   description: string;
+  image?: string;
   active?: boolean;
 };
 
@@ -28,23 +29,45 @@ const defaultTrucks: TruckType[] = [
   },
   {
     title: "Flatbed Dispatch",
+    image: "/Home/images/Flatbed Dispatch Services.webp",
     description:
       "Open-deck trailers transporting construction materials, steel, lumber, and heavy machinery with tarping, strapping, and load securement compliance built into every booking.",
   },
   {
     title: "Step Deck Dispatch",
+    image: "/Home/images/Step Deck Dispatch.webp",
     description:
       "Designed for 8.5 to 10 foot tall cargo including industrial machinery and construction equipment, with multi-state permit coordination and oversized load documentation.",
   },
   {
     title: "Reefer Dispatch",
+    image: "/Home/images/Reefer Dispatch Services.webp",
     description:
       "Temperature-controlled trailers for food, pharmaceuticals, and perishables requiring cold chain integrity and direct relationships with food-grade brokers.",
   },
   {
     title: "Hotshot Dispatch",
+    image: "/Home/images/Hotshot Truck Dispatching Services.webp",
     description:
       "Time-sensitive freight for oil fields, perishable cargo, and construction industries using 40-foot-plus trucks with same-day or next-day delivery turnaround.",
+  },
+  {
+    title: "Box Truck Dispatch",
+    image: "/Home/images/Box Truck.webp",
+    description:
+      "Straight trucks handling local and regional retail, household, and final-mile freight with careful route planning for dock access, liftgate needs, and appointment windows.",
+  },
+  {
+    title: "Power Only Dispatch",
+    image: "/Home/images/Power Only Dispatch Service.webp",
+    description:
+      "Tractor-only carriers pulling customer, broker, or leased trailers with drop-and-hook planning, trailer compatibility checks, and efficient empty-mile management.",
+  },
+  {
+    title: "Conestoga Dispatch",
+    image: "/Home/images/Conestoga Dispatch Services.webp",
+    description:
+      "Retractable-tarp trailers protecting steel, machinery, and specialized freight while preserving fast side-loading access and open-deck securement flexibility.",
   },
 ];
 
@@ -65,6 +88,18 @@ export default function OurTrucks({
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   const visibleActiveIndex = hoveredIndex ?? activeIndex;
+  const visibleBackgroundImage =
+    trucks[visibleActiveIndex]?.image ?? backgroundImage;
+  const visibleTruckTitle = trucks[visibleActiveIndex]?.title ?? heading;
+  const desktopTruckCount = Math.min(trucks.length, 5);
+  const desktopStartIndex = Math.min(
+    Math.max(activeIndex - desktopTruckCount + 1, 0),
+    Math.max(trucks.length - desktopTruckCount, 0),
+  );
+  const desktopTrucks = trucks.slice(
+    desktopStartIndex,
+    desktopStartIndex + desktopTruckCount,
+  );
 
   const showPreviousTruck = () => {
     if (trucks.length === 0) return;
@@ -86,8 +121,8 @@ export default function OurTrucks({
     <section className="group/section relative w-full overflow-hidden bg-[#1C1C1C] text-white">
       {/* Background */}
       <Image
-        src={backgroundImage}
-        alt="Black semi truck at night"
+        src={visibleBackgroundImage}
+        alt={`${visibleTruckTitle} truck`}
         fill
         sizes="100vw"
         className="object-cover object-center transition-transform duration-[1400ms] ease-out group-hover/section:scale-[1.015]"
@@ -153,12 +188,13 @@ export default function OurTrucks({
             className="grid min-h-[clamp(16rem,16.3vw,19.5625rem)] items-stretch gap-x-[2.667%] gap-y-4"
             style={{
               gridTemplateColumns: `repeat(${Math.min(
-                Math.max(trucks.length, 1),
+                Math.max(desktopTrucks.length, 1),
                 5,
               )}, minmax(0, 1fr))`,
             }}
           >
-            {trucks.map((truck, index) => {
+            {desktopTrucks.map((truck, desktopIndex) => {
+              const index = desktopStartIndex + desktopIndex;
               const isActive = visibleActiveIndex === index;
 
               return (
@@ -169,17 +205,17 @@ export default function OurTrucks({
                   onFocus={() => setHoveredIndex(index)}
                   onBlur={() => setHoveredIndex(null)}
                   tabIndex={0}
-                  className={`group/card flex min-h-[clamp(16rem,16.3vw,19.5625rem)] min-w-0 cursor-default flex-col px-[11.2%] pb-[12%] pt-[18.65%] outline-none transition-[transform,background-color,box-shadow] duration-500 ease-out focus-visible:ring-2 focus-visible:ring-[#B34B0C] focus-visible:ring-inset ${
+                  className={`truck-future-card group/card relative isolate flex min-h-[clamp(16rem,16.3vw,19.5625rem)] min-w-0 cursor-default flex-col overflow-hidden px-[11.2%] pb-[12%] pt-[18.65%] outline-none transition-[transform,background-color,box-shadow] duration-500 ease-out focus-visible:ring-2 focus-visible:ring-[#B34B0C] focus-visible:ring-inset ${
                     isActive
-                      ? "bg-[#B34B0C]/80 shadow-[0_1.25rem_3rem_rgba(0,0,0,0.16)]"
+                      ? "truck-future-card--active bg-[#B34B0C]/80 shadow-[0_1.25rem_3rem_rgba(0,0,0,0.16)]"
                       : "bg-transparent hover:-translate-y-1 hover:bg-[#161616]/45 hover:shadow-[0_1.25rem_3rem_rgba(0,0,0,0.14)]"
                   }`}
                 >
-                  <h3 className="max-w-[9.75rem] break-words font-['Outfit'] text-[clamp(0.875rem,1.15vw,1.375rem)] font-semibold leading-[1.27] transition-transform duration-300 ease-out [overflow-wrap:anywhere] group-hover/card:-translate-y-0.5">
+                  <h3 className="relative z-10 max-w-[9.75rem] break-words font-['Outfit'] text-[clamp(0.875rem,1.15vw,1.375rem)] font-semibold leading-[1.27] transition-transform duration-300 ease-out [overflow-wrap:anywhere] group-hover/card:-translate-y-0.5">
                     {truck.title}
                   </h3>
 
-                  <p className="mt-[14%] max-w-[13rem] break-words font-['DM_Sans'] text-[clamp(0.625rem,0.84vw,1rem)] leading-[1.38] [overflow-wrap:anywhere]">
+                  <p className="relative z-10 mt-[14%] max-w-[13rem] break-words font-['DM_Sans'] text-[clamp(0.625rem,0.84vw,1rem)] leading-[1.38] [overflow-wrap:anywhere]">
                     {truck.description}
                   </p>
                 </article>
@@ -227,17 +263,17 @@ export default function OurTrucks({
                 onBlur={() => setHoveredIndex(null)}
                 onClick={() => setActiveIndex(index)}
                 tabIndex={0}
-                className={`group/card min-h-[13.75rem] cursor-pointer p-6 outline-none transition-[transform,background-color,box-shadow] duration-500 ease-out focus-visible:ring-2 focus-visible:ring-[#B34B0C] focus-visible:ring-inset ${
+                className={`truck-future-card group/card relative isolate min-h-[13.75rem] cursor-pointer overflow-hidden p-6 outline-none transition-[transform,background-color,box-shadow] duration-500 ease-out focus-visible:ring-2 focus-visible:ring-[#B34B0C] focus-visible:ring-inset ${
                   isActive
-                    ? "bg-[#B34B0C]/80 shadow-[0_1rem_2.5rem_rgba(0,0,0,0.16)]"
+                    ? "truck-future-card--active bg-[#B34B0C]/80 shadow-[0_1rem_2.5rem_rgba(0,0,0,0.16)]"
                     : "bg-[#161616]/80 backdrop-blur-sm hover:-translate-y-1 hover:bg-[#202020]/90 hover:shadow-[0_1rem_2.5rem_rgba(0,0,0,0.2)]"
                 }`}
               >
-                <h3 className="break-words font-['Outfit'] text-[1.125rem] font-semibold leading-snug transition-transform duration-300 group-hover/card:-translate-y-0.5 [overflow-wrap:anywhere]">
+                <h3 className="relative z-10 break-words font-['Outfit'] text-[1.125rem] font-semibold leading-snug transition-transform duration-300 group-hover/card:-translate-y-0.5 [overflow-wrap:anywhere]">
                   {truck.title}
                 </h3>
 
-                <p className="mt-5 break-words font-['DM_Sans'] text-[0.75rem] leading-[1.5] [overflow-wrap:anywhere]">
+                <p className="relative z-10 mt-5 break-words font-['DM_Sans'] text-[0.75rem] leading-[1.5] [overflow-wrap:anywhere]">
                   {truck.description}
                 </p>
               </article>

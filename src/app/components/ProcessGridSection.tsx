@@ -15,8 +15,8 @@ export default function ProcessGridSection({
   return (
     <section className="mx-auto w-[calc(100%-40px)] max-w-[1560px] pb-16 pt-28 sm:w-[calc(100%-64px)]">
       <div className="grid gap-x-5 gap-y-[17px] md:grid-cols-2 lg:grid-cols-3">
-        <div className="flex min-h-64 items-start bg-[#b34b0c] px-[30px] pt-9">
-          <h2 className="max-w-[461px] font-['Outfit'] text-4xl font-bold leading-[1.25] text-white sm:text-5xl">
+        <div className="flex min-h-64 items-start bg-[#b34b0c] px-[30px] py-8">
+          <h2 className="max-w-[461px] font-['Outfit'] text-3xl font-bold leading-[1.2] text-white sm:text-4xl xl:text-[2.5rem]">
             {heading}
           </h2>
         </div>
@@ -37,7 +37,7 @@ export default function ProcessGridSection({
           return (
             <article
               key={title}
-              className="min-h-64 bg-[#171717] px-[30px] pt-8"
+              className="min-h-64 bg-[#171717] px-[30px] py-8"
             >
               <h3 className="font-['Outfit'] text-xl font-semibold leading-tight text-white">
                 {title}
