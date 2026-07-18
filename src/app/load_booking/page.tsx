@@ -407,6 +407,8 @@ export default function LoadBookingPage() {
           </>
         }
         benefits={freightBenefits}
+        defaultIconSrc="/load booking/images/24_tick_icon.webp"
+        defaultIconAlt="Orange tick icon"
       />
 
       <FAQs

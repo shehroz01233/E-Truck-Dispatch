@@ -52,13 +52,13 @@ export default function QuestionStats({
               }`}
             >
               <div className="w-full min-[80rem]:w-[8.875rem]">
-                <h3 className="font-['Outfit'] text-[1.75rem] font-bold leading-none text-white min-[30rem]:text-[2rem]">
+                <strong className="block font-['Outfit'] text-[1.75rem] font-bold leading-none text-white min-[30rem]:text-[2rem]">
                   {stat.value}
-                </h3>
+                </strong>
 
-                <p className="mt-[0.875rem] font-['DM_Sans'] text-[0.8125rem] font-bold leading-[1.15] text-white">
+                <h3 className="mt-[0.875rem] font-['DM_Sans'] text-[0.8125rem] font-bold leading-[1.15] text-white">
                   {stat.title}
-                </p>
+                </h3>
 
                 <p className="mt-[0.75rem] font-['DM_Sans'] text-[0.75rem] leading-[1.2] text-white/90">
                   {stat.text}

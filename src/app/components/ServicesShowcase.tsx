@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
 
 export type ServiceShowcaseItem = {
   title: string;
@@ -8,10 +11,15 @@ export type ServiceShowcaseItem = {
   wideImage: string;
 };
 
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
 export default function ServicesShowcase({ services }: { services: ServiceShowcaseItem[] }) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
-    <section className="bg-[#1c1c1c] px-4 py-12 text-white sm:px-8 lg:px-12 lg:py-20">
-      <div className="mx-auto flex w-full max-w-[97.5rem] flex-col gap-[clamp(0.25rem,1.282vw,1.25rem)]">
+    <LazyMotion features={domAnimation} strict>
+      <section className="bg-[#1a1a1a] px-4 py-[0.6875rem] text-white sm:px-8 lg:px-12 lg:py-20">
+        <div className="mx-auto flex w-full max-w-[22.875rem] flex-col gap-[clamp(0.25rem,1.282vw,1.25rem)] lg:max-w-[97.5rem]">
         {services.map((service, index) => {
           const reversed = index % 2 === 1;
 
@@ -29,9 +37,21 @@ export default function ServicesShowcase({ services }: { services: ServiceShowca
                 alt={`${service.title} specialist`}
                 className={reversed ? "order-3" : "order-1"}
                 sizes="22.436vw"
+                index={index}
+                shouldReduceMotion={shouldReduceMotion}
               />
 
-              <div className="order-2 flex min-h-0 flex-col justify-center overflow-hidden bg-[radial-gradient(ellipse_at_center,#272727_0%,#161616_80%)] px-[clamp(0.5rem,3.205vw,3.125rem)] py-[clamp(0.25rem,2.5vw,2.4375rem)]">
+              <m.div
+                initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: -34 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.35 }}
+                transition={{
+                  duration: shouldReduceMotion ? 0 : 0.62,
+                  delay: shouldReduceMotion ? 0 : Math.min(index * 0.04, 0.22),
+                  ease: smoothEase,
+                }}
+                className="order-2 flex min-h-0 flex-col justify-center overflow-hidden bg-[#161616] bg-[radial-gradient(ellipse_at_center,#272727_0%,#161616_80%)] px-[clamp(0.5rem,3.205vw,3.125rem)] py-[clamp(0.25rem,2.5vw,2.4375rem)]"
+              >
                 <h2 className="font-['Outfit'] text-[clamp(0.275rem,1.41vw,1.375rem)] font-semibold leading-tight">
                   {service.title}
                 </h2>
@@ -44,19 +64,22 @@ export default function ServicesShowcase({ services }: { services: ServiceShowca
                 >
                   Read More
                 </Link>
-              </div>
+              </m.div>
 
               <ServiceImage
                 src={service.wideImage}
                 alt={`${service.title} truck`}
                 className={reversed ? "order-1" : "order-3"}
                 sizes="51.795vw"
+                index={index}
+                shouldReduceMotion={shouldReduceMotion}
               />
             </article>
           );
         })}
-      </div>
-    </section>
+        </div>
+      </section>
+    </LazyMotion>
   );
 }
 
@@ -65,15 +88,35 @@ function ServiceImage({
   alt,
   className,
   sizes,
+  index,
+  shouldReduceMotion,
 }: {
   src: string;
   alt: string;
   className: string;
   sizes: string;
+  index: number;
+  shouldReduceMotion: boolean | null;
 }) {
   return (
-    <div className={`relative min-h-0 overflow-hidden ${className}`}>
-      <Image src={src} alt={alt} fill sizes={sizes} className="object-cover" />
-    </div>
+    <m.div
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 42 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, amount: 0.35 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.7,
+        delay: shouldReduceMotion ? 0 : Math.min(index * 0.04 + 0.06, 0.28),
+        ease: smoothEase,
+      }}
+      className={`relative min-h-0 overflow-hidden bg-[#161616] ${className}`}
+    >
+      <Image
+        src={src}
+        alt={alt}
+        fill
+        sizes={sizes}
+        className="object-contain"
+      />
+    </m.div>
   );
 }

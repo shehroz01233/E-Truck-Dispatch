@@ -1,3 +1,6 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import type { ReactNode } from "react";
 
@@ -35,6 +38,24 @@ const defaultSteps: WorkflowStep[] = [
     description:
       "Each load is assessed against real-time market data from platforms like DAT Solutions. Only freight meeting your approved rate floor and operational criteria is presented.",
   },
+  {
+    number: "4",
+    title: "Broker Confirmation and Dispatch",
+    description:
+      "Approved loads are confirmed with broker details, pickup instructions, appointment windows, commodity information, and driver communication prepared before dispatch.",
+  },
+  {
+    number: "5",
+    title: "Active Load Tracking",
+    description:
+      "Shipment progress is monitored from pickup to delivery with check calls, route updates, delay communication, and broker coordination handled throughout the trip.",
+  },
+  {
+    number: "6",
+    title: "Paperwork and Payment Follow-Up",
+    description:
+      "Rate confirmations, BOLs, PODs, invoices, and supporting documents are organized after delivery so billing and payment follow-up stay consistent.",
+  },
 ];
 
 export default function HowWeWork({
@@ -49,6 +70,7 @@ export default function HowWeWork({
   imageAlt = "Dispatcher handling freight boxes",
   steps = defaultSteps,
 }: HowWeWorkProps) {
+  const shouldReduceMotion = useReducedMotion();
   const hasDetailedSteps = steps.some(
     (step) => step.includes?.length || step.footer,
   );
@@ -58,7 +80,13 @@ export default function HowWeWork({
       <TopWave />
 
       <div className="relative z-10 mx-auto grid w-full max-w-[97.5rem] items-start gap-10 xl:grid-cols-[minmax(0,800fr)_minmax(0,729fr)] xl:gap-[clamp(1.125rem,1.615vw,1.9375rem)]">
-        <div className="relative min-h-[20rem] sm:min-h-[26.875rem] xl:-mt-[clamp(3rem,4.17vw,5rem)] xl:aspect-[800/742] xl:min-h-0">
+        <motion.div
+          className="relative min-h-[20rem] sm:min-h-[26.875rem] xl:-mt-[clamp(3rem,4.17vw,5rem)] xl:aspect-[800/742] xl:min-h-0"
+          initial={shouldReduceMotion ? false : { opacity: 0, x: -58 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.82, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="absolute left-0 top-0 h-[72.64%] w-[93.375%] xl:-left-[9.375vw]">
             <Image
               src="/Vector 1.svg"
@@ -80,20 +108,26 @@ export default function HowWeWork({
               priority
             />
           </div>
-        </div>
+        </motion.div>
 
         <div className="relative">
-          <h2 className="font-sans text-[2rem] font-bold leading-[1.08] tracking-[-0.02em] text-white sm:text-[2.375rem] xl:text-[clamp(2.125rem,2.5vw,3rem)]">
+          <motion.h2
+            className="font-sans text-[2.125rem] font-bold leading-[1.08] tracking-[-0.02em] text-white sm:text-[2.5rem] xl:text-[3rem]"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.64, ease: [0.22, 1, 0.36, 1] }}
+          >
             {heading}
-          </h2>
+          </motion.h2>
 
-          <div className={`mt-10 space-y-[clamp(0.75rem,1.04vw,1.25rem)] pr-[9.5%] xl:mt-[clamp(2.375rem,2.86vw,3.4375rem)] ${hasDetailedSteps ? "max-h-[28rem] overflow-y-auto [scrollbar-color:#B34B0C_#3F3F3F] [scrollbar-width:thin]" : ""}`}>
+          <div className="mt-10 max-h-[28rem] space-y-[clamp(0.75rem,1.04vw,1.25rem)] overflow-y-auto pr-[9.5%] [scrollbar-color:#B34B0C_#3F3F3F] [scrollbar-width:thin] xl:mt-[clamp(2.375rem,2.86vw,3.4375rem)]">
             {steps.map((step, index) => (
               <WorkflowCard
                 key={`${step.title}-${index}`}
                 step={step}
                 index={index}
-                detailed={hasDetailedSteps}
+                shouldReduceMotion={shouldReduceMotion}
               />
             ))}
           </div>
@@ -114,26 +148,37 @@ export default function HowWeWork({
 function WorkflowCard({
   step,
   index,
-  detailed,
+  shouldReduceMotion,
 }: {
   step: WorkflowStep;
   index: number;
-  detailed: boolean;
+  shouldReduceMotion: boolean | null;
 }) {
   return (
-    <article className={`grid min-h-[7.5rem] grid-cols-[4rem_1fr] border border-[#3F3F3F] bg-[#1C1C1C] p-3 min-[23.4375rem]:grid-cols-[5.625rem_1fr] sm:grid-cols-[6.875rem_1fr] xl:grid-cols-[16.67%_1fr] xl:p-[3%] ${detailed ? "" : "xl:aspect-[660/151] xl:min-h-0"}`}>
-      <div className="flex aspect-square items-center justify-center bg-[#B34B0C]/10">
+    <motion.article
+      className="group/work-card flex min-h-[7.5rem] items-stretch gap-3 border border-[#3F3F3F] bg-[#1C1C1C] p-3 sm:gap-4 xl:gap-[3%] xl:p-[3%]"
+      initial={shouldReduceMotion ? false : { opacity: 0, x: 28 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      whileHover={shouldReduceMotion ? undefined : { x: 5 }}
+      viewport={{ once: true, amount: 0.38 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.5,
+        delay: shouldReduceMotion ? 0 : Math.min(index * 0.06, 0.3),
+        ease: [0.22, 1, 0.36, 1],
+      }}
+    >
+      <div className="flex aspect-square w-[4rem] shrink-0 items-center justify-center self-start bg-[#B34B0C]/10 transition-colors duration-300 group-hover/work-card:bg-[#B34B0C]/20 min-[23.4375rem]:w-[5.625rem] sm:w-[6.875rem] xl:w-[16.67%]">
         <span className="font-sans text-[clamp(2.625rem,4.11vw,4.9375rem)] font-bold leading-none text-[#B34B0C]">
           {step.number ?? index + 1}
         </span>
       </div>
 
-      <div className="flex min-w-0 flex-col justify-center pl-[3%]">
-        <h3 className="font-sans text-[clamp(0.875rem,1.15vw,1.375rem)] font-semibold leading-tight text-[#B34B0C]">
+      <div className="flex min-w-0 flex-1 flex-col justify-center">
+        <h3 className="break-words font-sans text-[1.125rem] font-semibold leading-tight text-[#B34B0C] [overflow-wrap:anywhere] xl:text-[1.375rem]">
           {step.title}
         </h3>
 
-        <p className="mt-[2%] max-w-[31.0625rem] font-sans text-[clamp(0.625rem,0.84vw,1rem)] leading-[1.4] text-white/90">
+        <p className="mt-[0.5rem] max-w-[31.0625rem] break-words font-sans text-[0.875rem] leading-[1.4] text-white/90 [overflow-wrap:anywhere] xl:text-[1rem]">
           {step.description}
         </p>
 
@@ -159,26 +204,25 @@ function WorkflowCard({
           </p>
         ) : null}
       </div>
-    </article>
+    </motion.article>
   );
 }
 
 function TopWave() {
   return (
-    <svg
-      className="absolute left-0 top-0 h-[1.75rem] w-full xl:h-[4.375rem]"
-      viewBox="0 0 1440 28"
-      preserveAspectRatio="none"
-      fill="none"
+    <div
+      className="pointer-events-none absolute left-0 top-0 h-[2.25rem] w-full xl:h-[4.5625rem]"
       aria-hidden="true"
     >
-      <path
-        d="M0 14C78 3 113 24 184 13C267 0 330 28 414 15C491 3 551 20 632 12C725 2 779 26 872 14C964 2 1041 25 1131 12C1231 -3 1324 24 1440 9"
-        stroke="#B34B0C"
-        strokeOpacity="0.35"
-        strokeWidth="2"
+      <Image
+        src="/Home/images/Upperborder.svg"
+        alt=""
+        fill
+        sizes="100vw"
+        className="object-fill"
+        unoptimized
       />
-    </svg>
+    </div>
   );
 }
 

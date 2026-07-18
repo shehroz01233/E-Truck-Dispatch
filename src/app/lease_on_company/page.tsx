@@ -12,6 +12,7 @@ import TechnologyOperationsSection, {
 } from "@/app/components/TechnologyOperationsSection";
 import AudienceBenefitsSection from "@/app/components/AudienceBenefitsSection";
 import FAQSection, { type FAQItem } from "@/app/components/FAQs";
+import LeaseOnRevealSection from "@/app/components/LeaseOnRevealSection";
 import QuestionStats, { type Stat } from "@/app/components/QuestionStats";
 
 
@@ -383,11 +384,14 @@ export default function LeaseOnCompanyPage() {
       backgroundImage="/Lease on Companies/images/1_rectangle_1450.webp"
       backgroundAlt="Truck dispatching services for lease-on companies and owner operators"
     />
+   <LeaseOnRevealSection index={0} direction="left">
    <BenefitsGridSection
   heading="Reliable Dispatch Support for Lease-On Companies & Independent Owner Operators"
   benefits={leaseOnSupportBenefits}
 />
+   </LeaseOnRevealSection>
 
+<LeaseOnRevealSection index={1} direction="right">
 <ComparisonTableSection
   heading="What Is Truck Dispatching for Lease-On Companies?"
   tableTitle=""
@@ -395,7 +399,9 @@ export default function LeaseOnCompanyPage() {
   rows={leaseOnDispatchRows}
   compactTop
 />
+ </LeaseOnRevealSection>
 
+<LeaseOnRevealSection index={2} direction="left">
 <ComparisonTableSection
   heading="Dispatching Support for Lease-On Companies"
   tableTitle=""
@@ -403,18 +409,24 @@ export default function LeaseOnCompanyPage() {
   rows={leaseOnCarrierSupportRows}
   compactTop
 />
+ </LeaseOnRevealSection>
+<LeaseOnRevealSection index={3} direction="right">
 <ProcessGridSection
   heading="Why Owner Operators Choose E Truck Dispatching"
   steps={ownerOperatorChoiceSteps}
 />
+ </LeaseOnRevealSection>
 
+<LeaseOnRevealSection index={4}>
 <VisionFormSection
   heading="E Truck Dispatching"
   paragraphs={leaseOnVisionParagraphs}
   fields={leaseOnFormFields}
   compactBottom
 />
+ </LeaseOnRevealSection>
 
+<LeaseOnRevealSection index={5} direction="left">
 <HowWeWork
   heading={
     <>
@@ -427,7 +439,9 @@ export default function LeaseOnCompanyPage() {
   imageAlt="Dispatcher holding boxes during lease-on dispatching process"
   steps={leaseOnDispatchProcessSteps}
 />
+ </LeaseOnRevealSection>
 
+<LeaseOnRevealSection index={6} direction="right">
 <ComparisonTableSection
   heading="Revenue Optimization for Lease-On Owner Operators"
   tableTitle=""
@@ -435,7 +449,9 @@ export default function LeaseOnCompanyPage() {
   rows={leaseOnRevenueOptimizationRows}
   compactTop
 />
+ </LeaseOnRevealSection>
 
+<LeaseOnRevealSection index={7} direction="left">
 <TechnologyOperationsSection
   heading="Why Professional Dispatching Matters for Lease-On Trucking Operations"
   paragraphs={[]}
@@ -444,17 +460,23 @@ export default function LeaseOnCompanyPage() {
   imageAlt="Orange truck used for lease-on dispatching operations"
   featureColumns={3}
 />
+ </LeaseOnRevealSection>
+<LeaseOnRevealSection index={8}>
 <VisionFormSection
   heading="E Truck Dispatching"
   paragraphs={leaseOnVisionParagraphs}
   fields={leaseOnFormFields}
   compactBottom
 />
+ </LeaseOnRevealSection>
+<LeaseOnRevealSection index={9} direction="right">
 <AudienceBenefitsSection
   showAudiences={false}
   heading="Work With E Truck Dispatching"
   benefits={benefits}
 />
+ </LeaseOnRevealSection>
+<LeaseOnRevealSection index={10} direction="left">
 <FAQSection
   heading="Frequently Asked Questions"
   description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
@@ -462,7 +484,9 @@ export default function LeaseOnCompanyPage() {
   imageAlt="Lease-on trucking FAQ support"
   faqs={leaseOnFaqs}
 />
+ </LeaseOnRevealSection>
 
+<LeaseOnRevealSection index={11}>
 <QuestionStats
   heading="Still Have Questions?"
   description="Our dispatch experts are here to help. Get in touch for a free consultation."
@@ -470,6 +494,7 @@ export default function LeaseOnCompanyPage() {
   buttonHref="/contact"
   stats={leaseOnQuestionStats}
 />
+ </LeaseOnRevealSection>
 
 </main>
   );

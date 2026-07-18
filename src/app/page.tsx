@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Hero from "./components/landingPage";
 import OurServices, { Service } from "./components/OurServices";
 import WhoWeAre from "./components/WhoWeAre";
@@ -8,6 +9,17 @@ import HowWeWork from "./components/HowWeWork";
 import FAQs from "./components/FAQs";
 import QuestionStats from "./components/QuestionStats";
 
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "E Truck Dispatching | Professional Truck Dispatch Services",
+  },
+  description:
+    "Professional truck dispatching and back-office support for owner-operators and small fleets across the United States.",
+  alternates: {
+    canonical: "/",
+  },
+};
 
 const faqs = [
   {
@@ -99,44 +111,53 @@ const services: Service[] = [
 export default function Home() {
   return (
     <>
-      <Hero />
-       <WhoWeAre
-      heading="Who We Are"
-      paragraphs={whoWeAreParagraphs}
-      images={{
-        meeting: "/Home/images/48_who_we_are.webp",
-        presentation: "/Home/images/50_who_we_are.webp",
-        team: "/Home/images/49_who_we_are.webp",
-      }}
-      imageAlts={{
-        meeting: "E Truck Dispatching team collaborating around a table",
-        presentation: "Dispatching team attending a presentation",
-        team: "Members of the E Truck Dispatching team",
-      }}
-    />
-      <OurServices
-      heading="Our Services"
-      description="E Truck Dispatching provides end-to-end operational support beyond load booking — covering financial management, regulatory setup, and documentation handling for owner-operators and small carriers."
-      services={services}
-    />
-      <OurTrucks />
-      <FrieghtStates />
-      <WhyChooseUs />
-      <HowWeWork />
-      <FAQs
-      heading="Frequently Asked Questions"
-      description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
-      image="/Home/images/33_rectangle_1441.webp"
-      imageAlt="Dispatcher answering questions in warehouse"
-      faqs={faqs}
-    />
-      <QuestionStats
-      heading="Still Have Questions?"
-      description="Our billing experts are here to help. Get in touch for a free consultation."
-      buttonText="Talk to an Expert"
-      buttonHref="/contact"
-      stats={questionStats}
-    />
+      
+        <Hero />
+      
+        <WhoWeAre
+          heading="Who We Are"
+          paragraphs={whoWeAreParagraphs}
+          images={{
+            meeting: "/Home/images/48_who_we_are.webp",
+            presentation: "/Home/images/50_who_we_are.webp",
+            team: "/Home/images/49_who_we_are.webp",
+          }}
+          imageAlts={{
+            meeting: "E Truck Dispatching team collaborating around a table",
+            presentation: "Dispatching team attending a presentation",
+            team: "Members of the E Truck Dispatching team",
+          }}
+        />
+      
+        <OurServices
+          heading="Our Services"
+          description="E Truck Dispatching provides end-to-end operational support beyond load booking — covering financial management, regulatory setup, and documentation handling for owner-operators and small carriers."
+          services={services}
+        />
+      
+        <OurTrucks />
+     
+        <FrieghtStates />
+      
+        <WhyChooseUs />
+      
+        <HowWeWork />
+     
+        <FAQs
+          heading="Frequently Asked Questions"
+          description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
+          image="/Home/images/33_rectangle_1441.webp"
+          imageAlt="Dispatcher answering questions in warehouse"
+          faqs={faqs}
+        />
+      
+        <QuestionStats
+          heading="Still Have Questions?"
+          description="Our billing experts are here to help. Get in touch for a free consultation."
+          buttonText="Talk to an Expert"
+          buttonHref="/contact"
+          stats={questionStats}
+        />
     </>
   );
 }

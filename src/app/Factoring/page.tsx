@@ -725,14 +725,16 @@ export default function Factoring() {
             backgroundImage="/factoring/images/1_rectangle_1450.webp"
             backgroundAlt="Truck driver using a tablet to manage invoices and payments"
         />
-          <RevenuePanelSection
+      
+        <RevenuePanelSection
       heading=""
       description=""
       groups={mcDotGroups}
       image="/MC DOT Setup/images/4_rectangle_1558.webp"
       backgroundImage="/MC DOT Setup/icons/4_vector_3.svg"
     />
-    <TechnologyOperationsSection
+     
+        <TechnologyOperationsSection
       heading={
         <>
           How Freight Factoring Works <br />
@@ -747,36 +749,39 @@ export default function Factoring() {
       image="/Factoring/images/5_rectangle_1556.webp"
       imageAlt="Orange freight truck used for factoring service section"
     />
-     <ComparisonTableSection
+      
+        <ComparisonTableSection
       heading=""
       tableTitle=""
       columns={factoringColumns}
       rows={factoringRows}
       compactTop
     />
-    <ComplianceMatrixSection
+      
+        <ComplianceMatrixSection
       heading="Why Trucking Companies Use Freight Factoring Services"
       description="Freight factoring helps trucking companies maintain stable cash flow, improve operational continuity, and reduce financial pressure caused by delayed broker payments. Faster invoice funding supports smoother dispatch operations, stronger scheduling consistency, and reduced downtime across daily freight movement."
       cards={factoringCards}
       image="/Factoring/images/6_rectangle_1560.webp"
       imageAlt="Trucking company team near freight trailer"
     />
-  
-      <SupportColumnsSection
+      
+        <SupportColumnsSection
       heading="Freight Factoring for Owner-Operators and Small Fleets"
       intro="Freight factoring helps owner-operators and small fleets maintain stable cash flow, reduce operational pressure, and continue freight operations without waiting through delayed broker payment cycles."
       image="/Factoring/images/7_rectangle_1426.webp"
       imageAlt="Owner-operators discussing freight paperwork near a truck"
       cards={ownerOperatorCards}
     />
-     <VisionFormSection
+      
+        <VisionFormSection
       heading="E Truck Dispatching"
       paragraphs={visionParagraphs}
       fields={formFields}
       compactBottom
     />
-  
-<ComparisonCardsSection
+      
+        <ComparisonCardsSection
   heading="Recourse vs Non-Recourse Freight Factoring"
   description="Freight factoring programs operate under different financial risk structures that affect payment protection, operational risk exposure, and factoring costs. The two most common models used in trucking operations are recourse factoring and non-recourse factoring."
   comparisons={recourseFactoringComparisons}
@@ -791,54 +796,61 @@ export default function Factoring() {
     "Factoring structure icon",
   ]}
 />
-     <ComparisonTableSection
+    
+        <ComparisonTableSection
   heading=""
   tableTitle=""
   columns={recourseVsNonRecourseColumns}
   rows={recourseVsNonRecourseRows}
   compactTop
 />
-      <ProcessGridSection
+      
+        <ProcessGridSection
       heading="Broker Credit Checks and Payment Protection"
       steps={brokerCreditPaymentSteps}
     />
-
-       <OurServices
+     
+        <OurServices
       heading="Fuel Advances and Fuel Card Benefits"
       description="Fuel expenses directly affect dispatch profitability and operational continuity across trucking operations. Freight factoring programs paired with fuel card systems help carriers maintain fuel access, improve cash flow flexibility, and support continuous freight movement."
       services={fuelAdvanceServices}
     />
-     <FreightTypesSection
+      
+        <FreightTypesSection
       heading="Dispatching and Freight Factoring Integration"
       description="Dispatch operations and cash flow management work together to support operational continuity, stable freight movement, and stronger load acceptance performance across modern trucking operations."
       freightTypes={dispatchFactoringIntegrationCards}
     />
-     <DispatchTechnologyGridSection
+      
+        <DispatchTechnologyGridSection
       heading="Technology Used in Modern Power Only Dispatching"
       image="/Factoring/images/24_rectangle_1565.webp"
       imageAlt="Power only dispatching truck"
       cards={powerOnlyTechnologyCards}
     />
-    <ActivationSystemSection
+      
+        <ActivationSystemSection
   heading="Problems Carriers Face Without Freight Factoring"
   description="Slow broker payment cycles create operational pressure across trucking businesses because daily expenses often increase faster than incoming revenue. Freight factoring helps carriers improve cash flow stability, reduce operational disruption, and maintain more consistent dispatch continuity."
   cards={factoringProblemCards}
   image="/Factoring/images/25_rectangle_1426.webp"
   imageAlt="Dispatch office team handling freight factoring problems"
 />
-   <VisionFormSection
+      
+        <VisionFormSection
       heading="E Truck Dispatching"
       paragraphs={factoringVisionParagraphs}
       fields={factoringFormFields}
       compactBottom
     />
-     <BenefitsGridSection
+      
+        <BenefitsGridSection
       heading="How to Choose the Right Freight Factoring Company"
       description="Choosing The Right Freight Factoring Company Depends On Funding Speed, Contract Transparency, Broker Verification, And Operational Support."
       benefits={freightFactoringCompanyBenefits}
     />
-
-   <FreightBenefitsSection
+     
+        <FreightBenefitsSection
   heading={
     <>
       Getting Started (Simple <br />
@@ -849,32 +861,30 @@ export default function Factoring() {
   defaultIconSrc="/Factoring/images/36_rectangle_33.webp"
   defaultIconAlt="Check icon"
 />
-
-
-    <ComparisonTableSection
+    
+        <ComparisonTableSection
       heading="Freight Types Supported"
       tableTitle=""
       columns={freightTypesSupportedColumns}
       rows={freightTypesSupportedRows}
       compactTop
       />
-       <FAQSection
+      
+        <FAQSection
       heading="Frequently Asked Questions"
       description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
       image="/Factoring/images/43_rectangle_1441.webp"
       imageAlt="Carrier working on freight factoring documents in office"
       faqs={freightFactoringFaqs}
     />
-     <QuestionStats
+      
+        <QuestionStats
       heading="Still Have Questions?"
       description="Our billing experts are here to help. Get in touch for a free consultation."
       buttonText="Talk to an Expert"
       buttonHref="/contact"
       stats={factoringQuestionStats}
     />
-
-
-
     </main>
   );
 }

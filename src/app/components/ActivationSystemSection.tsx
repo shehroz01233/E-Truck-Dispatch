@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import type { ReactNode } from "react";
+import { LazyMotion, domAnimation, m, useReducedMotion } from "framer-motion";
 
 export type ActivationListItem =
   | string
@@ -21,6 +24,8 @@ type Props = {
   image: string;
   imageAlt?: string;
 };
+
+const smoothEase = [0.22, 1, 0.36, 1] as const;
 
 function CardList({ items }: { items: ActivationListItem[] }) {
   return (
@@ -52,9 +57,31 @@ function CardList({ items }: { items: ActivationListItem[] }) {
   );
 }
 
-function ActivationCardBlock({ card }: { card: ActivationCard }) {
+function ActivationCardBlock({
+  card,
+  index,
+  shouldReduceMotion,
+}: {
+  card: ActivationCard;
+  index: number;
+  shouldReduceMotion: boolean | null;
+}) {
   return (
-    <article className="min-h-[11.75rem] border border-[#3f3f3f] bg-[#171717] px-[1.25rem] py-[1.25rem] text-white min-[75rem]:min-h-[12.875rem]">
+    <m.article
+      initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, y: 22 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      whileHover={shouldReduceMotion ? undefined : { y: -6, borderColor: "#b34b0c" }}
+      viewport={{ once: true, amount: 0.3 }}
+      transition={{
+        duration: shouldReduceMotion ? 0 : 0.55,
+        delay: shouldReduceMotion ? 0 : Math.min(index * 0.06, 0.24),
+        ease: smoothEase,
+      }}
+      className="group relative min-h-[11.75rem] overflow-hidden border border-[#3f3f3f] bg-[#171717] px-[1.25rem] py-[1.25rem] text-white min-[75rem]:min-h-[12.875rem]"
+    >
+      <span className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-[#b34b0c] to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
+      <span className="pointer-events-none absolute inset-y-0 left-[-35%] w-[28%] skew-x-[-18deg] bg-white/5 opacity-0 transition-[left,opacity] duration-700 ease-out group-hover:left-[115%] group-hover:opacity-100" />
+
       <h3 className="max-w-[14rem] font-['Outfit'] text-[1.125rem] font-semibold leading-[1.2] text-white">
         {card.title}
       </h3>
@@ -70,7 +97,7 @@ function ActivationCardBlock({ card }: { card: ActivationCard }) {
           {card.description}
         </p>
       ) : null}
-    </article>
+    </m.article>
   );
 }
 
@@ -81,25 +108,52 @@ export default function ActivationSystemSection({
   image,
   imageAlt = "MC DOT activation system",
 }: Props) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
+    <LazyMotion features={domAnimation} strict>
     <section className="bg-[#1c1c1c] px-[1rem] py-[3rem] text-white sm:px-[2rem] sm:py-[4rem] lg:px-[3rem] min-[75rem]:py-[5rem]">
       <div className="mx-auto grid w-full max-w-[97.5rem] gap-[1.5rem] min-[75rem]:grid-cols-[minmax(0,58.5rem)_minmax(0,37.5rem)] min-[75rem]:items-stretch">
         <div className="grid grid-cols-1 gap-[1rem] sm:grid-cols-2 lg:grid-cols-3 min-[75rem]:gap-[1rem]">
-          {cards.map((card) => (
-            <ActivationCardBlock key={card.title} card={card} />
+          {cards.map((card, index) => (
+            <ActivationCardBlock
+              key={card.title}
+              card={card}
+              index={index}
+              shouldReduceMotion={shouldReduceMotion}
+            />
           ))}
         </div>
 
         <div className="flex min-w-0 flex-col">
-          <h2 className="max-w-[34rem] font-['Outfit'] text-[2rem] font-bold leading-[1.1] tracking-[-0.02em] text-white sm:text-[2.5rem] min-[75rem]:text-[3rem]">
+          <m.h2
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 28 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.45 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.6, ease: smoothEase }}
+            className="max-w-[34rem] font-['Outfit'] text-[2rem] font-bold leading-[1.1] tracking-[-0.02em] text-white sm:text-[2.5rem] min-[75rem]:text-[3rem]"
+          >
             {heading}
-          </h2>
+          </m.h2>
 
-          <p className="mt-[1.5rem] max-w-[34rem] font-['DM_Sans'] text-[0.875rem] leading-[1.45] text-white/80 sm:text-[1rem] min-[75rem]:text-[1rem]">
+          <m.p
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.45 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.58, delay: shouldReduceMotion ? 0 : 0.08, ease: smoothEase }}
+            className="mt-[1.5rem] max-w-[34rem] font-['DM_Sans'] text-[0.875rem] leading-[1.45] text-white/80 sm:text-[1rem] min-[75rem]:text-[1rem]"
+          >
             {description}
-          </p>
+          </m.p>
 
-          <div className="relative mt-[2rem] h-[14rem] w-full overflow-hidden bg-[#171717] sm:h-[18rem] min-[75rem]:mt-auto min-[75rem]:h-[16.125rem]">
+          <m.div
+            initial={shouldReduceMotion ? { opacity: 1 } : { opacity: 0, x: 36 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            whileHover={shouldReduceMotion ? undefined : { y: -5 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.7, delay: shouldReduceMotion ? 0 : 0.14, ease: smoothEase }}
+            className="group relative mt-[2rem] h-[14rem] w-full overflow-hidden bg-[#171717] sm:h-[18rem] min-[75rem]:mt-auto min-[75rem]:h-[16.125rem]"
+          >
             <Image
               src={image}
               alt={imageAlt}
@@ -109,9 +163,11 @@ export default function ActivationSystemSection({
             />
 
             <div className="absolute inset-0 bg-gradient-to-br from-[#b34b0c]/10 to-[#b34b0c]/20" />
-          </div>
+            <span className="pointer-events-none absolute inset-y-0 left-[-40%] w-[30%] skew-x-[-18deg] bg-white/10 opacity-0 transition-[left,opacity] duration-700 ease-out group-hover:left-[115%] group-hover:opacity-100" />
+          </m.div>
         </div>
       </div>
     </section>
+    </LazyMotion>
   );
 }

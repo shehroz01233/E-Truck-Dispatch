@@ -1,3 +1,6 @@
+"use client";
+
+import { motion, useReducedMotion } from "framer-motion";
 import Image, { type StaticImageData } from "next/image";
 import type { ReactNode } from "react";
 
@@ -25,29 +28,58 @@ export default function BrokerNetworkSection({
   features,
   className = "",
 }: BrokerNetworkSectionProps) {
+  const shouldReduceMotion = useReducedMotion();
+
   return (
     <section
       className={`overflow-hidden mt-20 mb-20 bg-transparent px-5 text-white sm:px-8 lg:px-12 ${className}`}
     >
       <div className="mx-auto grid w-full max-w-[97.5rem] lg:min-h-[27rem] lg:grid-cols-[minmax(0,47rem)_minmax(0,50.5rem)]">
         {/* Content */}
-        <div className="flex min-w-0 flex-col py-12 lg:py-[2.0625rem]">
-          <h2 className="w-full max-w-[43.9375rem] font-outfit text-3xl font-bold leading-[1.1] sm:text-4xl lg:text-5xl">
+        <motion.div
+          className="flex min-w-0 flex-col py-12 lg:py-[2.0625rem]"
+          initial={shouldReduceMotion ? false : { opacity: 0, x: -44 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.72, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <motion.h2
+            className="w-full max-w-[43.9375rem] font-outfit text-3xl font-bold leading-[1.1] sm:text-4xl lg:text-5xl"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.58, ease: [0.22, 1, 0.36, 1] }}
+          >
             {heading}
-          </h2>
+          </motion.h2>
 
-          <div className="mt-7 w-full max-w-[40.5625rem] font-outfit text-base font-medium leading-[1.35] text-white/90 sm:text-lg lg:mt-[2.75rem] lg:leading-[1.25]">
+          <motion.div
+            className="mt-7 w-full max-w-[40.5625rem] font-outfit text-base font-medium leading-[1.35] text-white/90 sm:text-lg lg:mt-[2.75rem] lg:leading-[1.25]"
+            initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.4 }}
+            transition={{ duration: shouldReduceMotion ? 0 : 0.58, delay: 0.08, ease: [0.22, 1, 0.36, 1] }}
+          >
             {description}
-          </div>
+          </motion.div>
 
           {features.length > 0 && (
             <div className="mt-8 grid w-full max-w-[40.5625rem] grid-cols-1 gap-x-8 gap-y-5 sm:grid-cols-2 lg:mt-[1.9375rem] lg:grid-cols-[18.1875rem_minmax(0,1fr)]">
               {features.map((feature, index) => (
-                <article
+                <motion.article
                   key={index}
-                  className="grid min-w-0 grid-cols-[2.625rem_minmax(0,1fr)] items-start gap-[0.625rem]"
+                  className="group/broker-feature grid min-w-0 grid-cols-[2.625rem_minmax(0,1fr)] items-start gap-[0.625rem]"
+                  initial={shouldReduceMotion ? false : { opacity: 0, y: 18 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  whileHover={shouldReduceMotion ? undefined : { x: 4 }}
+                  viewport={{ once: true, amount: 0.4 }}
+                  transition={{
+                    duration: shouldReduceMotion ? 0 : 0.45,
+                    delay: shouldReduceMotion ? 0 : index * 0.06,
+                    ease: [0.22, 1, 0.36, 1],
+                  }}
                 >
-                  <span className="flex size-[2.625rem] shrink-0 items-center justify-center text-[#b34b0c]">
+                  <span className="flex size-[2.625rem] shrink-0 items-center justify-center text-[#b34b0c] transition-transform duration-300 group-hover/broker-feature:rotate-6 group-hover/broker-feature:scale-110">
                     {feature.icon ? (
                       feature.icon
                     ) : feature.iconSrc ? (
@@ -63,17 +95,28 @@ export default function BrokerNetworkSection({
                     )}
                   </span>
 
-                  <div className="min-w-0 pt-[0.625rem] font-dm-sans text-base font-normal leading-[1.35] text-white">
+                  <div className="min-h-[3rem] min-w-0 pt-[0.625rem] font-dm-sans text-base font-normal leading-[1.35] text-white">
                     {feature.title}
                   </div>
-                </article>
+                </motion.article>
               ))}
             </div>
           )}
-        </div>
+        </motion.div>
 
         {/* Image */}
-        <div className="relative min-h-[20rem] overflow-hidden sm:min-h-[27rem] lg:h-[24rem] lg:min-h-0 lg:self-start">
+        <motion.div
+          className="group/broker-image relative min-h-[20rem] overflow-hidden sm:min-h-[27rem] lg:h-[24rem] lg:min-h-0 lg:self-start"
+          initial={shouldReduceMotion ? false : { opacity: 0, x: 48 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          whileHover={shouldReduceMotion ? undefined : { scale: 1.02 }}
+          viewport={{ once: true, amount: 0.25 }}
+          transition={{ duration: shouldReduceMotion ? 0 : 0.78, ease: [0.22, 1, 0.36, 1] }}
+        >
+          <span
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-y-[10%] left-[-35%] z-20 w-[20%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-white/15 to-transparent opacity-0 blur-[1px] transition-[left,opacity] duration-700 ease-out group-hover/broker-image:left-[112%] group-hover/broker-image:opacity-100"
+          />
           <Image
             src={image}
             alt={imageAlt}
@@ -82,7 +125,7 @@ export default function BrokerNetworkSection({
             sizes="(min-width: 1024px) 50.5rem, 100vw"
             className="object-contain object-center lg:object-right-top"
           />
-        </div>
+        </motion.div>
       </div>
     </section>
   );

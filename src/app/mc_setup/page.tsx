@@ -1,136 +1,4 @@
-// import type { Metadata } from "next";
-// import HeroSection from "../components/HeroSection";
-// import RevenuePanelSection from "../components/RevenuePanelSection";
-// import SupportColumnsSection from "../components/SupportColumnsSection";
 
-// export const metadata: Metadata = {
-//   title: "MC DOT Setup Services",
-//   description:
-//     "Complete MC authority, USDOT registration, BOC-3 filing, UCR registration, insurance compliance, and FMCSA setup for carriers.",
-// };
-// const cmvCards: SupportCard[] = [
-//   {
-//     sections: [
-//       {
-//         heading: "CMV Definition (FMCSA Criteria)",
-//         text: "A Commercial Motor Vehicle (CMV) is any vehicle that meets FMCSA thresholds requiring federal registration and compliance.",
-//       },
-//       {
-//         heading: "CMV Classification Triggers",
-//         items: [
-//           "10,001+ lbs GVWR/GCWR",
-//           "16+ passengers (including driver)",
-//           "hazardous materials requiring placards",
-//         ],
-//       },
-//       {
-//         text: "These thresholds are regulatory triggers, not optional classifications. Once classified as a CMV, USDOT registration and compliance become mandatory before operation.",
-//       },
-//     ],
-//   },
-//   {
-//     sections: [
-//       {
-//         heading: "When Compliance Becomes Mandatory",
-//         text: "Once a vehicle meets CMV criteria, FMCSA compliance becomes mandatory before operation.",
-//       },
-//       {
-//         heading: "This includes:",
-//         items: [
-//           "USDOT registration",
-//           "Safety compliance (ELD, HOS, inspections)",
-//           "Driver qualification requirements",
-//         ],
-//       },
-//       {
-//         heading:
-//           "Operating a CMV without proper registration or compliance results in:",
-//         items: [
-//           "Immediate out-of-service orders",
-//           "Fines and enforcement penalties",
-//           "Loss of operating authority and load access",
-//         ],
-//       },
-//       {
-//         text: "CMV classification is the starting point of MC DOT compliance, determining applicable regulations, safety standards, and operational requirements before a carrier can operate.",
-//       },
-//     ],
-//   },
-// ];
-
-// export default function McSetupPage() {
-//   return (
-//     <>
-//       <HeroSection
-//         h1={
-//           <>
-//             MC DOT Services: Complete
-//             <br />
-//             Setup &amp; Compliance
-//           </>
-//         }
-//         paragraphs={[
-//           "MC DOT services include USDOT registration, MC authority activation, BOC-3 filing, UCR registration, insurance compliance, and FMCSA regulatory setup required to legally operate a trucking business in the United States.",
-//           "Without complete MC DOT setup, carriers cannot activate authority, book loads, or receive payments.",
-//           "E Truck Dispatching uses a proprietary MC DOT Activation System to manage registration, compliance validation, and authority activation, ensuring faster approval, zero filing errors, and uninterrupted operations.",
-//         ]}
-//         backgroundImage="/MC DOT Setup/images/1_rectangle_1450.webp"
-//         backgroundAlt="Dispatch specialists completing MC DOT setup and compliance paperwork"
-//       />
-
-//       <div className="bg-[#1c1c1c] py-12 lg:py-20">
-//         <RevenuePanelSection
-//           heading=""
-//           description=""
-//           groups={[
-//             {
-//               title: "Why MC DOT Compliance Matters",
-//               intro: [
-//                 "MC DOT compliance affects a carrier’s ability to operate and generate revenue.",
-//                 "Non-compliance results in:",
-//               ],
-//               items: [
-//                 "Authority rejection or deactivation",
-//                 "Inability to book loads through brokers",
-//                 "FMCSA penalties and enforcement actions",
-//                 "Increased audit risk and operational shutdown",
-//               ],
-//               footer: "Accurate MC DOT setup ensures compliance and operations.",
-//             },
-//             {
-//               title: "What MC DOT Includes",
-//               intro: ["MC DOT services cover all required components:"],
-//               items: [
-//                 "USDOT number registration",
-//                 "MC authority application",
-//                 "BOC-3 filing",
-//                 "UCR registration",
-//                 "Insurance filing (BMC-91/BMC-91X)",
-//                 "Compliance setup",
-//               ],
-//               footer: "Each component must align before authority becomes active.",
-//             },
-//             {
-//               title: "Definition of MC DOT Services",
-//               intro: [
-//                 "MC DOT services refer to the FMCSA-required setup and compliance process that allows carriers to legally operate and transport freight for hire.",
-//                 "This includes authority registration, insurance compliance, and regulatory validation required before operations begin.",
-//               ],
-//             },
-//           ]}
-//           image="/MC DOT Setup/images/4_rectangle_1558.webp"
-//           backgroundImage="/MC DOT Setup/icons/4_vector_3.svg"
-//         />
-//       </div>
-//         <SupportColumnsSection
-//         heading="What Is a Commercial Motor Vehicle (CMV)"
-//         intro="A Commercial Motor Vehicle (CMV) is a truck or vehicle used to transport goods or passengers for business purposes, typically defined by the Federal Motor Carrier Safety Administration as weighing over 10,001 lbs, carrying hazardous materials, or transporting multiple passengers."
-//         image="/images/cmv-driver.jpg"
-//         imageAlt="Driver checking commercial motor vehicle paperwork"
-//         cards={cmvCards}
-//       />
-//   );
-// }
 import type { Metadata } from "next";
 import HeroSection from "../components/HeroSection";
 import RevenuePanelSection from "../components/RevenuePanelSection";
@@ -513,25 +381,26 @@ const mcSetupStats: Stat[] = [
 export default function McSetupPage() {
   return (
     <main className="bg-[#1c1c1c]">
-      <HeroSection
-        h1={
-          <>
-            MC DOT Services: Complete
-            <br />
-            Setup &amp; Compliance
-          </>
-        }
-        paragraphs={[
-          "MC DOT services include USDOT registration, MC authority activation, BOC-3 filing, UCR registration, insurance compliance, and FMCSA regulatory setup required to legally operate a trucking business in the United States.",
-          "Without complete MC DOT setup, carriers cannot activate authority, book loads, or receive payments.",
-          "E Truck Dispatching uses a proprietary MC DOT Activation System to manage registration, compliance validation, and authority activation, ensuring faster approval, zero filing errors, and uninterrupted operations.",
-        ]}
-        backgroundImage="/MC DOT Setup/images/1_rectangle_1450.webp"
-        backgroundAlt="Dispatch specialists completing MC DOT setup and compliance paperwork"
-      />
-
-      <div className="bg-[#1c1c1c] py-12 lg:py-20">
-        <RevenuePanelSection
+      
+        <HeroSection
+          h1={
+            <>
+              MC DOT Services: Complete
+              <br />
+              Setup &amp; Compliance
+            </>
+          }
+          paragraphs={[
+            "MC DOT services include USDOT registration, MC authority activation, BOC-3 filing, UCR registration, insurance compliance, and FMCSA regulatory setup required to legally operate a trucking business in the United States.",
+            "Without complete MC DOT setup, carriers cannot activate authority, book loads, or receive payments.",
+            "E Truck Dispatching uses a proprietary MC DOT Activation System to manage registration, compliance validation, and authority activation, ensuring faster approval, zero filing errors, and uninterrupted operations.",
+          ]}
+          backgroundImage="/MC DOT Setup/images/1_rectangle_1450.webp"
+          backgroundAlt="Dispatch specialists completing MC DOT setup and compliance paperwork"
+        />
+     
+        <div className="bg-[#1c1c1c] py-12 lg:py-20">
+          <RevenuePanelSection
           heading="What Are MC DOT Services"
           description=""
           groups={[
@@ -574,9 +443,9 @@ export default function McSetupPage() {
           ]}
           image="/MC DOT Setup/images/4_rectangle_1558.webp"
           backgroundImage="/MC DOT Setup/icons/4_vector_3.svg"
-        />
-      </div>
-
+          />
+        </div>
+     
      <SupportColumnsSection
   heading="What Is a Commercial Motor Vehicle (CMV)"
   intro="A Commercial Motor Vehicle (CMV) is a truck or vehicle used to transport goods or passengers for business purposes, typically defined by the Federal Motor Carrier Safety Administration as weighing over 10,001 lbs, carrying hazardous materials, or transporting multiple passengers."
@@ -584,12 +453,14 @@ export default function McSetupPage() {
   imageAlt="Driver checking commercial motor vehicle paperwork"
   cards={cmvCards}
 />
+     
        <ComparisonTableSection
         heading="MC vs DOT - Key Differences"
         tableTitle="USDOT vs MC Authority Comparison"
         columns={mcDotColumns}
         rows={mcDotRows}
       />
+      
        <ActivationSystemSection
       heading={
         <>
@@ -603,7 +474,8 @@ export default function McSetupPage() {
       image="/MC DOT Setup/images/6_rectangle_1426.webp"
       imageAlt="Carrier standing beside a truck during MC DOT activation setup"
     />
-    <br/>
+     
+      
       <ComplianceMatrixSection
       heading="MC DOT Setup Requirements"
       description="Before applying for MC DOT authority, carriers must meet specific legal, operational, and compliance prerequisites defined by FMCSA. Missing any requirement delays approval or results in application rejection."
@@ -611,6 +483,7 @@ export default function McSetupPage() {
       image="/MC DOT Setup/images/7_rectangle_1560.webp"
       imageAlt="Two trucking professionals completing MC DOT setup requirements"
     />
+     
       <HowWeWork
         heading={
           <>
@@ -623,12 +496,14 @@ export default function McSetupPage() {
         imageAlt="Carrier holding a package after completing dispatch setup"
         steps={carrierResultSteps}
       />
+      
       <VisionFormSection
         heading="E Truck Dispatching"
         paragraphs={visionParagraphs}
         fields={formFields}
         compactBottom
       />
+     
       <ComparisonTableSection
         heading=""
         tableTitle="MC DOT Registration Process Summary"
@@ -636,6 +511,7 @@ export default function McSetupPage() {
         rows={setupRequirementRows}
         compactTop
       />
+      
       <FAQs
         heading="Frequently Asked Questions"
         description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
@@ -643,6 +519,7 @@ export default function McSetupPage() {
         imageAlt="Dispatcher answering carrier questions in a warehouse"
         faqs={mcSetupFaqs}
       />
+      
       <QuestionStats
         heading="Still Have Questions?"
         description="Our billing experts are here to help. Get in touch for a free consultation."
@@ -650,6 +527,7 @@ export default function McSetupPage() {
         buttonHref="/contact"
         stats={mcSetupStats}
       />
+      
     </main>
   );
 }

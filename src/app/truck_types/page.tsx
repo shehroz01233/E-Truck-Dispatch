@@ -4,13 +4,12 @@ import VisionFormSection from "@/app/components/VisionFormSection";
 import TrustDeliverySection, {
   type TrustDeliveryCard,
 } from "@/app/components/TrustDeliverySection";
+
 import BenefitsGridSection from "@/app/components/BenefitsGridSection";
 import RevenueSystemSection, {
   type RevenueSystemCard,
 } from "@/app/components/RevenueSystemSection";
-import ResultsCarriersSection, {
-  type CarrierResultStep,
-} from "@/app/components/ResultsCarriersSection";
+import HowWeWork from "@/app/components/HowWeWork";
 import BrokerNetworkSection, {
   type BrokerNetworkFeature,
 } from "@/app/components/BrokerNetworkSection";
@@ -174,7 +173,7 @@ const revenueSystemCards: RevenueSystemCard[] = [
   },
 ];
 
-const carrierResultSteps: CarrierResultStep[] = [
+const carrierResultSteps = [
   {
     title: "More Consistent Earnings Across Preferred Lanes",
     description:
@@ -189,6 +188,21 @@ const carrierResultSteps: CarrierResultStep[] = [
     title: "Faster Payments With Clean and Accurate Documentation",
     description:
       "Error-free paperwork and complete submissions accelerate broker payments and reduce delays.",
+  },
+  {
+    title: "Stronger Rate Negotiation on Every Load",
+    description:
+      "Dispatchers compare lane demand, broker behavior, and market timing before negotiating so carriers avoid weak-paying freight.",
+  },
+  {
+    title: "Better Route Planning With Fewer Delays",
+    description:
+      "Pickup windows, delivery appointments, and reload options are reviewed early to keep trucks moving through cleaner routes.",
+  },
+  {
+    title: "More Time for Drivers to Focus on the Road",
+    description:
+      "Broker calls, load updates, rate confirmations, and document follow-up are handled by dispatch support during active operations.",
   },
 ];
 
@@ -283,6 +297,7 @@ return (
   backgroundImage="/Truck Types/images/1_rectangle_1450.webp"
   backgroundAlt="Types of trucks we dispatch"
 />
+
 <EquipmentShowcaseSection
   heading="Types of Trucks We Dispatch"
   names={truckTypeNames}
@@ -291,6 +306,7 @@ return (
   imageHeights={truckTypeImageHeights}
   columns={truckTypeColumns}
 />
+ 
 <VisionFormSection
   heading={
     <>
@@ -305,6 +321,7 @@ return (
   fields={dispatchFormFields}
   compactBottom
 />
+ 
 <TrustDeliverySection
   heading={
     <>
@@ -321,6 +338,7 @@ return (
   description="Start dispatching with a dedicated dispatcher in a structured, step-by-step onboarding process designed for speed and zero confusion."
   benefits={getStartedDispatchBenefits}
 />
+
 <RevenueSystemSection
   cards={revenueSystemCards}
   cta={{
@@ -333,7 +351,8 @@ return (
     backgroundAlt: "Revenue optimization background shape",
   }}
 />
-<ResultsCarriersSection
+
+<HowWeWork
   heading={
     <>
       Results Carriers Achieve
@@ -345,6 +364,7 @@ return (
   imageAlt="Carrier checking packages after dispatch setup"
   steps={carrierResultSteps}
 />
+
 <div className="bg-[#1c1c1c]">
   <BrokerNetworkSection
     heading={
@@ -368,6 +388,7 @@ return (
     features={brokerNetworkFeatures}
   />
 </div>
+ 
 <FAQs
   heading="Frequently Asked Questions"
   description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
@@ -375,6 +396,7 @@ return (
   imageAlt="Dispatcher answering carrier questions in a warehouse"
   faqs={truckTypesFaqs}
 />
+
 <QuestionStats
   heading="Still Have Questions?"
   description="Our billing experts are here to help. Get in touch for a free consultation."
@@ -382,7 +404,6 @@ return (
   buttonHref="/contact"
   stats={truckTypesStats}
 />
-
 
 </main>
 );    
