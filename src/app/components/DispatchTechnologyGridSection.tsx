@@ -1,5 +1,6 @@
 import Image, { type StaticImageData } from "next/image";
 import type { ReactNode } from "react";
+
 export type DispatchTechnologyCard = {
   title: string;
   description?: string;
@@ -8,61 +9,111 @@ export type DispatchTechnologyCard = {
   iconSrc?: string | StaticImageData;
   iconAlt?: string;
 };
+
 type DispatchTechnologyGridSectionProps = {
   heading: ReactNode;
   image: string | StaticImageData;
   imageAlt: string;
   cards: DispatchTechnologyCard[];
 };
+
 export default function DispatchTechnologyGridSection({
   heading,
   image,
   imageAlt,
-  cards
+  cards,
 }: DispatchTechnologyGridSectionProps) {
-  const positions = ["lg:col-start-1 lg:row-start-1", "lg:col-start-3 lg:row-start-1", "lg:col-start-1 lg:row-start-2", "lg:col-start-3 lg:row-start-2"];
-  return <section className="bg-[#1c1c1c] px-5 py-12 text-white sm:px-8 lg:py-[3.125rem]">
+  const positions = [
+    "lg:col-start-1 lg:row-start-1",
+    "lg:col-start-3 lg:row-start-1",
+    "lg:col-start-1 lg:row-start-2",
+    "lg:col-start-3 lg:row-start-2",
+  ];
+
+  return (
+    <section className="bg-[#1c1c1c] px-5 py-12 text-white sm:px-8 lg:py-[3.125rem]">
       <div className="mx-auto grid max-w-[97.5rem] gap-5 md:grid-cols-2 lg:grid-cols-[minmax(0,23.08fr)_minmax(0,48.72fr)_minmax(0,23.08fr)] lg:grid-rows-[minmax(20rem,auto)_minmax(20rem,auto)] lg:gap-x-5 lg:gap-y-[3.4375rem]">
         <div className="relative min-h-[36rem] overflow-hidden bg-[#161616] md:col-span-2 lg:col-span-1 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:min-h-0">
-          <div aria-hidden="true" className="absolute inset-0 bg-[radial-gradient(circle_at_52%_56%,rgba(179,75,12,0.22),transparent_56%)]" />
-          
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[radial-gradient(circle_at_52%_56%,rgba(179,75,12,0.22),transparent_56%)]"
+          />
 
           <h2 className="relative z-10 max-w-none px-7 pt-8 font-outfit text-3xl font-bold leading-[1.12] sm:px-12 sm:pt-12 sm:text-4xl lg:text-[2.75rem]">
             {heading}
           </h2>
 
           <div className="absolute inset-x-4 bottom-5 top-[9.5rem] sm:inset-x-8 sm:bottom-8 sm:top-[10.5rem]">
-            <Image src={image} alt={imageAlt} fill sizes="(min-width: 1280px) 48rem, 92vw" className="object-contain object-center" />
-            
+            <Image
+              src={image}
+              alt={imageAlt}
+              fill
+              sizes="(min-width: 1280px) 48rem, 92vw"
+              className="object-contain object-center"
+            />
           </div>
         </div>
 
-        {cards.map((card, index) => <article key={card.title} className={`min-h-[20rem] bg-[#161616] p-5 sm:p-6 lg:min-h-[20rem] ${positions[index] ?? ""}`}>
-          
+        {cards.map((card, index) => (
+          <article
+            key={card.title}
+            className={`min-h-[20rem] bg-[#161616] p-5 sm:p-6 lg:min-h-[20rem] ${
+              positions[index] ?? ""
+            }`}
+          >
             <span className="flex h-16 w-16 items-center justify-center bg-[#b34b0c]/20 text-[#b34b0c]">
-              {card.icon ? card.icon : card.iconSrc ? <Image src={card.iconSrc} alt={card.iconAlt ?? ""} width={42} height={42} className="h-10 w-10 object-contain" /> : <TechnologyIcon />}
+              {card.icon ? (
+                card.icon
+              ) : card.iconSrc ? (
+                <Image
+                  src={card.iconSrc}
+                  alt={card.iconAlt ?? ""}
+                  width={42}
+                  height={42}
+                  className="h-10 w-10 object-contain"
+                />
+              ) : (
+                <TechnologyIcon />
+              )}
             </span>
 
             <h3 className="mt-5 max-w-[18rem] font-outfit text-xl font-semibold leading-tight">
               {card.title}
             </h3>
 
-            {card.bullets?.length ? <ul className="mt-3 space-y-2 font-dm-sans text-sm leading-[1.3] text-white/85">
-                {card.bullets.map(item => <li key={item} className="flex gap-3">
+            {card.bullets?.length ? (
+              <ul className="mt-3 space-y-2 font-dm-sans text-sm leading-[1.3] text-white/85">
+                {card.bullets.map((item) => (
+                  <li key={item} className="flex gap-3">
                     <span className="mt-[0.42rem] h-1.5 w-1.5 shrink-0 rounded-full bg-[#b34b0c]" />
                     <span>{item}</span>
-                  </li>)}
-              </ul> : card.description ? <p className="mt-4 font-dm-sans text-sm leading-[1.45] text-white/85">
+                  </li>
+                ))}
+              </ul>
+            ) : card.description ? (
+              <p className="mt-4 font-dm-sans text-sm leading-[1.45] text-white/85">
                 {card.description}
-              </p> : null}
-          </article>)}
+              </p>
+            ) : null}
+          </article>
+        ))}
       </div>
-    </section>;
+    </section>
+  );
 }
+
 function TechnologyIcon() {
-  return <svg aria-hidden="true" viewBox="0 0 32 32" className="h-10 w-10 fill-none stroke-current" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      
+  return (
+    <svg
+      aria-hidden="true"
+      viewBox="0 0 32 32"
+      className="h-10 w-10 fill-none stroke-current"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
       <circle cx="16" cy="16" r="5" />
       <path d="M16 3v4M16 25v4M3 16h4M25 16h4M7 7l3 3M22 22l3 3M25 7l-3 3M10 22l-3 3" />
-    </svg>;
+    </svg>
+  );
 }

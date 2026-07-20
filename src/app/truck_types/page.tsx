@@ -319,7 +319,6 @@ return (
   }
   paragraphs={dispatchVisionParagraphs}
   fields={dispatchFormFields}
-  compactBottom
 />
  
 <TrustDeliverySection
