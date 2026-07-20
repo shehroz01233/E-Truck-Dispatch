@@ -1,45 +1,97 @@
-// import type { ReactNode } from "react";
+// // import type { ReactNode } from "react";
 
+// // export type DispatchAudience = {
+// //   title: string;
+// //   description: string;
+// // };
+
+// // type DispatchAudienceSectionProps = {
+// //   heading: ReactNode;
+// //   audiences: DispatchAudience[];
+// // };
+
+// // export default function DispatchAudienceSection({
+// //   heading,
+// //   audiences,
+// // }: DispatchAudienceSectionProps) {
+// //   return (
+// //     <section className="bg-[#1c1c1c] px-5 py-14 text-white sm:px-8 lg:py-20">
+// //       <div className="mx-auto max-w-[97.5rem]">
+// //         <h2 className="mx-auto max-w-[44rem] text-center font-outfit text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-[2.75rem]">
+// //           {heading}
+// //         </h2>
+
+// //         <div className="mt-12 grid gap-6 md:grid-cols-3">
+// //           {audiences.map((audience) => (
+// //             <article
+// //               key={audience.title}
+// //               className="min-h-[13.25rem] bg-[#c04d08] p-6 sm:p-8 lg:p-10"
+// //             >
+// //               <h3 className="font-outfit text-lg font-semibold leading-tight">
+// //                 {audience.title}
+// //               </h3>
+// //               <p className="mt-6 font-dm-sans text-sm leading-6 text-white/95">
+// //                 {audience.description}
+// //               </p>
+// //             </article>
+// //           ))}
+// //         </div>
+// //       </div>
+// //     </section>
+// //   );
+// // }
+// import type { ReactNode } from "react";
 // export type DispatchAudience = {
 //   title: string;
 //   description: string;
 // };
-
 // type DispatchAudienceSectionProps = {
 //   heading: ReactNode;
 //   audiences: DispatchAudience[];
 // };
-
 // export default function DispatchAudienceSection({
 //   heading,
-//   audiences,
+//   audiences
 // }: DispatchAudienceSectionProps) {
-//   return (
-//     <section className="bg-[#1c1c1c] px-5 py-14 text-white sm:px-8 lg:py-20">
-//       <div className="mx-auto max-w-[97.5rem]">
-//         <h2 className="mx-auto max-w-[44rem] text-center font-outfit text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-[2.75rem]">
+//   const remainder = audiences.length % 3;
+//   const lastRowStartIndex = remainder === 0 ? audiences.length : audiences.length - remainder;
+//   const getCardPosition = (index: number) => {
+//     if (index !== lastRowStartIndex) {
+//       return "";
+//     }
+
+//     // Center one card in the final row
+//     if (remainder === 1) {
+//       return "md:col-start-3";
+//     }
+
+//     // Center two cards in the final row
+//     if (remainder === 2) {
+//       return "md:col-start-2";
+//     }
+//     return "";
+//   };
+//   return <section className="bg-[#1c1c1c] px-5 py-14 text-white sm:px-8 lg:py-20">
+//       <div className="mx-auto w-full max-w-[76rem]">
+//         <h2 className="mx-auto max-w-[44rem] text-center font-['Outfit'] text-3xl font-bold leading-[1.15] text-white sm:text-4xl lg:text-[2.75rem]">
 //           {heading}
 //         </h2>
 
-//         <div className="mt-12 grid gap-6 md:grid-cols-3">
-//           {audiences.map((audience) => (
-//             <article
-//               key={audience.title}
-//               className="min-h-[13.25rem] bg-[#c04d08] p-6 sm:p-8 lg:p-10"
-//             >
-//               <h3 className="font-outfit text-lg font-semibold leading-tight">
+//         <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-6 lg:mt-12 lg:gap-6">
+//           {audiences.map((audience, index) => <article key={audience.title} className={`min-h-[10.25rem] bg-[#c04d08] p-6 md:col-span-2 lg:p-8 ${getCardPosition(index)}`}>
+//               <h3 className="font-['Outfit'] text-lg font-semibold leading-tight text-white">
 //                 {audience.title}
 //               </h3>
-//               <p className="mt-6 font-dm-sans text-sm leading-6 text-white/95">
+
+//               <p className="mt-5 font-['DM_Sans'] text-sm leading-6 text-white/95">
 //                 {audience.description}
 //               </p>
-//             </article>
-//           ))}
+//             </article>)}
 //         </div>
 //       </div>
-//     </section>
-//   );
+//     </section>;
 // }
+
 import type { ReactNode } from "react";
 
 export type DispatchAudience = {
@@ -57,6 +109,7 @@ export default function DispatchAudienceSection({
   audiences,
 }: DispatchAudienceSectionProps) {
   const remainder = audiences.length % 3;
+
   const lastRowStartIndex =
     remainder === 0 ? audiences.length : audiences.length - remainder;
 
@@ -79,25 +132,25 @@ export default function DispatchAudienceSection({
   };
 
   return (
-    <section className="bg-[#1c1c1c] px-5 py-14 text-white sm:px-8 lg:py-20">
-      <div className="mx-auto w-full max-w-[76rem]">
-        <h2 className="mx-auto max-w-[44rem] text-center font-['Outfit'] text-3xl font-bold leading-[1.15] text-white sm:text-4xl lg:text-[2.75rem]">
+    <section className="w-full bg-[#1c1c1c] py-16 text-white">
+      <div className="mx-auto w-[calc(100%-40px)] max-w-[1560px] sm:w-[calc(100%-64px)]">
+        <h2 className="mx-auto w-full max-w-[855px] text-center font-['Outfit'] text-3xl font-bold leading-[1.15] text-white sm:text-4xl lg:text-5xl">
           {heading}
         </h2>
 
-        <div className="mt-10 grid grid-cols-1 gap-5 md:grid-cols-6 lg:mt-12 lg:gap-6">
+        <div className="mt-12 grid w-full grid-cols-1 gap-5 md:grid-cols-6 lg:mt-16 lg:gap-[30px]">
           {audiences.map((audience, index) => (
             <article
               key={audience.title}
-              className={`min-h-[10.25rem] bg-[#c04d08] p-6 md:col-span-2 lg:p-8 ${getCardPosition(
+              className={`flex min-h-52 flex-col items-start justify-start gap-5 bg-[#b34b0c] px-6 pb-8 pt-8 md:col-span-2 lg:px-10 lg:pt-10 ${getCardPosition(
                 index,
               )}`}
             >
-              <h3 className="font-['Outfit'] text-lg font-semibold leading-tight text-white">
+              <h3 className="w-full font-['Outfit'] text-lg font-semibold leading-[1.4] text-white lg:text-xl lg:leading-10">
                 {audience.title}
               </h3>
 
-              <p className="mt-5 font-['DM_Sans'] text-sm leading-6 text-white/95">
+              <p className="w-full font-['DM_Sans'] text-sm font-normal leading-6 text-white lg:text-base">
                 {audience.description}
               </p>
             </article>

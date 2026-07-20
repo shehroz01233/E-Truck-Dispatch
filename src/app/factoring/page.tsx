@@ -864,6 +864,7 @@ export default function Factoring() {
     
         <ComparisonTableSection
       heading="Freight Types Supported"
+      description="E-Truck Dispatching supports multiple freight categories and equipment types across regional and long-haul operations."
       tableTitle=""
       columns={freightTypesSupportedColumns}
       rows={freightTypesSupportedRows}

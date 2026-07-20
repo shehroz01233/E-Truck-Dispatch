@@ -337,6 +337,8 @@ return (
   heading="Get Started in Minutes"
   description="Start dispatching with a dedicated dispatcher in a structured, step-by-step onboarding process designed for speed and zero confusion."
   benefits={getStartedDispatchBenefits}
+   buttonLabel="Start Trucking Dispatch"
+  buttonHref="/contact"
 />
 
 <RevenueSystemSection

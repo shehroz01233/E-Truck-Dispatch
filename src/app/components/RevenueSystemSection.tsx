@@ -1,10 +1,8 @@
 "use client";
 
-import { motion, useReducedMotion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
-
 export type RevenueSystemCard = {
   title: string;
   description: string;
@@ -15,7 +13,6 @@ export type RevenueSystemCard = {
   imageAlt?: string;
   logoAlt?: string;
 };
-
 type RevenueSystemCta = {
   heading: ReactNode;
   description: string;
@@ -24,61 +21,35 @@ type RevenueSystemCta = {
   backgroundImage?: string;
   backgroundAlt?: string;
 };
-
 type RevenueSystemSectionProps = {
   cards: RevenueSystemCard[];
   cta: RevenueSystemCta;
 };
-
 export default function RevenueSystemSection({
   cards,
-  cta,
+  cta
 }: RevenueSystemSectionProps) {
-  const shouldReduceMotion = useReducedMotion();
-
-  return (
-    <section className="bg-[#1c1c1c] py-10 text-white">
-      <div className="mx-auto grid w-[calc(100%-40px)] max-w-[97.5rem] gap-4 sm:w-[calc(100%-64px)] lg:h-[24.75rem] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
+  return <section className="bg-[#1c1c1c] py-10 text-white">
+      <div className="mx-auto grid w-[calc(100%-40px)] max-w-[97.5rem] gap-4 sm:w-[calc(100%-64px)] lg:min-h-[24.75rem] lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
         <div className="grid gap-4 sm:grid-cols-2 lg:h-full">
           {cards.map((card, index) => {
-            const iconPath = card.iconSrc || card.imageSrc || card.logoSrc || "";
+          const iconPath = card.iconSrc || card.imageSrc || card.logoSrc || "";
+          const iconAlt = card.iconAlt || card.imageAlt || card.logoAlt || `${card.title} icon`;
+          return <article key={`${card.title}-${index}`} className="group/revenue-card relative min-h-[10.5rem] overflow-hidden bg-[#171717] p-4 lg:min-h-0">
 
-            const iconAlt =
-              card.iconAlt ||
-              card.imageAlt ||
-              card.logoAlt ||
-              `${card.title} icon`;
 
-            return (
-              <motion.article
-                key={`${card.title}-${index}`}
-                className="group/revenue-card relative min-h-[10.5rem] overflow-hidden bg-[#171717] p-4 lg:min-h-0"
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 28 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-                viewport={{ once: true, amount: 0.3 }}
-                transition={{
-                  duration: shouldReduceMotion ? 0 : 0.52,
-                  delay: shouldReduceMotion ? 0 : index * 0.07,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <span
-                  aria-hidden="true"
-                  className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[#b34b0c] transition-transform duration-500 group-hover/revenue-card:scale-x-100"
-                />
+
+
+
+
+
+
+
+                
+                <span aria-hidden="true" className="pointer-events-none absolute inset-x-0 top-0 h-px origin-left scale-x-0 bg-[#b34b0c]   group-hover/revenue-card:scale-x-100" />
+                
                 <span className="flex h-9 w-9 items-center justify-center bg-[#b34b0c]/20 text-[#b34b0c]">
-                  {iconPath ? (
-                    <Image
-                      src={iconPath}
-                      alt={iconAlt}
-                      width={30}
-                      height={30}
-                      className="h-5 w-5 object-contain"
-                    />
-                  ) : (
-                    <span className="text-xl">✓</span>
-                  )}
+                  {iconPath ? <Image src={iconPath} alt={iconAlt} width={30} height={30} className="h-5 w-5 object-contain" /> : <span className="text-xl">✓</span>}
                 </span>
 
                 <h3 className="mt-4 min-h-[2.25rem] font-['Outfit'] text-[0.875rem] font-semibold leading-tight text-white">
@@ -88,40 +59,28 @@ export default function RevenueSystemSection({
                 <p className="mt-3 min-h-[3rem] font-['DM_Sans'] text-[0.6875rem] leading-[1.45] text-white/75">
                   {card.description}
                 </p>
-              </motion.article>
-            );
-          })}
+              </article>;
+        })}
         </div>
 
-        <motion.article
-          className="group/revenue-cta relative flex min-h-[22rem] overflow-hidden bg-[#171717] p-7 sm:p-8 lg:min-h-full"
-          initial={shouldReduceMotion ? false : { opacity: 0, x: 42 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.28 }}
-          transition={{
-            duration: shouldReduceMotion ? 0 : 0.72,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-        >
-          <span
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-y-0 left-[-35%] z-20 w-[22%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-[#b34b0c]/30 to-transparent opacity-0 blur-[1px] transition-[left,opacity] duration-700 ease-out group-hover/revenue-cta:left-[115%] group-hover/revenue-cta:opacity-100"
-          />
-          {cta.backgroundImage ? (
-            <motion.div
-              className="absolute inset-0"
-              animate={shouldReduceMotion ? undefined : { scale: [1, 1.03, 1] }}
-              transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            >
-              <Image
-                src={cta.backgroundImage}
-                alt={cta.backgroundAlt || ""}
-                fill
-                sizes="(max-width: 1024px) 100vw, 48vw"
-                className="object-contain object-center"
-              />
-            </motion.div>
-          ) : null}
+        <article className="group/revenue-cta relative flex min-h-[22rem] overflow-hidden bg-[#171717] p-7 sm:p-8 lg:min-h-full">
+
+
+
+
+
+
+
+          
+          <span aria-hidden="true" className="pointer-events-none absolute inset-y-0 left-[-35%] z-20 w-[22%] skew-x-[-18deg] bg-gradient-to-r from-transparent via-[#b34b0c]/30 to-transparent opacity-0 blur-[1px]    group-hover/revenue-cta:left-[115%] group-hover/revenue-cta:opacity-100" />
+          
+          {cta.backgroundImage ? <div className="absolute inset-0">
+
+
+            
+              <Image src={cta.backgroundImage} alt={cta.backgroundAlt || ""} fill sizes="(max-width: 1024px) 100vw, 48vw" className="object-contain object-center" />
+            
+            </div> : null}
 
           <div className="absolute inset-0 bg-gradient-to-br from-[#171717]/70 via-[#171717]/55 to-[#171717]/20" />
 
@@ -134,15 +93,12 @@ export default function RevenueSystemSection({
               {cta.description}
             </p>
 
-            <Link
-              href={cta.buttonHref}
-              className="mt-5 inline-flex h-8 items-center justify-center bg-[#b34b0c] px-4 font-['Outfit'] text-[0.6875rem] font-semibold text-white hover:bg-[#cf5a13]"
-            >
+            <Link href={cta.buttonHref} className="mt-5 inline-flex min-h-8 items-center justify-center bg-[#b34b0c] px-4 py-1 font-['Outfit'] text-[0.6875rem] font-semibold text-white hover:bg-[#cf5a13]">
+              
               {cta.buttonText}
             </Link>
           </div>
-        </motion.article>
+        </article>
       </div>
-    </section>
-  );
+    </section>;
 }

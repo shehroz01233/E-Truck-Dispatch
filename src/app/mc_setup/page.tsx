@@ -143,7 +143,7 @@ const activationCards: ActivationCard[] = [
       },
       {
         highlight: "Owner-operators:",
-        text: " transition to independent authority",
+        text: "  to independent authority",
       },
       {
         highlight: "Existing carriers:",

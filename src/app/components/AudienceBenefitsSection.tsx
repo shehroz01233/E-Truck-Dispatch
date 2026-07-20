@@ -43,7 +43,7 @@ export default function AudienceBenefitsSection({
       )}
 
       <h2
-        className={`${hasAudiences ? "mt-20" : ""} text-center text-4xl font-bold sm:text-5xl`}
+        className={`${hasAudiences ? "mt-20" : ""} mx-auto max-w-[42rem] text-center font-['Outfit'] text-4xl font-bold leading-[1.15] text-white sm:text-5xl`}
       >
         {heading}
       </h2>

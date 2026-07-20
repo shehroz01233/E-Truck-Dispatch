@@ -1,10 +1,8 @@
-"use client";
-
-import { motion, useReducedMotion } from "framer-motion";
 import Image, { type StaticImageData } from "next/image";
+import Link from "next/link";
 import type { ReactNode } from "react";
 
-type Benefit = {
+export type Benefit = {
   title: string;
   description?: string;
   icon?: ReactNode;
@@ -16,170 +14,47 @@ type Props = {
   heading: ReactNode;
   description?: string;
   benefits: (string | Benefit)[];
-  variant?: "grid" | "steps" | "text-grid";
+
+  // Optional CTA button
+  buttonLabel?: string;
+  buttonHref?: string;
 };
 
 export default function BenefitsGridSection({
   heading,
   description,
   benefits,
-  variant = "grid",
+  buttonLabel,
+  buttonHref,
 }: Props) {
-  const shouldReduceMotion = useReducedMotion();
-
-  if (variant === "steps") {
-    return (
-      <section className="bg-[#1c1c1c] px-5 pb-16 pt-8 text-white sm:px-8 lg:pb-20 lg:pt-10">
-        <div className="mx-auto max-w-[97.5rem]">
-          <motion.h2
-            className="mx-auto max-w-[44rem] text-center font-outfit text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-[2.75rem]"
-            initial={shouldReduceMotion ? false : { opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.62, ease: [0.22, 1, 0.36, 1] }}
-          >
-            {heading}
-          </motion.h2>
-
-          {description && (
-            <p className="mx-auto mt-5 max-w-[38rem] text-center text-sm leading-6 text-white/75">
-              {description}
-            </p>
-          )}
-
-          <ul className="mt-12 grid gap-y-8 sm:grid-cols-2 xl:grid-cols-4 xl:gap-y-0">
-            {benefits.map((benefit, index) => {
-              const isString = typeof benefit === "string";
-              const title = isString ? benefit : benefit.title;
-              const icon = isString ? null : benefit.icon;
-              const iconSrc = isString ? null : benefit.iconSrc;
-              const iconAlt = isString ? "" : benefit.iconAlt || "";
-
-              return (
-                <motion.li
-                  key={`${title}-${index}`}
-                  className="group/benefit-card flex min-h-20 items-center gap-5 px-2 sm:px-5 xl:border-l xl:border-white/20 xl:first:border-l-0"
-                  initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-                  viewport={{ once: true, amount: 0.35 }}
-                  transition={{
-                    duration: shouldReduceMotion ? 0 : 0.48,
-                    delay: shouldReduceMotion ? 0 : index * 0.05,
-                    ease: [0.22, 1, 0.36, 1],
-                  }}
-                >
-                  <span className="shrink-0 text-[#c9520b] transition-transform duration-300 group-hover/benefit-card:scale-110">
-                    {iconSrc ? (
-                      <Image
-                        src={iconSrc}
-                        alt={iconAlt}
-                        width={70}
-                        height={70}
-                        className="size-16 object-contain"
-                      />
-                    ) : icon ? (
-                      <span className="flex size-16 items-center justify-center [&_svg]:size-16">
-                        {icon}
-                      </span>
-                    ) : (
-                      <span className="flex size-16 items-center justify-center text-2xl">
-                        ✓
-                      </span>
-                    )}
-                  </span>
-
-                  <p className="min-h-10 font-dm-sans text-sm leading-5 text-white/90">
-                    {title}
-                  </p>
-                </motion.li>
-              );
-            })}
-          </ul>
-        </div>
-      </section>
-    );
-  }
-
-  if (variant === "text-grid") {
-    return (
-      <section className="py-12 text-white">
-        <div className="mx-auto grid w-[calc(100%-40px)] max-w-[1560px] gap-5 sm:w-[calc(100%-64px)] md:grid-cols-2 xl:grid-cols-3">
-          <motion.div
-            className="group/benefit-card flex min-h-60 flex-col justify-center bg-[#b34b0c] p-7 xl:p-8"
-            initial={shouldReduceMotion ? false : { opacity: 0, x: -28 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.35 }}
-            transition={{ duration: shouldReduceMotion ? 0 : 0.62, ease: [0.22, 1, 0.36, 1] }}
-          >
-            <h2 className="text-[clamp(1.75rem,2.4vw,3rem)] font-bold leading-[1.16]">
-              {heading}
-            </h2>
-
-            {description && (
-              <p className="mt-7 max-w-[22rem] text-[0.875rem] font-medium leading-6 text-white/90">
-                {description}
-              </p>
-            )}
-          </motion.div>
-
-          {benefits.map((benefit, index) => {
-            const isString = typeof benefit === "string";
-            const title = isString ? benefit : benefit.title;
-            const benefitDescription = isString ? "" : benefit.description;
-
-            return (
-              <motion.article
-                key={`${title}-${index}`}
-                className="group/benefit-card min-h-60 bg-[#171717] p-7 xl:p-8"
-                initial={shouldReduceMotion ? false : { opacity: 0, y: 26 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-                viewport={{ once: true, amount: 0.35 }}
-                transition={{
-                  duration: shouldReduceMotion ? 0 : 0.5,
-                  delay: shouldReduceMotion ? 0 : index * 0.05,
-                  ease: [0.22, 1, 0.36, 1],
-                }}
-              >
-                <h3 className="min-h-[3.5rem] font-outfit text-xl font-semibold leading-tight">
-                  {title}
-                </h3>
-
-                {benefitDescription && (
-                  <p className="mt-6 min-h-24 font-dm-sans text-sm leading-6 text-white/75">
-                    {benefitDescription}
-                  </p>
-                )}
-              </motion.article>
-            );
-          })}
-        </div>
-      </section>
-    );
-  }
+  const showButton = Boolean(buttonLabel && buttonHref);
 
   return (
     <section className="py-12 text-white">
       <div className="mx-auto grid w-[calc(100%-40px)] max-w-[1560px] gap-3 sm:w-[calc(100%-64px)] md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-2">
-        <motion.div
-          className="group/benefit-card flex min-h-96 flex-col justify-center overflow-hidden bg-[#b34b0c] p-7 xl:row-span-2 xl:p-8"
-          initial={shouldReduceMotion ? false : { opacity: 0, x: -32 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: shouldReduceMotion ? 0 : 0.64, ease: [0.22, 1, 0.36, 1] }}
-        >
-          <h2 className="text-[clamp(1.65rem,2vw,2rem)] font-bold leading-[1.18]">
-            {heading}
-          </h2>
+        {/* Heading card */}
+       <div className="flex min-h-96 flex-col justify-center overflow-hidden bg-[#b34b0c] p-7 xl:row-span-2 xl:p-8">
+  <h2 className="text-[clamp(1.65rem,2vw,2rem)] font-bold leading-[1.18]">
+    {heading}
+  </h2>
 
-          {description && (
-            <p className="mt-7 max-w-[18rem] text-[0.875rem] font-medium leading-5 text-white/90">
-              {description}
-            </p>
-          )}
-        </motion.div>
+  {description ? (
+    <p className="mt-7 max-w-[18rem] text-[0.875rem] font-medium leading-5 text-white/90">
+      {description}
+    </p>
+  ) : null}
 
+  {buttonLabel && buttonHref ? (
+    <Link
+      href={buttonHref}
+      className="mt-6 inline-flex w-fit items-center justify-center bg-[#171717] px-5 py-3 font-['DM_Sans'] text-sm font-medium leading-none text-white transition-colors hover:bg-[#242424] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+    >
+      {buttonLabel}
+    </Link>
+  ) : null}
+</div>
+
+        {/* Benefit cards */}
         {benefits.map((benefit, index) => {
           const isString = typeof benefit === "string";
 
@@ -190,20 +65,11 @@ export default function BenefitsGridSection({
           const iconAlt = isString ? "" : benefit.iconAlt || "";
 
           return (
-            <motion.div
+            <article
               key={`${title}-${index}`}
-              className="group/benefit-card min-h-48 bg-[#171717] p-5"
-              initial={shouldReduceMotion ? false : { opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              whileHover={shouldReduceMotion ? undefined : { y: -4 }}
-              viewport={{ once: true, amount: 0.35 }}
-              transition={{
-                duration: shouldReduceMotion ? 0 : 0.48,
-                delay: shouldReduceMotion ? 0 : index * 0.05,
-                ease: [0.22, 1, 0.36, 1],
-              }}
+              className="min-h-48 bg-[#171717] p-5"
             >
-              <span className="flex h-14 w-14 items-center justify-center bg-[#b34b0c]/20 text-[#b34b0c] transition-transform duration-300 group-hover/benefit-card:scale-110">
+              <span className="flex h-14 w-14 items-center justify-center bg-[#b34b0c]/20 text-[#b34b0c]">
                 {iconSrc ? (
                   <Image
                     src={iconSrc}
@@ -221,16 +87,16 @@ export default function BenefitsGridSection({
                 )}
               </span>
 
-              <p className="mt-6 min-h-[3.25rem] text-lg font-medium leading-snug">
+              <h3 className="mt-6 text-lg font-medium leading-snug">
                 {title}
-              </p>
+              </h3>
 
-              {benefitDescription && (
-                <p className="mt-3 min-h-[4.5rem] text-sm leading-6 text-white/70">
+              {benefitDescription ? (
+                <p className="mt-3 text-sm leading-6 text-white/70">
                   {benefitDescription}
                 </p>
-              )}
-            </motion.div>
+              ) : null}
+            </article>
           );
         })}
       </div>

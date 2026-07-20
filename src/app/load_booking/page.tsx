@@ -254,7 +254,7 @@ const freightBenefits: FreightBenefit[] = [
 
 export default function LoadBookingPage() {
   return (
-    <main className="bg-[#1c1c1c]">
+    <div className="bg-[#1c1c1c]">
       <HeroSection
         h1={
           <>
@@ -426,6 +426,6 @@ export default function LoadBookingPage() {
         buttonHref="/contact"
         stats={loadBookingStats}
       />
-    </main>
+    </div>
   );
 }
