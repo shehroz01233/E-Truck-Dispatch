@@ -1,0 +1,49 @@
+WORK LOG - JULY 18, 2026
+
+1. Our Trucks section
+- Added dynamic background-image switching based on the active or hovered truck card.
+- Kept the original Dry Van background as the default and fallback image.
+- Connected Flatbed, Step Deck, Reefer, and Hotshot cards to their matching images in public/Home/images.
+- Added Box Truck Dispatch, Power Only Dispatch, and Conestoga Dispatch with matching images and complete descriptions.
+- Kept five cards visible on desktop and made the existing arrow navigation reveal the remaining truck categories.
+- Kept all truck categories available in the existing mobile and tablet grid.
+- Preserved the section's existing layout, spacing, colors, and interaction behavior.
+
+2.truck-card animation
+- Added a  scanning-light animation to active, focused, and hovered truck cards.
+- Added a subtle pulsing edge illumination and text glow.
+- Added reduced-motion accessibility support.
+- Preserved the original card dimensions, spacing, colors, and content layout.
+
+3. Text-responsive component improvements
+- Audited the website components for fixed content heights, hidden overflow, and text-wrapping risks.
+- Added project-wide overflow wrapping for headings, paragraphs, list items, links, buttons, labels, and spans.
+- Replaced rigid content heights with minimum heights where text needs room to grow.
+- Added safe vertical padding to buttons and form fields so multi-line text does not get clipped.
+- Removed text clipping from the Services Showcase content panels.
+- Improved text flexibility in the navbar, FAQ buttons, forms, truck cards, state CTA, blog CTA, revenue cards, and other content sections.
+- Updated the following files during this text-responsiveness pass:
+  * src/app/globals.css
+  * src/app/components/DemoRequestForm.tsx
+  * src/app/components/FAQs.tsx
+  * src/app/components/FreightTypesSection.tsx
+  * src/app/components/FrieghtStates.tsx
+  * src/app/components/Navbar.tsx
+  * src/app/components/OurTruck.tsx
+  * src/app/components/QuestionStats.tsx
+  * src/app/components/RevenuePanelSection.tsx
+  * src/app/components/RevenueSystemSection.tsx
+  * src/app/components/ServicesBlogSection.tsx
+  * src/app/components/ServicesShowcase.tsx
+  * src/app/components/VisionFormSection.tsx
+  * src/app/components/landingPage.tsx
+
+4. Typography review
+- Reviewed whether every component could use one identical font size without changing the UI/UX.
+- Confirmed that one universal font size would remove the visual hierarchy and change the design.
+- Identified role-based typography consistency as the safe approach: section headings, card titles, body text, buttons, and captions should each use consistent sizes within their own category.
+
+5. Validation
+- The full ESLint check completed with no errors.
+- Four existing unused-variable warnings remain in the factoring and refer-dispatch-service pages.
+- The production build was attempted but is currently blocked by an existing missing LeaseOnRevealSection component and unavailable Google Font requests.
