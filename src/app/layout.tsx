@@ -47,14 +47,14 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${outfit.variable} ${dmSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full bg-zinc-900">
-        <div className="relative min-h-full">
-          <Navbar />
-          {children}
-        </div>
+      <body className="min-h-full overflow-x-hidden bg-zinc-900">
+  <div className="relative min-h-full overflow-x-hidden">
+    <Navbar />
+    {children}
+  </div>
 
-        <Footer />
-      </body>
+  <Footer />
+</body>
     </html>
   );
 }

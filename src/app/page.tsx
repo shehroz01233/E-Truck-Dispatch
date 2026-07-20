@@ -1,7 +1,7 @@
-import Image from "next/image";
-
 export default function Home() {
   return (
-    <div>This is home page</div>
+    <main className="min-h-screen bg-zinc-900 pt-40 text-white">
+      This is home page
+    </main>
   );
 }
