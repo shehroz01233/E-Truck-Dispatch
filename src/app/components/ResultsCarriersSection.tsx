@@ -23,7 +23,7 @@ export default function ResultsCarriersSection({
 
       <div className="relative z-10 mx-auto grid w-full max-w-[97.5rem] gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(25rem,37.5rem)] lg:items-center xl:gap-16">
         <div className="relative min-h-[24rem] sm:min-h-[30rem] lg:min-h-[34rem]">
-          <Image src="/MC DOT Setup/icons/4_vector_3.svg" alt="" fill sizes="(max-width: 63.9375rem) 100vw, 50vw" className="object-contain object-left-center opacity-60" unoptimized />
+          <Image src="/icons/4_vector_3.svg" alt="" fill sizes="(max-width: 63.9375rem) 100vw, 50vw" className="object-contain object-left-center opacity-60" unoptimized />
           <Image src={image} alt={imageAlt} fill sizes="(max-width: 63.9375rem) 100vw, 48rem" className="z-10 object-contain object-center" />
         </div>
 

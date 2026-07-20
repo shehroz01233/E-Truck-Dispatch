@@ -442,7 +442,7 @@ export default function McSetupPage() {
             },
           ]}
           image="/MC DOT Setup/images/4_rectangle_1558.webp"
-          backgroundImage="/MC DOT Setup/icons/4_vector_3.svg"
+          backgroundImage="/icons/4_vector_3.svg"
           />
         </div>
      

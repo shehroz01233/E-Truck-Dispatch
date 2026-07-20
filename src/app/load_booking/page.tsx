@@ -308,7 +308,7 @@ export default function LoadBookingPage() {
           description="E-Truck Dispatching follows a structured dispatch workflow designed to improve operational speed and freight consistency."
           groups={processGroups}
           image="/load booking/images/18_rectangle_1556.webp"
-          backgroundImage="/load booking/icons/34_vector_3.svg"
+          backgroundImage="/icons/34_vector_3.svg"
         />
       </div>
 
