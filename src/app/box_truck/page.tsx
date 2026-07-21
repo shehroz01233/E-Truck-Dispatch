@@ -276,33 +276,44 @@ export default function BoxTruckPage() {
         imageAlt="Blue Box Truck on the Road"
       />
       <HowWeWork
-        heading={
-          <>
-            Box Truck Equipment System &
-            <br />
-            Dispatch Decision Framework
-          </>
-        }
-        image="/Box Truck/images/6_vector_5.webp"
-        imageAlt="New image alt"
-        steps={[
-          {
-            number: "1",
-            title: "New Step One",
-            description: "New step one description.",
-          },
-          {
-            number: "2",
-            title: "New Step Two",
-            description: "New step two description.",
-          },
-          {
-            number: "3",
-            title: "New Step Three",
-            description: "New step three description.",
-          },
-        ]}
-      />
+  blendBackgroundEdges
+  heading={
+    <>
+      Box Truck Equipment System &
+      <br />
+      Dispatch Decision Framework
+    </>
+  }
+  backgroundImage="/background-earthquake.png"
+  image="/Box Truck/images/6_vector_5.webp"
+  imageAlt="Box truck delivery worker"
+  steps={[
+    {
+      number: "1",
+      title: "Understanding Equipment Configuration Impact",
+      description:
+        "Box truck configuration directly affects freight eligibility and earning potential. Size and capacity determine which loads can be accessed.",
+    },
+    {
+      number: "2",
+      title: "Evaluating 26 ft Box Trucks",
+      description:
+        "A 26 ft box truck handles larger, high-paying loads but requires CDL, higher compliance, and different rate structures.",
+    },
+    {
+      number: "3",
+      title: "Understanding 16–22 ft Non-CDL Trucks",
+      description:
+        "Smaller trucks operate in local markets, handling retail and last-mile deliveries with frequent short routes.",
+    },
+    {
+      number: "4",
+      title: "Understanding 16–22 ft Non-CDL Trucks",
+      description:
+        "Smaller trucks operate in local markets, handling retail and last-mile deliveries with frequent short routes.",
+    },
+  ]}
+/>
       <DispatchTechnologyGridSection
         heading={
           <>

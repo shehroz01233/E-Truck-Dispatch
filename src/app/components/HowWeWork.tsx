@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import type { Variants } from "motion/react";
 import * as motion from "motion/react-client";
 
-type WorkflowStep = {
+export type WorkflowStep = {
   number?: string;
   title: string;
   description: string;
@@ -15,7 +15,14 @@ type HowWeWorkProps = {
   heading?: ReactNode;
   image?: string;
   imageAlt?: string;
+  backgroundImage?: string;
   steps?: WorkflowStep[];
+
+  /**
+   * Adds matching top and bottom background strips
+   * without cropping the supplied background image.
+   */
+  blendBackgroundEdges?: boolean;
 };
 
 const defaultSteps: WorkflowStep[] = [
@@ -160,97 +167,130 @@ export default function HowWeWork({
   ),
   image = "/Home/images/55_vector_5.webp",
   imageAlt = "Dispatcher handling freight boxes",
+  backgroundImage = "/background-earthquake.png",
   steps = defaultSteps,
+  blendBackgroundEdges = false,
 }: HowWeWorkProps) {
-  const hasDetailedSteps = steps.some(
-    (step) => step.includes?.length || step.footer,
+  const hasDetailedSteps = steps.some((step) =>
+    Boolean(step.includes?.length || step.footer),
   );
 
   return (
-    <section className="relative overflow-hidden bg-[#161616] px-4 pb-14 pt-20 text-white sm:px-8 xl:px-[9.375vw] xl:pb-[clamp(2.5rem,3.125vw,3.75rem)] xl:pt-[clamp(5rem,7.03vw,8.4375rem)]">
-      <TopWave />
+    <section
+      className={`relative isolate overflow-hidden px-4 pb-14 pt-20 text-white sm:px-8 xl:px-[9.375vw] xl:pb-[clamp(2.5rem,3.125vw,3.75rem)] xl:pt-[clamp(5rem,7.03vw,8.4375rem)] ${
+        blendBackgroundEdges
+          ? "bg-[#1C1C1C] xl:min-h-[53.25rem]"
+          : "bg-[#161616]"
+      }`}
+    >
+      {/* Background image layer */}
+      <div
+        aria-hidden="true"
+        className={`pointer-events-none absolute inset-x-0 z-0 overflow-hidden ${
+          blendBackgroundEdges
+            ? "bottom-12 top-12 sm:bottom-14 sm:top-14 xl:bottom-16 xl:top-16"
+            : "inset-y-0"
+        }`}
+      >
+        <Image
+          src={backgroundImage}
+          alt=""
+          fill
+          priority
+          sizes="100vw"
+          aria-hidden="true"
+          className="select-none object-fill"
+        />
+      </div>
 
       <div className="relative z-10 mx-auto grid w-full max-w-[97.5rem] items-start gap-10 xl:grid-cols-[minmax(0,800fr)_minmax(0,729fr)] xl:gap-[clamp(1.125rem,1.615vw,1.9375rem)]">
-        {/* Illustration */}
-        <motion.div
-          initial={{
-            x: -42,
-            y: 24,
-            scale: 0.97,
-          }}
-          whileInView={{
-            x: 0,
-            y: 0,
-            scale: 1,
-          }}
-          viewport={sectionViewport}
-          transition={{
-            duration: 0.8,
-            ease,
-          }}
-          className="relative min-h-[20rem] sm:min-h-[26.875rem] xl:-mt-[clamp(3rem,4.17vw,5rem)] xl:aspect-[800/742] xl:min-h-0"
-        >
-          <motion.div
-            initial={{
-              x: -48,
-              scale: 0.94,
-            }}
-            whileInView={{
-              x: 0,
-              scale: 1,
-            }}
-            viewport={sectionViewport}
-            transition={{
-              duration: 0.85,
-              ease,
-            }}
-            className="absolute left-0 top-0 h-[72.64%] w-[93.375%] xl:-left-[9.375vw]"
-          >
-            <Image
-              src="/Vector 1.svg"
-              alt=""
-              fill
-              sizes="(max-width: 79.9375rem) 93vw, 38.90625vw"
-              className="object-fill"
-              unoptimized
-            />
-          </motion.div>
+        {/* Left-side illustration */}
+<motion.div
+  initial={{
+    x: -42,
+    y: 24,
+    scale: 0.97,
+  }}
+  whileInView={{
+    x: 0,
+    y: 0,
+    scale: 1,
+  }}
+  viewport={sectionViewport}
+  transition={{
+    duration: 0.8,
+    ease,
+  }}
+  className={`relative min-h-[20rem] sm:min-h-[26.875rem] xl:aspect-[800/742] xl:min-h-0 ${
+    blendBackgroundEdges
+      ? "xl:mt-0"
+      : "xl:-mt-[clamp(3rem,4.17vw,5rem)]"
+  }`}
+>
+  {/* Orange decorative E shape */}
+  <motion.div
+    initial={{
+      x: -48,
+      scale: 0.94,
+    }}
+    whileInView={{
+      x: 0,
+      scale: 1,
+    }}
+    viewport={sectionViewport}
+    transition={{
+      duration: 0.85,
+      ease,
+    }}
+    className="absolute left-0 top-0 h-[72.64%] w-[93.375%] xl:-left-[9.375vw]"
+  >
+    <Image
+      src="/Vector 1.svg"
+      alt=""
+      fill
+      unoptimized
+      aria-hidden="true"
+      sizes="(max-width: 1279px) 93vw, 39vw"
+      className="object-fill"
+    />
+  </motion.div>
 
-          <motion.div
-            initial={{
-              x: -20,
-              y: 34,
-              scale: 0.96,
-            }}
-            whileInView={{
-              x: 0,
-              y: 0,
-              scale: 1,
-            }}
-            whileHover={{
-              y: -5,
-              scale: 1.015,
-            }}
-            viewport={sectionViewport}
-            transition={{
-              duration: 0.9,
-              delay: 0.12,
-              ease,
-            }}
-            className="absolute inset-0"
-          >
-            <Image
-              src={image}
-              alt={imageAlt}
-              fill
-              sizes="(max-width: 79.9375rem) 100vw, 42vw"
-              className="object-contain object-left-bottom"
-              priority
-            />
-          </motion.div>
-        </motion.div>
+  {/* Main foreground image */}
+  <motion.div
+    initial={{
+      x: -20,
+      y: 34,
+      scale: 0.96,
+    }}
+    whileInView={{
+      x: 0,
+      y: 0,
+      scale: 1,
+    }}
+    whileHover={{
+      y: -5,
+      scale: 1.015,
+    }}
+    viewport={sectionViewport}
+    transition={{
+      duration: 0.9,
+      delay: 0.12,
+      ease,
+    }}
+    className="absolute inset-0"
+  >
+    <Image
+      src={image}
+      alt={imageAlt}
+      fill
+      priority
+      sizes="(max-width: 1279px) 100vw, 42vw"
+      className="object-contain object-left-bottom"
+    />
+  </motion.div>
+</motion.div>
 
-        {/* Workflow */}
+        {/* Right-side workflow content */}
         <div className="relative">
           <motion.h2
             variants={contentVariants}
@@ -262,7 +302,7 @@ export default function HowWeWork({
             {heading}
           </motion.h2>
 
-          <div className="mt-10 max-h-[28rem] space-y-[clamp(0.75rem,1.04vw,1.25rem)] overflow-y-scroll overscroll-contain pr-[9.5%] [scrollbar-color:#B34B0C_#3F3F3F] [scrollbar-width:thin] [&::-webkit-scrollbar-thumb]:bg-[#B34B0C] [&::-webkit-scrollbar-track]:bg-[#3F3F3F] [&::-webkit-scrollbar]:w-[0.5625rem] xl:mt-[clamp(2.375rem,2.86vw,3.4375rem)]">
+          <div className="mt-10 max-h-[28rem] space-y-[clamp(0.75rem,1.04vw,1.25rem)] overflow-y-auto overscroll-contain pr-[9.5%] [scrollbar-color:#B34B0C_#3F3F3F] [scrollbar-width:thin] [&::-webkit-scrollbar-thumb]:bg-[#B34B0C] [&::-webkit-scrollbar-track]:bg-[#3F3F3F] [&::-webkit-scrollbar]:w-[0.5625rem] xl:mt-[clamp(2.375rem,2.86vw,3.4375rem)] xl:max-h-[31.625rem]">
             {steps.map((step, index) => (
               <WorkflowCard
                 key={`${step.title}-${index}`}
@@ -274,8 +314,6 @@ export default function HowWeWork({
           </div>
         </div>
       </div>
-
-      <BottomWave />
     </section>
   );
 }
@@ -291,113 +329,43 @@ function WorkflowCard({
 }) {
   return (
     <motion.article
-      variants={cardVariants}
-      initial="hidden"
-      whileInView="visible"
-      whileHover="hover"
-      viewport={cardViewport}
-      transition={{
-        delay: Math.min(index * 0.05, 0.25),
-      }}
-      className={`grid min-h-[7.5rem] grid-cols-[4rem_1fr] border border-[#3F3F3F] bg-[#1C1C1C] p-3 min-[23.4375rem]:grid-cols-[5.625rem_1fr] sm:grid-cols-[6.875rem_1fr] xl:grid-cols-[16.67%_1fr] xl:p-[3%] ${
-        detailed ? "" : "xl:aspect-[660/151] xl:min-h-0"
-      }`}
-    >
-      <motion.div
-        variants={numberVariants}
-        className="flex aspect-square items-center justify-center bg-[#B34B0C]/10"
-      >
-        <span className="font-sans text-[clamp(2.625rem,4.11vw,4.9375rem)] font-bold leading-none text-[#B34B0C]">
-          {step.number ?? index + 1}
-        </span>
-      </motion.div>
+  variants={cardVariants}
+  initial="hidden"
+  whileInView="visible"
+  whileHover="hover"
+  viewport={cardViewport}
+  transition={{
+    delay: Math.min(index * 0.05, 0.25),
+  }}
+  className={`grid min-h-[7.5rem] grid-cols-[4rem_1fr] border border-[#3F3F3F] bg-[#1C1C1C] p-3 min-[23.4375rem]:grid-cols-[5.625rem_1fr] sm:grid-cols-[6.875rem_1fr] xl:grid-cols-[16.67%_1fr] xl:p-[3%] ${
+    detailed
+      ? ""
+      : index === 0
+        ? "xl:min-h-[10rem]"
+        : "xl:aspect-[660/151] xl:min-h-0"
+  }`}
+>
+  <motion.div
+    variants={numberVariants}
+    className="flex aspect-square items-center justify-center bg-[#B34B0C]/10"
+  >
+    <span className="font-sans text-[clamp(2.625rem,4.11vw,4.9375rem)] font-bold leading-none text-[#B34B0C]">
+      {step.number ?? index + 1}
+    </span>
+  </motion.div>
 
-      <motion.div
-        variants={cardContentVariants}
-        className="flex min-w-0 flex-col justify-center pl-[3%]"
-      >
-        <h3 className="font-sans text-[clamp(0.875rem,1.15vw,1.375rem)] font-semibold leading-tight text-[#B34B0C]">
-          {step.title}
-        </h3>
+  <motion.div
+    variants={cardContentVariants}
+    className="flex min-w-0 flex-col justify-center py-1 pl-[3%]"
+  >
+    <h3 className="font-sans text-[clamp(0.875rem,1.15vw,1.375rem)] font-semibold leading-tight text-[#B34B0C]">
+      {step.title}
+    </h3>
 
-        <p className="mt-[2%] max-w-[31.0625rem] font-sans text-[clamp(0.625rem,0.84vw,1rem)] leading-[1.4] text-white/90">
-          {step.description}
-        </p>
-
-        {step.includes?.length ? (
-          <>
-            <h4 className="mt-3 font-sans text-[clamp(0.6875rem,0.73vw,0.875rem)] font-semibold text-white">
-              The application includes:
-            </h4>
-
-            <ul className="mt-2 space-y-1">
-              {step.includes.map((item) => (
-                <li
-                  key={item}
-                  className="flex items-start gap-2 font-sans text-[clamp(0.5625rem,0.63vw,0.75rem)] leading-[1.35] text-white/80"
-                >
-                  <span className="mt-[0.35rem] h-1 w-1 shrink-0 rounded-full bg-[#B34B0C]" />
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </>
-        ) : null}
-
-        {step.footer ? (
-          <p className="mt-3 max-w-[31.0625rem] font-sans text-[clamp(0.5625rem,0.63vw,0.75rem)] leading-[1.4] text-white/80">
-            {step.footer}
-          </p>
-        ) : null}
-      </motion.div>
-    </motion.article>
-  );
-}
-
-function TopWave() {
-  return (
-    <motion.svg
-      initial={{ opacity: 0.35 }}
-      whileInView={{ opacity: 1 }}
-      viewport={sectionViewport}
-      transition={{ duration: 0.7, ease }}
-      className="absolute left-0 top-0 h-[1.75rem] w-full xl:h-[4.375rem]"
-      viewBox="0 0 1440 28"
-      preserveAspectRatio="none"
-      fill="none"
-      aria-hidden="true"
-    >
-      <motion.path
-        initial={{ pathLength: 0 }}
-        whileInView={{ pathLength: 1 }}
-        viewport={sectionViewport}
-        transition={{ duration: 1.2, ease }}
-        d="M0 14C78 3 113 24 184 13C267 0 330 28 414 15C491 3 551 20 632 12C725 2 779 26 872 14C964 2 1041 25 1131 12C1231 -3 1324 24 1440 9"
-        stroke="#B34B0C"
-        strokeOpacity="0.35"
-        strokeWidth="2"
-      />
-    </motion.svg>
-  );
-}
-
-function BottomWave() {
-  return (
-    <motion.svg
-      initial={{ y: 18 }}
-      whileInView={{ y: 0 }}
-      viewport={sectionViewport}
-      transition={{ duration: 0.7, ease }}
-      className="absolute bottom-0 left-0 h-[3rem] w-full"
-      viewBox="0 0 1440 48"
-      preserveAspectRatio="none"
-      fill="none"
-      aria-hidden="true"
-    >
-      <path
-        d="M0 23C90 45 174 9 270 28C375 49 475 17 595 29C715 41 801 13 925 27C1051 42 1167 17 1275 25C1350 31 1400 20 1440 18V48H0V23Z"
-        fill="#1C1C1C"
-      />
-    </motion.svg>
+    <p className="mt-[2%] max-w-[31.0625rem] font-sans text-[clamp(0.625rem,0.84vw,1rem)] leading-[1.4] text-white/90">
+      {step.description}
+    </p>
+  </motion.div>
+</motion.article>
   );
 }
