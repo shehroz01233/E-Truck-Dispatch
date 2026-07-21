@@ -1,6 +1,8 @@
 import Image, { type StaticImageData } from "next/image";
 import Link from "next/link";
 import type { ReactNode } from "react";
+import type { Variants } from "motion/react";
+import * as motion from "motion/react-client";
 
 export type Benefit = {
   title: string;
@@ -14,11 +16,128 @@ type Props = {
   heading: ReactNode;
   description?: string;
   benefits: (string | Benefit)[];
-  variant?: "grid" | "steps" | "text-grid";
 
   // Optional CTA button
   buttonLabel?: string;
   buttonHref?: string;
+};
+
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
+const viewportOptions = {
+  once: true,
+  amount: 0.25,
+  margin: "0px 0px -60px 0px",
+} as const;
+
+/*
+|--------------------------------------------------------------------------
+| Heading card
+|--------------------------------------------------------------------------
+*/
+
+const headingCardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 32,
+    scale: 0.98,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.65,
+      ease: smoothEase,
+      delayChildren: 0.12,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const headingContentVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: smoothEase,
+    },
+  },
+};
+
+const buttonVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 14,
+    scale: 0.97,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.45,
+      ease: smoothEase,
+    },
+  },
+};
+
+/*
+|--------------------------------------------------------------------------
+| Benefit card children
+|--------------------------------------------------------------------------
+*/
+
+const iconVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.7,
+    rotate: -8,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+    transition: {
+      duration: 0.42,
+      ease: smoothEase,
+    },
+  },
+};
+
+const titleVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 16,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      ease: smoothEase,
+    },
+  },
+};
+
+const descriptionVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 14,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      ease: smoothEase,
+    },
+  },
 };
 
 export default function BenefitsGridSection({
@@ -27,109 +146,104 @@ export default function BenefitsGridSection({
   benefits,
   buttonLabel,
   buttonHref,
-  variant = "grid",
 }: Props) {
-  if (variant === "steps") {
-    return (
-      <section className="bg-[#1c1c1c] px-5 pb-16 pt-8 text-white sm:px-8 lg:pb-20 lg:pt-10">
-        <div className="mx-auto max-w-[97.5rem]">
-          <h2 className="mx-auto max-w-[44rem] text-center font-['Outfit'] text-3xl font-bold leading-[1.15] sm:text-4xl lg:text-[2.75rem]">
-            {heading}
-          </h2>
-          {description ? (
-            <p className="mx-auto mt-5 max-w-[48rem] text-center font-['DM_Sans'] text-base leading-7 text-white/75">
-              {description}
-            </p>
-          ) : null}
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {benefits.map((benefit, index) => {
-              const title = typeof benefit === "string" ? benefit : benefit.title;
-              const detail = typeof benefit === "string" ? "" : benefit.description;
-              const iconSrc = typeof benefit === "string" ? null : benefit.iconSrc;
-              const iconAlt = typeof benefit === "string" ? "" : benefit.iconAlt || "";
-              return (
-                <article key={`${title}-${index}`} className="bg-[#171717] p-6">
-                  <span className="font-['Outfit'] text-3xl font-bold text-[#b34b0c]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  {iconSrc ? (
-                    <Image src={iconSrc} alt={iconAlt} width={34} height={34} className="mt-5 h-8 w-8 object-contain" />
-                  ) : null}
-                  <h3 className="mt-5 text-lg font-medium leading-snug">{title}</h3>
-                  {detail ? <p className="mt-3 text-sm leading-6 text-white/70">{detail}</p> : null}
-                </article>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-    );
-  }
-
-  if (variant === "text-grid") {
-    return (
-      <section className="py-12 text-white">
-        <div className="mx-auto grid w-[calc(100%-40px)] max-w-[1560px] gap-5 sm:w-[calc(100%-64px)] md:grid-cols-2 xl:grid-cols-3">
-          <div className="flex min-h-60 flex-col justify-center bg-[#b34b0c] p-7 xl:p-8">
-            <h2 className="text-[clamp(1.65rem,2vw,2rem)] font-bold leading-[1.18]">{heading}</h2>
-            {description ? <p className="mt-7 text-sm leading-6 text-white/90">{description}</p> : null}
-          </div>
-          {benefits.map((benefit, index) => {
-            const title = typeof benefit === "string" ? benefit : benefit.title;
-            const detail = typeof benefit === "string" ? "" : benefit.description;
-            return (
-              <article key={`${title}-${index}`} className="min-h-60 bg-[#171717] p-7">
-                <h3 className="text-lg font-medium leading-snug">{title}</h3>
-                {detail ? <p className="mt-4 text-sm leading-6 text-white/70">{detail}</p> : null}
-              </article>
-            );
-          })}
-        </div>
-      </section>
-    );
-  }
+  const showButton = Boolean(buttonLabel && buttonHref);
 
   return (
     <section className="py-12 text-white">
       <div className="mx-auto grid w-[calc(100%-40px)] max-w-[1560px] gap-3 sm:w-[calc(100%-64px)] md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-2">
         {/* Heading card */}
-       <div className="flex min-h-96 flex-col justify-center overflow-hidden bg-[#b34b0c] p-7 xl:row-span-2 xl:p-8">
-  <h2 className="text-[clamp(1.65rem,2vw,2rem)] font-bold leading-[1.18]">
-    {heading}
-  </h2>
+        <motion.div
+          variants={headingCardVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewportOptions}
+          className="flex min-h-96 flex-col justify-center overflow-hidden bg-[#b34b0c] p-7 xl:row-span-2 xl:p-8"
+        >
+          <motion.h2
+            variants={headingContentVariants}
+            className="text-[clamp(1.65rem,2vw,2rem)] font-bold leading-[1.18]"
+          >
+            {heading}
+          </motion.h2>
 
-  {description ? (
-    <p className="mt-7 max-w-[18rem] text-[0.875rem] font-medium leading-5 text-white/90">
-      {description}
-    </p>
-  ) : null}
+          {description ? (
+            <motion.p
+              variants={headingContentVariants}
+              className="mt-7 max-w-[18rem] text-[0.875rem] font-medium leading-5 text-white/90"
+            >
+              {description}
+            </motion.p>
+          ) : null}
 
-  {buttonLabel && buttonHref ? (
-    <Link
-      href={buttonHref}
-      className="mt-6 inline-flex w-fit items-center justify-center bg-[#171717] px-5 py-3 font-['DM_Sans'] text-sm font-medium leading-none text-white transition-colors hover:bg-[#242424] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
-    >
-      {buttonLabel}
-    </Link>
-  ) : null}
-</div>
+          {showButton ? (
+            <motion.div variants={buttonVariants} className="w-fit">
+              <Link
+                href={buttonHref!}
+                className="mt-6 inline-flex w-fit items-center justify-center bg-[#171717] px-5 py-3 font-['DM_Sans'] text-sm font-medium leading-none text-white transition-colors hover:bg-[#242424] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/80"
+              >
+                {buttonLabel}
+              </Link>
+            </motion.div>
+          ) : null}
+        </motion.div>
 
         {/* Benefit cards */}
         {benefits.map((benefit, index) => {
           const isString = typeof benefit === "string";
 
           const title = isString ? benefit : benefit.title;
-          const benefitDescription = isString ? "" : benefit.description;
+          const benefitDescription = isString
+            ? undefined
+            : benefit.description;
           const icon = isString ? null : benefit.icon;
           const iconSrc = isString ? null : benefit.iconSrc;
           const iconAlt = isString ? "" : benefit.iconAlt || "";
 
+          /*
+           * The delay is calculated on the server.
+           * Only a plain serializable object is passed to Motion.
+           */
+          const cardVariants: Variants = {
+            hidden: {
+              opacity: 0,
+              y: 28,
+              scale: 0.98,
+            },
+            visible: {
+              opacity: 1,
+              y: 0,
+              scale: 1,
+              transition: {
+                delay: (index % 3) * 0.08,
+                duration: 0.55,
+                ease: smoothEase,
+                delayChildren: 0.12,
+                staggerChildren: 0.08,
+              },
+            },
+          };
+
           return (
-            <article
+            <motion.article
               key={`${title}-${index}`}
+              variants={cardVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewportOptions}
+              whileHover={{
+                y: -5,
+                transition: {
+                  duration: 0.2,
+                  ease: smoothEase,
+                },
+              }}
               className="min-h-48 bg-[#171717] p-5"
             >
-              <span className="flex h-14 w-14 items-center justify-center bg-[#b34b0c]/20 text-[#b34b0c]">
+              <motion.span
+                variants={iconVariants}
+                className="flex h-14 w-14 items-center justify-center bg-[#b34b0c]/20 text-[#b34b0c]"
+              >
                 {iconSrc ? (
                   <Image
                     src={iconSrc}
@@ -143,20 +257,28 @@ export default function BenefitsGridSection({
                     {icon}
                   </span>
                 ) : (
-                  <span className="text-2xl">✓</span>
+                  <span className="text-2xl" aria-hidden="true">
+                    ✓
+                  </span>
                 )}
-              </span>
+              </motion.span>
 
-              <h3 className="mt-6 text-lg font-medium leading-snug">
+              <motion.h3
+                variants={titleVariants}
+                className="mt-6 text-lg font-medium leading-snug"
+              >
                 {title}
-              </h3>
+              </motion.h3>
 
               {benefitDescription ? (
-                <p className="mt-3 text-sm leading-6 text-white/70">
+                <motion.p
+                  variants={descriptionVariants}
+                  className="mt-3 text-sm leading-6 text-white/70"
+                >
                   {benefitDescription}
-                </p>
+                </motion.p>
               ) : null}
-            </article>
+            </motion.article>
           );
         })}
       </div>

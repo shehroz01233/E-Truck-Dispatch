@@ -275,34 +275,34 @@ export default function BoxTruckPage() {
         image="/Conestoga Dispatch Service/images/46_rectangle_1557.webp"
         imageAlt="Blue Box Truck on the Road"
       />
-        <HowWeWork
-          heading={
-            <>
-              Box Truck Equipment System & 
-              <br />
-              Dispatch Decision Framework
-            </>
-          }
-          image="/Box Truck/images/6_vector_5.webp"
-          imageAlt="New image alt"
-          steps={[
-            {
-              number: "1",
-              title: "New Step One",
-              description: "New step one description.",
-            },
-            {
-              number: "2",
-              title: "New Step Two",
-              description: "New step two description.",
-            },
-            {
-              number: "3",
-              title: "New Step Three",
-              description: "New step three description.",
-            },
-          ]}
-        />
+      <HowWeWork
+        heading={
+          <>
+            Box Truck Equipment System &
+            <br />
+            Dispatch Decision Framework
+          </>
+        }
+        image="/Box Truck/images/6_vector_5.webp"
+        imageAlt="New image alt"
+        steps={[
+          {
+            number: "1",
+            title: "New Step One",
+            description: "New step one description.",
+          },
+          {
+            number: "2",
+            title: "New Step Two",
+            description: "New step two description.",
+          },
+          {
+            number: "3",
+            title: "New Step Three",
+            description: "New step three description.",
+          },
+        ]}
+      />
       <DispatchTechnologyGridSection
         heading={
           <>
@@ -323,10 +323,11 @@ export default function BoxTruckPage() {
         cards={revenueCards}
       />
       <SupportColumnsSection
+        layoutVariant="box-truck-compliance"
         contentPosition="right"
         heading="Compliance, Control & Operational Failures in Box Truck Dispatch Systems"
-        intro=""
-        image="/Box Truck/images/13_rectangle_1426.webp"
+       image="/Box Truck/images/13_rectangle_1426.webp"
+        imageAlt="Box truck operator managing compliance requirements"
         cards={complianceCards}
       />
 
@@ -442,16 +443,16 @@ export default function BoxTruckPage() {
         imageAlt="White box truck showing dispatch earning improvement"
       />
       <FreightBenefitsSection
-  heading={
-    <>
-      Getting Started (Simple <br />
-      Process)
-    </>
-  }
-  benefits={freightBenefits}
-  defaultIconSrc="/Box Truck/images/25_tick_icon.webp"
-  defaultIconAlt="Check icon"
-/>
+        heading={
+          <>
+            Getting Started (Simple <br />
+            Process)
+          </>
+        }
+        benefits={freightBenefits}
+        defaultIconSrc="/Box Truck/images/25_tick_icon.webp"
+        defaultIconAlt="Check icon"
+      />
 
       <FAQs
         heading="Frequently Asked Questions"

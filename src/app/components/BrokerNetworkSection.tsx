@@ -1,5 +1,7 @@
 import Image, { type StaticImageData } from "next/image";
 import type { ReactNode } from "react";
+import type { Variants } from "motion/react";
+import * as motion from "motion/react-client";
 
 export type BrokerNetworkFeature = {
   title: ReactNode;
@@ -36,6 +38,163 @@ export type BrokerNetworkSectionProps = {
   className?: string;
 };
 
+const smoothEase = [0.22, 1, 0.36, 1] as const;
+
+const viewportOptions = {
+  once: true,
+  amount: 0.25,
+  margin: "0px 0px -70px 0px",
+} as const;
+
+/*
+|--------------------------------------------------------------------------
+| Section animation sequence
+|--------------------------------------------------------------------------
+*/
+
+const sectionVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.16,
+    },
+  },
+};
+
+const headingVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 26,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.65,
+      ease: smoothEase,
+    },
+  },
+};
+
+const descriptionVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.55,
+      ease: smoothEase,
+    },
+  },
+};
+
+/*
+|--------------------------------------------------------------------------
+| Feature animations
+|--------------------------------------------------------------------------
+*/
+
+const featuresGridVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      delayChildren: 0.08,
+      staggerChildren: 0.09,
+    },
+  },
+};
+
+const featureVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -18,
+    y: 8,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      duration: 0.45,
+      ease: smoothEase,
+      delayChildren: 0.06,
+      staggerChildren: 0.06,
+    },
+  },
+};
+
+const featureIconVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.55,
+    rotate: -12,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    rotate: 0,
+    transition: {
+      duration: 0.45,
+      ease: smoothEase,
+    },
+  },
+};
+
+const bulletVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 0.3,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 0.3,
+      ease: smoothEase,
+    },
+  },
+};
+
+const featureTitleVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 10,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.4,
+      ease: smoothEase,
+    },
+  },
+};
+
+/*
+|--------------------------------------------------------------------------
+| Image animations
+|--------------------------------------------------------------------------
+*/
+
+const imageInnerVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    scale: 1.08,
+  },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      delay: 0.08,
+      duration: 0.95,
+      ease: smoothEase,
+    },
+  },
+};
+
 export default function BrokerNetworkSection({
   heading,
   description,
@@ -49,11 +208,56 @@ export default function BrokerNetworkSection({
   const isImageLeft = imagePosition === "left";
   const isBulletVariant = featureVariant === "bullet";
 
+  /*
+   * Plain serializable objects generated on the server.
+   * No callback function is passed to Motion.
+   */
+  const contentVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      x: isImageLeft ? 42 : -42,
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      transition: {
+        duration: 0.75,
+        ease: smoothEase,
+        delayChildren: 0.12,
+        staggerChildren: 0.11,
+      },
+    },
+  };
+
+  const imageFrameVariants: Variants = {
+    hidden: {
+      opacity: 0,
+      x: isImageLeft ? -50 : 50,
+      clipPath: isImageLeft
+        ? "inset(0 100% 0 0)"
+        : "inset(0 0 0 100%)",
+    },
+    visible: {
+      opacity: 1,
+      x: 0,
+      clipPath: "inset(0 0% 0 0%)",
+      transition: {
+        duration: 0.85,
+        ease: smoothEase,
+        delayChildren: 0.06,
+      },
+    },
+  };
+
   return (
     <section
-      className={`mt-20 mb-20 overflow-hidden bg-transparent px-5 text-white sm:px-8 lg:px-12 ${className}`}
+      className={`mb-20 mt-20 overflow-hidden bg-transparent px-5 text-white sm:px-8 lg:px-12 ${className}`}
     >
-      <div
+      <motion.div
+        variants={sectionVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={viewportOptions}
         className={`mx-auto grid w-full max-w-[97.5rem] items-center ${
           isImageLeft
             ? "lg:min-h-[25.75rem] lg:grid-cols-[minmax(0,52.5rem)_minmax(0,45rem)] lg:gap-8"
@@ -61,24 +265,27 @@ export default function BrokerNetworkSection({
         }`}
       >
         {/* Content */}
-        <div
+        <motion.div
+          variants={contentVariants}
           className={`flex min-w-0 flex-col py-12 ${
             isImageLeft
               ? "lg:order-2 lg:py-[3.25rem] lg:pl-4"
               : "lg:order-1 lg:py-[2.0625rem]"
           }`}
         >
-          <h2
-  className={`w-full font-outfit text-3xl font-bold leading-[1.1] sm:text-4xl lg:text-5xl ${
-    isImageLeft
-      ? "max-w-[44rem]"
-      : "max-w-[43.9375rem]"
-  }`}
->
-  {heading}
-</h2>
+          <motion.h2
+            variants={headingVariants}
+            className={`w-full font-outfit text-3xl font-bold leading-[1.1] sm:text-4xl lg:text-5xl ${
+              isImageLeft
+                ? "max-w-[44rem]"
+                : "max-w-[43.9375rem]"
+            }`}
+          >
+            {heading}
+          </motion.h2>
 
-          <div
+          <motion.div
+            variants={descriptionVariants}
             className={`w-full font-outfit text-base font-medium leading-[1.35] text-white/90 sm:text-lg lg:leading-[1.25] ${
               isImageLeft
                 ? "mt-7 max-w-[42rem] lg:mt-[1.75rem]"
@@ -86,10 +293,11 @@ export default function BrokerNetworkSection({
             }`}
           >
             {description}
-          </div>
+          </motion.div>
 
-          {features.length > 0 && (
-            <div
+          {features.length > 0 ? (
+            <motion.div
+              variants={featuresGridVariants}
               className={
                 isBulletVariant
                   ? "mt-8 grid w-full max-w-[43rem] grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 lg:mt-[1.25rem] xl:grid-cols-3"
@@ -98,25 +306,34 @@ export default function BrokerNetworkSection({
             >
               {features.map((feature, index) =>
                 isBulletVariant ? (
-                  <article
-                    key={index}
+                  <motion.article
+                    key={`${index}-${feature.iconAlt ?? "bullet-feature"}`}
+                    variants={featureVariants}
                     className="grid min-w-0 grid-cols-[0.375rem_minmax(0,1fr)] items-start gap-3"
                   >
-                    <span
+                    <motion.span
+                      variants={bulletVariants}
                       aria-hidden="true"
                       className="mt-[0.45rem] size-[0.375rem] rounded-full bg-[#b34b0c]"
                     />
 
-                    <div className="min-w-0 font-dm-sans text-sm font-normal leading-[1.35] text-white">
+                    <motion.div
+                      variants={featureTitleVariants}
+                      className="min-w-0 font-dm-sans text-sm font-normal leading-[1.35] text-white"
+                    >
                       {feature.title}
-                    </div>
-                  </article>
+                    </motion.div>
+                  </motion.article>
                 ) : (
-                  <article
-                    key={index}
+                  <motion.article
+                    key={`${index}-${feature.iconAlt ?? "icon-feature"}`}
+                    variants={featureVariants}
                     className="grid min-w-0 grid-cols-[2.625rem_minmax(0,1fr)] items-start gap-[0.625rem]"
                   >
-                    <span className="flex size-[2.625rem] shrink-0 items-center justify-center text-[#b34b0c]">
+                    <motion.span
+                      variants={featureIconVariants}
+                      className="flex size-[2.625rem] shrink-0 items-center justify-center text-[#b34b0c]"
+                    >
                       {feature.icon ? (
                         feature.icon
                       ) : feature.iconSrc ? (
@@ -130,43 +347,52 @@ export default function BrokerNetworkSection({
                       ) : (
                         <NetworkFeatureIcon />
                       )}
-                    </span>
+                    </motion.span>
 
-                    <div className="min-w-0 pt-[0.625rem] font-dm-sans text-base font-normal leading-[1.35] text-white">
+                    <motion.div
+                      variants={featureTitleVariants}
+                      className="min-w-0 pt-[0.625rem] font-dm-sans text-base font-normal leading-[1.35] text-white"
+                    >
                       {feature.title}
-                    </div>
-                  </article>
+                    </motion.div>
+                  </motion.article>
                 ),
               )}
-            </div>
-          )}
-        </div>
+            </motion.div>
+          ) : null}
+        </motion.div>
 
         {/* Image */}
-        <div
+        <motion.div
+          variants={imageFrameVariants}
           className={`relative min-h-[20rem] overflow-hidden sm:min-h-[27rem] lg:min-h-0 ${
             isImageLeft
               ? "lg:order-1 lg:h-[25.75rem] lg:self-center"
               : "lg:order-2 lg:h-[24rem] lg:self-start"
           }`}
         >
-          <Image
-            src={image}
-            alt={imageAlt}
-            fill
-            sizes={
-              isImageLeft
-                ? "(min-width: 1024px) 52.5rem, 100vw"
-                : "(min-width: 1024px) 50.5rem, 100vw"
-            }
-            className={`object-contain object-center ${
-              isImageLeft
-                ? "lg:object-left-center"
-                : "lg:object-right-top"
-            }`}
-          />
-        </div>
-      </div>
+          <motion.div
+            variants={imageInnerVariants}
+            className="absolute inset-0"
+          >
+            <Image
+              src={image}
+              alt={imageAlt}
+              fill
+              sizes={
+                isImageLeft
+                  ? "(min-width: 1024px) 52.5rem, 100vw"
+                  : "(min-width: 1024px) 50.5rem, 100vw"
+              }
+              className={`object-contain object-center ${
+                isImageLeft
+                  ? "lg:object-left-center"
+                  : "lg:object-right-top"
+              }`}
+            />
+          </motion.div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }

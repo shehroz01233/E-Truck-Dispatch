@@ -1,4 +1,6 @@
 import Image from "next/image";
+import type { Variants } from "motion/react";
+import * as motion from "motion/react-client";
 
 export type Specification = [value: string, label: string];
 
@@ -17,6 +19,101 @@ type Props = {
   imageAlt?: string;
 };
 
+const ease = [0.22, 1, 0.36, 1] as const;
+
+const viewport = {
+  once: true,
+  amount: 0.2,
+  margin: "0px 0px -55px 0px",
+} as const;
+
+const panelVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: -36,
+    y: 20,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      duration: 0.68,
+      ease,
+      delayChildren: 0.08,
+      staggerChildren: 0.1,
+    },
+  },
+};
+
+const fadeUpVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 18,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.46,
+      ease,
+    },
+  },
+};
+
+const gridVariants: Variants = {
+  hidden: {},
+  visible: {
+    transition: {
+      staggerChildren: 0.08,
+    },
+  },
+};
+
+const cardVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    y: 24,
+    scale: 0.97,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease,
+    },
+  },
+  hover: {
+    y: -5,
+    borderColor: "rgba(179, 75, 12, 0.8)",
+    transition: {
+      duration: 0.22,
+      ease,
+    },
+  },
+};
+
+const formVariants: Variants = {
+  hidden: {
+    opacity: 0,
+    x: 42,
+    y: 24,
+    scale: 0.98,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.7,
+      ease,
+    },
+  },
+};
+
 export default function SpecificationsFormSection({
   heading,
   description,
@@ -30,35 +127,63 @@ export default function SpecificationsFormSection({
 
   return (
     <section className="relative isolate overflow-hidden py-14 text-white lg:py-[50px] xl:h-[692px]">
-      <Image
-        src={backgroundImage}
-        alt={imageAlt}
-        fill
-        sizes="100vw"
-        className="-z-20 object-cover object-center"
-      />
+      {/* Background */}
+      <motion.div
+        initial={{ scale: 1.06 }}
+        whileInView={{ scale: 1 }}
+        viewport={viewport}
+        transition={{
+          duration: 1.2,
+          ease,
+        }}
+        className="absolute inset-0 -z-20"
+      >
+        <Image
+          src={backgroundImage}
+          alt={imageAlt}
+          fill
+          sizes="100vw"
+          className="object-cover object-center"
+        />
+      </motion.div>
 
       <div className="absolute inset-0 -z-10 bg-[#171717]/90" />
 
       <div className="mx-auto grid w-[calc(100%-40px)] max-w-[1560px] gap-12 sm:w-[calc(100%-64px)] xl:grid-cols-[minmax(0,928px)_500px] xl:gap-[131px]">
         {/* Left content */}
-        <div className="min-w-0">
-          <h2 className="max-w-[882px] font-['Outfit'] text-4xl font-bold leading-[1.2] sm:text-5xl">
+        <motion.div
+          variants={panelVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
+          className="min-w-0"
+        >
+          <motion.h2
+            variants={fadeUpVariants}
+            className="max-w-[882px] font-['Outfit'] text-4xl font-bold leading-[1.2] sm:text-5xl"
+          >
             {heading}
-          </h2>
+          </motion.h2>
 
-          <p className="mt-8 max-w-[767px] font-['DM_Sans'] text-base font-normal leading-7 text-white sm:text-lg">
+          <motion.p
+            variants={fadeUpVariants}
+            className="mt-8 max-w-[767px] font-['DM_Sans'] text-base font-normal leading-7 text-white sm:text-lg"
+          >
             {description}
-          </p>
+          </motion.p>
 
           {specificationsHeading ? (
-            <h3 className="mt-10 font-['Outfit'] text-xl font-semibold">
+            <motion.h3
+              variants={fadeUpVariants}
+              className="mt-10 font-['Outfit'] text-xl font-semibold"
+            >
               {specificationsHeading}
-            </h3>
+            </motion.h3>
           ) : null}
 
           {/* Specification boxes */}
-          <div
+          <motion.div
+            variants={gridVariants}
             className={`grid gap-3 sm:grid-cols-2 ${
               specificationsHeading ? "mt-7" : "mt-[54px]"
             } ${
@@ -68,9 +193,11 @@ export default function SpecificationsFormSection({
             }`}
           >
             {specifications.map(([value, label], index) => (
-              <article
+              <motion.article
                 key={`${value}-${label}`}
-                className={`flex min-h-28 flex-col items-center justify-center bg-white/5 px-5 py-4 text-center backdrop-blur-[20.5px] ${
+                variants={cardVariants}
+                whileHover="hover"
+                className={`flex min-h-28 flex-col items-center justify-center border border-transparent bg-white/5 px-5 py-4 text-center backdrop-blur-[20.5px] ${
                   !hasFourSpecifications && index === 0
                     ? "sm:col-span-2 xl:col-span-2 xl:items-start xl:text-left"
                     : ""
@@ -83,16 +210,21 @@ export default function SpecificationsFormSection({
                 <p className="mt-4 font-['DM_Sans'] text-xl font-bold leading-none">
                   {label}
                 </p>
-              </article>
+              </motion.article>
             ))}
-          </div>
+          </motion.div>
 
           {/* Information cards */}
-          <div className="mt-[37px] grid gap-5 md:grid-cols-3 xl:max-w-[928px] xl:gap-8">
+          <motion.div
+            variants={gridVariants}
+            className="mt-[37px] grid gap-5 md:grid-cols-3 xl:max-w-[928px] xl:gap-8"
+          >
             {trailerTypes.map(([title, content]) => (
-              <article
+              <motion.article
                 key={title}
-                className="min-h-52 bg-[#171717] p-5"
+                variants={cardVariants}
+                whileHover="hover"
+                className="min-h-52 border border-transparent bg-[#171717] p-5"
               >
                 <h4 className="font-['Outfit'] text-xl font-semibold leading-tight">
                   {title}
@@ -115,14 +247,18 @@ export default function SpecificationsFormSection({
                     {content}
                   </p>
                 )}
-              </article>
+              </motion.article>
             ))}
-          </div>
-        </div>
+          </motion.div>
+        </motion.div>
 
         {/* Form */}
-        <form
+        <motion.form
           action="#"
+          variants={formVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={viewport}
           className="h-fit bg-white/5 p-5 backdrop-blur-[20.5px] xl:mt-[58px] xl:h-[476px]"
         >
           <h3 className="text-center font-['Outfit'] text-3xl font-bold capitalize leading-9">
@@ -149,14 +285,25 @@ export default function SpecificationsFormSection({
               </label>
             ))}
 
-            <button
+            <motion.button
               type="submit"
+              whileHover={{
+                y: -2,
+                scale: 1.015,
+              }}
+              whileTap={{
+                scale: 0.98,
+              }}
+              transition={{
+                duration: 0.2,
+                ease,
+              }}
               className="h-11 w-full bg-[#b34b0c] font-['Outfit'] text-lg font-medium capitalize text-white transition-colors hover:bg-[#cf5a13]"
             >
               Submit
-            </button>
+            </motion.button>
           </div>
-        </form>
+        </motion.form>
       </div>
     </section>
   );

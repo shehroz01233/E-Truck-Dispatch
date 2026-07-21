@@ -218,7 +218,7 @@ export default function AboutPage() {
           "We operate as a dedicated dispatching partner focused on maximizing RPM, improving route efficiency, and reducing operational downtime for carriers across the United States.",
           "Our dispatch team works with dry vans, reefers, flatbeds, step decks, power only units, box trucks, hotshots, and specialized freight operations.",
         ]}
-        backgroundImage="/About Us/images/1_rectangle_1450.webp"
+        backgroundImage="/About US/images/1_rectangle_1450.webp"
         backgroundAlt="Truck traveling on the highway"
       />
       <OverviewStatsSection
@@ -245,6 +245,7 @@ export default function AboutPage() {
         communication, scheduling, paperwork handling, and daily freight
         operations.
       </MissionBanner>
+      
       <ServicesGridSection
         heading="What We Do"
         eyebrow="Dedicated Truck Dispatch Services"
