@@ -14,7 +14,7 @@ import ComplianceMatrixSection, {
 } from "@/app/components/ComplianceMatrixSection";
 import SupportColumnsSection from "../components/SupportColumnsSection";
 import VisionFormSection from "@/app/components/VisionFormSection";
-import ComparisonCardsSection from "../components/ComparisonCardSection";
+import ComparisonCardsSection from "../components/ComparisonCardsSection";
 import ProcessGridSection from "../components/ProcessGridSection";
 import OurServices from "../components/OurServices";
 import FreightTypesSection from "../components/FreightTypesSection";

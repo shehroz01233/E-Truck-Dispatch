@@ -11,7 +11,7 @@ export type Service = {
 
 export type OurServicesProps = {
   heading: ReactNode;
-  description: string;
+  description?: string;
   services: Service[];
 };
 
@@ -28,12 +28,14 @@ export default function OurServices({
             {heading}
           </h2>
 
-          <p className="mx-auto mt-[1.25rem] max-w-[55rem] font-['DM_Sans'] text-[0.875rem] font-normal leading-[1.55] text-white min-[48rem]:text-[1rem] min-[80rem]:mt-[2rem] min-[80rem]:text-[1.125rem] min-[80rem]:leading-[1.6875rem]">
-            {description}
-          </p>
+          {description ? (
+            <p className="mx-auto mt-[1.25rem] max-w-[55rem] font-['DM_Sans'] text-[0.875rem] font-normal leading-[1.55] text-white min-[48rem]:text-[1rem] min-[80rem]:mt-[2rem] min-[80rem]:text-[1.125rem] min-[80rem]:leading-[1.6875rem]">
+              {description}
+            </p>
+          ) : null}
         </header>
 
-        <div className="mt-[2.5rem] grid overflow-hidden min-[48rem]:grid-cols-2 min-[80rem]:mt-[3rem] min-[80rem]:grid-cols-4">
+        <div className="mt-[2.5rem] grid items-stretch overflow-hidden min-[48rem]:grid-cols-2 min-[80rem]:mt-[3rem] min-[80rem]:grid-cols-4 min-[80rem]:[grid-auto-rows:minmax(22.5625rem,auto)]">
           {services.map((service, index) => (
             <ServicePair
               key={`${service.title}-${index}`}
@@ -67,7 +69,7 @@ function ServicePair({ service, index }: { service: Service; index: number }) {
   return (
     <div className="grid min-[80rem]:contents">
       <div
-        className={`relative aspect-[390/361] overflow-hidden ${imageOrder}`}
+        className={`relative aspect-[390/361] overflow-hidden min-[80rem]:h-full min-[80rem]:min-h-[22.5625rem] min-[80rem]:aspect-auto ${imageOrder}`}
       >
         <Image
           src={service.image}
@@ -79,9 +81,7 @@ function ServicePair({ service, index }: { service: Service; index: number }) {
       </div>
 
       <article
-        className={`flex aspect-[390/361] flex-col items-center justify-center overflow-hidden px-[1.25rem] py-[2rem] text-center ${
-          service.accent ? "bg-amber-700" : "bg-neutral-900"
-        } ${textOrder}`}
+        className={`flex aspect-[390/361] flex-col items-center justify-center overflow-hidden bg-[#161616] px-[1.25rem] py-[2rem] text-center text-white transition-colors duration-300 ease-out hover:bg-[#b34b0c] min-[80rem]:h-full min-[80rem]:min-h-[22.5625rem] min-[80rem]:aspect-auto ${textOrder}`}
       >
         <h3 className="w-full max-w-[20rem] font-['Outfit'] text-[1.0625rem] font-semibold leading-[1.35] text-white min-[48rem]:text-[1.125rem] min-[80rem]:text-[1.25rem] min-[80rem]:leading-[1.4]">
           {service.title}

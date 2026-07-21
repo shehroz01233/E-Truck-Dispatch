@@ -11,7 +11,7 @@ import FreightBenefitsSection, {
   type FreightBenefit,
 } from "../components/FreightBenefitsSection";
 import HeroSection from "../components/HeroSection";
-import ComparisonCardsSection from "../components/ComparisonCardSection";
+import ComparisonCardsSection from "../components/ComparisonCardsSection";
 import ComparisonTableSection, {
   type ComparisonColumn,
   type ComparisonRow,

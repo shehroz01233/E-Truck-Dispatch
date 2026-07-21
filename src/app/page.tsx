@@ -98,7 +98,6 @@ const services: Service[] = [
       "Load sourcing, rate negotiation, broker communication, appointment scheduling, and same-day invoice submission managed by a dedicated dispatcher aligned to your lanes, equipment type, and revenue targets.",
     image: "/Home/images/52_rectangle_1077.webp",
     imageAlt: "Warehouse worker reviewing freight information",
-    accent: true,
   },
   {
     title: "Document Management",

@@ -7,7 +7,7 @@ import FreightTypesSection, {
 import VisionFormSection from "@/app/components/VisionFormSection";
 import OurServices, { type Service } from "@/app/components/OurServices";
 import SupportColumnsSection from "@/app/components/SupportColumnsSection";
-import ComparisonCardsSection from "@/app/components/ComparisonCardSection";
+import ComparisonCardsSection from "@/app/components/ComparisonCardsSection";
 import DispatchAudienceSection, {
   type DispatchAudience,
 } from "@/app/components/DispatchAudienceSection";

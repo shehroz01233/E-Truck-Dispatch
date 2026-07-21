@@ -3,7 +3,7 @@ import FeatureIntroSection from "@/app/components/FeatureIntroSection";
 import RevenuePanelSection, {
   type RevenueGroup,
 } from "@/app/components/RevenuePanelSection";
-import ComparisonCardsSection from "@/app/components/ComparisonCardSection";
+import ComparisonCardsSection from "@/app/components/ComparisonCardsSection";
 import FreightTypesSection, {
   type FreightTypeCard,
 } from "@/app/components/FreightTypesSection";

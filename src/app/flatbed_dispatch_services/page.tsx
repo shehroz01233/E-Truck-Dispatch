@@ -2,7 +2,7 @@ import HeroSection from "@/app/components/HeroSection";
 import FeatureIntroSection from "@/app/components/FeatureIntroSection";
 import HowWeWork from "@/app/components/HowWeWork";
 import VisionFormSection from "@/app/components/VisionFormSection";
-import ComparisonCardsSection from "@/app/components/ComparisonCardSection";
+import ComparisonCardsSection from "@/app/components/ComparisonCardsSection";
 import RevenuePanelSection, {
   type RevenueGroup,
 } from "@/app/components/RevenuePanelSection";

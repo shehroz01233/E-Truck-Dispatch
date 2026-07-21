@@ -1,9 +1,18 @@
 import Image from "next/image";
 
+export type ComplianceCard = {
+  title: string;
+  intro?: string;
+  items: string[];
+  footer?: string;
+};
+
+type ComplianceCardInput = [string, string[]] | ComplianceCard;
+
 type Props = {
   heading: string;
   description: string;
-  cards: [string, string[]][];
+  cards: ComplianceCardInput[];
   image: string;
   imageAlt?: string;
   cardContentVariant?: "list" | "paragraph";
@@ -34,43 +43,63 @@ export default function ComplianceMatrixSection({
         </div>
 
         {/* Content cards */}
-        {cards.map(([title, items], index) => (
-          <article
-            key={title}
-            className={`min-h-80 bg-[#171717] p-5 ${
-              index > 1 ? "xl:row-start-2" : ""
-            }`}
-          >
-            <h3 className="font-['Outfit'] text-xl font-semibold leading-[1.2] text-white">
-              {title}
-            </h3>
+        {cards.map((card, index) => {
+          const [title, items] = Array.isArray(card)
+            ? card
+            : [card.title, card.items];
+          const intro = Array.isArray(card) ? undefined : card.intro;
+          const footer = Array.isArray(card) ? undefined : card.footer;
 
-            {isParagraphVariant ? (
-              <div className="mt-8 space-y-4">
-                {items.map((item) => (
-                  <p
-                    key={item}
-                    className="font-['DM_Sans'] text-sm leading-[1.4] text-white/85"
-                  >
-                    {item}
-                  </p>
-                ))}
-              </div>
-            ) : (
-              <ul className="mt-8 space-y-3">
-                {items.map((item) => (
-                  <li
-                    key={item}
-                    className="flex items-start gap-3 font-['DM_Sans'] text-sm leading-[1.4] text-white/75"
-                  >
-                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-[#b34b0c]" />
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
-            )}
-          </article>
-        ))}
+          return (
+            <article
+              key={title}
+              className={`min-h-80 bg-[#171717] p-5 ${
+                index > 1 ? "xl:row-start-2" : ""
+              }`}
+            >
+              <h3 className="font-['Outfit'] text-xl font-semibold leading-[1.2] text-white">
+                {title}
+              </h3>
+
+              {intro ? (
+                <p className="mt-8 font-['DM_Sans'] text-sm leading-[1.4] text-white/85">
+                  {intro}
+                </p>
+              ) : null}
+
+              {isParagraphVariant ? (
+                <div className={`${intro ? "mt-4" : "mt-8"} space-y-4`}>
+                  {items.map((item) => (
+                    <p
+                      key={item}
+                      className="font-['DM_Sans'] text-sm leading-[1.4] text-white/85"
+                    >
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              ) : (
+                <ul className={`${intro ? "mt-4" : "mt-8"} space-y-3`}>
+                  {items.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 font-['DM_Sans'] text-sm leading-[1.4] text-white/75"
+                    >
+                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-[#b34b0c]" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+
+              {footer ? (
+                <p className="mt-4 font-['DM_Sans'] text-sm leading-[1.4] text-white/85">
+                  {footer}
+                </p>
+              ) : null}
+            </article>
+          );
+        })}
 
         {/* Image */}
         <div className="relative min-h-80 overflow-hidden md:col-span-2 xl:col-start-3 xl:row-start-2">

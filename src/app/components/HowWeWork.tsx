@@ -35,6 +35,24 @@ const defaultSteps: WorkflowStep[] = [
     description:
       "Each load is assessed against real-time market data from platforms like DAT Solutions. Only freight meeting your approved rate floor and operational criteria is presented.",
   },
+  {
+    number: "4",
+    title: "Load Monitoring and Documentation",
+    description:
+      "Your dispatcher monitors the load through delivery, coordinates broker updates, and organizes the required paperwork so each shipment moves through the workflow without avoidable delays.",
+  },
+  {
+    number: "5",
+    title: "Delivery Confirmation and Invoicing",
+    description:
+      "After delivery, the signed proof of delivery is reviewed with the rate confirmation and supporting documents before the completed invoice package is submitted for payment.",
+  },
+  {
+    number: "6",
+    title: "Performance Review and Route Planning",
+    description:
+      "Completed loads are reviewed against rate-per-mile targets, deadhead distance, preferred lanes, and scheduling requirements to improve the next load selection and maintain consistent operations.",
+  },
 ];
 
 export default function HowWeWork({
@@ -87,7 +105,7 @@ export default function HowWeWork({
             {heading}
           </h2>
 
-          <div className={`mt-10 space-y-[clamp(0.75rem,1.04vw,1.25rem)] pr-[9.5%] xl:mt-[clamp(2.375rem,2.86vw,3.4375rem)] ${hasDetailedSteps ? "max-h-[28rem] overflow-y-auto [scrollbar-color:#B34B0C_#3F3F3F] [scrollbar-width:thin]" : ""}`}>
+          <div className="mt-10 max-h-[28rem] space-y-[clamp(0.75rem,1.04vw,1.25rem)] overflow-y-scroll overscroll-contain pr-[9.5%] [scrollbar-color:#B34B0C_#3F3F3F] [scrollbar-width:thin] [&::-webkit-scrollbar-thumb]:bg-[#B34B0C] [&::-webkit-scrollbar-track]:bg-[#3F3F3F] [&::-webkit-scrollbar]:w-[0.5625rem] xl:mt-[clamp(2.375rem,2.86vw,3.4375rem)]">
             {steps.map((step, index) => (
               <WorkflowCard
                 key={`${step.title}-${index}`}
@@ -98,11 +116,6 @@ export default function HowWeWork({
             ))}
           </div>
 
-          {!hasDetailedSteps ? (
-            <div className="absolute right-0 top-[22%] h-[71.2%] w-[clamp(0.25rem,0.47vw,0.5625rem)] bg-[#3F3F3F]">
-              <div className="h-[48.8%] w-[55%] bg-[#B34B0C]" />
-            </div>
-          ) : null}
         </div>
       </div>
 
