@@ -1,14 +1,16 @@
-"use client";
-
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import type { CSSProperties } from "react";
+import type { Variants } from "motion/react";
+import * as motion from "motion/react-client";
+
 type TruckType = {
   title: string;
   description: string;
   image?: string;
   active?: boolean;
 };
+
 type OurTrucksProps = {
   backgroundImage?: string;
   heading?: string;
@@ -17,173 +19,868 @@ type OurTrucksProps = {
   buttonHref?: string;
   trucks?: TruckType[];
 };
-const defaultTrucks: TruckType[] = [{
-  title: "Dry Van Dispatch",
-  description: "Standard 48 to 53 foot enclosed trailers moving retail goods, consumer products, and packaged freight through high-volume distribution corridors nationwide.",
-  active: true
-}, {
-  title: "Flatbed Dispatch",
-  image: "/Home/images/Flatbed Dispatch Services.webp",
-  description: "Open-deck trailers transporting construction materials, steel, lumber, and heavy machinery with tarping, strapping, and load securement compliance built into every booking."
-}, {
-  title: "Step Deck Dispatch",
-  image: "/Home/images/Step Deck Dispatch.webp",
-  description: "Designed for 8.5 to 10 foot tall cargo including industrial machinery and construction equipment, with multi-state permit coordination and oversized load documentation."
-}, {
-  title: "Reefer Dispatch",
-  image: "/Home/images/Reefer Dispatch Services.webp",
-  description: "Temperature-controlled trailers for food, pharmaceuticals, and perishables requiring cold chain integrity and direct relationships with food-grade brokers."
-}, {
-  title: "Hotshot Dispatch",
-  image: "/Home/images/Hotshot Truck Dispatching Services.webp",
-  description: "Time-sensitive freight for oil fields, perishable cargo, and construction industries using 40-foot-plus trucks with same-day or next-day delivery turnaround."
-}, {
-  title: "Box Truck Dispatch",
-  image: "/Home/images/Box Truck.webp",
-  description: "Straight trucks handling local and regional retail, household, and final-mile freight with careful route planning for dock access, liftgate needs, and appointment windows."
-}, {
-  title: "Power Only Dispatch",
-  image: "/Home/images/Power Only Dispatch Service.webp",
-  description: "Tractor-only carriers pulling customer, broker, or leased trailers with drop-and-hook planning, trailer compatibility checks, and efficient empty-mile management."
-}, {
-  title: "Conestoga Dispatch",
-  image: "/Home/images/Conestoga Dispatch Services.webp",
-  description: "Retractable-tarp trailers protecting steel, machinery, and specialized freight while preserving fast side-loading access and open-deck securement flexibility."
-}];
+
+type CardStyle = CSSProperties & {
+  willChange?: string;
+};
+
+type PositionState = {
+  left: number;
+  opacity: number;
+};
+
+type CarouselTimeline = {
+  left: string[];
+  opacity: number[];
+  times: number[];
+};
+
+const defaultTrucks: TruckType[] = [
+  {
+    title: "Dry Van Dispatch",
+    description:
+      "Standard 48 to 53 foot enclosed trailers moving retail goods, consumer products, and packaged freight through high-volume distribution corridors nationwide.",
+    active: true,
+  },
+  {
+    title: "Flatbed Dispatch",
+    image: "/Home/images/Flatbed Dispatch Services.webp",
+    description:
+      "Open-deck trailers transporting construction materials, steel, lumber, and heavy machinery with tarping, strapping, and load securement compliance built into every booking.",
+  },
+  {
+    title: "Step Deck Dispatch",
+    image: "/Home/images/Step Deck Dispatch.webp",
+    description:
+      "Designed for 8.5 to 10 foot tall cargo including industrial machinery and construction equipment, with multi-state permit coordination and oversized load documentation.",
+  },
+  {
+    title: "Reefer Dispatch",
+    image: "/Home/images/Reefer Dispatch Services.webp",
+    description:
+      "Temperature-controlled trailers for food, pharmaceuticals, and perishables requiring cold chain integrity and direct relationships with food-grade brokers.",
+  },
+  {
+    title: "Hotshot Dispatch",
+    image: "/Home/images/Hotshot Truck Dispatching Services.webp",
+    description:
+      "Time-sensitive freight for oil fields, perishable cargo, and construction industries using 40-foot-plus trucks with same-day or next-day delivery turnaround.",
+  },
+  {
+    title: "Box Truck Dispatch",
+    image: "/Home/images/Box Truck.webp",
+    description:
+      "Straight trucks handling local and regional retail, household, and final-mile freight with careful route planning for dock access, liftgate needs, and appointment windows.",
+  },
+  {
+    title: "Power Only Dispatch",
+    image: "/Home/images/Power Only Dispatch Service.webp",
+    description:
+      "Tractor-only carriers pulling customer, broker, or leased trailers with drop-and-hook planning, trailer compatibility checks, and efficient empty-mile management.",
+  },
+  {
+    title: "Conestoga Dispatch",
+    image: "/Home/images/Conestoga Dispatch Services.webp",
+    description:
+      "Retractable-tarp trailers protecting steel, machinery, and specialized freight while preserving fast side-loading access and open-deck securement flexibility.",
+  },
+];
+
+const ease = [0.22, 1, 0.36, 1] as const;
+
+const viewport = {
+  once: true,
+  amount: 0.2,
+  margin: "0px 0px -70px 0px",
+} as const;
+
+const contentVariants: Variants = {
+  hidden: {
+    opacity: 0.3,
+    x: -44,
+    y: 22,
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    y: 0,
+    transition: {
+      duration: 0.72,
+      ease,
+      delayChildren: 0.08,
+      staggerChildren: 0.11,
+    },
+  },
+};
+
+const itemVariants: Variants = {
+  hidden: {
+    opacity: 0.3,
+    y: 20,
+    scale: 0.985,
+  },
+  visible: {
+    opacity: 1,
+    y: 0,
+    scale: 1,
+    transition: {
+      duration: 0.5,
+      ease,
+    },
+  },
+};
+
+function getPositionState({
+  step,
+  total,
+  visibleCount,
+  slots,
+  leftExit,
+  rightExit,
+}: {
+  step: number;
+  total: number;
+  visibleCount: number;
+  slots: number[];
+  leftExit: number;
+  rightExit: number;
+}): PositionState {
+  const normalizedStep = step % total;
+
+  const relativeOffset =
+    (total - normalizedStep) % total;
+
+  if (relativeOffset < visibleCount) {
+    return {
+      left: slots[relativeOffset],
+      opacity: 1,
+    };
+  }
+
+  /*
+   * The active left card exits through the left edge.
+   */
+  if (normalizedStep === 1) {
+    return {
+      left: leftExit,
+      opacity: 0,
+    };
+  }
+
+  /*
+   * Hidden cards wait outside the right edge before entering.
+   */
+  return {
+    left: rightExit,
+    opacity: 0,
+  };
+}
+
+function createCardTimeline({
+  total,
+  visibleCount,
+  slots,
+  leftExit,
+  rightExit,
+  holdRatio,
+}: {
+  total: number;
+  visibleCount: number;
+  slots: number[];
+  leftExit: number;
+  rightExit: number;
+  holdRatio: number;
+}): CarouselTimeline {
+  const firstState = getPositionState({
+    step: 0,
+    total,
+    visibleCount,
+    slots,
+    leftExit,
+    rightExit,
+  });
+
+  const left = [`${firstState.left}%`];
+  const opacity = [firstState.opacity];
+  const times = [0];
+
+  for (let step = 0; step < total; step += 1) {
+    const currentState = getPositionState({
+      step,
+      total,
+      visibleCount,
+      slots,
+      leftExit,
+      rightExit,
+    });
+
+    const nextState = getPositionState({
+      step: step + 1,
+      total,
+      visibleCount,
+      slots,
+      leftExit,
+      rightExit,
+    });
+
+    /*
+     * Hold the current card position for 2.4 seconds.
+     */
+    left.push(`${currentState.left}%`);
+    opacity.push(currentState.opacity);
+    times.push((step + holdRatio) / total);
+
+    /*
+     * Move to the next position during the final 0.6 seconds.
+     */
+    left.push(`${nextState.left}%`);
+    opacity.push(nextState.opacity);
+    times.push((step + 1) / total);
+  }
+
+  return {
+    left,
+    opacity,
+    times,
+  };
+}
+
+function createActiveTimeline(
+  total: number,
+  holdRatio: number,
+) {
+  const opacity = [1];
+  const times = [0];
+
+  for (let step = 0; step < total; step += 1) {
+    const currentOpacity = step === 0 ? 1 : 0;
+
+    const nextOpacity =
+      step + 1 === total ? 1 : 0;
+
+    opacity.push(currentOpacity);
+    times.push((step + holdRatio) / total);
+
+    opacity.push(nextOpacity);
+    times.push((step + 1) / total);
+  }
+
+  return {
+    opacity,
+    times,
+  };
+}
+
 export default function OurTrucks({
   backgroundImage = "/Home/images/22_rectangle_1424.webp",
   heading = "Our Trucks",
   description = "E Truck Dispatching covers 8 equipment categories, each requiring distinct load board strategies, broker relationships, and securement knowledge.",
   buttonText = "View All States",
   buttonHref = "/states",
-  trucks = defaultTrucks
+  trucks = defaultTrucks,
 }: OurTrucksProps) {
-  const defaultActiveIndex = Math.max(trucks.findIndex(truck => truck.active), 0);
-  const [activeIndex, setActiveIndex] = useState(defaultActiveIndex);
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
-  const visibleActiveIndex = hoveredIndex ?? activeIndex;
-  const visibleBackgroundImage = trucks[visibleActiveIndex]?.image ?? backgroundImage;
-  const visibleTruckTitle = trucks[visibleActiveIndex]?.title ?? heading;
-  const desktopTruckCount = Math.min(trucks.length, 5);
-  const desktopStartIndex = Math.min(Math.max(activeIndex - desktopTruckCount + 1, 0), Math.max(trucks.length - desktopTruckCount, 0));
-  const desktopTrucks = trucks.slice(desktopStartIndex, desktopStartIndex + desktopTruckCount);
-  const showPreviousTruck = () => {
-    if (trucks.length === 0) return;
-    setActiveIndex(currentIndex => currentIndex === 0 ? trucks.length - 1 : currentIndex - 1);
-  };
-  const showNextTruck = () => {
-    if (trucks.length === 0) return;
-    setActiveIndex(currentIndex => currentIndex === trucks.length - 1 ? 0 : currentIndex + 1);
-  };
-  return <section className="group/section relative w-full overflow-hidden bg-[#1C1C1C] text-white">
-      {/* Background */}
-      <Image src={backgroundImage} alt={visibleBackgroundImage === backgroundImage ? `${visibleTruckTitle} truck` : ""} fill sizes="100vw" className={`object-cover object-center transition-[opacity,transform] duration-1000 ease-in-out motion-reduce:transition-none group-hover/section:scale-[1.015] ${visibleBackgroundImage === backgroundImage ? "opacity-100" : "opacity-0"}`} />
-      {trucks.map((truck, index) => truck.image && <Image key={`${truck.image}-${index}`} src={truck.image} alt={visibleActiveIndex === index ? `${truck.title} truck` : ""} fill sizes="100vw" className={`object-cover object-center transition-[opacity,transform] duration-1000 ease-in-out motion-reduce:transition-none group-hover/section:scale-[1.015] ${visibleActiveIndex === index ? "opacity-100" : "opacity-0"}`} />)}
+  const resolvedTrucks =
+    trucks.length > 0 ? trucks : defaultTrucks;
 
-      {/* Desktop */}
-      <div className="relative z-10 mx-auto hidden min-h-[clamp(42rem,41.6667vw,50rem)] w-full max-w-[120rem] flex-col xl:flex">
-        {/* Heading content */}
-        <div className="w-full px-[9.375%] pt-[clamp(4.75rem,4.6875vw,5.625rem)]">
-          <div className="w-[25.2%] min-w-[18rem] max-w-[24rem]">
-            <h2 className="break-words font-['Outfit'] text-[clamp(2rem,2.5vw,3rem)] font-bold leading-[1.2] [overflow-wrap:anywhere]">
-              {heading}
-            </h2>
+  const totalTrucks = resolvedTrucks.length;
 
-            {description && <p className="mt-[6%] break-words font-['DM_Sans'] text-[clamp(0.75rem,0.94vw,1.125rem)] leading-[1.5] [overflow-wrap:anywhere]">
-                {description}
-              </p>}
+  if (totalTrucks === 0) {
+    return null;
+  }
 
-            <Link href={buttonHref} className="group/button mt-[8%] inline-flex min-h-[clamp(2.125rem,2.3vw,2.75rem)] items-center overflow-hidden bg-[#B34B0C] px-5 py-1 font-['Outfit'] text-[clamp(0.8125rem,0.94vw,1.125rem)] font-medium capitalize transition-[transform,background-color,box-shadow] duration-300 ease-out motion-reduce:transition-none hover:-translate-y-0.5 hover:bg-[#c6530d] hover:shadow-[0_0.75rem_2rem_rgba(179,75,12,0.25)] active:translate-y-0">
-              <span className="transition-transform duration-300 ease-out motion-reduce:transition-none group-hover/button:translate-x-0.5">
-                {buttonText}
-              </span>
-            </Link>
+  const initialActiveIndex = Math.max(
+    resolvedTrucks.findIndex(
+      (truck) => truck.active,
+    ),
+    0,
+  );
+
+  const visibleCount = Math.min(
+    totalTrucks,
+    5,
+  );
+
+  /*
+   * Each card remains active for three seconds.
+   *
+   * 2.4 seconds = hold
+   * 0.6 seconds = movement
+   */
+  const changeEverySeconds = 3;
+  const transitionSeconds = 0.6;
+
+  const holdRatio =
+    (changeEverySeconds - transitionSeconds) /
+    changeEverySeconds;
+
+  const carouselDuration =
+    totalTrucks * changeEverySeconds;
+
+  const gapPercent = 2.667;
+
+  const cardWidthPercent =
+    (100 -
+      (visibleCount - 1) * gapPercent) /
+    visibleCount;
+
+  const slots = Array.from(
+    {
+      length: visibleCount,
+    },
+    (_, index) =>
+      index *
+      (cardWidthPercent + gapPercent),
+  );
+
+  const leftExit =
+    -(cardWidthPercent + gapPercent);
+
+  const rightExit = 100 + gapPercent;
+
+  const cardTimeline = createCardTimeline({
+    total: totalTrucks,
+    visibleCount,
+    slots,
+    leftExit,
+    rightExit,
+    holdRatio,
+  });
+
+  const activeTimeline =
+    createActiveTimeline(
+      totalTrucks,
+      holdRatio,
+    );
+
+  return (
+    <motion.section
+      initial={{
+        opacity: 0.35,
+        y: 30,
+      }}
+      whileInView={{
+        opacity: 1,
+        y: 0,
+      }}
+      viewport={viewport}
+      transition={{
+        duration: 0.72,
+        ease,
+      }}
+      className="group/section relative w-full overflow-hidden bg-[#1c1c1c] text-white"
+    >
+      {/* Automatically changing background images */}
+      <div className="absolute inset-0">
+        {resolvedTrucks.map(
+          (truck, index) => {
+            const offset =
+              (
+                index -
+                initialActiveIndex +
+                totalTrucks
+              ) % totalTrucks;
+
+            const phaseStep =
+              (
+                totalTrucks - offset
+              ) % totalTrucks;
+
+            const delay =
+              -(
+                phaseStep *
+                changeEverySeconds
+              );
+
+            const isInitiallyActive =
+              offset === 0;
+
+            return (
+              <motion.div
+                key={`${truck.title}-background`}
+                initial={false}
+                animate={{
+                  opacity:
+                    activeTimeline.opacity,
+                  scale:
+                    activeTimeline.opacity.map(
+                      (value) =>
+                        value === 1
+                          ? 1
+                          : 1.025,
+                    ),
+                }}
+                transition={{
+                  duration:
+                    carouselDuration,
+                  delay,
+                  ease: "linear",
+                  repeat: Infinity,
+                  times:
+                    activeTimeline.times,
+                }}
+                style={{
+                  opacity:
+                    isInitiallyActive
+                      ? 1
+                      : 0,
+                  willChange:
+                    "opacity, transform",
+                }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={
+                    truck.image ??
+                    backgroundImage
+                  }
+                  alt=""
+                  fill
+                  priority={
+                    isInitiallyActive
+                  }
+                  sizes="100vw"
+                  className="object-cover object-center transition-transform duration-1000 group-hover/section:scale-[1.015] motion-reduce:transition-none"
+                />
+              </motion.div>
+            );
+          },
+        )}
+      </div>
+
+      {/* Background overlays */}
+      <div className="pointer-events-none absolute inset-0 bg-black/30" />
+
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/65 via-black/20 to-black/25" />
+
+      <div className="relative z-10">
+        {/* Desktop */}
+        <div className="mx-auto hidden min-h-[clamp(42rem,41.6667vw,50rem)] w-full max-w-[120rem] flex-col xl:flex">
+          {/* Heading content */}
+          <div className="w-full px-[9.375%] pt-[clamp(4.75rem,4.6875vw,5.625rem)]">
+            <motion.div
+              variants={contentVariants}
+              initial="hidden"
+              whileInView="visible"
+              viewport={viewport}
+              className="w-[25.2%] min-w-[18rem] max-w-[24rem]"
+            >
+              <motion.h2
+                variants={itemVariants}
+                className="break-words font-['Outfit'] text-[clamp(2rem,2.5vw,3rem)] font-bold leading-[1.2] [overflow-wrap:anywhere]"
+              >
+                {heading}
+              </motion.h2>
+
+              {description ? (
+                <motion.p
+                  variants={itemVariants}
+                  className="mt-[6%] break-words font-['DM_Sans'] text-[clamp(0.75rem,0.94vw,1.125rem)] leading-[1.5] [overflow-wrap:anywhere]"
+                >
+                  {description}
+                </motion.p>
+              ) : null}
+
+              <motion.div
+                variants={itemVariants}
+                className="mt-[8%] inline-flex"
+              >
+                <motion.div
+                  whileHover={{
+                    y: -4,
+                    scale: 1.025,
+                    boxShadow:
+                      "0 14px 32px rgba(179,75,12,0.3)",
+                  }}
+                  whileTap={{
+                    scale: 0.97,
+                  }}
+                  transition={{
+                    duration: 0.2,
+                    ease,
+                  }}
+                >
+                  <Link
+                    href={buttonHref}
+                    className="group/button inline-flex min-h-[clamp(2.125rem,2.3vw,2.75rem)] items-center overflow-hidden bg-[#b34b0c] px-5 py-1 font-['Outfit'] text-[clamp(0.8125rem,0.94vw,1.125rem)] font-medium capitalize transition-colors duration-300 hover:bg-[#c6530d]"
+                  >
+                    <span className="transition-transform duration-300 group-hover/button:translate-x-0.5">
+                      {buttonText}
+                    </span>
+                  </Link>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
-        </div>
 
-        {/* Controls and truck cards */}
-        <div className="mt-auto grid w-full grid-cols-[9.375%_3.65%_1.0375%_78.125%_7.8125%] items-end">
-          <div />
+          {/* Controls and cards */}
+          <div className="mt-auto grid w-full grid-cols-[9.375%_3.65%_1.0375%_78.125%_7.8125%] items-end">
+            <div />
 
-          <div className="flex h-full min-h-[clamp(16rem,16.3vw,19.5625rem)] flex-col justify-end gap-[clamp(0.5rem,0.55vw,0.6875rem)] pb-[2.5%]">
-            <button type="button" aria-label="Previous truck type" onClick={showPreviousTruck} className="group/arrow flex aspect-square w-full items-center justify-center bg-[#161616] transition-[transform,background-color,box-shadow] duration-300 ease-out motion-reduce:transition-none hover:-translate-y-0.5 hover:bg-[#242424] hover:shadow-lg active:scale-95">
-              <span className="flex h-full w-full items-center justify-center transition-transform duration-300 ease-out motion-reduce:transition-none group-hover/arrow:-translate-x-1">
+            {/* Original arrow appearance */}
+            <div
+              aria-hidden="true"
+              className="flex h-full min-h-[clamp(16rem,16.3vw,19.5625rem)] flex-col justify-end gap-[clamp(0.5rem,0.55vw,0.6875rem)] pb-[2.5%]"
+            >
+              <motion.div
+                whileHover={{
+                  x: -4,
+                  y: -3,
+                  scale: 1.04,
+                }}
+                transition={{
+                  duration: 0.2,
+                  ease,
+                }}
+                className="flex aspect-square w-full items-center justify-center bg-[#161616]"
+              >
                 <Arrow direction="left" />
-              </span>
-            </button>
+              </motion.div>
 
-            <button type="button" aria-label="Next truck type" onClick={showNextTruck} className="group/arrow flex aspect-square w-full items-center justify-center bg-[#B34B0C] transition-[transform,background-color,box-shadow] duration-300 ease-out motion-reduce:transition-none hover:-translate-y-0.5 hover:bg-[#c6530d] hover:shadow-[0_0.75rem_2rem_rgba(179,75,12,0.25)] active:scale-95">
-              <span className="flex h-full w-full items-center justify-center transition-transform duration-300 ease-out motion-reduce:transition-none group-hover/arrow:translate-x-1">
+              <motion.div
+                whileHover={{
+                  x: 4,
+                  y: -3,
+                  scale: 1.04,
+                }}
+                transition={{
+                  duration: 0.2,
+                  ease,
+                }}
+                className="flex aspect-square w-full items-center justify-center bg-[#b34b0c]"
+              >
                 <Arrow direction="right" />
-              </span>
-            </button>
+              </motion.div>
+            </div>
+
+            <div />
+
+            {/* Automatic text-card carousel */}
+            <div className="relative min-h-[clamp(16rem,16.3vw,19.5625rem)] overflow-hidden">
+              {resolvedTrucks.map(
+                (truck, index) => {
+                  const offset =
+                    (
+                      index -
+                      initialActiveIndex +
+                      totalTrucks
+                    ) % totalTrucks;
+
+                  const phaseStep =
+                    (
+                      totalTrucks -
+                      offset
+                    ) % totalTrucks;
+
+                  const delay =
+                    -(
+                      phaseStep *
+                      changeEverySeconds
+                    );
+
+                  const initialPosition =
+                    offset < visibleCount
+                      ? {
+                          left:
+                            slots[offset],
+                          opacity: 1,
+                        }
+                      : {
+                          left: rightExit,
+                          opacity: 0,
+                        };
+
+                  const cardStyle: CardStyle =
+                    {
+                      width: `${cardWidthPercent}%`,
+                      left: `${initialPosition.left}%`,
+                      opacity:
+                        initialPosition.opacity,
+                      willChange:
+                        "left, opacity",
+                    };
+
+                  return (
+                    <motion.div
+                      key={`${truck.title}-desktop`}
+                      initial={false}
+                      animate={{
+                        left:
+                          cardTimeline.left,
+                        opacity:
+                          cardTimeline.opacity,
+                      }}
+                      transition={{
+                        duration:
+                          carouselDuration,
+                        delay,
+                        ease: "linear",
+                        repeat: Infinity,
+                        times:
+                          cardTimeline.times,
+                      }}
+                      style={cardStyle}
+                      className="absolute inset-y-0"
+                    >
+                      <motion.article
+                        whileHover={{
+                          y: -8,
+                          scale: 1.02,
+                          boxShadow:
+                            "0 22px 50px rgba(0,0,0,0.24)",
+                        }}
+                        transition={{
+                          duration: 0.28,
+                          ease,
+                        }}
+                        tabIndex={0}
+                        className="group/card relative isolate flex h-full cursor-default flex-col overflow-hidden bg-transparent px-[11.2%] pb-[12%] pt-[18.65%] outline-none focus-visible:ring-2 focus-visible:ring-[#b34b0c] focus-visible:ring-inset"
+                      >
+                        {/* Active orange background */}
+                        <motion.span
+                          initial={false}
+                          animate={{
+                            opacity:
+                              activeTimeline.opacity,
+                          }}
+                          transition={{
+                            duration:
+                              carouselDuration,
+                            delay,
+                            ease: "linear",
+                            repeat: Infinity,
+                            times:
+                              activeTimeline.times,
+                          }}
+                          style={{
+                            opacity:
+                              offset === 0
+                                ? 1
+                                : 0,
+                          }}
+                          aria-hidden="true"
+                          className="absolute inset-0 bg-[#b34b0c]/80"
+                        />
+
+                        {/* Active left rail */}
+                        <motion.span
+                          initial={false}
+                          animate={{
+                            opacity:
+                              activeTimeline.opacity,
+                            scaleY:
+                              activeTimeline.opacity,
+                          }}
+                          transition={{
+                            duration:
+                              carouselDuration,
+                            delay,
+                            ease: "linear",
+                            repeat: Infinity,
+                            times:
+                              activeTimeline.times,
+                          }}
+                          style={{
+                            opacity:
+                              offset === 0
+                                ? 1
+                                : 0,
+                            scaleY:
+                              offset === 0
+                                ? 1
+                                : 0,
+                          }}
+                          aria-hidden="true"
+                          className="absolute inset-y-0 left-0 w-[3px] origin-top bg-white/80"
+                        />
+
+                        <h3 className="relative z-10 max-w-[9.75rem] break-words font-['Outfit'] text-[clamp(0.875rem,1.15vw,1.375rem)] font-semibold leading-[1.27] transition-transform duration-300 group-hover/card:-translate-y-0.5 [overflow-wrap:anywhere]">
+                          {truck.title}
+                        </h3>
+
+                        <p className="relative z-10 mt-[14%] max-w-[13rem] break-words font-['DM_Sans'] text-[clamp(0.625rem,0.84vw,1rem)] leading-[1.38] [overflow-wrap:anywhere]">
+                          {truck.description}
+                        </p>
+
+                        {/* Active bottom line */}
+                        <motion.span
+                          initial={false}
+                          animate={{
+                            opacity:
+                              activeTimeline.opacity,
+                            scaleX:
+                              activeTimeline.opacity,
+                          }}
+                          transition={{
+                            duration:
+                              carouselDuration,
+                            delay,
+                            ease: "linear",
+                            repeat: Infinity,
+                            times:
+                              activeTimeline.times,
+                          }}
+                          style={{
+                            opacity:
+                              offset === 0
+                                ? 1
+                                : 0,
+                            scaleX:
+                              offset === 0
+                                ? 1
+                                : 0,
+                          }}
+                          aria-hidden="true"
+                          className="absolute bottom-0 left-0 h-[3px] w-full origin-left bg-white/90"
+                        />
+                      </motion.article>
+                    </motion.div>
+                  );
+                },
+              )}
+            </div>
+
+            <div />
           </div>
+        </div>
 
-          <div />
+        {/* Mobile and tablet */}
+        <div className="px-5 py-12 sm:px-8 xl:hidden">
+          <motion.div
+            variants={contentVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={viewport}
+            className="max-w-[26.875rem]"
+          >
+            <motion.h2
+              variants={itemVariants}
+              className="break-words font-['Outfit'] text-[2.125rem] font-bold leading-tight [overflow-wrap:anywhere]"
+            >
+              {heading}
+            </motion.h2>
 
-          <div className="grid min-h-[clamp(16rem,16.3vw,19.5625rem)] items-stretch gap-x-[2.667%] gap-y-4" style={{
-          gridTemplateColumns: `repeat(${Math.min(Math.max(desktopTrucks.length, 1), 5)}, minmax(0, 1fr))`
-        }}>
-            {desktopTrucks.map((truck, desktopIndex) => {
-            const index = desktopStartIndex + desktopIndex;
-            const isActive = visibleActiveIndex === index;
-            return <article key={`${truck.title}-${index}`} onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onFocus={() => setHoveredIndex(index)} onBlur={() => setHoveredIndex(null)} tabIndex={0} className={`truck-future-card group/card relative isolate flex min-h-[clamp(16rem,16.3vw,19.5625rem)] min-w-0 cursor-default flex-col overflow-hidden px-[11.2%] pb-[12%] pt-[18.65%] outline-none transition-[transform,background-color,box-shadow] duration-700 ease-in-out motion-reduce:transition-none focus-visible:ring-2 focus-visible:ring-[#B34B0C] focus-visible:ring-inset ${isActive ? "truck-future-card--active bg-[#B34B0C]/80 shadow-[0_1.25rem_3rem_rgba(0,0,0,0.16)]" : "bg-transparent hover:-translate-y-1 hover:bg-[#161616]/45 hover:shadow-[0_1.25rem_3rem_rgba(0,0,0,0.14)]"}`}>
-                  <h3 className="relative z-10 max-w-[9.75rem] break-words font-['Outfit'] text-[clamp(0.875rem,1.15vw,1.375rem)] font-semibold leading-[1.27] transition-transform duration-300 ease-out motion-reduce:transition-none [overflow-wrap:anywhere] group-hover/card:-translate-y-0.5">
-                    {truck.title}
-                  </h3>
+            {description ? (
+              <motion.p
+                variants={itemVariants}
+                className="mt-5 break-words font-['DM_Sans'] text-[0.8125rem] leading-[1.5] text-white/90 [overflow-wrap:anywhere]"
+              >
+                {description}
+              </motion.p>
+            ) : null}
 
-                  <p className="relative z-10 mt-[14%] max-w-[13rem] break-words font-['DM_Sans'] text-[clamp(0.625rem,0.84vw,1rem)] leading-[1.38] [overflow-wrap:anywhere]">
-                    {truck.description}
-                  </p>
-                </article>;
-          })}
+            <motion.div
+              variants={itemVariants}
+              className="mt-6 inline-flex"
+            >
+              <Link
+                href={buttonHref}
+                className="group/button inline-flex min-h-10 items-center bg-[#b34b0c] px-5 py-2 font-['Outfit'] text-[0.8125rem] font-medium transition-[transform,background-color,box-shadow] duration-300 hover:-translate-y-0.5 hover:bg-[#c6530d] hover:shadow-[0_0.75rem_2rem_rgba(179,75,12,0.25)]"
+              >
+                <span className="transition-transform duration-300 group-hover/button:translate-x-0.5">
+                  {buttonText}
+                </span>
+              </Link>
+            </motion.div>
+          </motion.div>
+
+          {/* Original responsive grid */}
+          <div className="mt-10 grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {resolvedTrucks.map(
+              (truck, index) => {
+                const offset =
+                  (
+                    index -
+                    initialActiveIndex +
+                    totalTrucks
+                  ) % totalTrucks;
+
+                const phaseStep =
+                  (
+                    totalTrucks -
+                    offset
+                  ) % totalTrucks;
+
+                const delay =
+                  -(
+                    phaseStep *
+                    changeEverySeconds
+                  );
+
+                return (
+                  <motion.article
+                    key={`${truck.title}-mobile`}
+                    whileHover={{
+                      y: -7,
+                      scale: 1.015,
+                      boxShadow:
+                        "0 16px 40px rgba(0,0,0,0.22)",
+                    }}
+                    transition={{
+                      duration: 0.3,
+                      ease,
+                    }}
+                    tabIndex={0}
+                    className="group/card relative isolate min-h-[13.75rem] cursor-default overflow-hidden bg-[#161616]/80 p-6 outline-none backdrop-blur-sm focus-visible:ring-2 focus-visible:ring-[#b34b0c] focus-visible:ring-inset"
+                  >
+                    <motion.span
+                      initial={false}
+                      animate={{
+                        opacity:
+                          activeTimeline.opacity,
+                      }}
+                      transition={{
+                        duration:
+                          carouselDuration,
+                        delay,
+                        ease: "linear",
+                        repeat: Infinity,
+                        times:
+                          activeTimeline.times,
+                      }}
+                      style={{
+                        opacity:
+                          offset === 0
+                            ? 1
+                            : 0,
+                      }}
+                      aria-hidden="true"
+                      className="absolute inset-0 bg-[#b34b0c]/80"
+                    />
+
+                    <h3 className="relative z-10 break-words font-['Outfit'] text-[1.125rem] font-semibold leading-snug transition-transform duration-300 group-hover/card:-translate-y-0.5 [overflow-wrap:anywhere]">
+                      {truck.title}
+                    </h3>
+
+                    <p className="relative z-10 mt-5 break-words font-['DM_Sans'] text-[0.75rem] leading-[1.5] [overflow-wrap:anywhere]">
+                      {truck.description}
+                    </p>
+                  </motion.article>
+                );
+              },
+            )}
           </div>
-
-          <div />
         </div>
       </div>
-
-      {/* Mobile and tablet */}
-      <div className="relative z-10 px-5 py-12 sm:px-8 xl:hidden">
-        <div className="max-w-[26.875rem]">
-          <h2 className="break-words font-['Outfit'] text-[2.125rem] font-bold leading-tight [overflow-wrap:anywhere]">
-            {heading}
-          </h2>
-
-          {description && <p className="mt-5 break-words font-['DM_Sans'] text-[0.8125rem] leading-[1.5] text-white/90 [overflow-wrap:anywhere]">
-              {description}
-            </p>}
-
-          <Link href={buttonHref} className="group/button mt-6 inline-flex min-h-10 items-center bg-[#B34B0C] px-5 py-2 font-['Outfit'] text-[0.8125rem] font-medium transition-[transform,background-color,box-shadow] duration-300 ease-out motion-reduce:transition-none hover:-translate-y-0.5 hover:bg-[#c6530d] hover:shadow-[0_0.75rem_2rem_rgba(179,75,12,0.25)] active:translate-y-0">
-            <span className="transition-transform duration-300 ease-out motion-reduce:transition-none group-hover/button:translate-x-0.5">
-              {buttonText}
-            </span>
-          </Link>
-        </div>
-
-        <div className="mt-10 grid items-stretch gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {trucks.map((truck, index) => {
-          const isActive = visibleActiveIndex === index;
-          return <article key={`${truck.title}-${index}`} onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)} onFocus={() => setHoveredIndex(index)} onBlur={() => setHoveredIndex(null)} onClick={() => setActiveIndex(index)} tabIndex={0} className={`truck-future-card group/card relative isolate min-h-[13.75rem] cursor-pointer overflow-hidden p-6 outline-none transition-[transform,background-color,box-shadow] duration-700 ease-in-out motion-reduce:transition-none focus-visible:ring-2 focus-visible:ring-[#B34B0C] focus-visible:ring-inset ${isActive ? "truck-future-card--active bg-[#B34B0C]/80 shadow-[0_1rem_2.5rem_rgba(0,0,0,0.16)]" : "bg-[#161616]/80 backdrop-blur-sm hover:-translate-y-1 hover:bg-[#202020]/90 hover:shadow-[0_1rem_2.5rem_rgba(0,0,0,0.2)]"}`}>
-                <h3 className="relative z-10 break-words font-['Outfit'] text-[1.125rem] font-semibold leading-snug transition-transform duration-300 ease-out motion-reduce:transition-none group-hover/card:-translate-y-0.5 [overflow-wrap:anywhere]">
-                  {truck.title}
-                </h3>
-
-                <p className="relative z-10 mt-5 break-words font-['DM_Sans'] text-[0.75rem] leading-[1.5] [overflow-wrap:anywhere]">
-                  {truck.description}
-                </p>
-              </article>;
-        })}
-        </div>
-      </div>
-    </section>;
+    </motion.section>
+  );
 }
+
 function Arrow({
-  direction
+  direction,
 }: {
   direction: "left" | "right";
 }) {
-  return <svg aria-hidden="true" viewBox="0 0 24 24" className={`h-1/2 w-1/2 fill-none stroke-current stroke-2 ${direction === "left" ? "rotate-180" : ""}`}>
+  return (
+    <motion.svg
+      aria-hidden="true"
+      viewBox="0 0 24 24"
+      className={`h-1/2 w-1/2 fill-none stroke-current stroke-2 ${
+        direction === "left"
+          ? "rotate-180"
+          : ""
+      }`}
+    >
       <path d="m8 4 8 8-8 8" />
-    </svg>;
+    </motion.svg>
+  );
 }
