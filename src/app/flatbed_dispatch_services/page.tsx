@@ -258,7 +258,7 @@ export default function FlatbedDispatchServices() {
   icons={[
     "/Flatbed Dispatch Service/images/9_rectangle_1545.webp",
     "/Flatbed Dispatch Service/images/10_rectangle_1539.webp",
-    "/Flatbed Dispatch/images/11_rectangle_1541.webp",
+    "/Flatbed Dispatch Service/images/11_rectangle_1541.webp",
   ]}
   iconAlts={[
     "Cargo securement icon",
