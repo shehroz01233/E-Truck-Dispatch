@@ -725,7 +725,6 @@ export default function Factoring() {
             backgroundImage="/factoring/images/1_rectangle_1450.webp"
             backgroundAlt="Truck driver using a tablet to manage invoices and payments"
         /> */}
-        Sample format:
   <HeroSection
   h1={<>Dry Van Dispatch Service</>}
   fixedTitle="Dry Van Dispatch Service"

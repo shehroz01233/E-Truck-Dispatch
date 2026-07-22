@@ -5,7 +5,9 @@ import WhoWeAre from "./components/WhoWeAre";
 import OurTrucks from "./components/OurTruck";
 import FrieghtStates from "./components/FrieghtStates";
 import WhyChooseUs from "./components/WhyChooseUs";
-import HowWeWork from "./components/HowWeWork";
+import HowWeWork, {
+  type WorkflowStep,
+} from "./components/HowWeWork";
 import FAQs from "./components/FAQs";
 import QuestionStats from "./components/QuestionStats";
 
@@ -107,6 +109,46 @@ const services: Service[] = [
     imageAlt: "Freight trucks traveling on a highway",
   },
 ];
+
+const completeTruckingServiceSteps: WorkflowStep[] = [
+  {
+    number: "1",
+    title: "Professional Truck Dispatching",
+    description:
+      "Dedicated dispatch support helps carriers find suitable loads, negotiate competitive rates, coordinate broker communication, and maintain consistent freight movement.",
+  },
+  {
+    number: "2",
+    title: "Load Booking and Rate Negotiation",
+    description:
+      "Each available load is reviewed according to equipment type, preferred lanes, deadhead distance, delivery schedule, and expected revenue per mile.",
+  },
+  {
+    number: "3",
+    title: "Route Planning and Load Coordination",
+    description:
+      "Routes are planned around pickup appointments, delivery windows, fuel efficiency, road conditions, and reload opportunities to reduce operational gaps.",
+  },
+  {
+    number: "4",
+    title: "Carrier Documentation Management",
+    description:
+      "Rate confirmations, broker packets, bills of lading, proof of delivery documents, invoices, and supporting paperwork are organized throughout the dispatch cycle.",
+  },
+  {
+    number: "5",
+    title: "Broker Communication and Support",
+    description:
+      "Dispatchers maintain communication with brokers and shippers regarding load details, appointment updates, delays, detention, and delivery confirmation.",
+  },
+  {
+    number: "6",
+    title: "Back-Office and Compliance Assistance",
+    description:
+      "Operational support includes document tracking, carrier setup assistance, invoicing coordination, compliance organization, and ongoing performance review.",
+  },
+];
+
 export default function Home() {
   return (
     <>
@@ -140,8 +182,25 @@ export default function Home() {
       
         <WhyChooseUs />
       
-        <HowWeWork />
-     
+      <HowWeWork
+        blendBackgroundEdges
+        heading={
+          <>
+            <span className="block">
+              A Complete Trucking
+            </span>
+
+            <span className="block">
+              Services Package We Offer
+            </span>
+          </>
+        }
+        backgroundImage="/background-earthquake.png"
+        image="/California/images/28_vector_5.webp"
+        imageAlt="Delivery professional holding packages and a clipboard"
+        steps={completeTruckingServiceSteps}
+      />
+
         <FAQs
           heading="Frequently Asked Questions"
           description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
