@@ -540,6 +540,7 @@ export default function DocumentManagementPage() {
       />
 
       <HowWeWork
+      blendBackgroundEdges
         heading={
           <>
             Step-by-Step Trucking
@@ -547,6 +548,7 @@ export default function DocumentManagementPage() {
             Paperwork Workflow
           </>
         }
+          backgroundImage="/background-earthquake.png"
         image="/Document Management Revised/images/31_vector_5.webp"
         imageAlt="New image alt"
         steps={[

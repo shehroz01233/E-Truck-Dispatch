@@ -9,7 +9,9 @@ import DispatchTechnologyGridSection, {
   DispatchTechnologyCard,
 } from "../components/DispatchTechnologyGridSection";
 import FAQSection, { FAQItem } from "../components/FAQs";
-import FreightTypesSection, { FreightTypeCard } from "../components/FreightTypesSection";
+import FreightTypesSection, {
+  FreightTypeCard,
+} from "../components/FreightTypesSection";
 import HeroSection from "../components/HeroSection";
 import HowWeWork from "../components/HowWeWork";
 import ProcessGridSection from "../components/ProcessGridSection";
@@ -482,26 +484,25 @@ const questionStats = [
   },
 ];
 
-
 export default function driverRecruitingPage() {
   return (
     <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">
       <HeroSection
-  h1={<>Driver Hiring Services for Trucking Companies</>}
-  fixedTitle="Driver Hiring Services"
-  typingTitles={[
-    "for Trucking Companies",
-    "for Qualified CDL Drivers",
-    "Built Around FMCSA Compliance",
-    "Designed for Stable Fleet Growth",
-  ]}
-  paragraphs={[
-    "The trucking industry continues facing one of its biggest operational challenges: finding qualified CDL drivers fast enough to support freight demand. Carriers often lose profitable loads because hiring delays interrupt dispatch operations, reduce fleet availability, and increase delivery pressure. Driver shortages, FMCSA regulations, insurance restrictions, and safety expectations have transformed recruitment into a complex operational system rather than a simple staffing process.",
-    "E-Truck Dispatching provides driver hiring services designed specifically for trucking operations. Our recruitment system focuses on CDL driver sourcing, FMCSA-compliant screening, dispatch-integrated onboarding, and operational alignment to help carriers build stable and scalable fleets. Instead of simply filling positions, we focus on connecting qualified drivers with the right freight operations, equipment types, and dispatch workflows.",
-  ]}
-  backgroundImage="/Driver Recruiting/images/1_rectangle_1450.webp"
-  backgroundAlt="CDL driver hiring and recruitment services for trucking companies"
-/>
+        h1={<>Driver Hiring Services for Trucking Companies</>}
+        fixedTitle="Driver Hiring Services"
+        typingTitles={[
+          "for Trucking Companies",
+          "for Qualified CDL Drivers",
+          "Built Around FMCSA Compliance",
+          "Designed for Stable Fleet Growth",
+        ]}
+        paragraphs={[
+          "The trucking industry continues facing one of its biggest operational challenges: finding qualified CDL drivers fast enough to support freight demand. Carriers often lose profitable loads because hiring delays interrupt dispatch operations, reduce fleet availability, and increase delivery pressure. Driver shortages, FMCSA regulations, insurance restrictions, and safety expectations have transformed recruitment into a complex operational system rather than a simple staffing process.",
+          "E-Truck Dispatching provides driver hiring services designed specifically for trucking operations. Our recruitment system focuses on CDL driver sourcing, FMCSA-compliant screening, dispatch-integrated onboarding, and operational alignment to help carriers build stable and scalable fleets. Instead of simply filling positions, we focus on connecting qualified drivers with the right freight operations, equipment types, and dispatch workflows.",
+        ]}
+        backgroundImage="/Driver Recruiting/images/1_rectangle_1450.webp"
+        backgroundAlt="CDL driver hiring and recruitment services for trucking companies"
+      />
       <SupportColumnsSection
         heading="Why Modern Driver Hiring Is Critical for Dispatch Operations"
         intro="Driver hiring now supports both recruitment and dispatch operations. Qualified drivers help carriers maintain freight continuity, reduce delays, and improve operational stability."
@@ -579,90 +580,88 @@ export default function driverRecruitingPage() {
         backgroundImage="/Vector 3.svg"
       />
       <SupportColumnsSection
-  heading="Driver Onboarding and Dispatch Coordination"
-  intro="Driver recruitment alone does not solve operational challenges. Many carriers experience workflow disruptions when drivers enter dispatch systems without proper onboarding, communication training, or operational alignment. Structured onboarding improves dispatch coordination, operational readiness, and overall freight continuity."
-  image="/Driver Recruiting/images/15_rectangle_1426.webp"
-  imageAlt="Truck driver reviewing dispatch information on a tablet"
-  cards={driverOnboardingCards}
-  contentPosition="right"
-  layoutVariant="driver-onboarding"
-/>
-<FreightTypesSection
-  heading={
-    <>
-      Safety-Focused Hiring Supports
-      <br />
-      Long-Term Fleet Growth
-    </>
-  }
-  description="Unsafe hiring practices increase operational risk, insurance problems, and fleet instability. Modern trucking companies require recruitment systems that prioritize safety, compliance, and driver reliability."
-  freightTypes={safetyFocusedHiringCards}
-/>
- <BenefitsGridSection
-      heading={
-        <>
-          Driver Retention
-          <br />
-          Impacts
-          <br />
-          Operational
-          <br />
-          Profitability
-        </>
-      }
-      description="High Driver Turnover Increases Costs And Affects Fleet Stability. Better Recruitment And Dispatch Coordination Improve Driver Retention And Operational Continuity."
-      benefits={driverRetentionBenefits}
-    />
-<ComparisonTableSection
-  heading="Freight Operations We Support"
-  description="Our driver hiring services support multiple freight sectors across the trucking industry. Each operation requires different driver qualifications, operational awareness, and equipment familiarity."
-  tableTitle=""
-  columns={freightOperationsColumns}
-  rows={freightOperationsRows}
-/>
-<VisionFormSection
+        heading="Driver Onboarding and Dispatch Coordination"
+        intro="Driver recruitment alone does not solve operational challenges. Many carriers experience workflow disruptions when drivers enter dispatch systems without proper onboarding, communication training, or operational alignment. Structured onboarding improves dispatch coordination, operational readiness, and overall freight continuity."
+        image="/Driver Recruiting/images/15_rectangle_1426.webp"
+        imageAlt="Truck driver reviewing dispatch information on a tablet"
+        cards={driverOnboardingCards}
+        contentPosition="right"
+        layoutVariant="driver-onboarding"
+      />
+      <FreightTypesSection
+        heading={
+          <>
+            Safety-Focused Hiring Supports
+            <br />
+            Long-Term Fleet Growth
+          </>
+        }
+        description="Unsafe hiring practices increase operational risk, insurance problems, and fleet instability. Modern trucking companies require recruitment systems that prioritize safety, compliance, and driver reliability."
+        freightTypes={safetyFocusedHiringCards}
+      />
+      <BenefitsGridSection
+        heading={
+          <>
+            Driver Retention
+            <br />
+            Impacts
+            <br />
+            Operational
+            <br />
+            Profitability
+          </>
+        }
+        description="High Driver Turnover Increases Costs And Affects Fleet Stability. Better Recruitment And Dispatch Coordination Improve Driver Retention And Operational Continuity."
+        benefits={driverRetentionBenefits}
+      />
+      <ComparisonTableSection
+        heading="Freight Operations We Support"
+        description="Our driver hiring services support multiple freight sectors across the trucking industry. Each operation requires different driver qualifications, operational awareness, and equipment familiarity."
+        tableTitle=""
+        columns={freightOperationsColumns}
+        rows={freightOperationsRows}
+      />
+      <VisionFormSection
         heading="E Truck Dispatching"
         paragraphs={visionParagraphs}
         fields={formFields}
       />
-<ComplianceMatrixSection
-  heading="Why Trucking Companies Choose E-Truck Dispatching"
-  description="E-Truck Dispatching combines driver recruitment with dispatch coordination, compliance support, and operational planning to improve fleet efficiency and long-term stability."
-  cards={whyChooseDispatchCards}
-  image="/Driver Recruiting/images/25_rectangle_1560.webp"
-  imageAlt="Warehouse employee moving freight during loading operations"
-  cardContentVariant="paragraph"
-/>
-<HowWeWork
-  heading={
-    <>
-      Our Driver Hiring
-      <br />
-      Workflow
-    </>
-  }
-  image="/Driver Recruiting/images/27_vector_5.webp"
-  imageAlt="Delivery driver holding a package and reviewing a clipboard"
-  steps={driverHiringWorkflowSteps}
-/>
-<FAQSection
-  heading="Frequently Asked Questions"
-  description="Get answers about CDL driver recruitment, compliance verification, owner-operator hiring, onboarding, and small-fleet support."
-  image="/Driver Recruiting/images/34_rectangle_1441.webp"
-  imageAlt="Recruitment specialist working on CDL driver hiring and onboarding"
-  faqs={driverRecruitingFaqs}
-/>
-<QuestionStats
+      <ComplianceMatrixSection
+        heading="Why Trucking Companies Choose E-Truck Dispatching"
+        description="E-Truck Dispatching combines driver recruitment with dispatch coordination, compliance support, and operational planning to improve fleet efficiency and long-term stability."
+        cards={whyChooseDispatchCards}
+        image="/Driver Recruiting/images/25_rectangle_1560.webp"
+        imageAlt="Warehouse employee moving freight during loading operations"
+        cardContentVariant="paragraph"
+      />
+      <HowWeWork
+        blendBackgroundEdges
+        heading={
+          <>
+            Our Driver Hiring
+            <br />
+            Workflow
+          </>
+        }
+        backgroundImage="/background-earthquake.png"
+        image="/Driver Recruiting/images/27_vector_5.webp"
+        imageAlt="Delivery driver holding a package and reviewing a clipboard"
+        steps={driverHiringWorkflowSteps}
+      />
+      <FAQSection
+        heading="Frequently Asked Questions"
+        description="Get answers about CDL driver recruitment, compliance verification, owner-operator hiring, onboarding, and small-fleet support."
+        image="/Driver Recruiting/images/34_rectangle_1441.webp"
+        imageAlt="Recruitment specialist working on CDL driver hiring and onboarding"
+        faqs={driverRecruitingFaqs}
+      />
+      <QuestionStats
         heading="Still Have Questions?"
         description="Our billing experts are here to help. Get in touch for a free consultation."
         buttonText="Talk to an Expert"
         buttonHref="/contact"
         stats={questionStats}
       />
-
-
-
-
     </main>
   );
 }

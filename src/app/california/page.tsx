@@ -500,13 +500,16 @@ export default function californiaPage() {
     "Advanced dispatch system icon",
   ]}
 />
+
 <HowWeWork
+blendBackgroundEdges
   heading={
     <>
       <span className="block">A Complete Trucking</span>
       <span className="block">Services Package We Offer</span>
     </>
   }
+    backgroundImage="/background-earthquake.png"
   image="/California/images/28_vector_5.webp"
   imageAlt="Delivery professional holding packages and a clipboard"
   steps={completeTruckingServiceSteps}
