@@ -130,21 +130,24 @@ export default function FeatureIntroSection({
     : description
       ? [description]
       : [];
+  const usesBulletFeatures = features.every(
+    (feature) => typeof feature === "string",
+  );
 
   return (
     <section className="mx-auto w-[calc(100%-32px)] max-w-[1560px] overflow-hidden py-12 sm:w-[calc(100%-48px)] sm:py-16 lg:w-[calc(100%-64px)] lg:py-20">
-      <div className="grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(380px,719px)] lg:gap-12 xl:gap-14">
+      <div className="grid gap-10 lg:min-h-[462px] lg:grid-cols-[minmax(0,703px)_minmax(380px,719px)] lg:justify-between lg:gap-8 xl:gap-12">
         {/* Text content */}
         <motion.div
           variants={contentVariants}
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="min-w-0"
+          className="min-w-0 lg:self-start lg:pt-[46px]"
         >
           <motion.h2
             variants={fadeUpVariants}
-            className="max-w-[703px] font-['Outfit'] text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl lg:text-[52px]"
+            className="max-w-[667px] font-['Outfit'] text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl"
           >
             {heading}
           </motion.h2>
@@ -152,7 +155,7 @@ export default function FeatureIntroSection({
           {descriptions.length > 0 ? (
             <motion.div
               variants={listVariants}
-              className="mt-6 max-w-[649px] space-y-4 font-['DM_Sans'] text-base font-medium leading-7 text-white/80 sm:mt-8 sm:text-lg"
+              className="mt-6 max-w-[649px] space-y-2 font-['DM_Sans'] text-base font-normal capitalize leading-6 text-white sm:text-lg lg:mt-[30px]"
             >
               {descriptions.map((paragraph, index) => (
                 <motion.p
@@ -168,7 +171,7 @@ export default function FeatureIntroSection({
           {features.length > 0 ? (
             <motion.ul
               variants={listVariants}
-              className="mt-7 space-y-4"
+              className={usesBulletFeatures ? "mt-[17px] space-y-1" : "mt-7 space-y-4"}
             >
               {features.map((feature, index) => {
                 const isString = typeof feature === "string";
@@ -182,11 +185,15 @@ export default function FeatureIntroSection({
                     key={index}
                     variants={featureVariants}
                     whileHover="hover"
-                    className="flex items-start gap-3 font-['DM_Sans'] text-sm font-medium leading-5 text-white/80 sm:text-base sm:leading-6"
+                    className={`flex items-start font-['DM_Sans'] text-sm font-normal text-white ${
+                      isString ? "gap-[10px] leading-6" : "gap-3 leading-5 sm:text-base sm:leading-6"
+                    }`}
                   >
                     <motion.span
                       variants={iconVariants}
-                      className="mt-[0.1rem] flex h-7 w-7 shrink-0 items-center justify-center text-[#b34b0c]"
+                      className={`flex shrink-0 items-center justify-center text-[#b34b0c] ${
+                        isString ? "h-6 w-1.5" : "mt-[0.1rem] h-7 w-7"
+                      }`}
                     >
                       {iconSrc ? (
                         <Image
@@ -201,7 +208,7 @@ export default function FeatureIntroSection({
                           {icon}
                         </span>
                       ) : (
-                        <span className="mt-[0.45rem] h-1.5 w-1.5 rounded-full bg-[#b34b0c]" />
+                        <span className="h-1.5 w-1.5 rounded-full bg-[#b34b0c]" />
                       )}
                     </motion.span>
 
@@ -234,7 +241,7 @@ export default function FeatureIntroSection({
             duration: 0.75,
             ease,
           }}
-          className="relative mx-auto aspect-[719/462] w-full max-w-[719px] overflow-hidden lg:mx-0 lg:justify-self-end"
+          className="relative mx-auto aspect-[719/462] w-full max-w-[719px] overflow-hidden bg-[#171717] lg:mx-0 lg:self-start lg:justify-self-end"
         >
           <motion.div
             initial={{

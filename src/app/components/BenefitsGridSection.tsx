@@ -148,21 +148,28 @@ export default function BenefitsGridSection({
   buttonHref,
 }: Props) {
   const showButton = Boolean(buttonLabel && buttonHref);
+  const hasSecondBenefitRow = benefits.length > 3;
 
   return (
     <section className="py-12 text-white">
-      <div className="mx-auto grid w-[calc(100%-40px)] max-w-[1560px] gap-3 sm:w-[calc(100%-64px)] md:grid-cols-2 xl:grid-cols-4 xl:grid-rows-2">
+      <div
+        className={`mx-auto grid w-[calc(100%-40px)] max-w-[1560px] items-stretch gap-3 sm:w-[calc(100%-64px)] md:grid-cols-2 xl:grid-cols-4 ${
+          hasSecondBenefitRow ? "xl:grid-rows-2" : ""
+        }`}
+      >
         {/* Heading card */}
         <motion.div
           variants={headingCardVariants}
           initial="hidden"
           whileInView="visible"
           viewport={viewportOptions}
-          className="flex min-h-96 flex-col justify-center overflow-hidden bg-[#b34b0c] p-7 xl:row-span-2 xl:p-8"
+          className={`flex min-h-80 min-w-0 flex-col justify-center overflow-hidden bg-[#b34b0c] p-7 sm:min-h-96 xl:h-full xl:px-[42px] xl:py-8 ${
+            hasSecondBenefitRow ? "xl:row-span-2" : ""
+          }`}
         >
           <motion.h2
             variants={headingContentVariants}
-            className="text-[clamp(1.65rem,2vw,2rem)] font-bold leading-[1.18]"
+            className="max-w-full break-words font-['Outfit'] text-[clamp(2rem,2.5vw,3rem)] font-bold leading-[1.08] [overflow-wrap:anywhere]"
           >
             {heading}
           </motion.h2>
@@ -238,7 +245,7 @@ export default function BenefitsGridSection({
                   ease: smoothEase,
                 },
               }}
-              className="min-h-48 bg-[#171717] p-5"
+              className="h-full min-h-48 min-w-0 bg-[#171717] px-5 pb-6 pt-[30px]"
             >
               <motion.span
                 variants={iconVariants}
@@ -248,12 +255,12 @@ export default function BenefitsGridSection({
                   <Image
                     src={iconSrc}
                     alt={iconAlt}
-                    width={34}
-                    height={34}
-                    className="h-8 w-8 object-contain"
+                    width={42}
+                    height={42}
+                    className="h-[42px] w-[42px] object-contain"
                   />
                 ) : icon ? (
-                  <span className="flex h-8 w-8 items-center justify-center [&_svg]:h-8 [&_svg]:w-8">
+                  <span className="flex h-[42px] w-[42px] items-center justify-center [&_svg]:h-[42px] [&_svg]:w-[42px]">
                     {icon}
                   </span>
                 ) : (
@@ -265,7 +272,7 @@ export default function BenefitsGridSection({
 
               <motion.h3
                 variants={titleVariants}
-                className="mt-6 text-lg font-medium leading-snug"
+                className="mt-6 max-w-80 break-words font-['Outfit'] text-lg font-medium capitalize leading-snug"
               >
                 {title}
               </motion.h3>
@@ -273,7 +280,7 @@ export default function BenefitsGridSection({
               {benefitDescription ? (
                 <motion.p
                   variants={descriptionVariants}
-                  className="mt-3 text-sm leading-6 text-white/70"
+                  className="mt-3 font-['DM_Sans'] text-sm leading-6 text-white/70"
                 >
                   {benefitDescription}
                 </motion.p>

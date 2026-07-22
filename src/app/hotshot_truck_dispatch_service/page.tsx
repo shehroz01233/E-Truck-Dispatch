@@ -487,18 +487,20 @@ export default function HotshotTruckDispatchService() {
         }
         services={hotshotDispatchProblemCards}
       />
-      <HowWeWork
-        heading={
-          <>
-            Key Features of a Professional
-            <br />
-            Hotshot Dispatch Service
-          </>
-        }
-        image="/Hotshot Truck Dispatching Service/images/13_vector_5.webp"
-        imageAlt="Dispatcher holding freight boxes"
-        steps={hotshotProfessionalFeatureSteps}
-      />
+ <HowWeWork
+  blendBackgroundEdges
+  heading={
+    <>
+      Key Features of a Professional
+      <br />
+      Hotshot Dispatch Service
+    </>
+  }
+  backgroundImage="/background-earthquake.png"
+  image="/Hotshot Truck Dispatching Service/images/13_vector_5.webp"
+  imageAlt="Dispatcher holding freight boxes"
+  steps={hotshotProfessionalFeatureSteps}
+/>
       <DispatchTechnologyGridSection
         heading={
           <>
