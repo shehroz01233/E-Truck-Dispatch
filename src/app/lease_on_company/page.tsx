@@ -14,7 +14,6 @@ import AudienceBenefitsSection from "@/app/components/AudienceBenefitsSection";
 import FAQSection, { type FAQItem } from "@/app/components/FAQs";
 import QuestionStats, { type Stat } from "@/app/components/QuestionStats";
 
-
 const leaseOnSupportBenefits = [
   {
     title: "Lease-On Trucking Companies",
@@ -92,50 +91,6 @@ const leaseOnDispatchRows: ComparisonRow[] = [
   },
 ];
 
-const leaseOnCarrierSupportColumns: ComparisonColumn[] = [
-  {
-    key: "need",
-    label: "Lease-On Carrier Needs",
-  },
-  {
-    key: "solution",
-    label: "E Truck Dispatching Solution",
-  },
-];
-
-const leaseOnCarrierSupportRows: ComparisonRow[] = [
-  {
-    factor: "Multi-driver coordination",
-    need: "Multi-driver coordination",
-    solution: "Centralized dispatch operations",
-  },
-  {
-    factor: "Broker communication",
-    need: "Broker communication",
-    solution: "Dedicated freight coordination",
-  },
-  {
-    factor: "Compliance monitoring",
-    need: "Compliance monitoring",
-    solution: "DOT-focused dispatch workflow",
-  },
-  {
-    factor: "Load planning",
-    need: "Load planning",
-    solution: "RPM-based lane strategy",
-  },
-  {
-    factor: "Driver utilization",
-    need: "Driver utilization",
-    solution: "Reduced downtime planning",
-  },
-  {
-    factor: "Settlement support",
-    need: "Settlement support",
-    solution: "Organized paperwork management",
-  },
-];
-
 const ownerOperatorChoiceSteps: [string, string][] = [
   [
     "No Forced Dispatch",
@@ -175,8 +130,7 @@ const leaseOnDispatchProcessSteps = [
   {
     number: "1",
     title: "Setup & Carrier Onboarding",
-    description:
-      "We collect:",
+    description: "We collect:",
     includes: [
       "MC/DOT information",
       "Insurance certificate",
@@ -188,8 +142,7 @@ const leaseOnDispatchProcessSteps = [
   {
     number: "2",
     title: "Freight Planning",
-    description:
-      "Our dispatchers begin sourcing freight based on:",
+    description: "Our dispatchers begin sourcing freight based on:",
     includes: [
       "Trailer type",
       "Preferred lanes",
@@ -223,53 +176,12 @@ const leaseOnDispatchProcessSteps = [
   },
 ];
 
-const leaseOnRevenueOptimizationColumns: ComparisonColumn[] = [
-  {
-    key: "area",
-    label: "Revenue Optimization Area",
-  },
-  {
-    key: "goal",
-    label: "Operational Goal",
-  },
-];
 
-const leaseOnRevenueOptimizationRows: ComparisonRow[] = [
-  {
-    factor: "Reduced deadhead",
-    area: "Reduced deadhead",
-    goal: "Lower fuel waste",
-  },
-  {
-    factor: "Higher-paying lanes",
-    area: "Higher-paying lanes",
-    goal: "Better RPM",
-  },
-  {
-    factor: "Reload planning",
-    area: "Reload planning",
-    goal: "Continuous freight movement",
-  },
-  {
-    factor: "Accessorial management",
-    area: "Accessorial management",
-    goal: "Additional revenue",
-  },
-  {
-    factor: "Fuel-aware routing",
-    area: "Fuel-aware routing",
-    goal: "Lower operational cost",
-  },
-  {
-    factor: "Broker screening",
-    area: "Broker screening",
-    goal: "Reduced payment delays",
-  },
-];
 
 const leaseOnProfessionalDispatchingGroups: TechnologyFeatureGroup[] = [
   {
-    title: "Without Organized Dispatch Systems",
+    title:
+      "Without Organized Dispatch Systems, Many Trucking Operations Face:",
     features: [
       {
         title: "Long downtime between loads",
@@ -280,11 +192,6 @@ const leaseOnProfessionalDispatchingGroups: TechnologyFeatureGroup[] = [
       {
         title: "Delayed paperwork submission",
       },
-    ],
-  },
-  {
-    title: "Many Trucking Operations Face",
-    features: [
       {
         title: "Weak rate negotiation",
       },
@@ -294,11 +201,6 @@ const leaseOnProfessionalDispatchingGroups: TechnologyFeatureGroup[] = [
       {
         title: "Inconsistent weekly settlements",
       },
-    ],
-  },
-  {
-    title: "",
-    features: [
       {
         title: "Excessive empty miles",
       },
@@ -311,7 +213,6 @@ const leaseOnProfessionalDispatchingGroups: TechnologyFeatureGroup[] = [
     ],
   },
 ];
-
 
 const benefits = [
   "Profit-focused freight planning",
@@ -371,124 +272,211 @@ const leaseOnQuestionStats: Stat[] = [
     text: "Actively working with us.",
   },
 ];
+const leaseOnSupportColumns: ComparisonColumn[] = [
+  {
+    key: "carrierNeed",
+    label: "Lease-On Carrier Needs",
+  },
+  {
+    key: "dispatchSolution",
+    label: "E Truck Dispatching Solution",
+  },
+];
+const leaseOnSupportRows: ComparisonRow[] = [
+  {
+    factor: "Multi-driver coordination",
+    carrierNeed: "Multi-driver coordination",
+    dispatchSolution: "Centralized dispatch operations",
+  },
+  {
+    factor: "Broker communication",
+    carrierNeed: "Broker communication",
+    dispatchSolution: "Dedicated freight coordination",
+  },
+  {
+    factor: "Compliance monitoring",
+    carrierNeed: "Compliance monitoring",
+    dispatchSolution: "DOT-focused dispatch workflow",
+  },
+  {
+    factor: "Load planning",
+    carrierNeed: "Load planning",
+    dispatchSolution: "RPM-based lane strategy",
+  },
+  {
+    factor: "Driver utilization",
+    carrierNeed: "Driver utilization",
+    dispatchSolution: "Reduced downtime planning",
+  },
+  {
+    factor: "Settlement support",
+    carrierNeed: "Settlement support",
+    dispatchSolution: "Organized paperwork management",
+  },
+];
+const leaseOnRevenueColumns: ComparisonColumn[] = [
+  {
+    key: "optimizationArea",
+    label: "Revenue Optimization Area",
+  },
+  {
+    key: "operationalGoal",
+    label: "Operational Goal",
+  },
+];
 
+const leaseOnRevenueRows: ComparisonRow[] = [
+  {
+    factor: "Reduced deadhead",
+    optimizationArea: "Reduced deadhead",
+    operationalGoal: "Lower fuel waste",
+  },
+  {
+    factor: "Higher-paying lanes",
+    optimizationArea: "Higher-paying lanes",
+    operationalGoal: "Better RPM",
+  },
+  {
+    factor: "Reload planning",
+    optimizationArea: "Reload planning",
+    operationalGoal: "Continuous freight movement",
+  },
+  {
+    factor: "Accessorial management",
+    optimizationArea: "Accessorial management",
+    operationalGoal: "Additional revenue",
+  },
+  {
+    factor: "Fuel-aware routing",
+    optimizationArea: "Fuel-aware routing",
+    operationalGoal: "Lower operational cost",
+  },
+  {
+    factor: "Broker screening",
+    optimizationArea: "Broker screening",
+    operationalGoal: "Reduced payment delays",
+  },
+];
 export default function LeaseOnCompanyPage() {
   return (
     <main>
-   <HeroSection
-  h1={
-    <>
-      Truck Dispatching Services For
-      <br />
-      Lease-On Companies &amp; Owner Operators
-    </>
-  }
-  fixedTitle="Truck Dispatching Services"
-  typingTitles={[
-    "for Lease-On Companies",
-    "for Owner Operators",
-    "Focused on High-Paying Loads",
-    "Built for Better Revenue and Compliance",
-  ]}
-  paragraphs={[
-    "Professional truck dispatching services for lease-on companies and owner operators focused on high-paying loads, better freight rates, reduced deadhead, and full back-office support. E Truck Dispatching helps carriers, leased owner operators, and small trucking businesses maximize revenue while staying compliant with FMCSA and DOT requirements.",
-  ]}
-  backgroundImage="/Lease on Companies/images/1_rectangle_1450.webp"
-  backgroundAlt="Truck dispatching services for lease-on companies and owner operators"
-/>
-   <BenefitsGridSection
-  heading="Reliable Dispatch Support for Lease-On Companies & Independent Owner Operators"
-  benefits={leaseOnSupportBenefits}
-/>
-  
-<ComparisonTableSection
-  heading="What Is Truck Dispatching for Lease-On Companies?"
-  tableTitle=""
-  columns={leaseOnDispatchColumns}
-  rows={leaseOnDispatchRows}
-  compactTop
-/>
- 
-<ComparisonTableSection
-  heading="Dispatching Support for Lease-On Companies"
-  tableTitle=""
-  columns={leaseOnCarrierSupportColumns}
-  rows={leaseOnCarrierSupportRows}
-  compactTop
-/>
+      <HeroSection
+        h1={
+          <>
+            Truck Dispatching Services For
+            <br />
+            Lease-On Companies &amp; Owner Operators
+          </>
+        }
+        fixedTitle="Truck Dispatching Services"
+        typingTitles={[
+          "for Lease-On Companies",
+          "for Owner Operators",
+          "Focused on High-Paying Loads",
+          "Built for Better Revenue and Compliance",
+        ]}
+        paragraphs={[
+          "Professional truck dispatching services for lease-on companies and owner operators focused on high-paying loads, better freight rates, reduced deadhead, and full back-office support. E Truck Dispatching helps carriers, leased owner operators, and small trucking businesses maximize revenue while staying compliant with FMCSA and DOT requirements.",
+        ]}
+        backgroundImage="/Lease on Companies/images/1_rectangle_1450.webp"
+        backgroundAlt="Truck dispatching services for lease-on companies and owner operators"
+      />
+      <BenefitsGridSection
+        heading="Reliable Dispatch Support for Lease-On Companies & Independent Owner Operators"
+        benefits={leaseOnSupportBenefits}
+      />
 
-<ProcessGridSection
-  heading="Why Owner Operators Choose E Truck Dispatching"
-  steps={ownerOperatorChoiceSteps}
-/>
+      <ComparisonTableSection
+        heading="What Is Truck Dispatching for Lease-On Companies?"
+        description="Lease-on dispatching refers to freight coordination for owner operators working under a motor carrier’s authority. Instead of operating under their own MC authority, leased owner operators run under an established trucking company while receiving dispatch, compliance, and operational support."
+        tableTitle=""
+        columns={leaseOnDispatchColumns}
+        rows={leaseOnDispatchRows}
+        compactTop
+        headingWidth="wide"
+      />
+      <ComparisonTableSection
+        heading="Dispatching Support for Lease-On Companies"
+        description="Lease-on carriers require organized dispatch systems capable of handling multiple owner operators, freight lanes, and compliance requirements simultaneously."
+        tableTitle=""
+        columns={leaseOnSupportColumns}
+        rows={leaseOnSupportRows}
+        compactTop
+        headingWidth="wide"
+      />
 
-<VisionFormSection
-  heading="E Truck Dispatching"
-  paragraphs={leaseOnVisionParagraphs}
-  fields={leaseOnFormFields}
-  
-/>
+      <ProcessGridSection
+        heading="Why Owner Operators Choose E Truck Dispatching"
+        steps={ownerOperatorChoiceSteps}
+      />
 
-<HowWeWork
-  heading={
-    <>
-      How Our Dispatching Process
-      <br />
-      Works
-    </>
-  }
-  image="/Lease On Companies/images/12_vector_5.webp"
-  imageAlt="Dispatcher holding boxes during lease-on dispatching process"
-  steps={leaseOnDispatchProcessSteps}
-/>
+      <VisionFormSection
+        heading="E Truck Dispatching"
+        paragraphs={leaseOnVisionParagraphs}
+        fields={leaseOnFormFields}
+      />
 
-<ComparisonTableSection
+      <HowWeWork
+        blendBackgroundEdges
+        heading={
+          <>
+            How Our Dispatching Process
+            <br />
+            Works
+          </>
+        }
+        backgroundImage="/background-earthquake.png"
+        image="/Lease On Companies/images/12_vector_5.webp"
+        imageAlt="Dispatcher holding boxes during lease-on dispatching process"
+        steps={leaseOnDispatchProcessSteps}
+      />
+
+      <ComparisonTableSection
   heading="Revenue Optimization for Lease-On Owner Operators"
+  description="Many trucking businesses struggle with unstable cash flow because of weak dispatch planning, poor reload coordination, and underpriced freight."
   tableTitle=""
-  columns={leaseOnRevenueOptimizationColumns}
-  rows={leaseOnRevenueOptimizationRows}
+  columns={leaseOnRevenueColumns}
+  rows={leaseOnRevenueRows}
   compactTop
-/>
- 
-<TechnologyOperationsSection
-  heading="Why Professional Dispatching Matters for Lease-On Trucking Operations"
-  paragraphs={[]}
-  featureGroups={leaseOnProfessionalDispatchingGroups}
-  image="/Lease On Companies/images/13_rectangle_1556.webp"
-  imageAlt="Orange truck used for lease-on dispatching operations"
-  featureColumns={3}
+  headingWidth="wide"
 />
 
-<VisionFormSection
-  heading="E Truck Dispatching"
-  paragraphs={leaseOnVisionParagraphs}
-  fields={leaseOnFormFields}
-  
-/>
- 
-<AudienceBenefitsSection
-  showAudiences={false}
-  heading="Work With E Truck Dispatching"
-  benefits={benefits}
-/>
- 
-<FAQSection
-  heading="Frequently Asked Questions"
-  description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
-  image="/Lease On Companies/images/21_rectangle_1441.webp"
-  imageAlt="Lease-on trucking FAQ support"
-  faqs={leaseOnFaqs}
-/>
- 
-<QuestionStats
-  heading="Still Have Questions?"
-  description="Our dispatch experts are here to help. Get in touch for a free consultation."
-  buttonText="Talk to an Expert"
-  buttonHref="/contact"
-  stats={leaseOnQuestionStats}
-/>
+      <TechnologyOperationsSection
+        heading="Why Professional Dispatching Matters for Lease-On Trucking Operations"
+        paragraphs={[]}
+        featureGroups={leaseOnProfessionalDispatchingGroups}
+        image="/Lease On Companies/images/13_rectangle_1556.webp"
+        imageAlt="Orange truck used for lease-on dispatching operations"
+        featureColumns={3}
+      />
 
+      <VisionFormSection
+        heading="E Truck Dispatching"
+        paragraphs={leaseOnVisionParagraphs}
+        fields={leaseOnFormFields}
+      />
 
-</main>
+      <AudienceBenefitsSection
+        showAudiences={false}
+        heading="Work With E Truck Dispatching"
+        benefits={benefits}
+      />
+
+      <FAQSection
+        heading="Frequently Asked Questions"
+        description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
+        image="/Lease On Companies/images/21_rectangle_1441.webp"
+        imageAlt="Lease-on trucking FAQ support"
+        faqs={leaseOnFaqs}
+      />
+
+      <QuestionStats
+        heading="Still Have Questions?"
+        description="Our dispatch experts are here to help. Get in touch for a free consultation."
+        buttonText="Talk to an Expert"
+        buttonHref="/contact"
+        stats={leaseOnQuestionStats}
+      />
+    </main>
   );
 }

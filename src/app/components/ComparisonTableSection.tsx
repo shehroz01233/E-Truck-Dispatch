@@ -18,6 +18,7 @@ type Props = {
   columns: ComparisonColumn[];
   rows: ComparisonRow[];
   compactTop?: boolean;
+  headingWidth?: "default" | "wide";
 };
 
 const smoothEase = [0.22, 1, 0.36, 1] as const;
@@ -284,6 +285,7 @@ export default function ComparisonTableSection({
   columns,
   rows,
   compactTop = false,
+  headingWidth = "default",
 }: Props) {
   const firstColumn = columns[0];
   const otherColumns = columns.slice(1);
@@ -295,7 +297,8 @@ export default function ComparisonTableSection({
    */
   const tableSpacing =
     description && !tableTitle ? "mt-12 sm:mt-14" : "mt-6";
-
+const headingWidthClass =
+  headingWidth === "wide" ? "max-w-[44rem]" : "max-w-[28rem]";
   const hasHeadingContent = Boolean(heading || description || tableTitle);
 
   return (
@@ -314,13 +317,13 @@ export default function ComparisonTableSection({
             viewport={headingViewport}
           >
             {heading ? (
-              <motion.h2
-                variants={headingVariants}
-                className="mx-auto max-w-[28rem] text-center font-['Outfit'] text-[1.75rem] font-bold leading-[1.15] tracking-[-0.02em] sm:text-[2.5rem] lg:text-[3rem]"
-              >
-                {heading}
-              </motion.h2>
-            ) : null}
+  <motion.h2
+    variants={headingVariants}
+    className={`mx-auto text-center font-['Outfit'] text-[1.75rem] font-bold leading-[1.15] tracking-[-0.02em] sm:text-[2.5rem] lg:text-[3rem] ${headingWidthClass}`}
+  >
+    {heading}
+  </motion.h2>
+) : null}
 
             {description ? (
               <motion.p
