@@ -291,14 +291,21 @@ export default function ConestogaDispatchServicesPage() {
   return (
     <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={<>Conestoga Dispatch Services</>}
-        paragraphs={[
-          "Conestoga freight does not operate like standard trucking. It sits between flatbed flexibility and dry van protection, requiring a dispatch system that understands equipment limitations, cargo sensitivity, and rate behavior at the lane level.",
-          "Our Conestoga dispatch service is designed to handle that complexity—so you don’t waste time chasing loads that don’t match your trailer or leave money on the table due to poor negotiation.",
-        ]}
-        backgroundImage="/Conestoga Dispatch Service/images/1_rectangle_1450.webp"
-        backgroundAlt="Truck traveling on the highway"
-      />
+  h1={<>Conestoga Dispatch Services</>}
+  fixedTitle="Conestoga Dispatch Services"
+  typingTitles={[
+    "for Specialized Freight",
+    "Built for Better Rates",
+    "Designed for Curtain-Side Trailers",
+    "That Reduce Deadhead Miles",
+  ]}
+  paragraphs={[
+    "Conestoga freight does not operate like standard trucking. It sits between flatbed flexibility and dry van protection, requiring a dispatch system that understands equipment limitations, cargo sensitivity, and rate behavior at the lane level.",
+    "Our Conestoga dispatch service is designed to handle that complexity—so you don’t waste time chasing loads that don’t match your trailer or leave money on the table due to poor negotiation.",
+  ]}
+  backgroundImage="/Conestoga Dispatch Service/images/1_rectangle_1450.webp"
+  backgroundAlt="Conestoga trailer traveling on the highway"
+/>
       <FeatureIntroSection
         heading="What Is Conestoga Dispatch Service?"
         description="Conestoga dispatch is a specialized freight coordination system for carriers operating curtain-side trailers. It includes load sourcing, rate negotiation, routing, compliance handling, and paperwork execution tailored specifically to rolling tarp equipment."

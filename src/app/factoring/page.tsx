@@ -778,7 +778,6 @@ export default function Factoring() {
       heading="E Truck Dispatching"
       paragraphs={visionParagraphs}
       fields={formFields}
-      compactBottom
     />
       
         <ComparisonCardsSection
@@ -841,7 +840,6 @@ export default function Factoring() {
       heading="E Truck Dispatching"
       paragraphs={factoringVisionParagraphs}
       fields={factoringFormFields}
-      compactBottom
     />
       
         <BenefitsGridSection

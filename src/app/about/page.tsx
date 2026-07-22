@@ -212,15 +212,26 @@ export default function AboutPage() {
   return (
     <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={<>Reliable Truck Dispatching Built Around Carrier Profitability</>}
-        paragraphs={[
-          "At E-Truck Dispatching, we help owner-operators and trucking fleets move freight with better rates, lower deadhead miles, and stronger operational support. Our dispatch system is built for carriers that want consistent freight opportunities without dealing with the daily pressure of load searching, broker communication, paperwork handling, and route planning.",
-          "We operate as a dedicated dispatching partner focused on maximizing RPM, improving route efficiency, and reducing operational downtime for carriers across the United States.",
-          "Our dispatch team works with dry vans, reefers, flatbeds, step decks, power only units, box trucks, hotshots, and specialized freight operations.",
-        ]}
-        backgroundImage="/About US/images/1_rectangle_1450.webp"
-        backgroundAlt="Truck traveling on the highway"
-      />
+  h1={
+    <>
+      Reliable Truck Dispatching Built Around Carrier Profitability
+    </>
+  }
+  fixedTitle="Reliable Truck Dispatching"
+  typingTitles={[
+    "Built Around Carrier Profitability",
+    "Focused on Better Rates and Higher RPM",
+    "Designed for Owner-Operators and Fleets",
+    "Built to Reduce Deadhead Miles",
+  ]}
+  paragraphs={[
+    "At E-Truck Dispatching, we help owner-operators and trucking fleets move freight with better rates, lower deadhead miles, and stronger operational support. Our dispatch system is built for carriers that want consistent freight opportunities without dealing with the daily pressure of load searching, broker communication, paperwork handling, and route planning.",
+    "We operate as a dedicated dispatching partner focused on maximizing RPM, improving route efficiency, and reducing operational downtime for carriers across the United States.",
+    "Our dispatch team works with dry vans, reefers, flatbeds, step decks, power only units, box trucks, hotshots, and specialized freight operations.",
+  ]}
+  backgroundImage="/About US/images/1_rectangle_1450.webp"
+  backgroundAlt="Truck traveling on the highway"
+/>
       <OverviewStatsSection
         heading="Who We Are"
         paragraphs={overviewParagraphs}

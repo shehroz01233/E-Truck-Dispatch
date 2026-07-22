@@ -225,14 +225,21 @@ export default function dryvandispatchPage() {
   return (
     <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={<>Dry Van Dispatch Service</>}
-        paragraphs={[
-          "Dry Van Dispatch Service helps carriers secure consistent, high-paying loads without dealing with brokers or paperwork. Our dispatchers manage load sourcing, rate negotiation, and route planning to keep your truck moving on profitable lanes while reducing empty miles.",
-          "We also handle documentation like rate confirmations and invoicing, so you stay focused on driving. You approve every load, while we ensure steady freight flow and better earnings with less stress.",
-        ]}
-        backgroundImage="/Dry Van Dispatch/images/1_rectangle_1450.webp"
-        backgroundAlt="Truck traveling on the highway"
-      />
+  h1={<>Dry Van Dispatch Service</>}
+  fixedTitle="Dry Van Dispatch Service"
+  typingTitles={[
+    "for High-Paying Loads",
+    "Built to Reduce Empty Miles",
+    "Focused on Better Revenue Per Mile",
+    "for Owner-Operators and Fleets",
+  ]}
+  paragraphs={[
+    "Dry Van Dispatch Service helps carriers secure consistent, high-paying loads without dealing with brokers or paperwork. Our dispatchers manage load sourcing, rate negotiation, and route planning to keep your truck moving on profitable lanes while reducing empty miles.",
+    "We also handle documentation like rate confirmations and invoicing, so you stay focused on driving. You approve every load, while we ensure steady freight flow and better earnings with less stress.",
+  ]}
+  backgroundImage="/Dry Van Dispatch/images/1_rectangle_1450.webp"
+  backgroundAlt="Dry van truck traveling on a profitable freight route"
+/>
       <FeatureIntroSection
         heading="How Our Dry Van Dispatch Keeps Freight Moving Consistently"
         description="Dry van dispatch creates a structured freight flow system for enclosed trailer carriers by controlling load continuity, broker coordination, route efficiency, and operational paperwork. Instead of reacting to single load opportunities, dispatchers manage lane strategy and freight timing to keep trucks loaded across regional and long-haul routes."

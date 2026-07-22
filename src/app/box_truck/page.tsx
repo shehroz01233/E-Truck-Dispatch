@@ -247,21 +247,28 @@ export default function BoxTruckPage() {
   return (
     <main className="flex-1 bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={
-          <>
-            Box Truck Dispatch Services
-            <span className="block">
-              Let’s Move Your Trucking Business Forward
-            </span>
-          </>
-        }
-        paragraphs={[
-          "Box truck dispatch is not just about finding loads. It is a daily revenue system built on load selection, route sequencing, rate negotiation, and compliance control.",
-          "A box truck operates in a completely different freight environment compared to semi-trucks. Urban delivery constraints, multi-stop routes, and time-sensitive freight require a dispatch strategy focused on stop density, route efficiency, and daily gross optimization—not just per-mile rates.",
-        ]}
-        backgroundImage="/Box Truck/images/1_rectangle_1450.webp"
-        backgroundAlt="Truck traveling on the highway"
-      />
+  h1={
+    <>
+      Box Truck Dispatch Services
+      <span className="block">
+        Let’s Move Your Trucking Business Forward
+      </span>
+    </>
+  }
+  fixedTitle="Box Truck Dispatch Services"
+  typingTitles={[
+    "That Keep Your Truck Moving",
+    "Built for Better Loads and Higher Revenue",
+    "Designed for Owner-Operators and Fleets",
+    "That Reduce Deadhead and Downtime",
+  ]}
+  paragraphs={[
+    "Box truck dispatch is not just about finding loads. It is a daily revenue system built on load selection, route sequencing, rate negotiation, and compliance control.",
+    "A box truck operates in a completely different freight environment compared to semi-trucks. Urban delivery constraints, multi-stop routes, and time-sensitive freight require a dispatch strategy focused on stop density, route efficiency, and daily gross optimization—not just per-mile rates.",
+  ]}
+  backgroundImage="/Box Truck/images/1_rectangle_1450.webp"
+  backgroundAlt="Truck traveling on the highway"
+/>
       <FeatureIntroSection
         heading="What Is a Box Truck Dispatch Service?"
         description="A box truck dispatch service manages load sourcing, rate negotiation, route planning, paperwork, and payment processing for straight truck carriers. Instead of drivers spending hours searching load boards and negotiating rates, dispatchers handle:"

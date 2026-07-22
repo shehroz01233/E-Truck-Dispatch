@@ -445,19 +445,26 @@ export default function dedicatedTruckDispatchingPage() {
   return (
     <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={
-          <>
-            Dedicated Truck Dispatching Services for Owner-Operators and Fleets
-          </>
-        }
-        paragraphs={[
-          "Freight operations move faster when dispatching is organized around consistency instead of random load booking. Many carriers lose revenue because of poor route planning, delayed broker communication, weak reload coordination, and excessive deadhead miles. A dedicated dispatching structure solves these operational gaps by creating a centralized freight management system focused on profitability and operational continuity.",
-          "E-Truck Dispatching provides dedicated truck dispatching services for owner-operators and growing fleets that need stable freight coordination, direct dispatcher communication, better RPM management, and long-term operational support. Instead of working with rotating dispatchers who do not understand your business model, equipment type, or preferred lanes, our system assigns a dedicated dispatcher who manages your operations daily.",
-          "This structure improves booking speed, communication accuracy, lane consistency, and freight planning efficiency across dry van, reefer, flatbed, power-only, hotshot, step deck, and box truck operations.",
-        ]}
-        backgroundImage="/Dedicated Truck Dispatching/images/1_rectangle_1450.webp"
-        backgroundAlt="Women in hero section reviewing documents"
-      />
+  h1={
+    <>
+      Dedicated Truck Dispatching Services for Owner-Operators and Fleets
+    </>
+  }
+  fixedTitle="Dedicated Truck Dispatching Services"
+  typingTitles={[
+    "for Owner-Operators and Fleets",
+    "Built for Consistent Freight Planning",
+    "Focused on Higher RPM and Lower Deadhead",
+    "with Direct Dispatcher Support",
+  ]}
+  paragraphs={[
+    "Freight operations move faster when dispatching is organized around consistency instead of random load booking. Many carriers lose revenue because of poor route planning, delayed broker communication, weak reload coordination, and excessive deadhead miles. A dedicated dispatching structure solves these operational gaps by creating a centralized freight management system focused on profitability and operational continuity.",
+    "E-Truck Dispatching provides dedicated truck dispatching services for owner-operators and growing fleets that need stable freight coordination, direct dispatcher communication, better RPM management, and long-term operational support. Instead of working with rotating dispatchers who do not understand your business model, equipment type, or preferred lanes, our system assigns a dedicated dispatcher who manages your operations daily.",
+    "This structure improves booking speed, communication accuracy, lane consistency, and freight planning efficiency across dry van, reefer, flatbed, power-only, hotshot, step deck, and box truck operations.",
+  ]}
+  backgroundImage="/Dedicated Truck Dispatching/images/1_rectangle_1450.webp"
+  backgroundAlt="Dedicated truck dispatch operations"
+/>
 
       <ComplianceMatrixSection
         heading="What Are Dedicated Truck Dispatching Services?"

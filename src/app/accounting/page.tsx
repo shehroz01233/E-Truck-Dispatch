@@ -464,15 +464,26 @@ export default function accountingPage() {
   return (
     <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={<>Trucking Accounting Services for Owner-Operators & Fleets</>}
-        paragraphs={[
-          "Running a trucking company involves more than moving freight from one location to another. Every dispatched load creates financial activity connected to fuel expenses, broker payments, payroll processing, maintenance costs, compliance reporting, and tax obligations. When these financial systems are not organized properly, trucking companies struggle with cash flow instability, delayed reporting, revenue leakage, and operational inefficiencies.",
-          "Our trucking accounting services are designed specifically for owner-operators, independent carriers, small fleets, and growing trucking companies that need accurate bookkeeping, freight invoicing, tax management, payroll processing, and profitability tracking. Instead of using generic accounting methods, we build transportation-focused financial systems that align directly with dispatch operations and fleet management workflows.",
-          "The objective is not only maintaining financial records. The objective is improving operational visibility, controlling expenses, increasing profitability, and supporting long-term fleet growth.",
-        ]}
-        backgroundImage="/Accounting/images/1_rectangle_1450.webp"
-        backgroundAlt="Women in hero section reviewing documents"
-      />
+  h1={
+    <>
+      Trucking Accounting Services for Owner-Operators &amp; Fleets
+    </>
+  }
+  fixedTitle="Trucking Accounting Services"
+  typingTitles={[
+    "for Owner-Operators & Fleets",
+    "Built for Better Cash Flow",
+    "Designed for Accurate Financial Control",
+    "Supporting Profitable Fleet Growth",
+  ]}
+  paragraphs={[
+    "Running a trucking company involves more than moving freight from one location to another. Every dispatched load creates financial activity connected to fuel expenses, broker payments, payroll processing, maintenance costs, compliance reporting, and tax obligations. When these financial systems are not organized properly, trucking companies struggle with cash flow instability, delayed reporting, revenue leakage, and operational inefficiencies.",
+    "Our trucking accounting services are designed specifically for owner-operators, independent carriers, small fleets, and growing trucking companies that need accurate bookkeeping, freight invoicing, tax management, payroll processing, and profitability tracking. Instead of using generic accounting methods, we build transportation-focused financial systems that align directly with dispatch operations and fleet management workflows.",
+    "The objective is not only maintaining financial records. The objective is improving operational visibility, controlling expenses, increasing profitability, and supporting long-term fleet growth.",
+  ]}
+  backgroundImage="/Accounting/images/1_rectangle_1450.webp"
+  backgroundAlt="Women in hero section reviewing documents"
+/>
       <ComparisonCardsSection
         heading="What Are Trucking Accounting Services?"
         description="Trucking accounting services help carriers manage payroll, invoicing, fuel costs, taxes, and operational expenses more efficiently."

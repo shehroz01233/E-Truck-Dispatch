@@ -487,14 +487,21 @@ export default function driverRecruitingPage() {
   return (
     <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={<>Driver Hiring Services for Trucking Companies</>}
-        paragraphs={[
-          "The trucking industry continues facing one of its biggest operational challenges: finding qualified CDL drivers fast enough to support freight demand. Carriers often lose profitable loads because hiring delays interrupt dispatch operations, reduce fleet availability, and increase delivery pressure. Driver shortages, FMCSA regulations, insurance restrictions, and safety expectations have transformed recruitment into a complex operational system rather than a simple staffing process.",
-          "E-Truck Dispatching provides driver hiring services designed specifically for trucking operations. Our recruitment system focuses on CDL driver sourcing, FMCSA-compliant screening, dispatch-integrated onboarding, and operational alignment to help carriers build stable and scalable fleets. Instead of simply filling positions, we focus on connecting qualified drivers with the right freight operations, equipment types, and dispatch workflows.",
-        ]}
-        backgroundImage="/Driver Recruiting/images/1_rectangle_1450.webp"
-        backgroundAlt="Women in hero section reviewing documents"
-      />
+  h1={<>Driver Hiring Services for Trucking Companies</>}
+  fixedTitle="Driver Hiring Services"
+  typingTitles={[
+    "for Trucking Companies",
+    "for Qualified CDL Drivers",
+    "Built Around FMCSA Compliance",
+    "Designed for Stable Fleet Growth",
+  ]}
+  paragraphs={[
+    "The trucking industry continues facing one of its biggest operational challenges: finding qualified CDL drivers fast enough to support freight demand. Carriers often lose profitable loads because hiring delays interrupt dispatch operations, reduce fleet availability, and increase delivery pressure. Driver shortages, FMCSA regulations, insurance restrictions, and safety expectations have transformed recruitment into a complex operational system rather than a simple staffing process.",
+    "E-Truck Dispatching provides driver hiring services designed specifically for trucking operations. Our recruitment system focuses on CDL driver sourcing, FMCSA-compliant screening, dispatch-integrated onboarding, and operational alignment to help carriers build stable and scalable fleets. Instead of simply filling positions, we focus on connecting qualified drivers with the right freight operations, equipment types, and dispatch workflows.",
+  ]}
+  backgroundImage="/Driver Recruiting/images/1_rectangle_1450.webp"
+  backgroundAlt="CDL driver hiring and recruitment services for trucking companies"
+/>
       <SupportColumnsSection
         heading="Why Modern Driver Hiring Is Critical for Dispatch Operations"
         intro="Driver hiring now supports both recruitment and dispatch operations. Qualified drivers help carriers maintain freight continuity, reduce delays, and improve operational stability."

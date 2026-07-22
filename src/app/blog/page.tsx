@@ -154,18 +154,25 @@ export default function BoxTruckPage() {
   return (
     <main className="flex-1 bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={
-          <>
-            Guides & Dispatch
-            <span className="block">Insights</span>
-          </>
-        }
-        paragraphs={[
-          "Step-by-step resources designed to help owner-operators and fleets improve load selection, increase revenue per mile, and stay compliant on every run.",
-        ]}
-        backgroundImage="/Blog/images/1_rectangle_1450.webp"
-        backgroundAlt="Truck traveling on the highway"
-      />
+  h1={
+    <>
+      Guides &amp; Dispatch
+      <span className="block">Insights</span>
+    </>
+  }
+  fixedTitle="Guides & Dispatch"
+  typingTitles={[
+    "Insights",
+    "Strategies",
+    "Resources",
+    "Carrier Growth Tips",
+  ]}
+  paragraphs={[
+    "Step-by-step resources designed to help owner-operators and fleets improve load selection, increase revenue per mile, and stay compliant on every run.",
+  ]}
+  backgroundImage="/Blog/images/1_rectangle_1450.webp"
+  backgroundAlt="Truck traveling on the highway"
+/>
 
       <LearningResourcesSection
         heading={

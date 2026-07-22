@@ -417,14 +417,21 @@ export default function californiaPage() {
   return (
     <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={<>Truck Dispatch Services in California</>}
-        paragraphs={[
-          "California operates as a major West Coast freight hub driven by ports, agriculture, and retail distribution.",
-          "At E Truck Dispatching, we focus on higher RPM, reduced deadhead miles, and consistent load flow for carriers operating across California.",
-        ]}
-        backgroundImage="/California/images/1_rectangle_1450.webp"
-        backgroundAlt="Women in hero section reviewing documents"
-      />
+  h1={<>Truck Dispatch Services in California</>}
+  fixedTitle="Truck Dispatch Services"
+  typingTitles={[
+    "in California",
+    "for Higher RPM",
+    "Built to Reduce Deadhead Miles",
+    "for Owner-Operators and Fleets",
+  ]}
+  paragraphs={[
+    "California operates as a major West Coast freight hub driven by ports, agriculture, and retail distribution.",
+    "At E Truck Dispatching, we focus on higher RPM, reduced deadhead miles, and consistent load flow for carriers operating across California.",
+  ]}
+  backgroundImage="/California/images/1_rectangle_1450.webp"
+  backgroundAlt="Truck operating on a California freight route"
+/>
 
       <FeatureIntroSection
         heading="Why Truck Dispatch Services Matter in California?"

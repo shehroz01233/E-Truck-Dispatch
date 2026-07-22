@@ -427,19 +427,26 @@ export default function DocumentManagementPage() {
   return (
     <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={
-          <>
-            Document Management & Paperwork Services for Owner Operators &
-            Trucking Companies
-          </>
-        }
-        paragraphs={[
-          "Trucking paperwork is not an administrative task, but it directly controls payments, compliance, and cash flow. Missing or inaccurate documents break the payment cycle, trigger broker disputes, and delay revenue.",
-          "At E Truck Dispatching, document management is structured as a system. Every document from Rate Confirmation and Bill of Lading (BOL) to Proof of Delivery (POD) and Invoice is processed, validated, and submitted with precision.",
-        ]}
-        backgroundImage="/Document Management Revised/images/1_rectangle_1450.webp"
-        backgroundAlt="Women in hero section reviewing documents"
-      />
+  h1={
+    <>
+      Document Management &amp; Paperwork Services for Owner Operators &amp;
+      Trucking Companies
+    </>
+  }
+  fixedTitle="Document Management & Paperwork Services"
+  typingTitles={[
+    "for Owner Operators",
+    "for Trucking Companies",
+    "Built for Faster Payments",
+    "Designed for Accurate Compliance",
+  ]}
+  paragraphs={[
+    "Trucking paperwork is not an administrative task, but it directly controls payments, compliance, and cash flow. Missing or inaccurate documents break the payment cycle, trigger broker disputes, and delay revenue.",
+    "At E Truck Dispatching, document management is structured as a system. Every document from Rate Confirmation and Bill of Lading (BOL) to Proof of Delivery (POD) and Invoice is processed, validated, and submitted with precision.",
+  ]}
+  backgroundImage="/Document Management Revised/images/1_rectangle_1450.webp"
+  backgroundAlt="Trucking document management and paperwork services"
+/>
 
       <BrokerNetworkSection
         heading="What Trucking Document Management Services Include?"
