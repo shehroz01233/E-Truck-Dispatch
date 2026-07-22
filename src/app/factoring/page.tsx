@@ -714,7 +714,7 @@ const freightBenefits: FreightBenefit[] = [
 
 export default function Factoring() {
   return (
-    <main className="bg-neutral-900 text-white">    
+    <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">   
         {/* <HeroSection
             h1="Fast Cash Flow Solutions for Owner-Operators and Trucking Fleets"
             paragraphs={[
