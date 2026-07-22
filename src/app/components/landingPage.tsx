@@ -315,7 +315,7 @@ export default function Hero() {
               In The USA
 
               <span className="mt-2 block text-[2.0625rem] min-[24.375rem]:text-[2.25rem] sm:text-[2.6875rem] lg:text-[3rem]">
-                E Truck Dispatching
+                 E Truck Dispatching
               </span>
             </motion.h1>
 

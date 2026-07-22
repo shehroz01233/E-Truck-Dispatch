@@ -2,20 +2,32 @@
 
 import { useLayoutEffect, useRef, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const navItems = [
   { label: "Home", href: "/" },
-  // { label: "Contact Us", href: "/contact" },
-  // { label: "About", href: "/about" },
+  { label: "About", href: "/about" },
+  { label: "Accounting", href: "/accounting" },
+  {label: "Blog", href: "/blog"},
+  { label: "Box  Truck", href: "/box_truck" },
+  { label: "California", href: "/california" },
   { label: "Conestoga", href: "/conestoga_dispatch_services" },
-  // { label: "Box  Truck", href: "/box_truck" },
-  { label: "Dry Van", href: "/dry-van-dispatch" },
-  { label: "Doc Mgt Revised", href: "/document-management-revised" },
+  { label: "Contact Us", href: "/contact" },
   { label: "Dedicated Truck Dispatching", href: "/dedicated-truck-dispatching" },
-  // { label: "Accounting", href: "/accounting" },
-  // { label: "Driver Recruiting", href: "/driver-recruiting" },
-  // { label: "California", href: "/california" },
-  {label: "Blog", href: "/blog"}
+  { label: "Doc Mgt Revised", href: "/document-management-revised" },
+  { label: "Driver Recruiting", href: "/driver-recruiting" },
+  { label: "Dry Van", href: "/dry-van-dispatch" },
+  { label: "Factoring", href: "/factoring" },
+  { label: "Flatbed Dispatch Services", href: "/flatbed_dispatch_services" },
+  { label: "Hotshot Truck Dispatch Service", href: "/hotshot_truck_dispatch_service" },
+  { label: "Lease on Company", href: "/lease_on_company" },
+  { label: "Load Booking", href: "/load_booking" },
+  { label: "MC Setup", href: "/mc_setup" },
+  { label: "Power Only Dispatch Service", href: "/power_only_dispatch_service" },
+  { label: "Services", href: "/services" },
+  { label: "States", href: "/states" },
+  { label: "Step Deck Dispatch", href: "/step_deck_dispatch" },
+  { label: "Truck Types", href: "/truck_types" },
 ];
 
 export default function Navbar() {
@@ -80,6 +92,30 @@ export default function Navbar() {
     };
   }, []);
 
+  useLayoutEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (isOpen && containerRef.current && !containerRef.current.contains(e.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    const handleEscapeKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape" && isOpen) {
+        setIsOpen(false);
+      }
+    };
+
+    if (isOpen) {
+      document.addEventListener("mousedown", handleClickOutside);
+      document.addEventListener("keydown", handleEscapeKey);
+    }
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("keydown", handleEscapeKey);
+    };
+  }, [isOpen]);
+
   return (
     <header className="absolute inset-x-0 top-[30px] z-[999] w-full bg-white/5 text-white backdrop-blur-lg">
       <div
@@ -92,19 +128,25 @@ export default function Navbar() {
           href="/"
           aria-label="E Truck Dispatching home"
           onClick={() => setIsOpen(false)}
-          className="group z-10 flex min-w-0 shrink-0 items-center gap-[3px]"
+          className="group z-10 flex min-w-0 shrink-0 items-center gap-2"
         >
-          <svg
-            aria-hidden="true"
-            viewBox="0 0 58 42"
-            className="h-[42px] w-[58px] shrink-0 fill-current transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:h-[50px] sm:w-[70px]"
-          >
-            <path d="M11 5h35l-4 6H25l-2.2 4H40l-4 6H19.8l-2.2 4H34l-4 7H2L11 5Zm25 18h9l6 5h4l-3 7H30l6-12Zm7 4-2 4h7l-4-4h-1ZM4 35h45l-2 3H2l2-3Z" />
-          </svg>
+          <Image
+            src="/Logo.png"
+            alt="E Truck Dispatching logo"
+            width={70}
+            height={50}
+            className="h-[32px] w-auto shrink-0 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:h-[40px]"
+            priority
+          />
 
-          <span className="truncate font-['Exo_2'] text-[22px] font-black italic uppercase leading-none tracking-[-0.04em] sm:text-[30px]">
-            DISPATCHING
-          </span>
+          <Image
+            src="/Dispatching.png"
+            alt="DISPATCHING"
+            width={250}
+            height={50}
+            className="h-[16px] w-auto shrink-0 transition-transform duration-300 ease-out group-hover:-translate-y-0.5 sm:h-[22px]"
+            priority
+          />
         </Link>
 
         {/* One visible nav */}
@@ -113,9 +155,9 @@ export default function Navbar() {
           aria-label="Main navigation"
           className={
             useMobileMenu
-              ? `absolute left-5 right-5 top-[92px] z-[1000] origin-top overflow-hidden rounded-xl border border-white/10 bg-[#111111]/95 shadow-2xl backdrop-blur-xl transition-all duration-300 ease-out ${
+              ? `absolute left-5 right-5 top-[92px] z-[1000] origin-top overflow-y-auto rounded-xl border border-white/10 bg-[#111111]/95 shadow-2xl backdrop-blur-xl transition-all duration-300 ease-out ${
                   isOpen
-                    ? "max-h-[520px] translate-y-0 scale-100 opacity-100"
+                    ? "max-h-[calc(100vh-150px)] translate-y-0 scale-100 opacity-100"
                     : "pointer-events-none max-h-0 -translate-y-3 scale-[0.98] opacity-0"
                 }`
               : "absolute left-1/2 top-1/2 z-10 block -translate-x-1/2 -translate-y-1/2"
