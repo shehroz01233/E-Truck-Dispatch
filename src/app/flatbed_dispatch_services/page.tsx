@@ -181,7 +181,7 @@ const flatbedQuestionStats: Stat[] = [
 
 export default function FlatbedDispatchServices() {
   return (
-    <main>
+        <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">   
      <HeroSection
   h1={
     <>
@@ -212,6 +212,7 @@ export default function FlatbedDispatchServices() {
         imageAlt="Flatbed truck reference views"
       />
       <HowWeWork
+      blendBackgroundEdges
         heading={
           <>
             How Our Flatbed Dispatch
@@ -219,6 +220,7 @@ export default function FlatbedDispatchServices() {
             System Works?
           </>
         }
+    backgroundImage="/background-earthquake.png"
         image="/Flatbed Dispatch Service/images/6_vector_5.webp"
         imageAlt="Dispatcher carrying packages for flatbed dispatch workflow"
         steps={[
