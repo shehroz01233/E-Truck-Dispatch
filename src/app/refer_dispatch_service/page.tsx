@@ -619,7 +619,6 @@ export default function ReferDispatchService() {
   }
   paragraphs={reeferFinalFormParagraphs}
   fields={reeferFinalFormFields}
-  compactBottom
 />
 <FreightBenefitsSection
   heading={

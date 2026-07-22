@@ -155,7 +155,7 @@ export default function VisionFormSection({
       className="mx-auto mb-[5rem] w-[calc(100%-2.5rem)] max-w-[97.5rem] overflow-hidden bg-[#161616] text-white sm:w-[calc(100%-4rem)] xl:h-[33.4375rem]"
     >
       <div className="grid gap-[3rem] px-[1.75rem] py-[2.5rem] sm:px-[3rem] sm:py-[3rem] xl:grid-cols-[minmax(18rem,24rem)_minmax(0,48.1875rem)] xl:justify-between xl:px-[clamp(3rem,6.41vw,6.25rem)] xl:pb-0 xl:pt-[3.125rem]">
-        {/* Vision content */}
+        {/* Left-side content */}
         <motion.div
           variants={contentVariants}
           className="max-w-[24rem] xl:self-center"
@@ -189,27 +189,86 @@ export default function VisionFormSection({
           {fields.map(([label, placeholder, type], index) => {
             const fieldId = `vision-form-field-${index}`;
 
+            const fieldName = label
+              .trim()
+              .toLowerCase()
+              .replace(/[^a-z0-9]+/g, "-");
+
             return (
-              <motion.label
+              <motion.div
                 key={`${label}-${index}`}
                 variants={fieldVariants}
-                htmlFor={fieldId}
               >
-                <span className="mb-[0.75rem] block text-[1rem] font-medium text-white">
+                {/* Main field label */}
+                <label
+                  htmlFor={fieldId}
+                  className="mb-[0.75rem] block text-[1rem] font-medium text-white"
+                >
                   {label}
-                </span>
+                </label>
 
-                <input
-                  id={fieldId}
-                  name={label
-                    .trim()
-                    .toLowerCase()
-                    .replace(/[^a-z0-9]+/g, "-")}
-                  className="h-[2.75rem] w-full bg-[#161616] px-[1.25rem] text-[0.875rem] text-white outline-none placeholder:text-white/50 focus:ring-1 focus:ring-[#b34b0c]"
-                  type={type || "text"}
-                  placeholder={placeholder}
-                />
-              </motion.label>
+                {/* Floating-placeholder field */}
+                <div className="relative">
+                  <input
+                    id={fieldId}
+                    name={fieldName}
+                    type={type || "text"}
+                    placeholder=" "
+                    aria-label={label}
+                    className="
+                      peer
+                      h-[2.875rem]
+                      w-full
+                      border
+                      border-white/10
+                      bg-[#161616]
+                      px-[1.25rem]
+                      pt-[0.25rem]
+                      text-[0.875rem]
+                      text-white
+                      outline-none
+                      transition-colors
+                      duration-200
+                      focus:border-[#b34b0c]
+                    "
+                  />
+
+                  <span
+                    className="
+                      pointer-events-none
+                      absolute
+                      left-[0.875rem]
+                      top-0
+                      z-10
+                      -translate-y-1/2
+                      bg-[#1c1c1c]
+                      px-[0.375rem]
+                      text-[0.75rem]
+                      text-white/70
+                      transition-all
+                      duration-200
+
+                      peer-placeholder-shown:left-[1.25rem]
+                      peer-placeholder-shown:top-1/2
+                      peer-placeholder-shown:-translate-y-1/2
+                      peer-placeholder-shown:bg-transparent
+                      peer-placeholder-shown:px-0
+                      peer-placeholder-shown:text-[0.875rem]
+                      peer-placeholder-shown:text-white/50
+
+                      peer-focus:left-[0.875rem]
+                      peer-focus:top-0
+                      peer-focus:-translate-y-1/2
+                      peer-focus:bg-[#1c1c1c]
+                      peer-focus:px-[0.375rem]
+                      peer-focus:text-[0.75rem]
+                      peer-focus:text-[#cf5a13]
+                    "
+                  >
+                    {placeholder}
+                  </span>
+                </div>
+              </motion.div>
             );
           })}
 
@@ -226,7 +285,7 @@ export default function VisionFormSection({
             whileTap={{
               scale: 0.98,
             }}
-            className="h-[2.75rem] bg-[#b34b0c] text-[1.125rem] font-medium capitalize text-white hover:bg-[#cf5a13] sm:col-span-2"
+            className="h-[2.75rem] bg-[#b34b0c] text-[1.125rem] font-medium capitalize text-white transition-colors hover:bg-[#cf5a13] sm:col-span-2"
             type="submit"
           >
             Get Started Now

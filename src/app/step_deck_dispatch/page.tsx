@@ -434,7 +434,7 @@ export default function StepDeckDispatch(){
   }
   paragraphs={stepDeckFormParagraphs}
   fields={stepDeckFormFields}
-  compactBottom
+
 />
 <FeatureIntroSection
   heading={
@@ -478,7 +478,7 @@ export default function StepDeckDispatch(){
   }
   paragraphs={stepDeckFormParagraphs}
   fields={stepDeckFormFields}
-  compactBottom
+ 
 />
 <FreightTypesSection
   heading={
@@ -539,7 +539,7 @@ export default function StepDeckDispatch(){
   }
   paragraphs={stepDeckFinalCtaParagraphs}
   fields={stepDeckFinalCtaFields}
-  compactBottom
+
 />
 
 <ServiceGuaranteesSection

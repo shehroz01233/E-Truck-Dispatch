@@ -501,7 +501,6 @@ export default function McSetupPage() {
         heading="E Truck Dispatching"
         paragraphs={visionParagraphs}
         fields={formFields}
-        compactBottom
       />
      
       <ComparisonTableSection

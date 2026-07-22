@@ -2,10 +2,19 @@ import Image from "next/image";
 import type { Variants } from "motion/react";
 import * as motion from "motion/react-client";
 
+export type ComplianceCard = {
+  title: string;
+  intro?: string;
+  items: string[];
+  footer?: string;
+};
+
+type ComplianceCardInput = [string, string[]] | ComplianceCard;
+
 type Props = {
   heading: string;
   description: string;
-  cards: [string, string[]][];
+  cards: ComplianceCardInput[];
   image: string;
   imageAlt?: string;
   cardContentVariant?: "list" | "paragraph";
@@ -221,7 +230,13 @@ export default function ComplianceMatrixSection({
         </motion.div>
 
         {/* Content cards */}
-        {cards.map(([title, items], index) => {
+        {cards.map((card, index) => {
+          const [title, items] = Array.isArray(card)
+            ? card
+            : [card.title, card.items];
+          const intro = Array.isArray(card) ? undefined : card.intro;
+          const footer = Array.isArray(card) ? undefined : card.footer;
+
           /*
            * Plain serializable object created on the server.
            * No function is passed to a Motion component.
@@ -264,10 +279,19 @@ export default function ComplianceMatrixSection({
                 {title}
               </motion.h3>
 
+              {intro ? (
+                <motion.p
+                  variants={paragraphVariants}
+                  className="mt-8 font-['DM_Sans'] text-sm leading-[1.4] text-white/85"
+                >
+                  {intro}
+                </motion.p>
+              ) : null}
+
               {isParagraphVariant ? (
                 <motion.div
                   variants={contentContainerVariants}
-                  className="mt-8 space-y-4"
+                  className={`${intro ? "mt-4" : "mt-8"} space-y-4`}
                 >
                   {items.map((item, itemIndex) => (
                     <motion.p
@@ -282,7 +306,7 @@ export default function ComplianceMatrixSection({
               ) : (
                 <motion.ul
                   variants={contentContainerVariants}
-                  className="mt-8 space-y-3"
+                  className={`${intro ? "mt-4" : "mt-8"} space-y-3`}
                 >
                   {items.map((item, itemIndex) => (
                     <motion.li
@@ -301,6 +325,15 @@ export default function ComplianceMatrixSection({
                   ))}
                 </motion.ul>
               )}
+
+              {footer ? (
+                <motion.p
+                  variants={paragraphVariants}
+                  className="mt-4 font-['DM_Sans'] text-sm leading-[1.4] text-white/85"
+                >
+                  {footer}
+                </motion.p>
+              ) : null}
             </motion.article>
           );
         })}
