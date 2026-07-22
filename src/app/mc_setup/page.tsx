@@ -18,6 +18,7 @@ import {
   type CarrierResultStep,
 } from "../components/ResultsCarriersSection";
 import HowWeWork from "../components/HowWeWork";
+import ComparisonCardsSection from "../components/ComparisonCardsSection";
 import FAQs, { type FAQItem } from "../components/FAQs";
 import QuestionStats, { type Stat } from "../components/QuestionStats";
 
@@ -360,6 +361,39 @@ const mcSetupFaqs: FAQItem[] = [
   },
 ];
 
+const mcDotApprovalComparisons = [
+  [
+    "Standard FMCSA Timeline",
+    "MC authority approval takes 14–21 days, depending on filing accuracy and insurance submission. The timeline includes a mandatory FMCSA 21-day waiting (protest) period, during which the application is publicly posted and reviewed before activation. Activation depends on completing all required steps within this timeframe.",
+  ] as [string, string],
+  {
+    title: "Factors That Delay Approval",
+    intro: "Several issues can extend the timeline beyond 21 days:",
+    items: [
+      "Incorrect or incomplete application data",
+      "Insurance not filed on time (BMC-91/BMC-91X)",
+      "BOC-3 not submitted",
+      "Business name or authority mismatch",
+      "Errors in cargo classification or operation type",
+    ],
+    footer:
+      "Even small inconsistencies between filings can delay activation.",
+  },
+  {
+    title: "How to Speed Up Activation",
+    intro:
+      "Approval speed depends on accuracy, not shortcuts. For this:",
+    items: [
+      "Submit complete and correct application on first attempt",
+      "Ensure insurance is filed immediately after MC application",
+      "Confirm business details match across all filings",
+      "Complete BOC-3 filing early in the process",
+    ],
+    footer:
+      "Faster activation occurs when all required filings are aligned and submitted within the FMCSA timeline.",
+  },
+];
+
 const mcSetupStats: Stat[] = [
   {
     value: "300+",
@@ -509,6 +543,12 @@ export default function McSetupPage() {
         columns={setupRequirementColumns}
         rows={setupRequirementRows}
         compactTop
+      />
+
+      <ComparisonCardsSection
+        heading="How Long Does MC DOT Approval Take?"
+        description="MC DOT Approval Typically Takes 20–25 Days, Including The FMCSA Waiting Period After Filing Authority And Completing Insurance And BOC-3 Requirements."
+        comparisons={mcDotApprovalComparisons}
       />
       
       <FAQs

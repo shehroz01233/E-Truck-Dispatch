@@ -375,14 +375,27 @@ const leaseOnQuestionStats: Stat[] = [
 export default function LeaseOnCompanyPage() {
   return (
     <main>
-    <HeroSection
-      h1="Truck Dispatching Services For Lease-On Companies & Owner Operators"
-      paragraphs={[
-        "Professional truck dispatching services for lease-on companies and owner operators focused on high-paying loads, better freight rates, reduced deadhead, and full back-office support. E Truck Dispatching helps carriers, leased owner operators, and small trucking businesses maximize revenue while staying compliant with FMCSA and DOT requirements.",
-      ]}
-      backgroundImage="/Lease on Companies/images/1_rectangle_1450.webp"
-      backgroundAlt="Truck dispatching services for lease-on companies and owner operators"
-    />
+   <HeroSection
+  h1={
+    <>
+      Truck Dispatching Services For
+      <br />
+      Lease-On Companies &amp; Owner Operators
+    </>
+  }
+  fixedTitle="Truck Dispatching Services"
+  typingTitles={[
+    "for Lease-On Companies",
+    "for Owner Operators",
+    "Focused on High-Paying Loads",
+    "Built for Better Revenue and Compliance",
+  ]}
+  paragraphs={[
+    "Professional truck dispatching services for lease-on companies and owner operators focused on high-paying loads, better freight rates, reduced deadhead, and full back-office support. E Truck Dispatching helps carriers, leased owner operators, and small trucking businesses maximize revenue while staying compliant with FMCSA and DOT requirements.",
+  ]}
+  backgroundImage="/Lease on Companies/images/1_rectangle_1450.webp"
+  backgroundAlt="Truck dispatching services for lease-on companies and owner operators"
+/>
    <BenefitsGridSection
   heading="Reliable Dispatch Support for Lease-On Companies & Independent Owner Operators"
   benefits={leaseOnSupportBenefits}
@@ -413,7 +426,7 @@ export default function LeaseOnCompanyPage() {
   heading="E Truck Dispatching"
   paragraphs={leaseOnVisionParagraphs}
   fields={leaseOnFormFields}
-  compactBottom
+  
 />
 
 <HowWeWork
@@ -450,7 +463,7 @@ export default function LeaseOnCompanyPage() {
   heading="E Truck Dispatching"
   paragraphs={leaseOnVisionParagraphs}
   fields={leaseOnFormFields}
-  compactBottom
+  
 />
  
 <AudienceBenefitsSection

@@ -182,21 +182,28 @@ const flatbedQuestionStats: Stat[] = [
 export default function FlatbedDispatchServices() {
   return (
     <main>
-      <HeroSection
-        h1={
-          <>
-            Flatbed Dispatch Services For
-            <br />
-            Owner-Operators &amp; Small Fleets
-          </>
-        }
-        paragraphs={[
-          "A structured flatbed dispatch system ensures that every load is matched, verified, and executed without compliance risk while maintaining profitability across each mile.",
-          "Flatbed dispatch services provide carriers with complete operational control over load sourcing, rate negotiation, documentation handling, and regulatory alignment.",
-        ]}
-        backgroundImage="/Flatbed Dispatch Service/images/1_rectangle_1450.webp"
-        backgroundAlt="Flatbed truck driving through mountains at sunset"
-      />
+     <HeroSection
+  h1={
+    <>
+      Flatbed Dispatch Services For
+      <br />
+      Owner-Operators &amp; Small Fleets
+    </>
+  }
+  fixedTitle="Flatbed Dispatch Services"
+  typingTitles={[
+    "for Owner-Operators",
+    "for Small Trucking Fleets",
+    "Built for Profitable Flatbed Loads",
+    "Focused on Compliance and Revenue",
+  ]}
+  paragraphs={[
+    "A structured flatbed dispatch system ensures that every load is matched, verified, and executed without compliance risk while maintaining profitability across each mile.",
+    "Flatbed dispatch services provide carriers with complete operational control over load sourcing, rate negotiation, documentation handling, and regulatory alignment.",
+  ]}
+  backgroundImage="/Flatbed Dispatch Service/images/1_rectangle_1450.webp"
+  backgroundAlt="Flatbed truck driving through mountains at sunset"
+/>
       <FeatureIntroSection
         heading="What Flatbed Dispatch Services Include?"
         description="Flatbed dispatch services manage the full lifecycle of open-deck freight operations, including load sourcing, permit coordination, route planning, and compliance. E-Truck Dispatching offers flatbed dispatch service to independent owner-operators, small fleets, and carriers operating under their own MC authority who need a system to manage operational complexity without building an internal dispatch team."
@@ -241,7 +248,6 @@ export default function FlatbedDispatchServices() {
           "Fill out the form to connect with our expert dispatch team and start getting high-paying loads with full support and zero stress.",
         ]}
         fields={flatbedFormFields}
-        compactBottom
       />
 <ComparisonCardsSection
   heading="What Flatbed Dispatch Challenges We Solve"
@@ -317,7 +323,7 @@ export default function FlatbedDispatchServices() {
   }
   paragraphs={flatbedFinalFormParagraphs}
   fields={flatbedFinalFormFields}
-  compactBottom
+  
 />
 <ComplianceMatrixSection
   heading="Why Carriers Choose E Truck Dispatching"

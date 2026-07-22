@@ -39,14 +39,21 @@ export default function ServicesPage() {
   return (
     <div className="bg-[#1c1c1c] text-white">
       
-        <HeroSection
-          h1="Providing Best Trucking Services in the USA"
-          paragraphs={[
-            "Our commitment to reliability, compliance, and 24/7 availability drives us to deliver the best truck dispatch services, tailored to meet the operational needs of owner-operators and small fleets across all 48 states in the USA.",
-          ]}
-          backgroundImage="/Services/images/1_rectangle_1450.webp"
-          backgroundAlt="Trucks on the road"
-        />
+       <HeroSection
+  h1={<>Providing Best Trucking Services in the USA</>}
+  fixedTitle="Best Trucking Services"
+  typingTitles={[
+    "for Owner-Operators",
+    "for Small Trucking Fleets",
+    "Available Across 48 States",
+    "Built for Reliable Freight Operations",
+  ]}
+  paragraphs={[
+    "Our commitment to reliability, compliance, and 24/7 availability drives us to deliver the best truck dispatch services, tailored to meet the operational needs of owner-operators and small fleets across all 48 states in the USA.",
+  ]}
+  backgroundImage="/Services/images/1_rectangle_1450.webp"
+  backgroundAlt="Trucks on the road"
+/>
       
 
     

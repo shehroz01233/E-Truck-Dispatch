@@ -199,18 +199,18 @@ export default function ComparisonCardsSection({
   const isDispatchPerformance = variant === "dispatch-performance";
 
   return (
-    <section className="mx-auto grid w-[calc(100%-40px)] max-w-[1560px] gap-3 py-20 text-white sm:w-[calc(100%-64px)] md:grid-cols-2 xl:grid-cols-4">
+    <section className="mx-auto grid w-[calc(100%-40px)] max-w-[1560px] grid-cols-1 items-start gap-3 py-12 text-white sm:w-[calc(100%-64px)] sm:py-16 md:grid-cols-2 xl:grid-cols-4 xl:items-stretch xl:py-20">
       {/* Heading card */}
       <motion.div
         variants={headingCardVariants}
         initial="hidden"
         whileInView="visible"
         viewport={viewportOptions}
-        className="flex min-h-80 flex-col bg-[#b34b0c] p-8"
+        className="flex h-fit min-h-80 min-w-0 self-start flex-col overflow-hidden bg-[#b34b0c] px-7 py-10 sm:px-8 xl:h-full xl:self-stretch xl:py-[50px]"
       >
         <motion.h2
           variants={headingContentVariants}
-          className="font-['Outfit'] text-4xl font-bold leading-tight sm:text-5xl"
+          className="max-w-full break-words font-['Outfit'] text-[clamp(2.25rem,2.65vw,3rem)] font-bold leading-[1.08] [overflow-wrap:anywhere]"
         >
           {heading}
         </motion.h2>
@@ -285,7 +285,7 @@ export default function ComparisonCardsSection({
                 ease: smoothEase,
               },
             }}
-            className="flex min-h-80 flex-col bg-[#171717] p-5"
+            className="flex h-fit min-h-80 min-w-0 self-start flex-col overflow-hidden bg-[#171717] px-5 pb-7 pt-[30px] xl:h-full xl:self-stretch"
           >
             <motion.span
               variants={iconVariants}
@@ -295,9 +295,9 @@ export default function ComparisonCardsSection({
                 <Image
                   src={iconPath}
                   alt={iconAlt}
-                  width={32}
-                  height={32}
-                  className="h-8 w-8 object-contain"
+                  width={42}
+                  height={42}
+                  className="h-[42px] w-[42px] object-contain"
                 />
               ) : (
                 <span className="text-2xl" aria-hidden="true">
@@ -308,7 +308,7 @@ export default function ComparisonCardsSection({
 
             <motion.h3
               variants={titleVariants}
-              className="mt-6 font-['Outfit'] text-lg font-medium leading-snug"
+              className="mt-6 max-w-40 break-words font-['Outfit'] text-lg font-medium capitalize leading-snug"
             >
               {title}
             </motion.h3>
@@ -316,13 +316,13 @@ export default function ComparisonCardsSection({
             {items.length > 0 ? (
               <motion.ul
                 variants={listVariants}
-                className="mt-6 space-y-3"
+                className="mt-6 space-y-0"
               >
                 {items.map((item, itemIndex) => (
                   <motion.li
                     key={`${item}-${itemIndex}`}
                     variants={listItemVariants}
-                    className="flex items-start gap-3 font-['DM_Sans'] text-sm leading-6 text-white/75"
+                    className="flex items-start gap-3 font-['DM_Sans'] text-sm leading-7 text-white"
                   >
                     <motion.span
                       variants={bulletVariants}
@@ -337,7 +337,7 @@ export default function ComparisonCardsSection({
             ) : legacyBody ? (
               <motion.p
                 variants={bodyVariants}
-                className="mt-6 font-['DM_Sans'] text-base leading-6 text-white/75"
+                className="mt-6 max-w-72 font-['DM_Sans'] text-base leading-6 text-white"
               >
                 {legacyBody}
               </motion.p>

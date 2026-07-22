@@ -106,11 +106,22 @@ export default function States(){
     return (
        <main>
         <HeroSection
-  h1="States We Serve – Nationwide E-Truck Dispatching Coverage"
-  paragraphs={eTruckStatesHeroParagraphs}
-  backgroundImage="/States/images/1_rectangle_1450.webp"
-  backgroundAlt="American flag representing nationwide E-Truck Dispatching coverage"
-/>
+    h1={
+      <>
+        States We Serve – Nationwide E-Truck Dispatching Coverage
+      </>
+    }
+    fixedTitle="Nationwide E-Truck Dispatching"
+    typingTitles={[
+      "Across All 48 States",
+      "for Owner-Operators",
+      "for Small Trucking Fleets",
+      "Built for Nationwide Freight Coverage",
+    ]}
+    paragraphs={eTruckStatesHeroParagraphs}
+    backgroundImage="/States/images/1_rectangle_1450.webp"
+    backgroundAlt="American flag representing nationwide E-Truck Dispatching coverage"
+  />
 <StatesCoverageSection
   heading={
     <>

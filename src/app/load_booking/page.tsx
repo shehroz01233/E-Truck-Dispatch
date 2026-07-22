@@ -255,22 +255,29 @@ const freightBenefits: FreightBenefit[] = [
 export default function LoadBookingPage() {
   return (
     <div className="bg-[#1c1c1c]">
-      <HeroSection
-        h1={
-          <>
-            Get A Load Fast With Professional Truck
-            <br />
-            Dispatching Services
-          </>
-        }
-        paragraphs={[
-          "Finding profitable freight quickly has become one of the biggest operational challenges for owner-operators and trucking companies. Trucks that remain parked between deliveries reduce weekly revenue, increase fuel-related losses, and create operational delays across the entire dispatch cycle.",
-          "E-Truck Dispatching helps drivers and fleets secure freight faster through real-time load monitoring, dedicated dispatch coordination, broker communication, and profitability-focused load planning.",
-          "Whether you operate a dry van, reefer, flatbed, step deck, hotshot, box truck, or power-only setup, our dispatch team works to keep your equipment loaded with consistent freight opportunities.",
-        ]}
-        backgroundImage="/load booking/images/1_rectangle_1450.webp"
-        backgroundAlt="Freight packages being prepared for truck dispatch"
-      />
+     <HeroSection
+  h1={
+    <>
+      Get A Load Fast With Professional Truck
+      <br />
+      Dispatching Services
+    </>
+  }
+  fixedTitle="Get A Load Fast"
+  typingTitles={[
+    "With Professional Dispatching",
+    "for Owner-Operators",
+    "for Trucking Companies",
+    "Built for Faster Freight Booking",
+  ]}
+  paragraphs={[
+    "Finding profitable freight quickly has become one of the biggest operational challenges for owner-operators and trucking companies. Trucks that remain parked between deliveries reduce weekly revenue, increase fuel-related losses, and create operational delays across the entire dispatch cycle.",
+    "E-Truck Dispatching helps drivers and fleets secure freight faster through real-time load monitoring, dedicated dispatch coordination, broker communication, and profitability-focused load planning.",
+    "Whether you operate a dry van, reefer, flatbed, step deck, hotshot, box truck, or power-only setup, our dispatch team works to keep your equipment loaded with consistent freight opportunities.",
+  ]}
+  backgroundImage="/load booking/images/1_rectangle_1450.webp"
+  backgroundAlt="Freight packages being prepared for truck dispatch"
+/>
 
       <ComparisonCardsSection
         heading="Why Fast Load Booking Matters in Modern Trucking"
@@ -385,7 +392,7 @@ export default function LoadBookingPage() {
           "Fill out the form to connect with our expert dispatch team and start getting high-paying loads with full support and zero stress.",
         ]}
         fields={formFields}
-        compactBottom
+        
       />
 
       <DispatchAudienceSection

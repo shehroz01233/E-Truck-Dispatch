@@ -478,20 +478,27 @@ const reeferDispatchStats = [
 export default function ReferDispatchService() {
   return (
     <main>
-      <HeroSection
-        h1={
-          <>
-            Reefer Dispatch Services For
-            <br />
-            Temperature-Controlled Freight
-          </>
-        }
-        paragraphs={[
-          "Reefer dispatch services control how temperature-sensitive freight moves across lanes, schedules, and delivery windows. Perishable cargo requires precision in timing, compliance, and coordination. Our Reefer Dispatch Services converts refrigerated trucking into a structured revenue and protection system for carriers.",
-        ]}
-        backgroundImage="/Refer Dispatch Service/images/1_rectangle_1450.webp"
-        backgroundAlt="Reefer truck for temperature-controlled freight dispatch"
-      />
+    <HeroSection
+  h1={
+    <>
+      Reefer Dispatch Services For
+      <br />
+      Temperature-Controlled Freight
+    </>
+  }
+  fixedTitle="Reefer Dispatch Services"
+  typingTitles={[
+    "for Temperature-Controlled Freight",
+    "Built for Perishable Cargo",
+    "Focused on On-Time Delivery",
+    "Designed for Cold Chain Protection",
+  ]}
+  paragraphs={[
+    "Reefer dispatch services control how temperature-sensitive freight moves across lanes, schedules, and delivery windows. Perishable cargo requires precision in timing, compliance, and coordination. Our Reefer Dispatch Services converts refrigerated trucking into a structured revenue and protection system for carriers.",
+  ]}
+  backgroundImage="/Refer Dispatch Service/images/1_rectangle_1450.webp"
+  backgroundAlt="Reefer truck for temperature-controlled freight dispatch"
+/>
       <FeatureIntroSection
   heading={
     <>

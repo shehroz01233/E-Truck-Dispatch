@@ -268,7 +268,7 @@ const hotshotPerformanceSystemCards = [
   },
 ];
 
-const hotshotPricingStructureCards = [
+const hotshotPricingStructureCards= [
   {
     title: "What Pricing Covers",
     description:
@@ -406,22 +406,29 @@ const hotshotQuestionStats: Stat[] = [
 export default function HotshotTruckDispatchService() {
   return (
     <main>
-      <HeroSection
-        h1={
-          <>
-            Hotshot Truck Dispatching Services
-            <br />
-            For Owner-Operators And
-            <br />
-            Trucking Companies
-          </>
-        }
-        paragraphs={[
-          "Hotshot operations depend on rapid load access, precise scheduling, and continuous freight movement. Delays between loads, weak rate negotiation, and inconsistent routing reduce revenue per trip. A structured dispatch system controls load selection, broker coordination, and documentation flow to maintain consistent earnings and reduce operational gaps.",
-        ]}
-        backgroundImage="/Hotshot Truck Dispatching Service/images/1_rectangle_1450.webp"
-        backgroundAlt="Hotshot truck dispatching service truck on the road"
-      />
+     <HeroSection
+  h1={
+    <>
+      Hotshot Truck Dispatching Services
+      <br />
+      For Owner-Operators And
+      <br />
+      Trucking Companies
+    </>
+  }
+  fixedTitle="Hotshot Truck Dispatching Services"
+  typingTitles={[
+    "for Owner-Operators",
+    "for Trucking Companies",
+    "Built for Faster Load Access",
+    "Focused on Consistent Revenue",
+  ]}
+  paragraphs={[
+    "Hotshot operations depend on rapid load access, precise scheduling, and continuous freight movement. Delays between loads, weak rate negotiation, and inconsistent routing reduce revenue per trip. A structured dispatch system controls load selection, broker coordination, and documentation flow to maintain consistent earnings and reduce operational gaps.",
+  ]}
+  backgroundImage="/Hotshot Truck Dispatching Service/images/1_rectangle_1450.webp"
+  backgroundAlt="Hotshot truck dispatching service truck on the road"
+/>
       <FeatureIntroSection
         heading={
           <>
@@ -456,7 +463,6 @@ export default function HotshotTruckDispatchService() {
         }
         paragraphs={hotshotFormParagraphs}
         fields={hotshotFormFields}
-        compactBottom
       />
       <FeatureIntroSection
         heading={
@@ -466,12 +472,8 @@ export default function HotshotTruckDispatchService() {
             Dispatchers Handle?
           </>
         }
-        description="Hotshot dispatch manages freight categories requiring flexibility, speed, and direct routing:"
+        description="Hotshot dispatch manages freight categories requiring flexibility, speed, and direct routing. These shipments are typically partial loads with strict delivery timelines. Direct routing reduces handling points and improves transit visibility compared to shared freight networks. Specialized opportunities include auction transport, dealer transfers, and emergency shipments requiring immediate dispatch coordination."
         features={hotshotLoadTypeFeatures}
-        footerDescription={[
-          "These shipments are typically partial loads with strict delivery timelines. Direct routing reduces handling points and improves transit visibility compared to shared freight networks.",
-          "Specialized opportunities include auction transport, dealer transfers, and emergency shipments requiring immediate dispatch coordination.",
-        ]}
         image="/Hotshot Truck Dispatching Service/images/7_rectangle_1556.webp"
         imageAlt="Hotshot truck hauling specialized freight"
       />
@@ -524,7 +526,6 @@ export default function HotshotTruckDispatchService() {
         }
         paragraphs={hotshotFormParagraphs}
         fields={hotshotFormFields}
-        compactBottom
       />
       <DispatchAudienceSection
         heading={
@@ -543,8 +544,7 @@ export default function HotshotTruckDispatchService() {
         imageAlt="Dispatcher monitoring hotshot freight operations"
         cards={hotshotPerformanceSystemCards}
       />
-      <FeatureIntroSection
-        variant="cards"
+      <BenefitsGridSection
         heading={
           <>
             Pricing Structure for Hotshot
@@ -553,7 +553,7 @@ export default function HotshotTruckDispatchService() {
           </>
         }
         description="Hotshot dispatch typically operates on a percentage-based model, ranging between 5% to 10% per load."
-        cards={hotshotPricingStructureCards}
+        benefits={hotshotPricingStructureCards}
       />
       <BenefitsGridSection
         heading={
@@ -572,7 +572,6 @@ export default function HotshotTruckDispatchService() {
         benefits={hotshotWhyChooseBenefits}
       />
       <BenefitsGridSection
-        variant="steps"
         heading={
           <>
             How to Get Started with Hotshot
@@ -586,7 +585,6 @@ export default function HotshotTruckDispatchService() {
         heading="Conclusion"
         paragraphs={hotshotConclusionParagraphs}
         fields={hotshotFormFields}
-        compactBottom
       />
       <FAQSection
         heading="Frequently Asked Questions"

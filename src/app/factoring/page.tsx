@@ -715,7 +715,7 @@ const freightBenefits: FreightBenefit[] = [
 export default function Factoring() {
   return (
     <main className="bg-neutral-900 text-white">    
-        <HeroSection
+        {/* <HeroSection
             h1="Fast Cash Flow Solutions for Owner-Operators and Trucking Fleets"
             paragraphs={[
                 "Freight transportation operates on movement, timing, and continuity. Trucks continue moving across freight lanes every day, but broker and shipper payments often move much slower than operational expenses. Fuel purchases, truck repairs, insurance premiums, payroll obligations, toll charges, and maintenance costs continue long before freight invoices are paid.Freight transportation operates on movement, timing, and continuity. Trucks continue moving across freight lanes every day, but broker and shipper payments often move much slower than operational expenses. Fuel purchases, truck repairs, insurance premiums, payroll obligations, toll charges, and maintenance costs continue long before freight invoices are paid.Freight transportation operates on movement, timing, and continuity. Trucks continue moving across freight lanes every day, but broker and shipper payments often move much slower than operational expenses. Fuel purchases, truck repairs, insurance premiums, payroll obligations, toll charges, and maintenance costs continue long before freight invoices are paid.Freight transportation operates on movement, timing, and continuity. Trucks continue moving across freight lanes every day, but broker and shipper payments often move much slower than operational expenses. Fuel purchases, truck repairs, insurance premiums, payroll obligations, toll charges, and maintenance costs continue long before freight invoices are paid.Freight transportation operates on movement, timing, and continuity. Trucks continue moving across freight lanes every day, but broker and shipper payments often move much slower than operational expenses. Fuel purchases, truck repairs, insurance premiums, payroll obligations, toll charges, and maintenance costs continue long before freight invoices are paid.",
@@ -724,7 +724,24 @@ export default function Factoring() {
             ]}
             backgroundImage="/factoring/images/1_rectangle_1450.webp"
             backgroundAlt="Truck driver using a tablet to manage invoices and payments"
-        />
+        /> */}
+        Sample format:
+  <HeroSection
+  h1={<>Dry Van Dispatch Service</>}
+  fixedTitle="Dry Van Dispatch Service"
+  typingTitles={[
+    "for High-Paying Loads",
+    "Built to Reduce Empty Miles",
+    "Focused on Better Revenue Per Mile",
+    "for Owner-Operators and Fleets",
+  ]}
+  paragraphs={[
+    "Dry Van Dispatch Service helps carriers secure consistent, high-paying loads without dealing with brokers or paperwork. Our dispatchers manage load sourcing, rate negotiation, and route planning to keep your truck moving on profitable lanes while reducing empty miles.",
+    "We also handle documentation like rate confirmations and invoicing, so you stay focused on driving. You approve every load, while we ensure steady freight flow and better earnings with less stress.",
+  ]}
+  backgroundImage="/Dry Van Dispatch/images/1_rectangle_1450.webp"
+  backgroundAlt="Dry van truck traveling on a profitable freight route"
+/>
       
         <RevenuePanelSection
       heading=""

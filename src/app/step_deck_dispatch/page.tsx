@@ -386,7 +386,7 @@ const stepDeckFinalQuestionStats: Stat[] = [
 export default function StepDeckDispatch(){
     return(
         <main>
-           <HeroSection
+      <HeroSection
   h1={
     <>
       Step Deck Dispatch Services By
@@ -394,6 +394,13 @@ export default function StepDeckDispatch(){
       E-Truck Dispatching
     </>
   }
+  fixedTitle="Step Deck Dispatch Services"
+  typingTitles={[
+    "for Height-Sensitive Freight",
+    "Built for Specialized Open-Deck Loads",
+    "Focused on Clearance and Route Control",
+    "for Owner-Operators and Fleets",
+  ]}
   paragraphs={[
     "A step deck dispatch service manages freight operations for two-level open-deck trailers designed for height-sensitive cargo. The trailer structure includes an upper platform behind the cab and a lower rear deck positioned closer to ground level, allowing taller freight to move within legal height limits without triggering permits.",
     "This dispatch model focuses on equipment-specific load matching, clearance validation, and operational control. Unlike general freight coordination, it applies structured decision logic based on cargo height, loading method, and route feasibility.",

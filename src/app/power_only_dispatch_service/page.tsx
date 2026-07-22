@@ -61,24 +61,6 @@ const powerOnlyIncludedServiceCards: ComplianceCard[] = [
   },
 ];
 
-const powerOnlyTruckingWorkCards = [
-  {
-    title: "Trailer Pickup and Hooking Process",
-    description:
-      "Drivers arrive at the assigned pickup location, inspect the trailer, verify load information, and connect the trailer to the tractor unit before transportation begins. Dispatch coordination ensures compliance checks, trailer readiness, and accurate pickup scheduling.",
-  },
-  {
-    title: "Freight Transportation and Delivery",
-    description:
-      "The power unit transports loaded or empty trailers between warehouses, ports, terminals, distribution centers, and customer facilities based on scheduled delivery requirements. Dispatchers monitor communication, routing, and operational timing throughout the trip.",
-  },
-  {
-    title: "Drop-and-Hook Operations",
-    description:
-      "Many power only trucking operations rely on drop-and-hook systems instead of live loading processes. This operational model reduces detention time, improves turnaround speed, increases trailer utilization, and supports continuous freight movement.",
-  },
-];
-
 const powerOnlyFormParagraphs = [
   "Fill out the form to connect with our expert dispatch team and start getting high-paying loads with full support and zero stress.",
 ];
@@ -610,18 +592,25 @@ const powerOnlyDispatchStats = [
 export default function PowerOnlyDisptachService() {
   return (
     <main>
-      <HeroSection
-        h1={
-          <>
-            Power Only Dispatch Service For
-            <br />
-            Owner Operators &amp; Small Fleets
-          </>
-        }
-        paragraphs={powerOnlyHeroParagraphs}
-        backgroundImage="/Power only Dispatch Service/images/1_rectangle_1450.webp"
-        backgroundAlt="Power only dispatch service truck yard"
-      />
+    <HeroSection
+  h1={
+    <>
+      Power Only Dispatch Service For
+      <br />
+      Owner Operators &amp; Small Fleets
+    </>
+  }
+  fixedTitle="Power Only Dispatch Service"
+  typingTitles={[
+    "for Owner-Operators",
+    "for Small Trucking Fleets",
+    "Built for Trailer Flexibility",
+    "Focused on Consistent Load Movement",
+  ]}
+  paragraphs={powerOnlyHeroParagraphs}
+  backgroundImage="/Power only Dispatch Service/images/1_rectangle_1450.webp"
+  backgroundAlt="Power only dispatch service truck yard"
+/>
       <FeatureIntroSection
         heading={
           <>
@@ -643,10 +632,8 @@ export default function PowerOnlyDisptachService() {
         imageAlt="Warehouse worker loading power only freight"
       />
       <FeatureIntroSection
-        variant="process"
         heading="How Power Only Trucking Works"
         description="Power only trucking operates when a carrier provides the tractor unit while the broker, shipper, or customer provides the trailer. Dispatchers coordinate trailer pickup, compliance verification, scheduling, and delivery operations to keep freight moving efficiently."
-        cards={powerOnlyTruckingWorkCards}
         image="/Power only Dispatch Service/images/6_rectangle_1558.webp"
         imageAlt="Black power only tractor with orange background"
       />
@@ -660,7 +647,6 @@ export default function PowerOnlyDisptachService() {
         }
         paragraphs={powerOnlyFormParagraphs}
         fields={powerOnlyFormFields}
-        compactBottom
       />
       <SupportColumnsSection
         heading="What Makes a High-Performance Power Only Dispatch System?"
@@ -670,7 +656,6 @@ export default function PowerOnlyDisptachService() {
         cards={powerOnlyPerformanceSystemCards}
       />
       <BenefitsGridSection
-        variant="text-grid"
         heading={
           <>
             How E-Truck
@@ -714,7 +699,6 @@ export default function PowerOnlyDisptachService() {
         }
         paragraphs={powerOnlyFormParagraphs}
         fields={powerOnlyFormFields}
-        compactBottom
       />
       <FeatureIntroSection
         heading={
@@ -775,10 +759,8 @@ export default function PowerOnlyDisptachService() {
         }
         paragraphs={powerOnlyFormParagraphs}
         fields={powerOnlyFormFields}
-        compactBottom
       />
       <BenefitsGridSection
-        variant="steps"
         heading={
           <>
             How to Get Started with Power Only

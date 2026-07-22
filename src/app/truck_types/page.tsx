@@ -291,6 +291,13 @@ return (
       We Dispatch
     </>
   }
+  fixedTitle="Types Of Trucks We Dispatch"
+  typingTitles={[
+    "for Different Freight Types",
+    "Built for Profitable Load Planning",
+    "Focused on Reducing Empty Miles",
+    "for Owner-Operators and Fleets",
+  ]}
   paragraphs={[
     "We dispatch different truck types based on freight, routes, and load conditions. Each equipment follows a tailored strategy to increase revenue per mile, reduce empty runs, and ensure compliance. From dry vans to flatbeds and step decks, every plan matches load type and delivery needs for efficient operations.",
   ]}
