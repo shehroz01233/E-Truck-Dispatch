@@ -15,9 +15,11 @@ import DispatchAudienceSection, {
   type DispatchAudience,
 } from "@/app/components/DispatchAudienceSection";
 import SupportColumnsSection from "@/app/components/SupportColumnsSection";
-import BenefitsGridSection from "@/app/components/BenefitsGridSection";
+import BenefitsGridSection, { Benefit } from "@/app/components/BenefitsGridSection";
 import FAQSection, { type FAQItem } from "@/app/components/FAQs";
 import QuestionStats, { type Stat } from "@/app/components/QuestionStats";
+import FreightTypesSection, { FreightTypeCard } from "../components/FreightTypesSection";
+import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
 
 const hotshotTurnaroundFeatures = [
   "Coordinating expedited and partial-load freight",
@@ -268,85 +270,48 @@ const hotshotPerformanceSystemCards = [
   },
 ];
 
-const hotshotPricingStructureCards= [
-  {
-    title: "What Pricing Covers",
-    description:
-      "Dispatch pricing commonly includes load sourcing, broker communication, rate negotiation, scheduling coordination, paperwork handling, and operational support for daily freight movement.",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/22_rectangle_1607.webp",
-    iconAlt: "Hotshot pricing coverage icon",
-  },
-  {
-    title: "Dispatch Cost Structure",
-    description:
-      "Most hotshot dispatch services use a percentage-per-load pricing model, allowing owner-operators and small fleets to pay based on completed freight activity instead of fixed contracts.",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/23_rectangle_1643.webp",
-    iconAlt: "Dispatch cost structure icon",
-  },
-  {
-    title: "Cost vs Revenue Impact",
-    description:
-      "Stronger rate negotiation, lower deadhead mileage, consistent load planning, and reduced operational delays help offset dispatch costs while improving overall revenue performance.",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/24_rectangle_1645.webp",
-    iconAlt: "Cost versus revenue impact icon",
-  },
-];
 
-const hotshotWhyChooseBenefits = [
+
+const hotshotsDispatchBenefits: Benefit[] = [
   {
     title: "Dedicated Dispatcher Support",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/25_rectangle_1537.webp",
-    iconAlt: "Dedicated dispatcher support icon",
+    iconSrc:
+      "/Hotshot Truck Dispatching Service/images/25_rectangle_1537.webp",
+    iconAlt: "Dedicated hotshot dispatcher support icon",
   },
   {
     title: "No Forced Dispatch System",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/26_rectangle_1545.webp",
+    iconSrc:
+      "/Hotshot Truck Dispatching Service/images/27_rectangle_1539.webp",
     iconAlt: "No forced dispatch system icon",
   },
   {
     title: "Hotshot-Specific Freight Expertise",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/27_rectangle_1539.webp",
-    iconAlt: "Hotshot-specific freight expertise icon",
+    iconSrc:
+      "/Hotshot Truck Dispatching Service/images/29_rectangle_1541.webp",
+    iconAlt: "Hotshot freight expertise icon",
   },
   {
     title: "Access To Strong Broker Network",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/28_rectangle_1546.webp",
-    iconAlt: "Strong broker network icon",
+    iconSrc:
+      "/Hotshot Truck Dispatching Service/images/26_rectangle_1545.webp",
+    iconAlt: "Strong freight broker network icon",
   },
   {
     title: "Transparent Load Communication",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/29_rectangle_1541.webp",
+    iconSrc:
+      "/Hotshot Truck Dispatching Service/images/28_rectangle_1546.webp",
     iconAlt: "Transparent load communication icon",
   },
   {
     title: "Consistent Freight Opportunities",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/30_rectangle_1547.webp",
-    iconAlt: "Consistent freight opportunities icon",
+    iconSrc:
+      "/Hotshot Truck Dispatching Service/images/30_rectangle_1547.webp",
+    iconAlt: "Consistent hotshot freight opportunities icon",
   },
 ];
 
-const hotshotGetStartedBenefits = [
-  {
-    title: "Provide MC authority, insurance, and W-9.",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/31_tick_icon.webp",
-    iconAlt: "Completed setup step icon",
-  },
-  {
-    title: "Define trailer type, lanes, and revenue goals.",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/31_tick_icon.webp",
-    iconAlt: "Completed setup step icon",
-  },
-  {
-    title: "A dedicated dispatcher manages operations.",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/31_tick_icon.webp",
-    iconAlt: "Completed setup step icon",
-  },
-  {
-    title: "Load offers and dispatch coordination begin.",
-    iconSrc: "/Hotshot Truck Dispatching Service/images/31_tick_icon.webp",
-    iconAlt: "Completed setup step icon",
-  },
-];
+
 
 const hotshotConclusionParagraphs = [
   "Hotshot trucking operates on speed, flexibility, and precise execution. A structured dispatch system ensures continuous load flow, accurate rate control, and optimized routing. Consistent coordination across sourcing, booking, and documentation directly impacts profitability and operational stability.",
@@ -402,10 +367,49 @@ const hotshotQuestionStats: Stat[] = [
     text: "Actively working with us.",
   },
 ];
-
+const hotshotPricingCards: FreightTypeCard[] = [
+  {
+    title: "What Pricing Covers",
+    description:
+      "Dispatch pricing commonly includes load sourcing, broker communication, rate negotiation, scheduling coordination, paperwork handling, and operational support for daily freight movement.",
+    iconSrc:
+      "/Hotshot Truck Dispatching Service/images/22_rectangle_1607.webp",
+    iconAlt: "Hotshot dispatch pricing coverage icon",
+  },
+  {
+    title: "Dispatch Cost Structure",
+    description:
+      "Most hotshot dispatch services use a percentage-per-load pricing model, allowing owner-operators and small fleets to pay based on completed freight activity instead of fixed contracts.",
+    iconSrc:
+      "/Hotshot Truck Dispatching Service/images/23_rectangle_1643.webp",
+    iconAlt: "Hotshot dispatch cost structure icon",
+  },
+  {
+    title: "Cost vs Revenue Impact",
+    description:
+      "Stronger rate negotiation, lower deadhead mileage, consistent load planning, and reduced operational delays help offset dispatch costs while improving overall revenue performance.",
+    iconSrc:
+      "/Hotshot Truck Dispatching Service/images/24_rectangle_1645.webp",
+    iconAlt: "Hotshot dispatch revenue growth icon",
+  },
+];
+const hotshotGettingStartedBenefits: FreightBenefit[] = [
+  {
+    text: "Provide MC authority, insurance, and W-9.",
+  },
+  {
+    text: "Define trailer type, lanes, and revenue goals.",
+  },
+  {
+    text: "A dedicated dispatcher manages operations.",
+  },
+  {
+    text: "Load offers and dispatch coordination begin.",
+  },
+];
 export default function HotshotTruckDispatchService() {
   return (
-    <main>
+    <main className="flex-1 overflow-hidden bg-[#1c1c1c] text-white">   
      <HeroSection
   h1={
     <>
@@ -546,43 +550,50 @@ export default function HotshotTruckDispatchService() {
         imageAlt="Dispatcher monitoring hotshot freight operations"
         cards={hotshotPerformanceSystemCards}
       />
+<FreightTypesSection
+  heading={
+    <>
+      Pricing Structure for Hotshot
+      <br />
+      Dispatch Services
+    </>
+  }
+  description="Hotshot dispatch typically operates on a percentage-based model, ranging between 5% to 10% per load."
+  freightTypes={hotshotPricingCards}
+  columns={3}
+/>
+
+      
+     
       <BenefitsGridSection
-        heading={
-          <>
-            Pricing Structure for Hotshot
-            <br />
-            Dispatch Services
-          </>
-        }
-        description="Hotshot dispatch typically operates on a percentage-based model, ranging between 5% to 10% per load."
-        benefits={hotshotPricingStructureCards}
-      />
-      <BenefitsGridSection
-        heading={
-          <>
-            Why Choose
-            <br />
-            Our Hotshot
-            <br />
-            Truck
-            <br />
-            Dispatching
-            <br />
-            Services?
-          </>
-        }
-        benefits={hotshotWhyChooseBenefits}
-      />
-      <BenefitsGridSection
-        heading={
-          <>
-            How to Get Started with Hotshot
-            <br />
-            Dispatching Services
-          </>
-        }
-        benefits={hotshotGetStartedBenefits}
-      />
+  heading={
+    <>
+      Why Choose
+      <br />
+      Our Hotshot
+      <br />
+      Truck
+      <br />
+      Dispatching
+      <br />
+      Services?
+    </>
+  }
+  benefits={hotshotsDispatchBenefits}
+/>
+  <FreightBenefitsSection
+  heading={
+    <>
+      How to Get Started with Hotshot
+      <br />
+      Dispatching Services
+    </>
+  }
+  benefits={hotshotGettingStartedBenefits}
+  defaultIconSrc="/Hotshot Truck Dispatching Service/images/31_tick_icon.webp"
+  defaultIconAlt="Hotshot dispatch setup step"
+/>
+      
       <VisionFormSection
         heading="Conclusion"
         paragraphs={hotshotConclusionParagraphs}
