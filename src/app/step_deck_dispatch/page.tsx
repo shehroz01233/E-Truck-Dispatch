@@ -53,29 +53,7 @@ const stepDeckDispatchOperationSteps: [string, string][] = [
     "Rate confirmations, BOLs, PODs, permit details, and accessorial records are reviewed and organized to support cleaner dispatch operations and faster payment processing.",
   ],
 ];
-const stepDeckBestLoadCards: FreightTypeCard[] = [
-  {
-    title: "Height-Sensitive Freight",
-    description:
-      "Cargo exceeding 8'6'' flatbed limits, such as industrial machines, tanks, and generators, fits within step deck lower deck clearance.",
-    iconSrc: "/Step Deck Dispatch/images/4_rectangle_1607.webp",
-    iconAlt: "Height-sensitive freight icon",
-  },
-  {
-    title: "Equipment and Machinery Transport",
-    description:
-      "Construction units like excavators, skid steers, and agricultural tractors use ramp-based loading instead of cranes.",
-    iconSrc: "/Step Deck Dispatch/images/5_rectangle_1643.webp",
-    iconAlt: "Equipment and machinery transport icon",
-  },
-  {
-    title: "Multi-Level Freight Utilization",
-    description:
-      "Partial loads combine cargo across both deck levels, increasing revenue efficiency per trip without exceeding limits.",
-    iconSrc: "/Step Deck Dispatch/images/6_rectangle_1645.webp",
-    iconAlt: "Multi-level freight utilization icon",
-  },
-];
+
 const stepDeckFormParagraphs = [
   "Fill out the form to connect with our expert dispatch team and start getting high-paying step deck loads with full support and zero stress.",
 ];
@@ -382,7 +360,29 @@ const stepDeckFinalQuestionStats: Stat[] = [
     text: "Actively working with us.",
   },
 ];
-
+const stepDeckBestLoadTypes: FreightTypeCard[] = [
+  {
+    title: "Height-Sensitive Freight",
+    description:
+      "Cargo exceeding 8’6” flatbed limits—such as industrial machines, tanks, and generators—fits within step deck lower deck clearance.",
+    iconSrc: "/Step Deck Dispatch/images/4_rectangle_1607.webp",
+    iconAlt: "Height-sensitive step deck freight icon",
+  },
+  {
+    title: "Equipment and Machinery Transport",
+    description:
+      "Construction units like excavators, skid steers, and agricultural tractors use ramp-based loading instead of cranes.",
+    iconSrc: "/Step Deck Dispatch/images/5_rectangle_1643.webp",
+    iconAlt: "Equipment and machinery transport icon",
+  },
+  {
+    title: "Multi-Level Freight Utilization",
+    description:
+      "Partial loads combine cargo across both deck levels, increasing revenue efficiency per trip without exceeding limits.",
+    iconSrc: "/Step Deck Dispatch/images/6_rectangle_1645.webp",
+    iconAlt: "Multi-level step deck freight icon",
+  },
+];
 export default function StepDeckDispatch(){
     return(
         <main>
@@ -429,7 +429,8 @@ export default function StepDeckDispatch(){
     </>
   }
   description="Step deck equipment is used when height, loading method, or jobsite conditions restrict standard trailers."
-  freightTypes={stepDeckBestLoadCards}
+  freightTypes={stepDeckBestLoadTypes}
+  columns={3}
 />
 <VisionFormSection
   heading={
