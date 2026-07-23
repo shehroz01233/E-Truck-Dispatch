@@ -5,20 +5,17 @@ import ComparisonCardsSection from "../components/ComparisonCardsSection";
 import ComparisonTableSection, { ComparisonColumn, ComparisonRow } from "../components/ComparisonTableSection";
 import ComplianceMatrixSection from "../components/ComplianceMatrixSection";
 import DispatchAudienceSection, { DispatchAudience } from "../components/DispatchAudienceSection";
-import DispatchTechnologyGridSection, { DispatchTechnologyCard} from "../components/DispatchTechnologyGridSection";
+import DispatchTechnologyGridSection, { DispatchTechnologyCard } from "../components/DispatchTechnologyGridSection";
 import FAQSection, { FAQItem } from "../components/FAQs";
-import FreightTypesSection, {
-  FreightTypeCard,
-} from "../components/FreightTypesSection";
+import FreightTypesSection, { FreightTypeCard } from "../components/FreightTypesSection";
 import HeroSection from "../components/HeroSection";
 import OurServices, { Service } from "../components/OurServices";
 import ProcessGridSection from "../components/ProcessGridSection";
 import QuestionStats from "../components/QuestionStats";
-import RevenuePanelSection, {
-  RevenueGroup,
-} from "../components/RevenuePanelSection";
+import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
 import SupportColumnsSection from "../components/SupportColumnsSection";
 import VisionFormSection from "../components/VisionFormSection";
+
 const truckingAccountingComparisons: [string, string][] = [
   [
     "Financial Management For Trucking Operations",

@@ -1,19 +1,17 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import AudienceBenefitsSection from "../components/AudienceBenefitsSection";
+import BenefitsGridSection from "../components/BenefitsGridSection";
 import ComparisonCardsSection from "../components/ComparisonCardsSection";
 import ComplianceMatrixSection from "../components/ComplianceMatrixSection";
+import DispatchTechnologyGridSection, { DispatchTechnologyCard } from "../components/DispatchTechnologyGridSection";
+import FAQs from "../components/FAQs";
 import FeatureIntroSection from "../components/FeatureIntroSection";
-import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
-import SpecificationsFormSection from "../components/SpecificationsFormSection";
 import HeroSection from "../components/HeroSection";
 import ProcessGridSection from "../components/ProcessGridSection";
-import VisionFormSection from "../components/VisionFormSection";
-import FAQs from "../components/FAQs";
 import QuestionStats from "../components/QuestionStats";
-import DispatchTechnologyGridSection, {
-  DispatchTechnologyCard,
-} from "../components/DispatchTechnologyGridSection";
-import BenefitsGridSection from "../components/BenefitsGridSection";
+import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
+import SpecificationsFormSection from "../components/SpecificationsFormSection";
+import VisionFormSection from "../components/VisionFormSection";
 
 export const metadata: Metadata = {
   title: "Conestoga Dispatch Services | E-Truck Dispatching",

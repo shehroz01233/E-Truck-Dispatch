@@ -12,6 +12,7 @@ import QuestionStats from "../components/QuestionStats";
 import SpecificationsFormSection from "../components/SpecificationsFormSection";
 import VisionFormSection from "../components/VisionFormSection";
 import WhyChooseDispatchSection, { WhyChooseBenefit } from "../components/WhyChooseDispatchSection";
+
 const californiaDispatchServiceCards = [
   {
     title: "Load Search & Booking",

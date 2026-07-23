@@ -1,32 +1,17 @@
-import TechnologyOperationsSection, {
-  type TechnologyFeature,
-} from "../components/TechnologyOperationsSection";
-import FreightTypesSection, {
-  type FreightTypeCard,
-} from "../components/FreightTypesSection";
-import DispatchAudienceSection, {
-  type DispatchAudience,
-} from "../components/DispatchAudienceSection";
-import FreightBenefitsSection, {
-  type FreightBenefit,
-} from "../components/FreightBenefitsSection";
-import HeroSection from "../components/HeroSection";
 import ComparisonCardsSection from "../components/ComparisonCardsSection";
-import ComparisonTableSection, {
-  type ComparisonColumn,
-  type ComparisonRow,
-} from "../components/ComparisonTableSection";
-import RevenuePanelSection, { type RevenueGroup } from "../components/RevenuePanelSection";
+import ComparisonTableSection, { ComparisonColumn, ComparisonRow } from "../components/ComparisonTableSection";
+import ComplianceMatrixSection, { ComplianceCard } from "../components/ComplianceMatrixSection";
+import DispatchAudienceSection, { DispatchAudience } from "../components/DispatchAudienceSection";
+import DispatchTechnologyGridSection, { DispatchTechnologyCard } from "../components/DispatchTechnologyGridSection";
+import FAQs, { FAQItem } from "../components/FAQs";
+import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
+import FreightTypesSection, { FreightTypeCard } from "../components/FreightTypesSection";
+import HeroSection from "../components/HeroSection";
+import OurServices, { Service } from "../components/OurServices";
+import QuestionStats, { Stat } from "../components/QuestionStats";
+import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
+import TechnologyOperationsSection, { TechnologyFeature } from "../components/TechnologyOperationsSection";
 import VisionFormSection from "../components/VisionFormSection";
-import FAQs, { type FAQItem } from "../components/FAQs";
-import QuestionStats, { type Stat } from "../components/QuestionStats";
-import OurServices, { type Service } from "../components/OurServices";
-import ComplianceMatrixSection, {
-  type ComplianceCard,
-} from "../components/ComplianceMatrixSection";
-import DispatchTechnologyGridSection, {
-  type DispatchTechnologyCard,
-} from "../components/DispatchTechnologyGridSection";
 
 const bookingProblems: [string, string][] = [
   [

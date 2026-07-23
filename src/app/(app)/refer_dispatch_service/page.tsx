@@ -1,33 +1,19 @@
-import HeroSection from "@/app/components/HeroSection";
-import FeatureIntroSection from "@/app/components/FeatureIntroSection";
-import RevenuePanelSection, {
-  type RevenueGroup,
-} from "@/app/components/RevenuePanelSection";
-import ComparisonCardsSection from "@/app/components/ComparisonCardsSection";
-import FreightTypesSection, {
-  type FreightTypeCard,
-} from "@/app/components/FreightTypesSection";
-import DispatchTechnologyGridSection, {
-  type DispatchTechnologyCard,
-} from "@/app/components/DispatchTechnologyGridSection";
-import OurServices, { type Service } from "@/app/components/OurServices";
-import ComplianceMatrixSection, {
-  type ComplianceCard,
-} from "@/app/components/ComplianceMatrixSection";
-import ServiceGuaranteesSection, {
-  type ServiceGuaranteeCard,
-} from "@/app/components/ServiceGuaranteesSection";
-import DispatchAudienceSection, {
-  type DispatchAudience,
-} from "@/app/components/DispatchAudienceSection";
-import SupportColumnsSection from "@/app/components/SupportColumnsSection";
-import VisionFormSection from "@/app/components/VisionFormSection";
-import FreightBenefitsSection, {
-  type FreightBenefit,
-} from "@/app/components/FreightBenefitsSection";
+import ComparisonCardsSection from "../components/ComparisonCardsSection";
+import ComplianceMatrixSection, { ComplianceCard } from "../components/ComplianceMatrixSection";
+import DispatchAudienceSection, { DispatchAudience } from "../components/DispatchAudienceSection";
+import DispatchTechnologyGridSection, { DispatchTechnologyCard } from "../components/DispatchTechnologyGridSection";
 import FAQSection from "../components/FAQs";
+import FeatureIntroSection from "../components/FeatureIntroSection";
+import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
+import FreightTypesSection, { FreightTypeCard } from "../components/FreightTypesSection";
+import HeroSection from "../components/HeroSection";
+import OurServices, { Service } from "../components/OurServices";
 import QuestionStats from "../components/QuestionStats";
-import VisionForm from "@/app/components/VisionFormSection";
+import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
+import ServiceGuaranteesSection, { ServiceGuaranteeCard } from "../components/ServiceGuaranteesSection";
+import SupportColumnsSection from "../components/SupportColumnsSection";
+import VisionFormSection from "../components/VisionFormSection";
+
 
 
 

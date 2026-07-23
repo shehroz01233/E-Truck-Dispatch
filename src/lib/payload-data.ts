@@ -8,20 +8,20 @@ import type { Post } from "@/payload-types";
 const publishedWhere = { status: { equals: "published" as const } };
 
 const fallbackPosts: Record<string, { title: string; metaDescription: string; image: string }> = {
-  "why-box-truck-owners-lose-profitable-loads": {
-    title: "Why Box Truck Owners Lose Profitable Loads",
-    metaDescription: "Common mistakes box truck owner-operators make when booking freight and how to avoid them.",
-    image: "/Images/Rectangle 249-2x.webp",
+  "how-to-find-high-paying-truck-loads": {
+    title: "How to Find High-Paying Truck Loads",
+    metaDescription: "Learn how lane demand, deadhead distance, equipment type, and market timing influence load profitability.",
+    image: "/Blog/images/4_rectangle_249.webp",
   },
-  "how-dispatch-services-save-time": {
-    title: "How Dispatch Services Save Time",
-    metaDescription: "Learn how professional dispatch services help box truck operators save time and increase revenue.",
-    image: "/Images/Rectangle 250-2x.webp",
+  "truck-dispatching-strategies-improve-rpm": {
+    title: "Truck Dispatching Strategies That Improve RPM",
+    metaDescription: "Explore dispatch planning methods that reduce empty miles and improve revenue per loaded mile.",
+    image: "/Blog/images/8_rectangle_250.webp",
   },
-  "top-mistakes-new-box-truck-businesses": {
-    title: "Top Mistakes New Box Truck Businesses Make",
-    metaDescription: "Avoid these common pitfalls when starting your box truck business.",
-    image: "/Images/Rectangle 251-2x.webp",
+  "route-planning-reduces-operating-costs": {
+    title: "How Route Planning Reduces Operating Costs",
+    metaDescription: "See how stronger route selection helps carriers control fuel use, delays, tolls, and unnecessary mileage.",
+    image: "/Blog/images/9_rectangle_251.webp",
   },
 };
 

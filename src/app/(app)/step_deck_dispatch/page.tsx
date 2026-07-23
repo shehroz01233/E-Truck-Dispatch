@@ -1,27 +1,18 @@
-import HeroSection from "@/app/components/HeroSection";
-import FeatureIntroSection from "@/app/components/FeatureIntroSection";
-import ProcessGridSection from "@/app/components/ProcessGridSection";
-import FreightTypesSection, {
-  type FreightTypeCard,
-} from "@/app/components/FreightTypesSection";
-import VisionFormSection from "@/app/components/VisionFormSection";
-import OurServices, { type Service } from "@/app/components/OurServices";
-import SupportColumnsSection from "@/app/components/SupportColumnsSection";
-import ComparisonCardsSection from "@/app/components/ComparisonCardsSection";
-import DispatchAudienceSection, {
-  type DispatchAudience,
-} from "@/app/components/DispatchAudienceSection";
-import FreightBenefitsSection, {
-  type FreightBenefit,
-} from "@/app/components/FreightBenefitsSection";
-import ServiceGuaranteesSection, {
-  type ServiceGuaranteeCard,
-} from "@/app/components/ServiceGuaranteesSection";
-import ComplianceMatrixSection, {
-  type ComplianceCard,
-} from "@/app/components/ComplianceMatrixSection";
-import FAQSection, { type FAQItem } from "@/app/components/FAQs";
-import QuestionStats, { type Stat } from "@/app/components/QuestionStats";
+import ComparisonCardsSection from "../components/ComparisonCardsSection";
+import ComplianceMatrixSection, { ComplianceCard } from "../components/ComplianceMatrixSection";
+import DispatchAudienceSection, { DispatchAudience } from "../components/DispatchAudienceSection";
+import FAQSection, { FAQItem } from "../components/FAQs";
+import FeatureIntroSection from "../components/FeatureIntroSection";
+import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
+import FreightTypesSection, { FreightTypeCard } from "../components/FreightTypesSection";
+import HeroSection from "../components/HeroSection";
+import OurServices, { Service } from "../components/OurServices";
+import ProcessGridSection from "../components/ProcessGridSection";
+import QuestionStats, { Stat } from "../components/QuestionStats";
+import ServiceGuaranteesSection, { ServiceGuaranteeCard } from "../components/ServiceGuaranteesSection";
+import SupportColumnsSection from "../components/SupportColumnsSection";
+import VisionFormSection from "../components/VisionFormSection";
+
 
 
 const stepDeckIntroFeatures = [

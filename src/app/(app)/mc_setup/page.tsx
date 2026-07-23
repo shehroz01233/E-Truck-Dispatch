@@ -1,26 +1,17 @@
-
-import type { Metadata } from "next";
+import { Metadata } from "next";
+import ActivationSystemSection, { ActivationCard } from "../components/ActivationSystemSection";
+import ComparisonCardsSection from "../components/ComparisonCardsSection";
+import ComparisonTableSection, { ComparisonColumn, ComparisonRow } from "../components/ComparisonTableSection";
+import ComplianceMatrixSection, { ComplianceCard } from "../components/ComplianceMatrixSection";
+import FAQs, { FAQItem } from "../components/FAQs";
 import HeroSection from "../components/HeroSection";
+import HowWeWork from "../components/HowWeWork";
+import QuestionStats, { Stat } from "../components/QuestionStats";
+import { CarrierResultStep } from "../components/ResultsCarriersSection";
 import RevenuePanelSection from "../components/RevenuePanelSection";
 import SupportColumnsSection from "../components/SupportColumnsSection";
-import ComparisonTableSection, {
-  type ComparisonColumn,
-  type ComparisonRow,
-} from "../components/ComparisonTableSection";
 import VisionFormSection from "../components/VisionFormSection";
-import ActivationSystemSection, {
-  type ActivationCard,
-} from "../components/ActivationSystemSection";
-import ComplianceMatrixSection, {
-  type ComplianceCard,
-} from "../components/ComplianceMatrixSection";
-import {
-  type CarrierResultStep,
-} from "../components/ResultsCarriersSection";
-import HowWeWork from "../components/HowWeWork";
-import ComparisonCardsSection from "../components/ComparisonCardsSection";
-import FAQs, { type FAQItem } from "../components/FAQs";
-import QuestionStats, { type Stat } from "../components/QuestionStats";
+
 
 
 export const metadata: Metadata = {

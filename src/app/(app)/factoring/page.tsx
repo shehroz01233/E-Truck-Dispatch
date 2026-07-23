@@ -1,36 +1,20 @@
-import HeroSection from "@/app/components/HeroSection";
-import RevenuePanelSection, {
-  RevenueGroup,
-} from "@/app/components/RevenuePanelSection";
-import TechnologyOperationsSection, {
-  TechnologyFeature,
-} from "@/app/components/TechnologyOperationsSection";
-import ComparisonTableSection, {
-  ComparisonColumn,
-  ComparisonRow,
-} from "@/app/components/ComparisonTableSection";
-import ComplianceMatrixSection, {
-  ComplianceCard,
-} from "@/app/components/ComplianceMatrixSection";
-import SupportColumnsSection from "../components/SupportColumnsSection";
-import VisionFormSection from "@/app/components/VisionFormSection";
+import ActivationSystemSection, { ActivationCard } from "../components/ActivationSystemSection";
+import BenefitsGridSection from "../components/BenefitsGridSection";
 import ComparisonCardsSection from "../components/ComparisonCardsSection";
-import ProcessGridSection from "../components/ProcessGridSection";
-import OurServices from "../components/OurServices";
+import ComparisonTableSection, { ComparisonColumn, ComparisonRow } from "../components/ComparisonTableSection";
+import ComplianceMatrixSection, { ComplianceCard } from "../components/ComplianceMatrixSection";
+import DispatchTechnologyGridSection, { DispatchTechnologyCard } from "../components/DispatchTechnologyGridSection";
+import FAQSection, { FAQItem } from "../components/FAQs";
+import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
 import FreightTypesSection from "../components/FreightTypesSection";
-import DispatchTechnologyGridSection, {
-  type DispatchTechnologyCard,
-} from "@/app/components/DispatchTechnologyGridSection";
-import ActivationSystemSection, {
-  type ActivationCard,
-} from "@/app/components/ActivationSystemSection";
-import BenefitsGridSection from "@/app/components/BenefitsGridSection";
-import FreightBenefitsSection, {
-  type FreightBenefit,
-} from "@/app/components/FreightBenefitsSection";
-import FAQSection, { type FAQItem } from "@/app/components/FAQs";
-import QuestionStats, { type Stat } from "@/app/components/QuestionStats";
-
+import HeroSection from "../components/HeroSection";
+import OurServices from "../components/OurServices";
+import ProcessGridSection from "../components/ProcessGridSection";
+import QuestionStats, { Stat } from "../components/QuestionStats";
+import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
+import SupportColumnsSection from "../components/SupportColumnsSection";
+import TechnologyOperationsSection, { TechnologyFeature } from "../components/TechnologyOperationsSection";
+import VisionFormSection from "../components/VisionFormSection";
 
 
 

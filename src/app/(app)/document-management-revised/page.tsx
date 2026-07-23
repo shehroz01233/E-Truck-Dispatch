@@ -2,26 +2,18 @@ import AudienceBenefitsSection from "../components/AudienceBenefitsSection";
 import BenefitsGridSection from "../components/BenefitsGridSection";
 import BrokerNetworkSection from "../components/BrokerNetworkSection";
 import ComparisonCardsSection from "../components/ComparisonCardsSection";
-import ComparisonTableSection, {
-  ComparisonColumn,
-  ComparisonRow,
-} from "../components/ComparisonTableSection";
-import ComplianceDocumentsSection, {
-  ComplianceDocumentItem,
-} from "../components/ComplianceDocumentsSection";
+import ComparisonTableSection, { ComparisonColumn, ComparisonRow } from "../components/ComparisonTableSection";
+import ComplianceDocumentsSection, { ComplianceDocumentItem } from "../components/ComplianceDocumentsSection";
 import EquipmentShowcaseSection from "../components/EquipmentShowcaseSection";
 import FAQs from "../components/FAQs";
-import FreightBenefitsSection, {
-  FreightBenefit,
-} from "../components/FreightBenefitsSection";
+import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
 import HeroSection from "../components/HeroSection";
 import HowWeWork from "../components/HowWeWork";
 import OurServices, { Service } from "../components/OurServices";
 import QuestionStats from "../components/QuestionStats";
-import RevenuePanelSection, {
-  RevenueGroup,
-} from "../components/RevenuePanelSection";
+import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
 import VisionFormSection from "../components/VisionFormSection";
+
 const services: Service[] = [
   {
     title: "Invoice Rejections from Documentation Errors",

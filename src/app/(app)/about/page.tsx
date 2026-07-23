@@ -1,13 +1,14 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import BenefitsGridSection from "../components/BenefitsGridSection";
 import EquipmentShowcaseSection from "../components/EquipmentShowcaseSection";
+import HeroSection from "../components/HeroSection";
 import MissionBanner from "../components/MissionBanner";
 import OverviewStatsSection from "../components/OverviewStatsSection";
 import ProcessGridSection from "../components/ProcessGridSection";
 import ServicesGridSection from "../components/ServicesGridSection";
 import SupportColumnsSection from "../components/SupportColumnsSection";
 import VisionFormSection from "../components/VisionFormSection";
-import HeroSection from "../components/HeroSection";
+
 
 export const metadata: Metadata = {
   title: "About Us | E-Truck Dispatching",

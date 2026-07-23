@@ -3,6 +3,7 @@ import ServicesBlogSection from "../components/ServicesBlogSection";
 import ServicesShowcase from "../components/ServicesShowcase";
 import VisionFormSection from "../components/VisionFormSection";
 
+
 const services = [
   ["Truck Dispatching", "Our dispatch team sources loads, negotiates rates with brokers, and handles all communication so your truck stays loaded and your revenue stays consistent."],
   ["Trucking Accounting", "Our accounting team manages invoicing, collections, and payroll for trucking businesses, keeping your financials accurate and your cash flow uninterrupted."],

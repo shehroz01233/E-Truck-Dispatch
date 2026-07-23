@@ -1,25 +1,20 @@
-import HeroSection from "@/app/components/HeroSection";
-import FeatureIntroSection from "@/app/components/FeatureIntroSection";
-import RevenuePanelSection, {
-  type RevenueGroup,
-} from "@/app/components/RevenuePanelSection";
-import ProcessGridSection from "@/app/components/ProcessGridSection";
-import VisionFormSection from "@/app/components/VisionFormSection";
-import OurServices, { type Service } from "@/app/components/OurServices";
-import HowWeWork from "@/app/components/HowWeWork";
-import DispatchTechnologyGridSection, {
-  type DispatchTechnologyCard,
-} from "@/app/components/DispatchTechnologyGridSection";
-import AudienceBenefitsSection from "@/app/components/AudienceBenefitsSection";
-import DispatchAudienceSection, {
-  type DispatchAudience,
-} from "@/app/components/DispatchAudienceSection";
-import SupportColumnsSection from "@/app/components/SupportColumnsSection";
-import BenefitsGridSection, { Benefit } from "@/app/components/BenefitsGridSection";
-import FAQSection, { type FAQItem } from "@/app/components/FAQs";
-import QuestionStats, { type Stat } from "@/app/components/QuestionStats";
-import FreightTypesSection, { FreightTypeCard } from "../components/FreightTypesSection";
+import AudienceBenefitsSection from "../components/AudienceBenefitsSection";
+import BenefitsGridSection, { Benefit } from "../components/BenefitsGridSection";
+import DispatchAudienceSection, { DispatchAudience } from "../components/DispatchAudienceSection";
+import DispatchTechnologyGridSection, { DispatchTechnologyCard } from "../components/DispatchTechnologyGridSection";
+import FAQSection, { FAQItem } from "../components/FAQs";
+import FeatureIntroSection from "../components/FeatureIntroSection";
 import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
+import FreightTypesSection, { FreightTypeCard } from "../components/FreightTypesSection";
+import HeroSection from "../components/HeroSection";
+import HowWeWork from "../components/HowWeWork";
+import OurServices, { Service } from "../components/OurServices";
+import ProcessGridSection from "../components/ProcessGridSection";
+import QuestionStats, { Stat } from "../components/QuestionStats";
+import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
+import SupportColumnsSection from "../components/SupportColumnsSection";
+import VisionFormSection from "../components/VisionFormSection";
+
 
 const hotshotTurnaroundFeatures = [
   "Coordinating expedited and partial-load freight",

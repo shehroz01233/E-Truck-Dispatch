@@ -1,19 +1,14 @@
-import HeroSection from "@/app/components/HeroSection";
-import FeatureIntroSection from "@/app/components/FeatureIntroSection";
-import HowWeWork from "@/app/components/HowWeWork";
-import VisionFormSection from "@/app/components/VisionFormSection";
-import ComparisonCardsSection from "@/app/components/ComparisonCardsSection";
-import RevenuePanelSection, {
-  type RevenueGroup,
-} from "@/app/components/RevenuePanelSection";
-import BrokerNetworkSection from "@/app/components/BrokerNetworkSection";
-import SupportColumnsSection from "@/app/components/SupportColumnsSection";
-import ComplianceMatrixSection, {
-  type ComplianceCard,
-} from "@/app/components/ComplianceMatrixSection";
-import FAQSection, { type FAQItem } from "@/app/components/FAQs";
-import QuestionStats, { type Stat } from "@/app/components/QuestionStats";
-
+import BrokerNetworkSection from "../components/BrokerNetworkSection";
+import ComparisonCardsSection from "../components/ComparisonCardsSection";
+import ComplianceMatrixSection, { ComplianceCard } from "../components/ComplianceMatrixSection";
+import FAQSection, { FAQItem } from "../components/FAQs";
+import FeatureIntroSection from "../components/FeatureIntroSection";
+import HeroSection from "../components/HeroSection";
+import HowWeWork from "../components/HowWeWork";
+import QuestionStats, { Stat } from "../components/QuestionStats";
+import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
+import SupportColumnsSection from "../components/SupportColumnsSection";
+import VisionFormSection from "../components/VisionFormSection";
 
 const flatbedFormFields = [
   ["First Name", "Enter First Name", "text"],

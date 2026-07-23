@@ -1,27 +1,21 @@
-import HeroSection from "@/app/components/HeroSection";
-import FeatureIntroSection from "@/app/components/FeatureIntroSection";
-import ComplianceMatrixSection, {
-  type ComplianceCard,
-} from "@/app/components/ComplianceMatrixSection";
-import VisionFormSection from "@/app/components/VisionFormSection";
-import SupportColumnsSection from "@/app/components/SupportColumnsSection";
-import BenefitsGridSection from "@/app/components/BenefitsGridSection";
-import ComparisonTableSection, {
-  type ComparisonColumn,
-  type ComparisonRow,
-} from "@/app/components/ComparisonTableSection";
-import DispatchTechnologyGridSection, {
-  type DispatchTechnologyCard,
-} from "@/app/components/DispatchTechnologyGridSection";
-import OurServices, { type Service } from "@/app/components/OurServices";
-import AudienceBenefitsSection from "@/app/components/AudienceBenefitsSection";
-import ProcessGridSection from "@/app/components/ProcessGridSection";
+import AudienceBenefitsSection from "../components/AudienceBenefitsSection";
+import BenefitsGridSection from "../components/BenefitsGridSection";
+import BrokerNetworkSection, { BrokerNetworkFeature } from "../components/BrokerNetworkSection";
+import ComparisonTableSection, { ComparisonColumn, ComparisonRow } from "../components/ComparisonTableSection";
+import ComplianceMatrixSection, { ComplianceCard } from "../components/ComplianceMatrixSection";
 import DispatchAudienceSection from "../components/DispatchAudienceSection";
+import DispatchTechnologyGridSection, { DispatchTechnologyCard } from "../components/DispatchTechnologyGridSection";
 import FAQSection from "../components/FAQs";
+import FeatureIntroSection from "../components/FeatureIntroSection";
+import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
+import HeroSection from "../components/HeroSection";
+import OurServices, { Service } from "../components/OurServices";
+import ProcessGridSection from "../components/ProcessGridSection";
 import QuestionStats from "../components/QuestionStats";
 import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
-import BrokerNetworkSection, { BrokerNetworkFeature } from "../components/BrokerNetworkSection";
-import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
+import SupportColumnsSection from "../components/SupportColumnsSection";
+import VisionFormSection from "../components/VisionFormSection";
+
 
 const powerOnlyHeroParagraphs = [
   "Power only trucking is built for carriers that want to keep their tractor moving without investing in trailer ownership. Instead of hauling your own trailer, you pull shipper-owned, broker-owned, or rental trailers across dedicated lanes, drop-and-hook routes, intermodal terminals, warehouse routes, and distribution networks.",

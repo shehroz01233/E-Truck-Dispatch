@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
+import { Metadata } from "next";
 import ChecklistHighlightSection from "../components/ChecklistHighlightSection";
 import HeroSection from "../components/HeroSection";
 import InformationFormSection from "../components/InformationFormSection";
+
 
 export const metadata: Metadata = {
   title: "Contact Us | E-Truck Dispatching",

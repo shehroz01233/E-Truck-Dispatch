@@ -1,20 +1,13 @@
-import HeroSection from "@/app/components/HeroSection";
-import EquipmentShowcaseSection from "@/app/components/EquipmentShowcaseSection";
-import VisionFormSection from "@/app/components/VisionFormSection";
-import TrustDeliverySection, {
-  type TrustDeliveryCard,
-} from "@/app/components/TrustDeliverySection";
-
-import BenefitsGridSection from "@/app/components/BenefitsGridSection";
-import RevenueSystemSection, {
-  type RevenueSystemCard,
-} from "@/app/components/RevenueSystemSection";
-import HowWeWork from "@/app/components/HowWeWork";
-import BrokerNetworkSection, {
-  type BrokerNetworkFeature,
-} from "@/app/components/BrokerNetworkSection";
-import FAQs, { type FAQItem } from "@/app/components/FAQs";
-import QuestionStats, { type Stat } from "@/app/components/QuestionStats";
+import BenefitsGridSection from "../components/BenefitsGridSection";
+import BrokerNetworkSection, { BrokerNetworkFeature } from "../components/BrokerNetworkSection";
+import EquipmentShowcaseSection from "../components/EquipmentShowcaseSection";
+import FAQs, { FAQItem } from "../components/FAQs";
+import HeroSection from "../components/HeroSection";
+import HowWeWork from "../components/HowWeWork";
+import QuestionStats, { Stat } from "../components/QuestionStats";
+import RevenueSystemSection, { RevenueSystemCard } from "../components/RevenueSystemSection";
+import TrustDeliverySection, { TrustDeliveryCard } from "../components/TrustDeliverySection";
+import VisionFormSection from "../components/VisionFormSection";
 
 const truckTypeNames = [
   "Dry Van",

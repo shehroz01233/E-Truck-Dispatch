@@ -1,18 +1,14 @@
-import HeroSection from "@/app/components/HeroSection";
-import BenefitsGridSection from "@/app/components/BenefitsGridSection";
-import ComparisonTableSection, {
-  type ComparisonColumn,
-  type ComparisonRow,
-} from "@/app/components/ComparisonTableSection";
-import ProcessGridSection from "@/app/components/ProcessGridSection";
-import VisionFormSection from "@/app/components/VisionFormSection";
-import HowWeWork from "@/app/components/HowWeWork";
-import TechnologyOperationsSection, {
-  type TechnologyFeatureGroup,
-} from "@/app/components/TechnologyOperationsSection";
-import AudienceBenefitsSection from "@/app/components/AudienceBenefitsSection";
-import FAQSection, { type FAQItem } from "@/app/components/FAQs";
-import QuestionStats, { type Stat } from "@/app/components/QuestionStats";
+import AudienceBenefitsSection from "../components/AudienceBenefitsSection";
+import BenefitsGridSection from "../components/BenefitsGridSection";
+import ComparisonTableSection, { ComparisonColumn, ComparisonRow } from "../components/ComparisonTableSection";
+import FAQSection, { FAQItem } from "../components/FAQs";
+import HeroSection from "../components/HeroSection";
+import HowWeWork from "../components/HowWeWork";
+import ProcessGridSection from "../components/ProcessGridSection";
+import QuestionStats, { Stat } from "../components/QuestionStats";
+import TechnologyOperationsSection, { TechnologyFeatureGroup } from "../components/TechnologyOperationsSection";
+import VisionFormSection from "../components/VisionFormSection";
+
 
 const leaseOnSupportBenefits = [
   {

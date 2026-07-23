@@ -1,20 +1,18 @@
-import type { Metadata } from "next";
-import HeroSection from "../components/HeroSection";
-import FeatureIntroSection from "../components/FeatureIntroSection";
-import DispatchTechnologyGridSection, {
-  DispatchTechnologyCard,
-} from "../components/DispatchTechnologyGridSection";
-import HowWeWork from "../components/HowWeWork";
-import SupportColumnsSection from "../components/SupportColumnsSection";
-import BenefitsGridSection from "../components/BenefitsGridSection";
-import VisionFormSection from "../components/VisionFormSection";
+import { Metadata } from "next";
 import AudienceBenefitsSection from "../components/AudienceBenefitsSection";
-import FreightBenefitsSection, {
-  FreightBenefit,
-} from "@/app/components/FreightBenefitsSection";
-import QuestionStats from "../components/QuestionStats";
+import BenefitsGridSection from "../components/BenefitsGridSection";
+import DispatchTechnologyGridSection, { DispatchTechnologyCard } from "../components/DispatchTechnologyGridSection";
 import FAQs from "../components/FAQs";
+import FeatureIntroSection from "../components/FeatureIntroSection";
+import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
+import HeroSection from "../components/HeroSection";
+import HowWeWork from "../components/HowWeWork";
+import QuestionStats from "../components/QuestionStats";
+import SupportColumnsSection from "../components/SupportColumnsSection";
 import TechnologyOperationsSection from "../components/TechnologyOperationsSection";
+import VisionFormSection from "../components/VisionFormSection";
+
+
 
 export const metadata: Metadata = {
   title: "Box Truck | E-Truck Dispatching",
