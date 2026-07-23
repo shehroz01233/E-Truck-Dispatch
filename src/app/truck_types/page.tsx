@@ -16,7 +16,6 @@ import BrokerNetworkSection, {
 import FAQs, { type FAQItem } from "@/app/components/FAQs";
 import QuestionStats, { type Stat } from "@/app/components/QuestionStats";
 
-
 const truckTypeNames = [
   "Dry Van",
   "Flatbed",
@@ -83,7 +82,6 @@ const dispatchFormFields = [
   ["MC Number", "Enter MC Number", "text"],
 ];
 
-
 const trustDeliveryCards: TrustDeliveryCard[] = [
   {
     text: "Start without risk. Stay only if the results make sense.",
@@ -106,7 +104,6 @@ const trustDeliveryCards: TrustDeliveryCard[] = [
     imageAlt: "Truck and logistics data screen",
   },
 ];
-
 
 const getStartedDispatchBenefits = [
   {
@@ -140,7 +137,6 @@ const getStartedDispatchBenefits = [
     iconAlt: "Load search icon",
   },
 ];
-
 
 const revenueSystemCards: RevenueSystemCard[] = [
   {
@@ -213,7 +209,8 @@ const brokerNetworkFeatures: BrokerNetworkFeature[] = [
     iconAlt: "Owner operator icon",
   },
   {
-    title: "Small fleets looking to increase revenue without hiring in-house dispatchers",
+    title:
+      "Small fleets looking to increase revenue without hiring in-house dispatchers",
     iconSrc: "/Truck Types/images/27_rectangle_1557.webp",
     iconAlt: "Small fleet revenue icon",
   },
@@ -223,7 +220,8 @@ const brokerNetworkFeatures: BrokerNetworkFeature[] = [
     iconAlt: "New authority lane strategy icon",
   },
   {
-    title: "Experienced carriers aiming to improve rate per mile and reduce empty miles",
+    title:
+      "Experienced carriers aiming to improve rate per mile and reduce empty miles",
     iconSrc: "/Truck Types/images/29_rectangle_1557.webp",
     iconAlt: "Rate per mile improvement icon",
   },
@@ -281,138 +279,139 @@ const truckTypesStats: Stat[] = [
 ];
 
 export default function TruckTypes() {
-return (
-<main>
-    <HeroSection
-  h1={
-    <>
-      Types Of Trucks
-      <br />
-      We Dispatch
-    </>
-  }
-  fixedTitle="Types Of Trucks We Dispatch"
-  typingTitles={[
-    "for Different Freight Types",
-    "Built for Profitable Load Planning",
-    "Focused on Reducing Empty Miles",
-    "for Owner-Operators and Fleets",
-  ]}
-  paragraphs={[
-    "We dispatch different truck types based on freight, routes, and load conditions. Each equipment follows a tailored strategy to increase revenue per mile, reduce empty runs, and ensure compliance. From dry vans to flatbeds and step decks, every plan matches load type and delivery needs for efficient operations.",
-  ]}
-  backgroundImage="/Truck Types/images/1_rectangle_1450.webp"
-  backgroundAlt="Types of trucks we dispatch"
-/>
+  return (
+    <main>
+      <HeroSection
+        h1={
+          <>
+            Types Of Trucks
+            <br />
+            We Dispatch
+          </>
+        }
+        fixedTitle="Types Of Trucks We Dispatch"
+        typingTitles={[
+          "for Different Freight Types",
+          "Built for Profitable Load Planning",
+          "Focused on Reducing Empty Miles",
+          "for Owner-Operators and Fleets",
+        ]}
+        paragraphs={[
+          "We dispatch different truck types based on freight, routes, and load conditions. Each equipment follows a tailored strategy to increase revenue per mile, reduce empty runs, and ensure compliance. From dry vans to flatbeds and step decks, every plan matches load type and delivery needs for efficient operations.",
+        ]}
+        backgroundImage="/Truck Types/images/1_rectangle_1450.webp"
+        backgroundAlt="Types of trucks we dispatch"
+      />
 
-<EquipmentShowcaseSection
-  heading="Types of Trucks We Dispatch"
-  names={truckTypeNames}
-  images={truckTypeImages}
-  descriptions={truckTypeDescriptions}
-  imageHeights={truckTypeImageHeights}
-  columns={truckTypeColumns}
-/>
- 
-<VisionFormSection
-  heading={
-    <>
-      Stop Managing
-      <br />
-      Dispatch. Focus on
-      <br />
-      Driving and Earning
-    </>
-  }
-  paragraphs={dispatchVisionParagraphs}
-  fields={dispatchFormFields}
-/>
- 
-<TrustDeliverySection
-  heading={
-    <>
-      We Don’t Just Dispatch We
-      <br />
-      Deliver on Our Word
-    </>
-  }
-  cards={trustDeliveryCards}
-/>
+      <EquipmentShowcaseSection
+        heading="Types of Trucks We Dispatch"
+        names={truckTypeNames}
+        images={truckTypeImages}
+        descriptions={truckTypeDescriptions}
+        imageHeights={truckTypeImageHeights}
+        columns={truckTypeColumns}
+      />
 
-<BenefitsGridSection
-  heading="Get Started in Minutes"
-  description="Start dispatching with a dedicated dispatcher in a structured, step-by-step onboarding process designed for speed and zero confusion."
-  benefits={getStartedDispatchBenefits}
-   buttonLabel="Start Trucking Dispatch"
-  buttonHref="/contact"
-/>
+      <VisionFormSection
+        heading={
+          <>
+            Stop Managing
+            <br />
+            Dispatch. Focus on
+            <br />
+            Driving and Earning
+          </>
+        }
+        paragraphs={dispatchVisionParagraphs}
+        fields={dispatchFormFields}
+      />
 
-<RevenueSystemSection
-  cards={revenueSystemCards}
-  cta={{
-    heading: "How Our Dispatching System Maximizes Your Revenue",
-    description:
-      "This system focuses on decision-making, not just load booking. Our dispatching is built around structured load selection, rate negotiation, and lane consistency.",
-    buttonText: "Start Trucking Dispatch",
-    buttonHref: "/contact",
-    backgroundImage: "/Vector 4.svg",
-    backgroundAlt: "Revenue optimization background shape",
-  }}
-/>
+      <TrustDeliverySection
+        heading={
+          <>
+            We Don’t Just Dispatch We
+            <br />
+            Deliver on Our Word
+          </>
+        }
+        cards={trustDeliveryCards}
+      />
 
-<HowWeWork
-  heading={
-    <>
-      Results Carriers Achieve
-      <br />
-      With Our Dispatching
-    </>
-  }
-  image="/Truck Types/images/24_vector_5.webp"
-  imageAlt="Carrier checking packages after dispatch setup"
-  steps={carrierResultSteps}
-/>
+      <BenefitsGridSection
+        heading="Get Started in Minutes"
+        description="Start dispatching with a dedicated dispatcher in a structured, step-by-step onboarding process designed for speed and zero confusion."
+        benefits={getStartedDispatchBenefits}
+        buttonLabel="Start Trucking Dispatch"
+        buttonHref="/contact"
+      />
 
-<div className="bg-[#1c1c1c]">
-  <BrokerNetworkSection
-    heading={
-      <>
-        Who Our Dispatching Service
-        <br />
-        Is Built For
-      </>
-    }
-    description={
-      <p>
-        This system focuses on decision-making, not just load booking. Our
-        dispatching is built around structured load selection, rate negotiation,
-        and lane consistency, not random load booking. Every decision is focused
-        on increasing your revenue per mile while reducing empty miles and
-        operational friction.
-      </p>
-    }
-    image="/Truck Types/images/25_rectangle_1556.webp"
-    imageAlt="Orange delivery truck with dispatcher standing beside it"
-    features={brokerNetworkFeatures}
-  />
-</div>
- 
-<FAQs
-  heading="Frequently Asked Questions"
-  description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
-  image="/Truck Types/images/36_rectangle_1441.webp"
-  imageAlt="Dispatcher answering carrier questions in a warehouse"
-  faqs={truckTypesFaqs}
-/>
+      <RevenueSystemSection
+        cards={revenueSystemCards}
+        cta={{
+          heading: "How Our Dispatching System Maximizes Your Revenue",
+          description:
+            "This system focuses on decision-making, not just load booking. Our dispatching is built around structured load selection, rate negotiation, and lane consistency.",
+          buttonText: "Start Trucking Dispatch",
+          buttonHref: "/contact",
+          backgroundImage: "/Vector 4.svg",
+          backgroundAlt: "Revenue optimization background shape",
+        }}
+      />
 
-<QuestionStats
-  heading="Still Have Questions?"
-  description="Our billing experts are here to help. Get in touch for a free consultation."
-  buttonText="Talk to an Expert"
-  buttonHref="/contact"
-  stats={truckTypesStats}
-/>
+      <HowWeWork
+        blendBackgroundEdges
+        heading={
+          <>
+            Results Carriers Achieve
+            <br />
+            With Our Dispatching
+          </>
+        }
+        backgroundImage="/background-earthquake.png"
+        image="/Truck Types/images/24_vector_5.webp"
+        imageAlt="Carrier checking packages after dispatch setup"
+        steps={carrierResultSteps}
+      />
 
-</main>
-);    
+      <div className="bg-[#1c1c1c]">
+        <BrokerNetworkSection
+          heading={
+            <>
+              Who Our Dispatching Service
+              <br />
+              Is Built For
+            </>
+          }
+          description={
+            <p>
+              This system focuses on decision-making, not just load booking. Our
+              dispatching is built around structured load selection, rate
+              negotiation, and lane consistency, not random load booking. Every
+              decision is focused on increasing your revenue per mile while
+              reducing empty miles and operational friction.
+            </p>
+          }
+          image="/Truck Types/images/25_rectangle_1556.webp"
+          imageAlt="Orange delivery truck with dispatcher standing beside it"
+          features={brokerNetworkFeatures}
+        />
+      </div>
+
+      <FAQs
+        heading="Frequently Asked Questions"
+        description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
+        image="/Truck Types/images/36_rectangle_1441.webp"
+        imageAlt="Dispatcher answering carrier questions in a warehouse"
+        faqs={truckTypesFaqs}
+      />
+
+      <QuestionStats
+        heading="Still Have Questions?"
+        description="Our billing experts are here to help. Get in touch for a free consultation."
+        buttonText="Talk to an Expert"
+        buttonHref="/contact"
+        stats={truckTypesStats}
+      />
+    </main>
+  );
 }
