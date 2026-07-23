@@ -351,7 +351,7 @@ export default function LoadBookingPage() {
         heading="How We Improve Carrier Profitability"
         description="Getting loads quickly only matters when those loads support operational profitability. E-Truck Dispatching focuses on freight quality, route efficiency, and revenue optimization instead of random load volume."
         cards={profitabilityCards}
-        image="/load booking/images/11_rectangle_1558.webp"
+        image="/load booking/images/17_rectangle_1560.webp"
         imageAlt="Dispatch team reviewing carrier profitability"
       />
 

@@ -519,6 +519,7 @@ export default function McSetupPage() {
     />
      
       <HowWeWork
+      blendBackgroundEdges
         heading={
           <>
             Results Carriers Achieve
@@ -526,6 +527,7 @@ export default function McSetupPage() {
             With Our Dispatching
           </>
         }
+  backgroundImage="/background-earthquake.png"
         image="/MC DOT Setup/images/9_vector_5.webp"
         imageAlt="Carrier holding a package after completing dispatch setup"
         steps={carrierResultSteps}

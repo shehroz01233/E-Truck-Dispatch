@@ -24,6 +24,7 @@ const navItems = [
   { label: "Load Booking", href: "/load_booking" },
   { label: "MC Setup", href: "/mc_setup" },
   { label: "Power Only Dispatch Service", href: "/power_only_dispatch_service" },
+    { label: "Refer Dispatch Service", href: "/refer_dispatch_service" },
   { label: "Services", href: "/services" },
   { label: "States", href: "/states" },
   { label: "Step Deck Dispatch", href: "/step_deck_dispatch" },

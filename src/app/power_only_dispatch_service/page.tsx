@@ -19,6 +19,9 @@ import ProcessGridSection from "@/app/components/ProcessGridSection";
 import DispatchAudienceSection from "../components/DispatchAudienceSection";
 import FAQSection from "../components/FAQs";
 import QuestionStats from "../components/QuestionStats";
+import RevenuePanelSection, { RevenueGroup } from "../components/RevenuePanelSection";
+import BrokerNetworkSection, { BrokerNetworkFeature } from "../components/BrokerNetworkSection";
+import FreightBenefitsSection, { FreightBenefit } from "../components/FreightBenefitsSection";
 
 const powerOnlyHeroParagraphs = [
   "Power only trucking is built for carriers that want to keep their tractor moving without investing in trailer ownership. Instead of hauling your own trailer, you pull shipper-owned, broker-owned, or rental trailers across dedicated lanes, drop-and-hook routes, intermodal terminals, warehouse routes, and distribution networks.",
@@ -121,33 +124,7 @@ const powerOnlyPerformanceSystemCards = [
   },
 ];
 
-const powerOnlyDeadheadReductionBenefits = [
-  {
-    title: "Backhaul Matching",
-    description:
-      "Our dispatchers secure return freight before delivery whenever possible to reduce empty miles and improve operational continuity. This strategy helps carriers maintain consistent revenue flow, reduce fuel waste, and avoid unnecessary repositioning between freight assignments.",
-  },
-  {
-    title: "Reload Sequencing",
-    description:
-      "Loads are planned based on reload availability, freight timing, and nearby market demand instead of isolated trip movement. Strategic sequencing improves equipment utilization, reduces downtime, and supports continuous trailer movement across active freight lanes.",
-  },
-  {
-    title: "Regional Freight Planning",
-    description:
-      "We prioritize freight corridors with stable outbound and inbound demand to improve scheduling consistency and reduce empty travel distance. Regional planning helps carriers stay within profitable markets with stronger freight availability and balanced load opportunities.",
-  },
-  {
-    title: "Trailer Repositioning Opportunities",
-    description:
-      "Empty trailer moves are coordinated to reposition equipment toward active freight zones instead of allowing tractors to run empty. This improves trailer utilization, supports faster reload access, and reduces non-revenue mileage across operations.",
-  },
-  {
-    title: "Lane and Freight Density Analysis",
-    description:
-      "Dispatch planning uses lane analysis and freight density mapping to identify stronger reload markets and more profitable freight corridors. These insights improve route planning, reduce unnecessary detours, and support long-term operational efficiency.",
-  },
-];
+
 
 const powerOnlyOwnerOperatorBenefits = [
   {
@@ -226,17 +203,7 @@ const powerOnlyOwnerOperatorRows: ComparisonRow[] = [
   },
 ];
 
-const powerOnlyComplianceFeatures = [
-  "MC authority status",
-  "USDOT verification",
-  "Insurance validation",
-  "ELD compliance",
-  "Hours of Service availability",
-  "Weight restrictions",
-  "Trailer inspection requirements",
-  "Route legality",
-  "Broker setup verification",
-];
+
 
 const powerOnlyDocumentationColumns: ComparisonColumn[] = [
   {
@@ -365,32 +332,7 @@ const powerOnlyDispatchProblemCards: Service[] = [
   },
 ];
 
-const powerOnlyGetStartedBenefits = [
-  {
-    title:
-      "Reduced empty miles through strategic reload planning and lane optimization",
-    iconSrc: "/Power only Dispatch Service/images/27_tick_icon.webp",
-    iconAlt: "Power only dispatch benefit check icon",
-  },
-  {
-    title:
-      "Better freight rates through market analysis and broker rate negotiation",
-    iconSrc: "/Power only Dispatch Service/images/27_tick_icon.webp",
-    iconAlt: "Power only dispatch benefit check icon",
-  },
-  {
-    title:
-      "Improved reload timing to maintain continuous freight movement and reduce downtime",
-    iconSrc: "/Power only Dispatch Service/images/27_tick_icon.webp",
-    iconAlt: "Power only dispatch benefit check icon",
-  },
-  {
-    title:
-      "Strong operational control with broker verification, payment tracking, and dispatch coordination",
-    iconSrc: "/Power only Dispatch Service/images/27_tick_icon.webp",
-    iconAlt: "Power only dispatch benefit check icon",
-  },
-];
+
 
 const powerOnlyDispatchServiceBenefits = [
   "Dedicated Dispatcher: One dispatcher manages your operations and lanes.",
@@ -589,6 +531,110 @@ const powerOnlyDispatchStats = [
     text: "Actively working with us.",
   },
 ];
+const powerOnlyHowItWorksGroups: RevenueGroup[] = [
+  {
+    title: "Trailer Pickup and Hooking Process",
+    intro: [
+      "Drivers arrive at the assigned pickup location, inspect the trailer, verify load information, and connect the trailer to the tractor unit before transportation begins. Dispatch coordination ensures compliance checks, trailer readiness, and accurate pickup scheduling.",
+    ],
+  },
+  {
+    title: "Freight Transportation and Delivery",
+    intro: [
+      "The power unit transports loaded or empty trailers between warehouses, ports, terminals, distribution centers, and customer facilities based on scheduled delivery requirements. Dispatchers monitor communication, routing, and operational timing throughout the trip.",
+    ],
+  },
+  {
+    title: "Drop-and-Hook Operations",
+    intro: [
+      "Many power only trucking operations rely on drop-and-hook systems instead of live loading processes. This operational model reduces detention time, improves turnaround speed, increases trailer utilization, and supports continuous freight movement.",
+    ],
+  },
+];
+const powerOnlyDeadheadSteps: [string, string][] = [
+  [
+    "Backhaul Matching",
+    "Our dispatchers secure return freight before delivery whenever possible to reduce empty miles and improve operational continuity. This strategy helps carriers maintain consistent revenue flow, reduce fuel waste, and avoid unnecessary repositioning between freight assignments.",
+  ],
+  [
+    "Reload Sequencing",
+    "Loads are planned based on reload availability, freight timing, and nearby market demand instead of isolated trip movement. Strategic sequencing improves equipment utilization, reduces downtime, and supports continuous trailer movement across active freight lanes.",
+  ],
+  [
+    "Regional Freight Planning",
+    "We prioritize freight corridors with stable outbound and inbound demand to improve scheduling consistency and reduce empty travel distance. Regional planning helps carriers stay within profitable markets with stronger freight availability and balanced load opportunities.",
+  ],
+  [
+    "Trailer Repositioning Opportunities",
+    "Empty trailer moves are coordinated to reposition equipment toward active freight zones instead of allowing tractors to run empty. This improves trailer utilization, supports faster reload access, and reduces non-revenue mileage across operations.",
+  ],
+  [
+    "Lane and Freight Density Analysis",
+    "Dispatch planning uses lane analysis and freight density mapping to identify stronger reload markets and more profitable freight corridors. These insights improve route planning, reduce unnecessary detours, and support long-term operational efficiency.",
+  ],
+];
+const powerOnlyComplianceFeatures: BrokerNetworkFeature[] = [
+  {
+    title: "MC authority status",
+  },
+  {
+    title: "ELD compliance",
+  },
+  {
+    title: "Trailer inspection requirements",
+  },
+  {
+    title: "USDOT verification",
+  },
+  {
+    title: "Hours of Service availability",
+  },
+  {
+    title: "Route legality",
+  },
+  {
+    title: "Insurance validation",
+  },
+  {
+    title: "Weight restrictions",
+  },
+  {
+    title: "Broker setup verification",
+  },
+];
+const dispatchOptimizationBenefits: FreightBenefit[] = [
+  {
+    text: (
+      <>
+        Reduced empty miles through strategic reload planning and lane
+        optimization
+      </>
+    ),
+  },
+  {
+    text: (
+      <>
+        Better freight rates through market analysis and broker rate negotiation
+      </>
+    ),
+  },
+  {
+    text: (
+      <>
+        Improved reload timing to maintain continuous freight movement and
+        reduce downtime
+      </>
+    ),
+  },
+  {
+    text: (
+      <>
+        Strong operational control with broker verification, payment tracking,
+        and dispatch coordination
+      </>
+    ),
+  },
+];
 export default function PowerOnlyDisptachService() {
   return (
     <main>
@@ -631,12 +677,13 @@ export default function PowerOnlyDisptachService() {
         image="/Power only Dispatch Service/images/5_rectangle_1560.webp"
         imageAlt="Warehouse worker loading power only freight"
       />
-      <FeatureIntroSection
-        heading="How Power Only Trucking Works"
-        description="Power only trucking operates when a carrier provides the tractor unit while the broker, shipper, or customer provides the trailer. Dispatchers coordinate trailer pickup, compliance verification, scheduling, and delivery operations to keep freight moving efficiently."
-        image="/Power only Dispatch Service/images/6_rectangle_1558.webp"
-        imageAlt="Black power only tractor with orange background"
-      />
+     <RevenuePanelSection
+  heading="How Power Only Trucking Works"
+  description="Power only trucking operates when a carrier provides the tractor unit while the broker, shipper, or customer provides the trailer. Dispatchers coordinate trailer pickup, compliance verification, scheduling, and delivery operations to keep freight moving efficiently."
+  groups={powerOnlyHowItWorksGroups}
+        image="/Accounting/images/8_rectangle_1558.webp"
+        backgroundImage="/Vector 3.svg"
+/>
       <VisionFormSection
         heading={
           <>
@@ -655,18 +702,10 @@ export default function PowerOnlyDisptachService() {
         imageAlt="Dispatcher coordinating power only freight"
         cards={powerOnlyPerformanceSystemCards}
       />
-      <BenefitsGridSection
-        heading={
-          <>
-            How E-Truck
-            <br />
-            Dispatching Reduces
-            <br />
-            Deadhead Miles
-          </>
-        }
-        benefits={powerOnlyDeadheadReductionBenefits}
-      />
+      <ProcessGridSection
+  heading="How E-Truck Dispatching Reduces Deadhead Miles"
+  steps={powerOnlyDeadheadSteps}
+/>
       <BenefitsGridSection
         heading={
           <>
@@ -700,26 +739,41 @@ export default function PowerOnlyDisptachService() {
         paragraphs={powerOnlyFormParagraphs}
         fields={powerOnlyFormFields}
       />
-      <FeatureIntroSection
-        heading={
-          <>
-            Compliance System Behind Our
-            <br />
-            Dispatch Operations
-          </>
-        }
-        description={[
-          "Power Only Trucking Still Requires Strict FMCSA Compliance And Operational Control.",
-          "A Profitable Load Means Nothing If Compliance Failures Create Violations, Shutdowns, Or Insurance Problems.",
-          "Our Dispatch Process Includes Compliance Coordination Before Every Load Is Assigned.",
-          <span key="compliance-heading" className="font-bold text-white">
-            Compliance Areas We Monitor
-          </span>,
-        ]}
-        features={powerOnlyComplianceFeatures}
-        image="/Power only Dispatch Service/images/17_rectangle_1556.webp"
-        imageAlt="White power only tractor for compliance dispatch operations"
-      />
+      <BrokerNetworkSection
+  heading={
+    <>
+      <span className="block">Compliance System Behind Our</span>
+      <span className="block">Dispatch Operations</span>
+    </>
+  }
+  description={
+    <div className="space-y-2">
+      <p>
+        Power Only Trucking Still Requires Strict FMCSA Compliance And
+        Operational Control.
+      </p>
+
+      <p>
+        A Profitable Load Means Nothing If Compliance Failures Create
+        Violations, Shutdowns, Or Insurance Problems.
+      </p>
+
+      <p>
+        Our Dispatch Process Includes Compliance Coordination Before Every Load
+        Is Assigned.
+      </p>
+
+      <h3 className="pt-3 font-['Outfit'] text-xl font-semibold text-white">
+        Compliance Areas We Monitor
+      </h3>
+    </div>
+  }
+  image="/Power only Dispatch Service/images/17_rectangle_1556.webp"
+  imageAlt="White power only tractor representing dispatch compliance operations"
+  imagePosition="right"
+  featureVariant="bullet"
+  features={powerOnlyComplianceFeatures}
+/>
       <ComparisonTableSection
         heading=""
         tableTitle="Documentation Managed by Our Dispatch Team"
@@ -760,16 +814,18 @@ export default function PowerOnlyDisptachService() {
         paragraphs={powerOnlyFormParagraphs}
         fields={powerOnlyFormFields}
       />
-      <BenefitsGridSection
-        heading={
-          <>
-            How to Get Started with Power Only
-            <br />
-            Dispatching Services
-          </>
-        }
-        benefits={powerOnlyGetStartedBenefits}
-      />
+      <FreightBenefitsSection
+  heading={
+    <>
+      How to Get Started with Hotshot
+      <br />
+      Dispatching Services
+    </>
+  }
+  benefits={dispatchOptimizationBenefits}
+  defaultIconSrc="/Power only Dispatch Service/images/27_tick_icon.webp"
+  defaultIconAlt="Dispatch service benefit"
+/>
       <AudienceBenefitsSection
         showAudiences={false}
         heading="What Drivers Get With Our Dispatch Service"

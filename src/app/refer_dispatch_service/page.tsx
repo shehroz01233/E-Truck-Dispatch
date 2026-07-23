@@ -27,6 +27,7 @@ import FreightBenefitsSection, {
 } from "@/app/components/FreightBenefitsSection";
 import FAQSection from "../components/FAQs";
 import QuestionStats from "../components/QuestionStats";
+import VisionForm from "@/app/components/VisionFormSection";
 
 
 
@@ -579,6 +580,29 @@ export default function ReferDispatchService() {
   image="/Refer Dispatch Service/images/21_rectangle_1560.webp"
   imageAlt="Warehouse workers checking reefer freight operational challenges"
 />
+
+ <VisionFormSection
+      heading={
+        <>
+          E Truck
+          <br />
+          Dispatching
+        </>
+      }
+      paragraphs={[
+        "Fill out the form to connect with our expert dispatch team and start getting high-paying loads with full support and zero stress.",
+      ]}
+      fields={[
+        ["First Name", "Enter First Name", "text"],
+        ["Last Name", "Enter Last Name", "text"],
+        ["Phone Number", "+1 (000) 123-1234", "tel"],
+        ["Email Address", "email@gmail.com", "email"],
+        ["Truck Type", "Enter Truck Type", "select"],
+        ["MC Number", "Enter MC Number", "text"],
+      ]}
+    />
+
+
 <FreightTypesSection
   heading={
     <>
