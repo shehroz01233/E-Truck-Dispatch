@@ -12,7 +12,6 @@ const primaryStates = [
     description:"Strong Midwest freight hub with consistent demand across manufacturing and retail lanes. Ideal for dry van, reefer, and regional freight operations.",
     image: "/States/images/4_ohio.webp",
     imageAlt: "Ohio state flag",
-    highlighted: true,
   },
   {
     name: "Indiana",
