@@ -146,93 +146,184 @@ export default function VisionFormSection({
   paragraphs,
   fields,
 }: VisionFormSectionProps) {
+  // return (
+  //   <motion.section
+  //     variants={sectionVariants}
+  //     initial="hidden"
+  //     whileInView="visible"
+  //     viewport={viewportOptions}
+  //     className="mx-auto mb-[5rem] w-[calc(100%-2.5rem)] max-w-[97.5rem] overflow-hidden bg-[#161616] text-white sm:w-[calc(100%-4rem)] xl:h-[33.4375rem]"
+  //   >
+  //     <div className="grid gap-[3rem] px-[1.75rem] py-[2.5rem] sm:px-[3rem] sm:py-[3rem] xl:grid-cols-[minmax(18rem,24rem)_minmax(0,48.1875rem)] xl:justify-between xl:px-[clamp(3rem,6.41vw,6.25rem)] xl:pb-0 xl:pt-[3.125rem]">
+  //       {/* Vision content */}
+  //       <motion.div
+  //         variants={contentVariants}
+  //         className="max-w-[24rem] xl:self-center"
+  //       >
+  //         <motion.h2
+  //           variants={headingVariants}
+  //           className="text-[clamp(2.25rem,3.2vw,3rem)] font-bold leading-[1.08]"
+  //         >
+  //           {heading}
+  //         </motion.h2>
+
+  //         {paragraphs.map((paragraph, index) => (
+  //           <motion.p
+  //             key={`${paragraph}-${index}`}
+  //             variants={paragraphVariants}
+  //             className={`${
+  //               index === 0 ? "mt-[2rem]" : "mt-[1.5rem]"
+  //             } text-[1.125rem] leading-[1.55] text-white/75`}
+  //           >
+  //             {paragraph}
+  //           </motion.p>
+  //         ))}
+  //       </motion.div>
+
+  //       {/* Form */}
+  //       <motion.form
+  //         variants={formVariants}
+  //         className="mt-[2.5rem] grid gap-x-[2.0625rem] gap-y-[1.25rem] bg-[#1c1c1c] p-[1.5rem] sm:grid-cols-2 sm:p-[2.5rem] xl:mt-0 xl:min-h-[24.875rem] xl:w-full xl:px-[3.125rem] xl:py-[2.4375rem]"
+  //         action="#"
+  //       >
+  //         {fields.map(([label, placeholder, type], index) => {
+  //           const fieldId = `vision-form-field-${index}`;
+
+  //           return (
+  //             <motion.label
+  //               key={`${label}-${index}`}
+  //               variants={fieldVariants}
+  //               htmlFor={fieldId}
+  //             >
+  //               <span className="mb-[0.75rem] block text-[1rem] font-medium text-white">
+  //                 {label}
+  //               </span>
+
+  //               <input
+  //                 id={fieldId}
+  //                 name={label
+  //                   .trim()
+  //                   .toLowerCase()
+  //                   .replace(/[^a-z0-9]+/g, "-")}
+  //                 className="h-[2.75rem] w-full bg-[#161616] px-[1.25rem] text-[0.875rem] text-white outline-none placeholder:text-white/50 focus:ring-1 focus:ring-[#b34b0c]"
+  //                 type={type || "text"}
+  //                 placeholder={placeholder}
+  //               />
+  //             </motion.label>
+  //           );
+  //         })}
+
+  //         <motion.button
+  //           variants={buttonVariants}
+  //           whileHover={{
+  //             y: -2,
+  //             scale: 1.01,
+  //             transition: {
+  //               duration: 0.2,
+  //               ease: smoothEase,
+  //             },
+  //           }}
+  //           whileTap={{
+  //             scale: 0.98,
+  //           }}
+  //           className="h-[2.75rem] bg-[#b34b0c] text-[1.125rem] font-medium capitalize text-white hover:bg-[#cf5a13] sm:col-span-2"
+  //           type="submit"
+  //         >
+  //           Get Started Now
+  //         </motion.button>
+  //       </motion.form>
+  //     </div>
+  //   </motion.section>
+  // );
   return (
-    <motion.section
-      variants={sectionVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={viewportOptions}
-      className="mx-auto mb-[5rem] w-[calc(100%-2.5rem)] max-w-[97.5rem] overflow-hidden bg-[#161616] text-white sm:w-[calc(100%-4rem)] xl:h-[33.4375rem]"
-    >
-      <div className="grid gap-[3rem] px-[1.75rem] py-[2.5rem] sm:px-[3rem] sm:py-[3rem] xl:grid-cols-[minmax(18rem,24rem)_minmax(0,48.1875rem)] xl:justify-between xl:px-[clamp(3rem,6.41vw,6.25rem)] xl:pb-0 xl:pt-[3.125rem]">
-        {/* Vision content */}
-        <motion.div
-          variants={contentVariants}
-          className="max-w-[24rem] xl:self-center"
+  <motion.section
+    variants={sectionVariants}
+    initial="hidden"
+    whileInView="visible"
+    viewport={viewportOptions}
+    className="mx-auto mb-[5rem] w-[calc(100%-2.5rem)] max-w-[97.5rem] overflow-hidden bg-[#161616] text-white sm:w-[calc(100%-4rem)] xl:min-h-[33.4375rem]"
+  >
+    <div className="grid gap-[3rem] px-[1.75rem] py-[2.5rem] sm:px-[3rem] sm:py-[3rem] xl:grid-cols-[minmax(18rem,24rem)_minmax(0,48.1875rem)] xl:items-center xl:justify-between xl:px-[clamp(3rem,6.41vw,6.25rem)] xl:py-[3.125rem]">
+      {/* Vision content */}
+      <motion.div
+        variants={contentVariants}
+        className="max-w-[24rem]"
+      >
+        <motion.h2
+          variants={headingVariants}
+          className="text-[clamp(2.25rem,3.2vw,3rem)] font-bold leading-[1.08]"
         >
-          <motion.h2
-            variants={headingVariants}
-            className="text-[clamp(2.25rem,3.2vw,3rem)] font-bold leading-[1.08]"
-          >
-            {heading}
-          </motion.h2>
+          {heading}
+        </motion.h2>
 
-          {paragraphs.map((paragraph, index) => (
-            <motion.p
-              key={`${paragraph}-${index}`}
-              variants={paragraphVariants}
-              className={`${
-                index === 0 ? "mt-[2rem]" : "mt-[1.5rem]"
-              } text-[1.125rem] leading-[1.55] text-white/75`}
+        {paragraphs.map((paragraph, index) => (
+          <motion.p
+            key={`${paragraph}-${index}`}
+            variants={paragraphVariants}
+            className={`${
+              index === 0 ? "mt-[2rem]" : "mt-[1.5rem]"
+            } text-[1.125rem] leading-[1.55] text-white/75`}
+          >
+            {paragraph}
+          </motion.p>
+        ))}
+      </motion.div>
+
+      {/* Form */}
+      <motion.form
+        variants={formVariants}
+        className="mt-[2.5rem] grid w-full gap-x-[2.0625rem] gap-y-[1.25rem] bg-[#1c1c1c] p-[1.5rem] sm:grid-cols-2 sm:p-[2.5rem] xl:mt-0 xl:min-h-[24.875rem] xl:px-[3.125rem] xl:py-[2.4375rem]"
+        action="#"
+      >
+        {fields.map(([label, placeholder, type], index) => {
+          const fieldId = `vision-form-field-${index}`;
+
+          return (
+            <motion.label
+              key={`${label}-${index}`}
+              variants={fieldVariants}
+              htmlFor={fieldId}
+              className="min-w-0"
             >
-              {paragraph}
-            </motion.p>
-          ))}
-        </motion.div>
+              <span className="mb-[0.75rem] block text-[1rem] font-medium text-white">
+                {label}
+              </span>
 
-        {/* Form */}
-        <motion.form
-          variants={formVariants}
-          className="mt-[2.5rem] grid gap-x-[2.0625rem] gap-y-[1.25rem] bg-[#1c1c1c] p-[1.5rem] sm:grid-cols-2 sm:p-[2.5rem] xl:mt-0 xl:min-h-[24.875rem] xl:w-full xl:px-[3.125rem] xl:py-[2.4375rem]"
-          action="#"
+              <input
+                id={fieldId}
+                name={label
+                  .trim()
+                  .toLowerCase()
+                  .replace(/[^a-z0-9]+/g, "-")}
+                className="h-[2.75rem] w-full min-w-0 bg-[#161616] px-[1.25rem] text-[0.875rem] text-white outline-none placeholder:text-white/50 focus:ring-1 focus:ring-[#b34b0c]"
+                type={type || "text"}
+                placeholder={placeholder}
+              />
+            </motion.label>
+          );
+        })}
+
+        <motion.button
+          variants={buttonVariants}
+          whileHover={{
+            y: -2,
+            scale: 1.01,
+            transition: {
+              duration: 0.2,
+              ease: smoothEase,
+            },
+          }}
+          whileTap={{
+            scale: 0.98,
+          }}
+          className="h-[2.75rem] bg-[#b34b0c] text-[1.125rem] font-medium capitalize text-white hover:bg-[#cf5a13] sm:col-span-2"
+          type="submit"
         >
-          {fields.map(([label, placeholder, type], index) => {
-            const fieldId = `vision-form-field-${index}`;
-
-            return (
-              <motion.label
-                key={`${label}-${index}`}
-                variants={fieldVariants}
-                htmlFor={fieldId}
-              >
-                <span className="mb-[0.75rem] block text-[1rem] font-medium text-white">
-                  {label}
-                </span>
-
-                <input
-                  id={fieldId}
-                  name={label
-                    .trim()
-                    .toLowerCase()
-                    .replace(/[^a-z0-9]+/g, "-")}
-                  className="h-[2.75rem] w-full bg-[#161616] px-[1.25rem] text-[0.875rem] text-white outline-none placeholder:text-white/50 focus:ring-1 focus:ring-[#b34b0c]"
-                  type={type || "text"}
-                  placeholder={placeholder}
-                />
-              </motion.label>
-            );
-          })}
-
-          <motion.button
-            variants={buttonVariants}
-            whileHover={{
-              y: -2,
-              scale: 1.01,
-              transition: {
-                duration: 0.2,
-                ease: smoothEase,
-              },
-            }}
-            whileTap={{
-              scale: 0.98,
-            }}
-            className="h-[2.75rem] bg-[#b34b0c] text-[1.125rem] font-medium capitalize text-white hover:bg-[#cf5a13] sm:col-span-2"
-            type="submit"
-          >
-            Get Started Now
-          </motion.button>
-        </motion.form>
-      </div>
-    </motion.section>
-  );
+          Get Started Now
+        </motion.button>
+      </motion.form>
+    </div>
+  </motion.section>
+);
 }
+
