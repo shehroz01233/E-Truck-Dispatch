@@ -7,7 +7,6 @@ import { extractAllText, extractHeadings } from "@/lib/extract-headings";
 
 import ArticleContentSection from "../../components/ArticleContentSection";
 import HeroSection from "../../components/HeroSection";
-import ServicesShowcaseSection from "../../components/ServicesShowcaseSection";
 import VisionFormSection from "../../components/VisionFormSection";
 import FAQSection from "../../components/FAQs";
 
@@ -53,6 +52,11 @@ export default async function BlogPostPage({ params }: PageProps) {
     | null
     | undefined;
   const author = post.author as { email?: string } | string | null | undefined;
+  const category = post.category as
+    | { name?: string }
+    | string
+    | null
+    | undefined;
 
   const authorName =
     typeof author === "object" && author?.email
@@ -68,6 +72,12 @@ export default async function BlogPostPage({ params }: PageProps) {
         year: "numeric",
       })
     : "";
+  const categoryName =
+    typeof category === "object" && category?.name
+      ? category.name
+      : typeof category === "string"
+        ? category
+        : "Dispatch Insights";
 
   const articleBlocks = lexToBlocks(post.content);
   const headings = extractHeadings(post.content);
@@ -96,23 +106,19 @@ export default async function BlogPostPage({ params }: PageProps) {
         backgroundAlt="Truck traveling on the highway"
       />
 
-      <ServicesShowcaseSection
-        image={featureImageUrl}
-        imageAlt={featureImageAlt}
-        services={headings.map((h) => ({
-          title: h.text,
-          href: `#${h.id}`,
-        }))}
-        activeIndex={0}
-      />
-
       <ArticleContentSection
         author={{
           name: authorName,
           role: "Professional",
-          image: "/Blog/images/author.webp",
           imageAlt: authorName,
         }}
+        category={categoryName}
+        featureImage={featureImageUrl}
+        featureImageAlt={featureImageAlt}
+        tableOfContents={headings.map((heading) => ({
+          title: heading.text,
+          href: `#${heading.id}`,
+        }))}
         updateLabel="Latest Update"
         updatedAt={publishedDate}
         dateTime={post.publishedDate ?? undefined}

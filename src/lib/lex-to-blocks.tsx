@@ -89,6 +89,19 @@ function renderChildren(node: LexicalNode): ReactNode[] {
   );
 }
 
+function getText(node: LexicalNode): string {
+  if (node.type === "text") return node.text ?? "";
+  return node.children?.map(getText).join("") ?? "";
+}
+
+function toHeadingId(node: LexicalNode): string {
+  return getText(node)
+    .toLowerCase()
+    .trim()
+    .replace(/\s+/g, "-")
+    .replace(/[^a-z0-9-]/g, "");
+}
+
 function lexToListItems(node: LexicalNode): ReactNode[] {
   return (
     node.children?.map((child, i) => {
@@ -109,6 +122,7 @@ function collectBlocks(nodes: LexicalNode[]): ArticleContentBlock[] {
       blocks.push({
         type: "heading",
         content: <>{renderChildren(node)}</>,
+        id: toHeadingId(node),
       });
     } else if (node.type === "paragraph") {
       const children = renderChildren(node);
