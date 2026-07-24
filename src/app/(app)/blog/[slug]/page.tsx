@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { getPostBySlug, getPublishedPostSlugs } from "@/lib/payload-data";
 import { lexToBlocks } from "@/lib/lex-to-blocks";
 import { extractAllText, extractHeadings } from "@/lib/extract-headings";
+import { buildArticleSchema } from "@/lib/schema";
 
 import ArticleContentSection from "../../components/ArticleContentSection";
 import HeroSection from "../../components/HeroSection";
@@ -92,6 +93,12 @@ export default async function BlogPostPage({ params }: PageProps) {
 
   return (
     <main className="flex-1 bg-[#1c1c1c] text-white">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(post.jsonSchema ?? buildArticleSchema(post)),
+        }}
+      />
       <HeroSection
         h1={
           <>

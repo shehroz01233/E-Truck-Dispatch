@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter, Outfit, DM_Sans } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import { buildOrganizationSchema } from "@/lib/schema";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -75,12 +76,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const orgSchema = buildOrganizationSchema();
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${inter.variable} ${outfit.variable} ${dmSans.variable} h-full antialiased`}
     >
       <body className="min-h-full overflow-x-hidden bg-zinc-900">
+  <script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }}
+  />
   <div className="relative min-h-full overflow-x-hidden">
     <Navbar />
     {children}
