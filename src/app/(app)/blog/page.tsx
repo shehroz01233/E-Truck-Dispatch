@@ -1,12 +1,10 @@
-import { Suspense } from "react";
-import { Metadata } from "next";
 import { getPosts, getCategories } from "@/lib/payload-data";
+import { Metadata } from "next";
+import { Suspense } from "react";
 import HeroSection from "../components/HeroSection";
-import LearningResourcesSection, {
-  LearningResource,
-  ResourceCategory,
-} from "../components/LearningResourcesSection";
+import LearningResourcesSection, { LearningResource, ResourceCategory } from "../components/LearningResourcesSection";
 import VisionFormSection from "../components/VisionFormSection";
+
 
 export const metadata: Metadata = {
   title: "Blog | E-Truck Dispatching",

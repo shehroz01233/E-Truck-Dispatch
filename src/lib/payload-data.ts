@@ -30,12 +30,12 @@ function buildFallbackPost(
   data: { title: string; metaDescription: string; image: string },
 ): Post {
   return {
-    id: 0,
+    id: "0",
     title: data.title,
     slug,
     metaDescription: data.metaDescription,
     featureImage: {
-      id: 0,
+      id: "0",
       alt: data.title,
       url: data.image,
     },

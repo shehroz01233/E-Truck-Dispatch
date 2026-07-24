@@ -1,11 +1,15 @@
-import RichText from "@/lib/lexical-renderer";
-import { getPublishedPostSlugs, getPostBySlug } from "@/lib/payload-data";
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import FAQSection from "../../components/FAQs";
-import HeroSection from "../../components/HeroSection";
-import VisionFormSection from "../../components/VisionFormSection";
+import type { Metadata } from "next";
 
+import { getPostBySlug, getPublishedPostSlugs } from "@/lib/payload-data";
+import { lexToBlocks } from "@/lib/lex-to-blocks";
+import { extractAllText, extractHeadings } from "@/lib/extract-headings";
+
+import ArticleContentSection from "../../components/ArticleContentSection";
+import HeroSection from "../../components/HeroSection";
+import ServicesShowcaseSection from "../../components/ServicesShowcaseSection";
+import VisionFormSection from "../../components/VisionFormSection";
+import FAQSection from "../../components/FAQs";
 
 type PageProps = {
   params: Promise<{ slug: string }>;
@@ -38,71 +42,92 @@ const formFields = [
   ["Truck Type", "Enter Truck Type", "text"],
   ["MC Number", "Enter MC Number", "text"],
 ];
-
 export default async function BlogPostPage({ params }: PageProps) {
   const { slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) notFound();
 
-  const featureImage = post.featureImage as { url?: string; alt?: string } | null | undefined;
-  const category = post.category as { name?: string } | null | undefined;
-  const faqs = (post.faqs as { question: string; answer: string | { root: unknown } }[] | null | undefined) ?? [];
+  const featureImage = post.featureImage as
+    | { url?: string; alt?: string }
+    | null
+    | undefined;
+  const author = post.author as { email?: string } | string | null | undefined;
 
-  const formattedFaqs = faqs.map((faq) => ({
+  const authorName =
+    typeof author === "object" && author?.email
+      ? author.email
+      : typeof author === "string"
+        ? author
+        : "Author";
+
+  const publishedDate = post.publishedDate
+    ? new Date(post.publishedDate).toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+      })
+    : "";
+
+  const articleBlocks = lexToBlocks(post.content);
+  const headings = extractHeadings(post.content);
+
+  const formattedFaqs = (post.faqs ?? []).map((faq) => ({
     question: faq.question,
-    answer:
-      typeof faq.answer === "string"
-        ? faq.answer
-        : (() => {
-            try {
-              const root = faq.answer?.root as { children?: { text?: string }[] } | undefined;
-              return root?.children?.map((c) => c.text ?? "").join("") ?? "";
-            } catch {
-              return "";
-            }
-          })(),
+    answer: extractAllText(faq.answer),
   }));
+
+  const featureImageUrl = featureImage?.url ?? "/Blog/images/1_rectangle_1450.webp";
+  const featureImageAlt = featureImage?.alt ?? post.title;
 
   return (
     <main className="flex-1 bg-[#1c1c1c] text-white">
       <HeroSection
-        h1={<>{post.title}</>}
+        h1={
+          <>
+            Guides & Dispatch
+            <span className="block">Insights</span>
+          </>
+        }
         paragraphs={[
-          category?.name ? `Category: ${category.name}` : "",
-          post.publishedDate
-            ? `Published: ${new Date(post.publishedDate).toLocaleDateString("en-US", {
-                month: "long",
-                day: "numeric",
-                year: "numeric",
-              })}`
-            : "",
-        ].filter(Boolean)}
-        backgroundImage={featureImage?.url ?? "/Blog/images/1_rectangle_1450.webp"}
-        backgroundAlt={featureImage?.alt ?? post.title}
+          "Step-by-step resources designed to help owner-operators and fleets improve load selection, increase revenue per mile, and stay compliant on every run.",
+        ]}
+        backgroundImage="/Blog Single Page/images/1_rectangle_1450.webp"
+        backgroundAlt="Truck traveling on the highway"
       />
 
-      <section className="mx-auto w-[calc(100%-40px)] max-w-[900px] py-12 sm:w-[calc(100%-64px)] lg:py-20">
-        <RichText content={post.content} />
-      </section>
+      <ServicesShowcaseSection
+        image={featureImageUrl}
+        imageAlt={featureImageAlt}
+        services={headings.map((h) => ({
+          title: h.text,
+          href: `#${h.id}`,
+        }))}
+        activeIndex={0}
+      />
 
+      <ArticleContentSection
+        author={{
+          name: authorName,
+          role: "Professional",
+          image: "/Blog/images/author.webp",
+          imageAlt: authorName,
+        }}
+        updateLabel="Latest Update"
+        updatedAt={publishedDate}
+        dateTime={post.publishedDate ?? undefined}
+        updateIconSrc="/Blog/images/calendar-icon.webp"
+        blocks={articleBlocks}
+      />
       {formattedFaqs.length > 0 && (
         <FAQSection
           heading="Frequently Asked Questions"
-          description="Our coverage spans major shipping corridors, manufacturing hubs, and distribution centers where load density and broker networks support consistent freight availability."
-          image="/Blog/images/1_rectangle_1450.webp"
-          imageAlt="Dispatcher answering questions"
+          description="Get answers about trucking bookkeeping, freight invoicing, payroll, IFTA reporting, tax preparation, and financial management."
+          image="/Accounting/images/37_rectangle_1441.webp"
+          imageAlt="Accounting professional managing trucking financial records"
           faqs={formattedFaqs}
         />
       )}
-
-      {post.jsonSchema != null && (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(post.jsonSchema as Record<string, unknown>) }}
-        />
-      )}
-
       <VisionFormSection
         heading={
           <>

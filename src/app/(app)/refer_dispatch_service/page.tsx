@@ -333,17 +333,6 @@ const reeferWhyChooseCards = [
       "Ongoing operational guidance",
     ],
   },
-   {
-    title: "Dedicated Services",
-    items: [
-      "Dedicated dispatcher assignment",
-      "24/7 dispatcher communication",
-      "No forced dispatch control",
-      "Broker coordination assistance",
-      "Paperwork handling support",
-      "Ongoing operational guidance",
-    ],
-  },
 ];
 const reeferFinalFormParagraphs = [
   "Fill out the form to connect with our expert dispatch team and start getting high-paying reefer loads with full support and zero stress.",
